@@ -1,3 +1,6 @@
-{ pkgs ? import <nixpkgs> {} }: pkgs.mkShell {
-    nativeBuildInputs = with pkgs.buildPackages; [ git vim ];
+{pkgs ? import <nixpkgs> {}, ...}: {
+  default = pkgs.mkShell {
+    NIX_CONFIG = "extra-experimental-features = nix-command flakes";
+    nativeBuildInputs = with pkgs; [git neovim nix];
+  };
 }
