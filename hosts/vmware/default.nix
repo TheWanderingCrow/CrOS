@@ -5,7 +5,7 @@
     ./hardware-configuration.nix
     ../../modules
     ];
-    networking.hostName = "nixos-vmware";
+    networking.hostName = "vmware";
     environment.systemPackages = [
         pkgs.git
         pkgs.vim
