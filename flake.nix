@@ -20,5 +20,5 @@
             specialArgs = {inherit pkgs inputs;};
             modules = [(./hosts + "/${host}")];
         });
-    in {nixosConfigurations = lib.attrsets.genAttrs ["remote"] ns;};
+    in {nixosConfigurations = lib.attrsets.genAttrs ["remote" "vmware"] ns;};
 }
