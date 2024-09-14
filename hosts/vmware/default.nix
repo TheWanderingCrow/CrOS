@@ -3,6 +3,7 @@
 }:{
     imports = [
     ./hardware-configuration.nix
+    ./boot.nix
     ../../modules
     ];
     networking.hostName = "vmware";
