@@ -14,10 +14,16 @@
       screen
       curl
       firefox
+      fish
    ];
 
    users.users.crow = {
       isNormalUser = true;
       extraGroups = [ "wheel" "networking" ];
+   };
+
+   programs.sway = {
+      enable = true;
+      wrapperFeatures.gtk = true;
    };
 }
