@@ -21,12 +21,6 @@
       fsType = "iso9660";
     };
 
-  fileSystems."/nix/.ro-store" =
-    { device = "/iso/nix-store.squashfs";
-      fsType = "squashfs";
-      options = [ "loop" ];
-    };
-
   fileSystems."/nix/.rw-store" =
     { device = "tmpfs";
       fsType = "tmpfs";
@@ -37,9 +31,27 @@
       fsType = "overlay";
     };
 
+  fileSystems."/nix/store" =
+    { device = "/nix/store";
+      fsType = "none";
+      options = [ "bind" ];
+    };
+
   fileSystems."/mnt" =
     { device = "/dev/disk/by-uuid/cc7fc1f5-77b0-4fd6-89c2-dde99d6247ca";
       fsType = "ext4";
+    };
+
+  fileSystems."/mnt/boot" =
+    { device = "/dev/disk/by-uuid/73DE-6834";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
+    };
+
+  fileSystems."/nix/.ro-store" =
+    { device = "/iso/nix-store.squashfs";
+      fsType = "squashfs";
+      options = [ "loop" ];
     };
 
   swapDevices = [ ];
