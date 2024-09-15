@@ -38,12 +38,12 @@
     };
 
   fileSystems."/mnt" =
-    { device = "/dev/disk/by-uuid/cc7fc1f5-77b0-4fd6-89c2-dde99d6247ca";
+    { device = "/dev/disk/by-label/nixos";
       fsType = "ext4";
     };
 
   fileSystems."/mnt/boot" =
-    { device = "/dev/disk/by-uuid/73DE-6834";
+    { device = "/dev/disk/by-label/boot";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
