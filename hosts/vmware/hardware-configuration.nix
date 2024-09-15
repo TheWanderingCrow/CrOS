@@ -42,12 +42,6 @@
       fsType = "ext4";
     };
 
-  fileSystems."/mnt/boot" =
-    { device = "/dev/disk/by-uuid/73DE-6834";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
-    };
-
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
