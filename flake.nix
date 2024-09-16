@@ -20,10 +20,6 @@
             specialArgs = {inherit pkgs inputs;};
             modules = [
                 (./hosts + "/${host}")
-                home-manager.nixosModules.home-manager {
-                    home-manager.useGlobalPkgs = true;
-                    home-manager.useUserPackages = true;
-                }
             ];
         });
     in {nixosConfigurations = lib.attrsets.genAttrs [ "Parzival-Mobile" ] ns;};
