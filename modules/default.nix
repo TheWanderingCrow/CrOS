@@ -7,7 +7,7 @@
         ./users
     ];
 
-    config = {
+    options = {
         packages = {
             enable = lib.mkDefault true;
             core.enable = lib.mkDefault true;
