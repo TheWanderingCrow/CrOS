@@ -4,9 +4,6 @@
    pkgs,
    ...
 }: {
-   system.stateVersion = "24.05";
-   time.timeZone = "America/New_York";
-
     options.packages = {
         enable = lib.mkEnableOption "enables packages";
         core.enable = lib.mkEnableOption "enables required packages";
@@ -18,6 +15,8 @@
     };
     
     config = {
+        system.stateVersion = "24.05";
+        time.timeZone = "America/New_York";
         packages = {
             enable = lib.mkDefault true;
             core.enable = lib.mkDefault true;
