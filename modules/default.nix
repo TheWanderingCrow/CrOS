@@ -9,7 +9,7 @@
 
     options.omni.enable = lib.mkOption {default = true;};
 
-    config = {
+    config = lib.mkIf config.omni.enable {
         packages = {
             enable = lib.mkDefault true;
             core.enable = lib.mkDefault true;
