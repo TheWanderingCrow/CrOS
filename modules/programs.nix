@@ -92,5 +92,5 @@
                 widelands
                 wesnoth
             ] else []
-        )
+        );
 }
