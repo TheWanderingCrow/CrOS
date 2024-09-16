@@ -75,7 +75,7 @@
                 hashcat
                 dirstalk
             ] else []
-
+        )
         ++ (
             if config.packages.mudding.enable
             then [
