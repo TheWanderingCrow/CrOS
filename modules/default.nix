@@ -7,7 +7,9 @@
         ./users
     ];
 
-    options = {
+    options.omni.enable = lib.mkOption {default = true;};
+
+    config = {
         packages = {
             enable = lib.mkDefault true;
             core.enable = lib.mkDefault true;
