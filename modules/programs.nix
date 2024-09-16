@@ -1,5 +1,4 @@
 { inputs, pkgs, lib, config, ...}: {
-
     environment.systemPackages = with pkgs;
         (
             # Core packages
@@ -93,5 +92,5 @@
                 widelands
                 wesnoth
             ] else []
-        );
+        )
 }
