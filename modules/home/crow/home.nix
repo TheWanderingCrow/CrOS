@@ -27,7 +27,7 @@
                             margin = 10;
                             modules-left = [ "hyprland/workspaces" ];
                             modules-center = [ "clock" ];
-                            modules-right = [ "network", "battery", "backlight", "pulseaudio", "tray" ];
+                            modules-right = [ "network" "battery" "backlight" "pulseaudio" "tray" ];
                             tray = {
                                 spacing = 10;
                             };
@@ -49,11 +49,11 @@
                             temperature = {
                                 critical-threshold = 80;
                                 format = "{temperatureC}°C {icon}";
-                                format-icons = ["", "", ""];
+                                format-icons = ["" "" ""];
                             };
                             backlight = {
                                 format = "{percent}% {icon}";
-                                format-icons = ["󰃞", "󰃟", "󰃠"];
+                                format-icons = ["󰃞" "󰃟" "󰃠"];
                             };
                             battery = {
                                 states = {
@@ -65,7 +65,7 @@
                                 format-charging = "{capacity}% ";
                                 format-plugged = "{capacity}% ";
                                 format-alt = "{time} {icon}";
-                                format-icons = ["", "", "", "", ""];
+                                format-icons = ["" "" "" "" ""];
                             };
                             network = {
                                 format-wifi = "{essid} ({signalStrength}%) ";
@@ -89,7 +89,7 @@
                                     "phone" = "";
                                     "portable" = "";
                                     "car" = "";
-                                    "default" = ["", "", ""];
+                                    "default" = ["" "" ""];
                                 };
                                 "on-click" = "pavucontrol";
                             };
