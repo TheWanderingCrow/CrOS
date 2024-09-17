@@ -18,79 +18,81 @@
         waybar = {
             enable = true;
             settings = {
-                layer = "top";
-                position = "top";
-                height = "30";
-                spacing = "4";
-                mode = "dock";
-                margin = "10";
-                modules-left = [ "hyprland/workspaces" ];
-                modules-center = [ "clock" ];
-                modules-right = [ "network" "battery" "backlight" "pulseaudio" "tray" ];
-                tray = {
-                    spacing = "10";
-                };
-                "hyprland/workspaces" = {
-                    format = "{icon}";
-                    format-icons = {
-                        active = "";
-                        default = "";
+                mainBar = {
+                    layer = "top";
+                    position = "top";
+                    height = 30;
+                    spacing = 4;
+                    mode = "dock";
+                    margin = 10;
+                    modules-left = [ "hyprland/workspaces" ];
+                    modules-center = [ "clock" ];
+                    modules-right = [ "network" "battery" "backlight" "pulseaudio" "tray" ];
+                    tray = {
+                        spacing = 10;
                     };
-                };
-                clock = {
-                    tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-                    format-alt = "{:%m-%d-%Y}";
-                };
-                cpu = {
-                    format = "{usage}% ";
-                    tooltip = false;
-                };
-                temperature = {
-                    critical-threshold = 80;
-                    format = "{temperatureC}°C {icon}";
-                    format-icons = ["" "" ""];
-                };
-                backlight = {
-                    format = "{percent}% {icon}";
-                    format-icons = ["󰃞" "󰃟" "󰃠"];
-                };
-                battery = {
-                    states = {
-                        warning = "30";
-                        critical = "15";
+                    "hyprland/workspaces" = {
+                        format = "{icon}";
+                        format-icons = {
+                            active = "";
+                            default = "";
+                        };
                     };
-                    format = "{capacity}% {icon}";
-                    format-full = "{capacity}% {icon}";
-                    format-charging = "{capacity}% ";
-                    format-plugged = "{capacity}% ";
-                    format-alt = "{time} {icon}";
-                    format-icons = ["" "" "" "" ""];
-                };
-                network = {
-                    format-wifi = "{essid} ({signalStrength}%) ";
-                    format-ethernet = "{ipaddr}/{cidr} ";
-                    tooltip-format = "{ifname} via {gwaddr} ";
-                    format-linked = "{ifname} (No IP) ";
-                    format-disconnected = "Disconnected ⚠";
-                    format-alt = "{ifname}: {ipaddr}/{cidr}";
-                };
-                pulseaudio = {
-                    "format" = "{volume}% {icon} {format_source}";
-                    "format-bluetooth" = "{volume}% {icon} {format_source}";
-                    "format-bluetooth-muted" = " {icon} {format_source}";
-                    "format-muted" = " {format_source}";
-                    "format-source" = "{volume}% ";
-                    "format-source-muted" = "";
-                    "format-icons" = {
-                        "headphone" = "";
-                        "hands-free" = "";
-                        "headset" = "";
-                        "phone" = "";
-                        "portable" = "";
-                        "car" = "";
-                        "default" = ["" "" ""];
+                    clock = {
+                        tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+                        format-alt = "{:%m-%d-%Y}";
                     };
-                    "on-click" = "pavucontrol";
+                    cpu = {
+                        format = "{usage}% ";
+                        tooltip = false;
+                    };
+                    temperature = {
+                        critical-threshold = 80;
+                        format = "{temperatureC}°C {icon}";
+                        format-icons = ["" "" ""];
+                    };
+                    backlight = {
+                        format = "{percent}% {icon}";
+                        format-icons = ["󰃞" "󰃟" "󰃠"];
+                    };
+                    battery = {
+                        states = {
+                            warning = 30;
+                            critical = 15;
+                        };
+                        format = "{capacity}% {icon}";
+                        format-full = "{capacity}% {icon}";
+                        format-charging = "{capacity}% ";
+                        format-plugged = "{capacity}% ";
+                        format-alt = "{time} {icon}";
+                        format-icons = ["" "" "" "" ""];
+                    };
+                    network = {
+                        format-wifi = "{essid} ({signalStrength}%) ";
+                        format-ethernet = "{ipaddr}/{cidr} ";
+                        tooltip-format = "{ifname} via {gwaddr} ";
+                        format-linked = "{ifname} (No IP) ";
+                        format-disconnected = "Disconnected ⚠";
+                        format-alt = "{ifname}: {ipaddr}/{cidr}";
+                    };
+                    pulseaudio = {
+                        "format" = "{volume}% {icon} {format_source}";
+                        "format-bluetooth" = "{volume}% {icon} {format_source}";
+                        "format-bluetooth-muted" = " {icon} {format_source}";
+                        "format-muted" = " {format_source}";
+                        "format-source" = "{volume}% ";
+                        "format-source-muted" = "";
+                        "format-icons" = {
+                            "headphone" = "";
+                            "hands-free" = "";
+                            "headset" = "";
+                            "phone" = "";
+                            "portable" = "";
+                            "car" = "";
+                            "default" = ["" "" ""];
+                        };
+                        "on-click" = "pavucontrol";
+                    };
                 };
             };
             style = ''
