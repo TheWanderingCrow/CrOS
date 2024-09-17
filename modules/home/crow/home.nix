@@ -13,6 +13,9 @@
     };
     
     programs = {
+        hyprcursor = {
+            enable = true;
+        };
         waybar = {
             enable = true;
             systemd.enable = true;
