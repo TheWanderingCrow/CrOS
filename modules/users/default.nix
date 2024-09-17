@@ -1,10 +1,7 @@
-{ config, ... }: {
-    imports = 
-    (
-        if config.users.crow.enable then
-        [./crow.nix]
-	else []
-    );
-    # ++ ( to add more, just move the ;
-    
+{ lib, config, pkgs, ...}: {
+    users.users.crow = lib.mkIf config.users.crow.enable {
+        isNormalUser = true;
+        initialPassword = "changeme";
+        extraGroups = [ "wheel" "networkmanager" ];
+    };
 }
