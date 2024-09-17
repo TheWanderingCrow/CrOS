@@ -27,7 +27,7 @@
     config = {
         system.stateVersion = "24.05";
         time.timeZone = "America/New_York";
-        
+
         users = {
             enable = lib.mkDefault true;
             crow.enable = lib.mkDefault true;
@@ -42,6 +42,8 @@
             mudding.enable = lib.mkDefault false;
             gaming.enable = lib.mkDefault false;
         };
+        
+        hypr.enable = lib.mkDefault false;
     };
     
 }

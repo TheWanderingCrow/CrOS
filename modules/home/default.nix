@@ -2,7 +2,7 @@
     imports = [
     (
         if config.users.crow.home.enable then
-        ./crow.nix
+        ./crow/home.nix
     );
     # ++ ( to add more, just move the ;
     ];

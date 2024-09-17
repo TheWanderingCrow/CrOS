@@ -1,6 +1,4 @@
-{ pkgs,
-  ...
-}:{
+{config, pkgs, ...}:{
     imports = [
     ./hardware-configuration.nix
     ../../modules
@@ -11,4 +9,8 @@
         pkgs.vim
         pkgs.wget
     ];
+
+    config = {
+        hypr.enable = true;
+    };
 }
