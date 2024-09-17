@@ -47,6 +47,9 @@
         };
         
         hypr.enable = lib.mkDefault false;
+
+        # Configure pulseaudio
+        hardware.pulseaudio.enable = lib.mkDefault true;
     };
     
 }
