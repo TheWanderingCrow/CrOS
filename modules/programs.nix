@@ -7,6 +7,7 @@
                 vim
                 wget
                 screen
+                git
                 curl
                 foot
                 tmux
