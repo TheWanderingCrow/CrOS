@@ -50,6 +50,7 @@
 
         # Configure pulseaudio
         hardware.pulseaudio.enable = lib.mkDefault true;
+        services.pipewire.enable = false;
     };
     
 }
