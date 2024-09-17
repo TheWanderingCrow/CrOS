@@ -20,15 +20,15 @@
             settings = {
                 layer = "top";
                 position = "top";
-                height = 30;
-                spacing = 4;
+                height = "30";
+                spacing = "4";
                 mode = "dock";
-                margin = 10;
+                margin = "10";
                 modules-left = [ "hyprland/workspaces" ];
                 modules-center = [ "clock" ];
                 modules-right = [ "network" "battery" "backlight" "pulseaudio" "tray" ];
                 tray = {
-                    spacing = 10;
+                    spacing = "10";
                 };
                 "hyprland/workspaces" = {
                     format = "{icon}";
@@ -56,8 +56,8 @@
                 };
                 battery = {
                     states = {
-                        warning = 30;
-                        critical = 15;
+                        warning = "30";
+                        critical = "15";
                     };
                     format = "{capacity}% {icon}";
                     format-full = "{capacity}% {icon}";
