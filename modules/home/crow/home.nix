@@ -11,7 +11,7 @@
                 };
 
                 xdg = {
-                    configHome = "${homeDirectory}/.config";
+                    configHome = "/home/crow/.config";
                     enable = true;
                 };
                 
