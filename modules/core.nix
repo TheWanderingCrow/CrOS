@@ -32,7 +32,7 @@
             enable = lib.mkDefault true;
             crow = {
                 enable = lib.mkDefault true;
-                home.enable = mkDefault false;
+                home.enable = lib.mkDefault false;
             };
         };
         
