@@ -1,7 +1,8 @@
 {config, inputs, pkgs, lib, ...}: {
     
     config.home-manager = lib.mkIf config.users.crow.home.enable {
-        enable = true;
+        useGlobalPkgs = true;
+        useUserPackages = true;
         users.crow = {
             home = {
                 username = "crow";

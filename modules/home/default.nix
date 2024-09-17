@@ -1,5 +1,8 @@
-{ config, ... }: {
-    imports = [
-        ./crow/home.nix
-    ];
+{ config, lib, ... }: {
+    
+    config.home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        users.crow = lib.mkIf config.users.crow.home.enable ./crow/home.nix;
+    };
 }
