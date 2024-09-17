@@ -16,6 +16,6 @@
         systemPackages = with pkgs;
         [
             hyprcursor
-        ]
+        ];
     };
 }
