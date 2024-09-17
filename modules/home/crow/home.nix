@@ -1,8 +1,11 @@
 {config, inputs, pkgs, lib, ...}: {
-    username = "crow";
-    homeDirectory = "/home/crow";
-    file.".config/hypr/hyprland.conf" = lib.mkIf config.hypr.enable {
-        source = ./hyprland.conf;
+    
+    home = {
+        username = "crow";
+        homeDirectory = "/home/crow";
+        file.".config/hypr/hyprland.conf" = lib.mkIf config.hypr.enable {
+            source = ./hyprland.conf;
+        };
     };
 
     xdg = {
