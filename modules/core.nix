@@ -22,8 +22,6 @@
                 home.enable = lib.mkEnableOption "enable home configuration";
             };
         };
-
-        hypr.enable = lib.mkEnableOption "enable hyprland";
     };
     
     config = {
