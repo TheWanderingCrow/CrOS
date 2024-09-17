@@ -4,8 +4,6 @@
     ../../modules
     ];
 
-    config = {
-        hypr.enable = true;
+    hypr.enable = true;
 	networking.hostName = "Parzival-Mobile";
-    };
 }
