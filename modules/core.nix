@@ -17,17 +17,22 @@
         
         users = {
             enable = lib.mkEnableOption "enables users";
-            crow.enable = lib.mkEnableOption "enable crow";
+            crow = {
+                enable = lib.mkEnableOption "enable crow";
+                home.enable = lib.mkEnableOption "enable home configuration";
+            };
         };
     };
     
     config = {
         system.stateVersion = "24.05";
         time.timeZone = "America/New_York";
-	users = {
-	    enable = lib.mkDefault true;
-	    crow.enable = lib.mkDefault true;
-	};
+        
+        users = {
+            enable = lib.mkDefault true;
+            crow.enable = lib.mkDefault true;
+        };
+        
         packages = {
             enable = lib.mkDefault true;
             core.enable = lib.mkDefault true;

@@ -11,13 +11,22 @@
                 curl
                 foot
                 tmux
+                pulseaudio
             ] else []
         )
         ++ (
             if config.packages.gui.enable
             then [
-                # Note taking
+                # Writing
                 logseq
+                hunspellDicts.en-us
+                libreoffice
+                hunspell
+
+                # Audio
+                pavucontrol
+                pulsemixer
+                noisetorch
 
                 # Communication
                 mattermost-desktop
@@ -38,13 +47,6 @@
                 # Utilities
                 grim
                 hyfetch
-                wofi
-                waybar
-                swaynotificationcenter
-                udiskie
-                swayidle
-                hyprlock
-                pulseaudio
                 gimp
             ] else []
         )
