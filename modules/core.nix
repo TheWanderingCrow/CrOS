@@ -30,7 +30,10 @@
 
         users = {
             enable = lib.mkDefault true;
-            crow.enable = lib.mkDefault true;
+            crow = {
+                enable = lib.mkDefault true;
+                home.enable = mkDefault false;
+            };
         };
         
         packages = {
