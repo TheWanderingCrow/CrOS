@@ -6,6 +6,8 @@ in {
     home = {
         inherit username homeDirectory;
         stateVersion = system.stateVersion;
+        file = {
+            ".config/hypr/hyprland.conf".source = ./hyprland.conf
     };
 
     xdg = {
@@ -231,4 +233,6 @@ in {
             userName = "TheWanderingCrow";
         };
     };
+
+
 }
