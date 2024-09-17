@@ -4,19 +4,21 @@
    pkgs,
    ...
 }: {
-    options.packages = {
-        enable = lib.mkEnableOption "enables packages";
-        core.enable = lib.mkEnableOption "enables required packages";
-        gui.enable = lib.mkEnableOption "enables gui+DE packages";
-        programming.enable = lib.mkEnableOption "enables programming packages";
-        hacking.enable = lib.mkEnableOption "enables hacking packages";
-        mudding.enable = lib.mkEnableOption "enables mudding packages";
-        gaming.enable = lib.mkEnableOption "enables gaming packages";
-    };
-
-    options.users = {
-    	enable = lib.mkEnableOption "enables users";
-	crow.enable = lib.mkEnableOption "enable crow";
+    options =
+        packages = {
+            enable = lib.mkEnableOption "enables packages";
+            core.enable = lib.mkEnableOption "enables required packages";
+            gui.enable = lib.mkEnableOption "enables gui+DE packages";
+            programming.enable = lib.mkEnableOption "enables programming packages";
+            hacking.enable = lib.mkEnableOption "enables hacking packages";
+            mudding.enable = lib.mkEnableOption "enables mudding packages";
+            gaming.enable = lib.mkEnableOption "enables gaming packages";
+        };
+        
+        users = {
+            enable = lib.mkEnableOption "enables users";
+            crow.enable = lib.mkEnableOption "enable crow";
+        };
     };
     
     config = {
