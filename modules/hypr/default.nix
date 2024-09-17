@@ -8,6 +8,11 @@
         portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
     };
 
+    config.environment.systemPackages = lib.mkIf config.hypr.enable with pkgs;
+    [
+        hyprcursor
+    ]
+
     config.environment.sessionVariables = lib.mkIf config.hypr.enable {
         NIXOS_OZONE_WL = "1";
     };
