@@ -12,7 +12,6 @@
                 foot
                 tmux
                 pulseaudio
-		nerdfonts
             ] else []
         )
         ++ (

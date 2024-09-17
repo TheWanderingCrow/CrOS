@@ -35,6 +35,10 @@
                 home.enable = lib.mkDefault true;
             };
         };
+
+        fonts.packages = with pkgs; [
+            nerdfonts
+        ];
         
         packages = {
             enable = lib.mkDefault true;
