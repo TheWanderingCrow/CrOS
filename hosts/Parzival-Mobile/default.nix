@@ -3,14 +3,9 @@
     ./hardware-configuration.nix
     ../../modules
     ];
-    networking.hostName = "Parzival-Mobile";
-    environment.systemPackages = [
-        pkgs.git
-        pkgs.vim
-        pkgs.wget
-    ];
 
     config = {
         hypr.enable = true;
+	networking.hostName = "Parzival-Mobile";
     };
 }
