@@ -7,7 +7,8 @@ in {
         inherit username homeDirectory;
         stateVersion = system.stateVersion;
         file = {
-            ".config/hypr/hyprland.conf".source = ./hyprland.conf
+            ".config/hypr/hyprland.conf".source = ./hyprland.conf;
+        };
     };
 
     xdg = {
