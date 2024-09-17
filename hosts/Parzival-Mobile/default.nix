@@ -5,5 +5,6 @@
     ];
 
     hypr.enable = true;
+    mudding.enable = true;
 	networking.hostName = "Parzival-Mobile";
 }
