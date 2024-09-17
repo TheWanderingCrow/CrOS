@@ -1,4 +1,4 @@
-{inputs, pkgs, ...}: let
+{config, inputs, pkgs, ...}: let
     username = "crow";
     homeDirectory = "/home/${username}";
     configHome = "${homeDirectory}/.config";
