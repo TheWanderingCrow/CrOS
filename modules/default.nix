@@ -5,5 +5,6 @@
         ./networking.nix
         ./programs.nix
         ./users
+        ./hypr
     ];
 }
