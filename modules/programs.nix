@@ -6,7 +6,6 @@
             then [
                 vim
                 wget
-                git
                 screen
                 curl
                 foot
