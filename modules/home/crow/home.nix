@@ -44,7 +44,7 @@
                             };
                             cpu = {
                                 format = "{usage}% ";
-                                tooltip = false
+                                tooltip = false;
                             };
                             temperature = {
                                 critical-threshold = 80;
