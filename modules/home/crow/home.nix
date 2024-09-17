@@ -231,5 +231,11 @@
             userEmail = "contact@wanderingcrow.net";
             userName = "TheWanderingCrow";
         };
+        wofi = {
+            enable = true;
+        };
+        foot = {
+            enable = true;
+        };
     };
 }

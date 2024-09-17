@@ -45,7 +45,6 @@
                 strawberry-qt6
 
                 # Utilities
-                grim
                 hyfetch
                 gimp
             ] else []
