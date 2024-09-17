@@ -7,6 +7,6 @@
 	networking.hostName = "Parzival";
 
     hypr.enable = true;
-    mudding.enable = true;
-    gaming.enable = true;
+    packages.mudding.enable = true;
+    packages.gaming.enable = true;
 }
