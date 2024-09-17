@@ -3,6 +3,7 @@
     home = {
         username = "crow";
         homeDirectory = "/home/crow";
+        stateVersion = system.stateVersion;
         file.".config/hypr/hyprland.conf" = lib.mkIf config.hypr.enable {
             source = ./hyprland.conf;
         };
