@@ -4,7 +4,7 @@
    pkgs,
    ...
 }: {
-    options =
+    options = {
         packages = {
             enable = lib.mkEnableOption "enables packages";
             core.enable = lib.mkEnableOption "enables required packages";
