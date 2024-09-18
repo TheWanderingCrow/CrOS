@@ -59,26 +59,30 @@
             enable = true;
             keyboards.default = {
                 ids = [ "*" ];
-                settings = {
-                    main = {
-                        capslock = "layer(l2)";
-                    };
-                    l2 = {
-                        w = "up";
-                        a = "left";
-                        s = "down";
-                        d = "right";
+                extraConfig = ''
+                [main]
 
-                        b = "C-b";
+                capslock = layer(l2)
 
-                        space = "playpause";
-                        ''. = "nextsong";
-                        '', = "prevsong";
+                [l2]
 
-                        escape = "~";
-                        home = "end";
-                    };
-                };
+                w = up
+                s = down
+                a = left
+                d = right
+
+                b = C-b
+
+                space = playpause
+                . = nextsong
+                , = previoussong
+
+                [ = delete
+                ] = end
+                escape = ~
+
+                home = end
+                ''
             };
         };
     };
