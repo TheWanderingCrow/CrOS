@@ -13,8 +13,11 @@
         system = "x86_64-linux";
         inherit (inputs.nixpkgs) lib;
 
+        firefox_overlay = final: _prev: {firefox = import inputs.firefox-addons {system = final.system;};};
+        overlays = [firefox_overlay];
+
         pkgs = import inputs.nixpkgs {
-            inherit system;
+            inherit system overlays;
             config.allowUnfree = true;
         };
 
