@@ -5,5 +5,5 @@
         extraGroups = [ "wheel" "networkmanager" "audio" ];
     };
 
-    config.home-manager.users.crow = lib.mkIf config.users.crow.home.enable ./crow/home.nix;
+    config.home-manager.users.crow = lib.mkIf config.users.crow.home.enable ./home.nix;
 }
