@@ -55,6 +55,31 @@
         # Configure pulseaudio
         hardware.pulseaudio.enable = lib.mkDefault true;
         services.pipewire.enable = false;
+	services.keyd = {
+	    enable = true;
+	    keyboards.default = {
+	        ids = [ "*" ];
+		settings = {
+		    main = {
+		        capslock = "layer(l2)";
+		    };
+		    l2 = {
+		        w = "up";
+			a = "left";
+			s = "down";
+			d = "right";
+
+			b = "C-b";
+
+			space = "playpause";
+			"." = "nextsong";
+			"," = "prevsong";
+
+			escape = "~";
+			home = "end";
+		    };
+		};
+	    };
+	}:
     };
-    
 }
