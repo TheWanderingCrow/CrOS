@@ -38,7 +38,6 @@
                 teamspeak_client
 
                 # Browsing
-                firefox
                 tor-browser
 
                 # Music
