@@ -253,5 +253,23 @@
             bind -n M-Down select-pane -D
             '';
         };
+	firefox = {
+		enable = true;
+		policies = {
+			BlockAboutConfig = true;
+			DisableFirefoxStudies = true;
+			DisableFormHistory = true;
+			DisablePasswordReveal = true;
+			DisablePocket = true;
+			DisableProfileImport = true;
+			DontCheckDefaultBrowser = true;
+			EnableTrackingProtection = true;
+			Homepage = {
+				URL = "https://home.wanderingcrow.net";
+			};
+			OfferToSaveLogins = false;
+			PasswordManagerEnabled = false;
+		};
+	};
     };
 }
