@@ -286,5 +286,6 @@
                     "extensions.autoDisableScopes" = 0; # auto enable our extensions
                 };
             };
+	};
     };
 }
