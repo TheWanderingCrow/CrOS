@@ -6,7 +6,7 @@
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-        firefox-addons.url = "gitlab:ryceee/nur-expressions?dir=pkgs/firefox-addons";
+        firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     };
 
     outputs = inputs: let
