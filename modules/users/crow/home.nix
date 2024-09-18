@@ -263,9 +263,15 @@
 			DisablePocket = true;
 			DisableProfileImport = true;
 			DontCheckDefaultBrowser = true;
-			EnableTrackingProtection = true;
+			EnableTrackingProtection = {
+				Value = true;
+				Locked = true;
+				Cryptomining = true;
+				Fingerprinting = true;
+			};
 			Homepage = {
 				URL = "https://home.wanderingcrow.net";
+				StartPage = "homepage";
 			};
 			OfferToSaveLogins = false;
 			PasswordManagerEnabled = false;
