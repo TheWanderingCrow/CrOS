@@ -253,29 +253,30 @@
             bind -n M-Down select-pane -D
             '';
         };
-	firefox = {
-		enable = true;
-		policies = {
-			BlockAboutConfig = true;
-			DisableFirefoxStudies = true;
-			DisableFormHistory = true;
-			DisablePasswordReveal = true;
-			DisablePocket = true;
-			DisableProfileImport = true;
-			DontCheckDefaultBrowser = true;
-			EnableTrackingProtection = {
-				Value = true;
-				Locked = true;
-				Cryptomining = true;
-				Fingerprinting = true;
-			};
-			Homepage = {
-				URL = "https://home.wanderingcrow.net";
-				StartPage = "homepage";
-			};
-			OfferToSaveLogins = false;
-			PasswordManagerEnabled = false;
-		};
-	};
+        firefox = {
+            enable = true;
+            policies = {
+                BlockAboutConfig = true;
+                DisableFirefoxStudies = true;
+                DisableFormHistory = true;
+                DisablePasswordReveal = true;
+                DisablePocket = true;
+                DisableProfileImport = true;
+                DontCheckDefaultBrowser = true;
+                EnableTrackingProtection = {
+                    Value = true;
+                    Locked = true;
+                    Cryptomining = true;
+                    Fingerprinting = true;
+                };
+                Homepage = {
+                    URL = "https://home.wanderingcrow.net";
+                    StartPage = "homepage";
+                };
+                OfferToSaveLogins = false;
+                PasswordManagerEnabled = false;
+            };
+            profiles.profiles.crow.extensions = with inpits.firefox-addons; [ bitwarden-password-manager ublock-origin ];
+        };
     };
 }
