@@ -72,8 +72,8 @@
                         b = "C-b";
 
                         space = "playpause";
-                        "." = "nextsong";
-                        "," = "prevsong";
+                        . = "nextsong";
+                        , = "prevsong";
 
                         escape = "~";
                         home = "end";
