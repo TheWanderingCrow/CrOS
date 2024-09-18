@@ -276,7 +276,8 @@
                 OfferToSaveLogins = false;
                 PasswordManagerEnabled = false;
             };
-            profiles.profiles.crow.extensions = with pkgs; [ bitwarden-password-manager ublock-origin ];
+            profiles.profiles.crow.extensions = with pkgs; 
+            [ bitwarden-password-manager ublock-origin ]
         };
     };
 }
