@@ -6,7 +6,6 @@
         stateVersion = "24.05";
         file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
         file."/etc/keyd/default.conf".source = ./keyd.conf;
-        file
     };
 
     xdg = {
