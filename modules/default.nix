@@ -6,6 +6,5 @@
         ./programs.nix
         ./users
         ./hypr
-        ./home
     ];
 }
