@@ -276,11 +276,15 @@
                 OfferToSaveLogins = false;
                 PasswordManagerEnabled = false;
             };
-            profiles.crow.extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-                ublock-origin
-                bitwarden
-                vimium
-            ];
-        };
+            profiles.crow = {
+                extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+                    ublock-origin
+                    bitwarden
+                    vimium
+                ];
+                settings = {
+                    "extensions.autoDisableScopes" = 0; # auto enable our extensions
+                };
+            };
     };
 }
