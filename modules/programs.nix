@@ -12,6 +12,7 @@
                 foot
                 tmux
                 pulseaudio
+                keyd
             ] else []
         )
         ++ (
@@ -63,6 +64,7 @@
                 ddev
                 cloc
                 ansible
+                flutter
             ] else []
         )
         ++ (

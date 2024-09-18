@@ -5,6 +5,8 @@
         homeDirectory = "/home/crow";
         stateVersion = "24.05";
         file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
+        file."/etc/keyd/default.conf".source = ./keyd.conf;
+        file
     };
 
     xdg = {
@@ -237,6 +239,22 @@
         };
         foot = {
             enable = true;
+        };
+        tmux = {
+            enable = true;
+            extraConfig = ''
+            # split panes using | and -
+            bind | split-window -h
+            bind - split-window -v
+            unbind '"'
+            unbind %
+
+            # Alt-arrow pane nav
+            bind -n M-Left select-pane -L
+            bind -n M-Right select-pane -R
+            bind -n M-Up select-pane -U
+            bind -n M-Down select-pane -D
+            '';
         };
     };
 }
