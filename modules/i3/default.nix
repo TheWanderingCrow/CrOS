@@ -24,7 +24,7 @@
           enable = true;
           configFile = ./i3.config;
         };
-        displayManager.lightdm.enable = false;
+        displayManager.startx.enable = true;
       };
     };
   };

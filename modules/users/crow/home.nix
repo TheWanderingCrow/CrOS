@@ -4,7 +4,6 @@
         homeDirectory = "/home/crow";
         stateVersion = "24.05";
         file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
-        file.".config/hypr/hypr.conf".source = ./hypr.conf;
     };
 
     xdg = {
