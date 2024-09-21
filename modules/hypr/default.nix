@@ -14,8 +14,10 @@
             windowManager.hypr = {
                 enable = true;
             };
-            displayManager.startx.enable = true;
-            lightdm.enable = lib.mkForce false;
+            displayManager = {
+                startx.enable = true;
+                lightdm.enable = lib.mkForce false;
+            };
         };
     };
 
