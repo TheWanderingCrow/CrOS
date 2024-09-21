@@ -46,8 +46,16 @@
                 # Utilities
                 hyfetch
                 gimp
-		foot
+                foot
             ] else []
+        )
+        ++ (
+            if config.packages.wayland.enable
+            then [] else []
+        )
+        ++ (
+            if config.packages.x11.enable
+            then [] else []
         )
         ++ (
             if config.packages.programming.enable

@@ -9,6 +9,8 @@
             enable = lib.mkEnableOption "enables packages";
             core.enable = lib.mkEnableOption "enables required packages";
             gui.enable = lib.mkEnableOption "enables gui+DE packages";
+            wayland.enable = lib.mkEnableOption "enables wayland packages";
+            x11.enable = lib.mkEnableOption "enables x11 packages";
             programming.enable = lib.mkEnableOption "enables programming packages";
             hacking.enable = lib.mkEnableOption "enables hacking packages";
             mudding.enable = lib.mkEnableOption "enables mudding packages";
@@ -45,6 +47,8 @@
             enable = lib.mkDefault true;
             core.enable = lib.mkDefault true;
             gui.enable = lib.mkDefault true;
+            wayland.enable = lib.mkDefault false;
+            x11.enable = lib.mkDefault false;
             programming.enable = lib.mkDefault true;
             hacking.enable = lib.mkDefault false;
             mudding.enable = lib.mkDefault false;
