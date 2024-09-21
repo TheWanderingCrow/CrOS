@@ -52,6 +52,7 @@
         ++ (
             if config.packages.programming.enable
             then [
+	    	inputs.nixvim.packages.${pkgs.system}.default
                 lua
                 libgcc
                 php
