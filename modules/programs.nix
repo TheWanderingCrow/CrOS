@@ -9,7 +9,6 @@
                 screen
                 git
                 curl
-                foot
                 tmux
                 pulseaudio
                 keyd
@@ -47,12 +46,12 @@
                 # Utilities
                 hyfetch
                 gimp
+		foot
             ] else []
         )
         ++ (
             if config.packages.programming.enable
             then [
-                neovim
                 lua
                 libgcc
                 php

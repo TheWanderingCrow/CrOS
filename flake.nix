@@ -7,6 +7,7 @@
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+	nixvim.url = "git+https://git.wanderingcrow.net/TheWanderingCrow/nvix";
     };
 
     outputs = inputs: let
