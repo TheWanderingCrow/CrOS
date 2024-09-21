@@ -7,4 +7,5 @@
 	networking.hostName = "WCE-Vault";
     gui.enable = false;
     programming.enable = false;
+    users.vault.enable = true;
 }
