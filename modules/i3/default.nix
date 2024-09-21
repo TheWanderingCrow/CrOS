@@ -25,6 +25,7 @@
           configFile = ./i3.config;
         };
         displayManager.startx.enable = true;
+        desktopManager.xterm.enable = false;
       };
     };
   };
