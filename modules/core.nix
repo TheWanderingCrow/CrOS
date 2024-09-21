@@ -56,6 +56,7 @@
         };
         
         hypr.enable = lib.mkDefault false;
+        hyprland.enable = lib.mkDefault false;
 
         # Configure pulseaudio
         hardware.pulseaudio.enable = lib.mkDefault true;
