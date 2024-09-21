@@ -23,19 +23,25 @@
                 enable = lib.mkEnableOption "enable crow";
                 home.enable = lib.mkEnableOption "enable home configuration";
             };
+            vault = {
+                enable = lib.mkEnableOption "enable vault";
+            };
         };
     };
     
     config = {
         system.stateVersion = "24.05";
         time.timeZone = "America/New_York";
-	nix.settings.experimental-features = ["flakes" "nix-command"];
+        nix.settings.experimental-features = ["flakes" "nix-command"];
 
         users = {
             enable = lib.mkDefault true;
             crow = {
                 enable = lib.mkDefault true;
                 home.enable = lib.mkDefault true;
+            };
+            vault = {
+                enable = lib.mkDefault false;
             };
         };
 
