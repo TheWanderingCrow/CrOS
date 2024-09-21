@@ -55,7 +55,7 @@
             gaming.enable = lib.mkDefault false;
         };
         
-        hypr.enable = lib.mkDefault false;
+        i3.enable = lib.mkDefault false;
         hyprland.enable = lib.mkDefault false;
 
         # Configure pulseaudio
