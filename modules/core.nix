@@ -33,6 +33,11 @@
         system.stateVersion = "24.05";
         time.timeZone = "America/New_York";
         nix.settings.experimental-features = ["flakes" "nix-command"];
+        
+        environment.variables = {
+            EDITOR = "nvim";
+            VISUAL = "nvim";
+        };
 
         users = {
             enable = lib.mkDefault true;
