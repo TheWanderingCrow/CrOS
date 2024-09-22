@@ -13,7 +13,7 @@
                 pulseaudio
                 keyd
             ] else []
-        )
+)
         ++ (
             if config.packages.gui.enable
             then [
@@ -46,12 +46,24 @@
                 # Utilities
                 hyfetch
                 gimp
-                foot
+                pulseaudio-ctl
+                playerctl
+                brightnessctl
             ] else []
         )
         ++ (
             if config.packages.wayland.enable
-            then [] else []
+            then [
+               foot
+               wofi
+               swaynotificationcenter
+               udiskie
+               polkit_gnome
+               swayidle
+               sway-audio-idle-inhibit
+               swaylock-effects
+               grimshot
+            ] else []
         )
         ++ (
             if config.packages.x11.enable

@@ -58,8 +58,8 @@
             enable = lib.mkDefault true;
             core.enable = lib.mkDefault true;
             gui.enable = lib.mkDefault true;
-            wayland.enable = lib.mkDefault false;
-            x11.enable = lib.mkDefault false;
+            wayland.enable = lib.mkDefault hyprland.enable;
+            x11.enable = lib.mkDefault i3.enable;
             programming.enable = lib.mkDefault true;
             hacking.enable = lib.mkDefault false;
             mudding.enable = lib.mkDefault false;
