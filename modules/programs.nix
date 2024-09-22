@@ -13,7 +13,7 @@
                 pulseaudio
                 keyd
             ] else []
-)
+        )
         ++ (
             if config.packages.gui.enable
             then [
@@ -62,7 +62,7 @@
                swayidle
                sway-audio-idle-inhibit
                swaylock-effects
-               grimshot
+               sway-contrib.grimshot
             ] else []
         )
         ++ (
