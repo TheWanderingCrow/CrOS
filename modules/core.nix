@@ -58,15 +58,14 @@
             enable = lib.mkDefault true;
             core.enable = lib.mkDefault true;
             gui.enable = lib.mkDefault true;
-            wayland.enable = lib.mkDefault config.hyprland.enable;
-            x11.enable = lib.mkDefault config.i3.enable;
             programming.enable = lib.mkDefault true;
+            wayland.enable = lib.mkDefault config.hyprland.enable;
+            x11.enable = lib.mkDefault false;
             hacking.enable = lib.mkDefault false;
             mudding.enable = lib.mkDefault false;
             gaming.enable = lib.mkDefault false;
         };
         
-        i3.enable = lib.mkDefault false;
         hyprland.enable = lib.mkDefault false;
 
         # Configure pulseaudio
