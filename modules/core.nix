@@ -69,6 +69,8 @@
         hyprland.enable = lib.mkDefault false;
 
         # Configure pulseaudio
+        hardware.graphics.enable32Bit = config.packages.gaming.enable;
+        hardware.pulseaudio.support32Bit = config.packages.gaming.enable;
         hardware.pulseaudio.enable = lib.mkDefault true;
         services.pipewire.enable = false;
         services.keyd = {
