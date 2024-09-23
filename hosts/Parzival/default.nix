@@ -5,6 +5,8 @@
     ];
 
 	networking.hostName = "Parzival";
+    networking.networkmanager.enable = false;
+    networking.wireless.iwd.enable = true;
 
     hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.production;
     hardware.nvidia.open = false;
