@@ -4,8 +4,8 @@
         homeDirectory = "/home/crow";
         stateVersion = "24.05";
         file.".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
-        file.".config/hypr/monitors.conf".source = lib.mkIf config.networking.hostName == "Parzival" ./hypr/parzival-monitors.conf
-        file.".config/hypr/monitors.conf".source = lib.mkIf config.networking.hostName == "Parzival-Mobile" ./hypr/parzival_mobile-monitors.conf
+        file.".config/hypr/monitors.conf".source = lib.mkIf config.networking.hostName == "Parzival" ./hypr/parzival-monitors.conf;
+        file.".config/hypr/monitors.conf".source = lib.mkIf config.networking.hostName == "Parzival-Mobile" ./hypr/parzival_mobile-monitors.conf;
     };
 
     xdg = {
