@@ -1,4 +1,4 @@
-{config, inputs, pkgs, lib, ...}: 
+{osConfig, config, inputs, pkgs, lib, ...}: 
 let
     monitorConfig = if osConfig.networking.hostName == "Parzival" then ./hypr/parzival-monitors.conf
                     else if osConfig.networking.hostName == "Parzival-Mobile" then ./hypr/parzival_mobile-monitors.conf
