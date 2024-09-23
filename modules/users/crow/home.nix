@@ -1,11 +1,16 @@
-{config, inputs, pkgs, lib, ...}: {
+{config, inputs, pkgs, lib, ...}: 
+let
+    monitorConfig = if config.networking.hostName == "Parzival" then ./hypr/parzival-monitors.conf
+                    else if config.networking.hostName == "Parzival-Mobile" then ./hypr/parzival_mobile-monitors.conf
+                    else null;
+in                    
+{
     home = {
         username = "crow";
         homeDirectory = "/home/crow";
         stateVersion = "24.05";
         file.".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
-        file.".config/hypr/monitors.conf".source = lib.mkIf config.networking.hostName == "Parzival" ./hypr/parzival-monitors.conf;
-        file.".config/hypr/monitors.conf".source = lib.mkIf config.networking.hostName == "Parzival-Mobile" ./hypr/parzival_mobile-monitors.conf;
+        file.".config/hypr/monitors.conf".source = lib.mkIf (monitorConfig != null) monitorConfig;
     };
 
     xdg = {
