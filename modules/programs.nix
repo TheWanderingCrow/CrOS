@@ -113,6 +113,7 @@
                 mudlet
                 widelands
                 wesnoth
+                gamescope
             ] else []
         );
 }
