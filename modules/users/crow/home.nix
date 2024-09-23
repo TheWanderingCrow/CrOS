@@ -1,7 +1,7 @@
 {config, inputs, pkgs, lib, ...}: 
 let
-    monitorConfig = if config.networking.hostName == "Parzival" then ./hypr/parzival-monitors.conf
-                    else if config.networking.hostName == "Parzival-Mobile" then ./hypr/parzival_mobile-monitors.conf
+    monitorConfig = if osConfig.networking.hostName == "Parzival" then ./hypr/parzival-monitors.conf
+                    else if osConfig.networking.hostName == "Parzival-Mobile" then ./hypr/parzival_mobile-monitors.conf
                     else null;
 in                    
 {
