@@ -13,8 +13,9 @@ in
         homeDirectory = "/home/crow";
         stateVersion = "24.05";
 #       file.".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
-#       file.".config/hypr/monitors.conf".source = lib.mkIf (monitorConfig != null) hyprMonitorConfig;
+#       file.".config/hypr/monitors.conf".source = lib.mkIf (hyprMonitorConfig != null) hyprMonitorConfig;
         file.".config/sway/config".source = ./sway/sway.conf;
+        file.".config/sway/monitors.conf".source = lib.mkIf (swayMonitorConfig != null) swayMonitorConfig;
     };
 
     xdg = {
