@@ -63,6 +63,7 @@
                sway-audio-idle-inhibit
                swaylock-effects
                sway-contrib.grimshot
+               glfw-wayland-minecraft
             ] else []
         )
         ++ (
