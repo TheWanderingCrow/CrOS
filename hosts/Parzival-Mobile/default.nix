@@ -4,7 +4,7 @@
     ../../modules
     ];
 
-    hyprland.enable = true;
+    sway.enable = true;
     packages.mudding.enable = true;
 	networking.hostName = "Parzival-Mobile";
 }
