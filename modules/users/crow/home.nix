@@ -3,6 +3,9 @@ let
     hyprMonitorConfig = if osConfig.networking.hostName == "Parzival" then ./hypr/parzival-monitors.conf
                     else if osConfig.networking.hostName == "Parzival-Mobile" then ./hypr/parzival_mobile-monitors.conf
                     else null;
+    swayMonitorConfig = if osConfig.networking.hostName == "Parzival" then ./sway/parzival-monitors.conf
+                        else if osConfig.networking.hostName == "Parzival-Mobile" then ./sway/parzival_mobile-monitors.conf
+                        else null;
 in                    
 {
     home = {
