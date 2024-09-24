@@ -76,7 +76,8 @@
 	    	inputs.nixvim.packages.${pkgs.system}.default
                 lua
                 libgcc
-                php
+                php83
+                php83Packages.composer
                 python3
                 serverless
                 jwt-cli
