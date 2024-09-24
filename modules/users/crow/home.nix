@@ -17,6 +17,7 @@ in
         file.".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
         file.".config/waybar/style.css".source = ./waybar/style.css;
         file.".config/sway/config".source = ./sway/sway.conf;
+        file.".config/sway/backgrounds.conf".source = ./sway/backgrounds.conf;
         file.".config/sway/monitors.conf".source = lib.mkIf (swayMonitorConfig != null) swayMonitorConfig;
         file.".config/sway/background-1".source = ./sway/cyber_defiance.jpg;
         file.".config/sway/background-2".source = ./sway/cyber_skyscrapers.jpg;
