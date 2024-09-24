@@ -1,6 +1,6 @@
 {osConfig, config, inputs, pkgs, lib, ...}: 
 let
-    monitorConfig = if osConfig.networking.hostName == "Parzival" then ./hypr/parzival-monitors.conf
+    hyprMonitorConfig = if osConfig.networking.hostName == "Parzival" then ./hypr/parzival-monitors.conf
                     else if osConfig.networking.hostName == "Parzival-Mobile" then ./hypr/parzival_mobile-monitors.conf
                     else null;
 in                    
@@ -9,8 +9,9 @@ in
         username = "crow";
         homeDirectory = "/home/crow";
         stateVersion = "24.05";
-        file.".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
-        file.".config/hypr/monitors.conf".source = lib.mkIf (monitorConfig != null) monitorConfig;
+#       file.".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
+#       file.".config/hypr/monitors.conf".source = lib.mkIf (monitorConfig != null) hyprMonitorConfig;
+        file.".config/sway/config".source = ./sway/sway.conf;
     };
 
     xdg = {
@@ -30,13 +31,13 @@ in
                     spacing = 4;
                     mode = "dock";
                     margin = "10";
-                    modules-left = [ "hyprland/workspaces" ];
+                    modules-left = [ "sway/workspaces" ];
                     modules-center = [ "clock" ];
                     modules-right = [ "network" "battery" "backlight" "pulseaudio" "tray" ];
                     tray = {
                         spacing = 10;
                     };
-                    "hyprland/workspaces" = {
+                    "sway/workspaces" = {
                         format = "{icon}";
                         format-icons = {
                             active = "";
