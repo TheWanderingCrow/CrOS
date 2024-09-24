@@ -59,7 +59,7 @@
             core.enable = lib.mkDefault true;
             gui.enable = lib.mkDefault true;
             programming.enable = lib.mkDefault true;
-            wayland.enable = lib.mkDefault config.hyprland.enable;
+            wayland.enable = lib.mkDefault true;
             x11.enable = lib.mkDefault false;
             hacking.enable = lib.mkDefault false;
             mudding.enable = lib.mkDefault false;
