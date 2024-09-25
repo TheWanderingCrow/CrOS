@@ -5,6 +5,7 @@
 
 	networking.hostName = "WCE-Home";
     networking.firewall.allowedTCPPorts = [ 8123 ];
+    proxmoxLXC.manageNetwork = true;
 
     virtualisation.oci-containers = {
         backend = "podman";
