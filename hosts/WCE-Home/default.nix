@@ -13,7 +13,7 @@
             environment.TZ = "America/New_York";
             image = "ghcr.io/home-assistant/home-assistant:stable";
             extraOptions = [
-                "--network=host",
+                "--network=host";
                 "--device=/dev/ttyACM0:/dev/ttyACM0";
             ];
         };
