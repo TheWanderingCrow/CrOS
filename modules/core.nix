@@ -26,6 +26,9 @@
             vault = {
                 enable = lib.mkEnableOption "enable vault";
             };
+            ha = {
+                enable = lib.mkEnableOption "enable home assistant user";
+            };
         };
     };
     
@@ -46,6 +49,9 @@
                 home.enable = lib.mkDefault true;
             };
             vault = {
+                enable = lib.mkDefault false;
+            };
+            ha = {
                 enable = lib.mkDefault false;
             };
         };

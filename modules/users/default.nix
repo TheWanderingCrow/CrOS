@@ -2,6 +2,7 @@
     imports = [
         ./crow
         ./vault
+        ./ha
     ];
 
     config.home-manager = {
