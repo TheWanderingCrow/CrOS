@@ -46,7 +46,7 @@
             enable = lib.mkDefault true;
             crow = {
                 enable = lib.mkDefault true;
-                home.enable = lib.mkDefault true;
+                home.enable = lib.mkDefault config.users.crow.enable;
             };
             vault = {
                 enable = lib.mkDefault false;
