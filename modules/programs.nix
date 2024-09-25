@@ -44,6 +44,7 @@
                 strawberry-qt6
 
                 # Utilities
+                taskwarrior3
                 hyfetch
                 gimp
                 pulseaudio-ctl
