@@ -112,6 +112,7 @@
             then [
                 steam
                 protonup-qt
+                steamtinkerlaunch
                 prismlauncher
                 mudlet
                 widelands
