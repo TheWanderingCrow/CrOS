@@ -59,6 +59,8 @@
         fonts.packages = with pkgs; [
             nerdfonts
         ];
+
+        fonts.enableDefaultPackages = true;
         
         packages = {
             enable = lib.mkDefault true;
