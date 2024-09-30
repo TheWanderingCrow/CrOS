@@ -60,7 +60,6 @@
             nerdfonts
         ];
 
-        fonts.enableDefaultPackages = true;
         
         packages = {
             enable = lib.mkDefault true;
