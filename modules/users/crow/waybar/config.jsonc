@@ -8,7 +8,7 @@
     "margin": 10, // float the bar off the edges of the screen
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
+        "sway/workspaces",
     ],
     "modules-center": [
         "clock",
@@ -24,7 +24,7 @@
         // "icon-size": 21,
         "spacing": 10
     },
-    "hyprland/workspaces": {
+    "sway/workspaces": {
         "format": "{icon}",
         "format-icons" : {
             "1": "󰈹",
