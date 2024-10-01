@@ -42,7 +42,7 @@
                 # Music
                 spotify
                 strawberry-qt6
-                gst_all_1.gstreamer
+                gst_all_1.gst-plugins-rs
 
                 # Utilities
                 taskwarrior3
