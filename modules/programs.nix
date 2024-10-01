@@ -42,7 +42,7 @@
                 # Music
                 spotify
                 strawberry-qt6
-                haskellPackages.gstreamer
+                gst_all_1.gstreamer
 
                 # Utilities
                 taskwarrior3
