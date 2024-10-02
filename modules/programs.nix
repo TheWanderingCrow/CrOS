@@ -118,6 +118,7 @@
                 widelands
                 wesnoth
                 gamescope
+                gamemoderun
             ] else []
         );
 }
