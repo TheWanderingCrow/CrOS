@@ -23,7 +23,7 @@
             Persistent = true;
         };
         wantedBy = [
-            timers.target
+            "timers.target"
         ];
     };
 
