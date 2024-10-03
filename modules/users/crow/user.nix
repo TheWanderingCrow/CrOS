@@ -8,7 +8,7 @@
     config.systemd.services.note_sync = {
         enable = true;
         description = "Auto sync notes to remote";
-        unitConfig = {
+        serviceConfig = {
             User = "crow";
             Group = "crow";
             Type = "oneshot";
