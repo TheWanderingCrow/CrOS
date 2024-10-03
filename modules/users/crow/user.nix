@@ -14,6 +14,7 @@
         };
         path = [
             pkgs.git
+            pkgs.ssh
         ];
         startAt = [
             "*:0/5"
