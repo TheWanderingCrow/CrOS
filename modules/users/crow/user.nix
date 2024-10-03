@@ -10,7 +10,6 @@
         description = "Auto sync notes to remote";
         serviceConfig = {
             User = "crow";
-            Group = "crow";
             Type = "oneshot";
         };
         path = [
