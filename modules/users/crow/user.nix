@@ -13,7 +13,7 @@
             Type = "oneshot";
         };
         path = [
-            "/run/current-system/sw/bin/"
+            "/run/current-system/sw"
         ];
         startAt = [
             "*:0/5"
