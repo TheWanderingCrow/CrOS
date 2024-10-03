@@ -18,7 +18,7 @@
         startAt = [
             "*:0/5"
         ];
-        script = "cd /home/crow/Notes\ngit pull\ngit add .\ngit commit -am 'automatic backup'\ngit push";
+        script = "cd /home/crow/Notes\ngit pull\ngit add .\ngit diff-index --quiet HEAD || git commit -am 'automatic backup'\ngit push";
     };
 
     config.home-manager.users.crow = lib.mkIf config.users.crow.home.enable ./home.nix;
