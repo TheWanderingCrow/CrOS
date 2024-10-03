@@ -16,18 +16,10 @@
         path = [
             pkgs.git
         ];
-        script = "cd /home/crow/Notes\ngit add .\ngit commit -am 'automatic backup'\ngit push";
-    };
-    config.systemd.timers.note_sync = {
-        enable = true;
-        description = "Timer to autosync notes";
-        timerConfig = {
-            OnCalendar = "*:0/5";
-            Persistent = true;
-        };
-        wantedBy = [
-            "timers.target"
+        startAt = [
+            "*:0/5"
         ];
+        script = "cd /home/crow/Notes\ngit add .\ngit commit -am 'automatic backup'\ngit push";
     };
 
     config.home-manager.users.crow = lib.mkIf config.users.crow.home.enable ./home.nix;
