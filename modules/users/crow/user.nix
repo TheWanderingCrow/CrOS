@@ -1,4 +1,4 @@
-{ lib, config, ...}: {
+{ pkgs, lib, config, ...}: {
     config.users.users.crow = lib.mkIf config.users.crow.enable {
         isNormalUser = true;
         initialPassword = "changeme";
@@ -13,6 +13,9 @@
             Group = "crow";
             Type = "oneshot";
         };
+        path = [
+            pkgs.git
+        ];
         script = "cd /home/crow/Notes\ngit add .\ngit commit -am 'automatic backup'\ngit push";
     };
     config.systemd.timers.note_sync = {
