@@ -13,8 +13,7 @@
             Type = "oneshot";
         };
         path = [
-            pkgs.git
-            pkgs.ssh
+            "/run/current-system/sw/bin"
         ];
         startAt = [
             "*:0/5"
