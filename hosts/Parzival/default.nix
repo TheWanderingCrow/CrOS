@@ -15,4 +15,8 @@
     sway.enable = true;
     packages.mudding.enable = true;
     packages.gaming.enable = true;
+
+    services.vault = {
+        enable = true;
+    };
 }
