@@ -18,5 +18,6 @@
 
     services.vault = {
         enable = true;
+        address = "localhost:8200";
     };
 }
