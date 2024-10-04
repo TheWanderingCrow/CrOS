@@ -1,8 +1,7 @@
 {config, ...}: {
     imports = [
         ./crow
-        ./vault
-        ./ha
+        ./overseer
     ];
 
     config.home-manager = {

@@ -26,8 +26,8 @@
             vault = {
                 enable = lib.mkEnableOption "enable vault";
             };
-            ha = {
-                enable = lib.mkEnableOption "enable home assistant user";
+            overseer = {
+                enable = lib.mkEnableOption "enable container overseer user";
             };
         };
     };
@@ -51,7 +51,7 @@
             vault = {
                 enable = lib.mkDefault false;
             };
-            ha = {
+            overseer = {
                 enable = lib.mkDefault false;
             };
         };

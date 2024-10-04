@@ -28,5 +28,5 @@
                 inputs.home-manager.nixosModules.home-manager
             ];
         });
-    in {nixosConfigurations = lib.attrsets.genAttrs [ "Parzival" "Parzival-Mobile" "WCE-Vault" "WCE-Home" ] ns;};
+    in {nixosConfigurations = lib.attrsets.genAttrs [ "Parzival" "Parzival-Mobile" "WCE-Overseer" ] ns;};
 }

@@ -1,5 +1,5 @@
 { lib, config, ...}: {
-    config.users.users.ha = lib.mkIf config.users.ha.enable {
+    config.users.users.overseer = lib.mkIf config.users.overseer.enable {
         isNormalUser = true;
         initialPassword = "changeme";
         extraGroups = [ "wheel" "libvirtd" ];
