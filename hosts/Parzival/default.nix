@@ -12,11 +12,13 @@
     hardware.nvidia.open = false;
     hardware.nvidia.modesetting.enable = true;
 
-    sway.enable = true;
-    packages.mudding.enable = true;
-    packages.gaming.enable = true;
+    user.crow.enable = true;
 
-    services.vault = {
-        enable = true;
-    };
+    desktop.sway.enable = true;
+
+    module.gui.enable = true;
+    module.programming.enable = true;
+    module.wayland.enable = true;
+    module.mudding.enable = true;
+    module.gaming.enable = true;
 }

@@ -5,7 +5,7 @@
    ...
 }: {
     options = {
-        packages = {
+        module = {
             enable = lib.mkEnableOption "enables packages";
             core.enable = lib.mkEnableOption "enables required packages";
             gui.enable = lib.mkEnableOption "enables gui+DE packages";
@@ -17,14 +17,11 @@
             gaming.enable = lib.mkEnableOption "enables gaming packages";
         };
         
-        users = {
+        user = {
             enable = lib.mkEnableOption "enables users";
             crow = {
                 enable = lib.mkEnableOption "enable crow";
                 home.enable = lib.mkEnableOption "enable home configuration";
-            };
-            vault = {
-                enable = lib.mkEnableOption "enable vault";
             };
             overseer = {
                 enable = lib.mkEnableOption "enable container overseer user";
@@ -42,43 +39,42 @@
             VISUAL = "nvim";
         };
 
-        users = {
+        user = {
             enable = lib.mkDefault true;
             crow = {
-                enable = lib.mkDefault true;
-                home.enable = lib.mkDefault config.users.crow.enable;
-            };
-            vault = {
                 enable = lib.mkDefault false;
+                home.enable = lib.mkDefault config.user.crow.enable;
             };
             overseer = {
                 enable = lib.mkDefault false;
             };
         };
 
-        fonts.packages = with pkgs; [
+        fonts.module = with pkgs; [
             font-awesome
             nerdfonts
         ];
 
         
-        packages = {
+        module = {
             enable = lib.mkDefault true;
             core.enable = lib.mkDefault true;
-            gui.enable = lib.mkDefault true;
-            programming.enable = lib.mkDefault true;
-            wayland.enable = lib.mkDefault true;
+            gui.enable = lib.mkDefault false;
+            programming.enable = lib.mkDefault false;
+            wayland.enable = lib.mkDefault false;
             x11.enable = lib.mkDefault false;
             hacking.enable = lib.mkDefault false;
             mudding.enable = lib.mkDefault false;
             gaming.enable = lib.mkDefault false;
         };
-        
-        hyprland.enable = lib.mkDefault false;
 
+        desktop = {
+            sway = lib.mkDefault false;
+        };
+        
         # Configure pulseaudio
-        hardware.graphics.enable32Bit = config.packages.gaming.enable;
-        hardware.pulseaudio.support32Bit = config.packages.gaming.enable;
+        hardware.graphics.enable32Bit = config.module.gaming.enable;
+        hardware.pulseaudio.support32Bit = config.module.gaming.enable;
         hardware.pulseaudio.enable = lib.mkDefault true;
         services.pipewire.enable = false;
         services.keyd = {

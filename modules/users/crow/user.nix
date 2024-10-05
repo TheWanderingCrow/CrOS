@@ -1,5 +1,5 @@
 { pkgs, lib, config, ...}: {
-    config.users.users.crow = lib.mkIf config.users.crow.enable {
+    config.users.users.crow = lib.mkIf config.user.crow.enable {
         isNormalUser = true;
         initialPassword = "changeme";
         extraGroups = [ "wheel" "networkmanager" "audio" ];
@@ -21,5 +21,5 @@
         script = "cd /home/crow/Notes\ngit pull\ngit add .\ngit diff-index --quiet HEAD || git commit -am 'automatic backup'\ngit push";
     };
 
-    config.home-manager.users.crow = lib.mkIf config.users.crow.home.enable ./home.nix;
+    config.home-manager.users.crow = lib.mkIf config.user.crow.home.enable ./home.nix;
 }

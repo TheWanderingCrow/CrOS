@@ -2,7 +2,7 @@
     environment.systemPackages = with pkgs;
         (
             # Core packages
-            if config.packages.core.enable
+            if config.module.core.enable
             then [
                 vim
                 wget
@@ -15,7 +15,7 @@
             ] else []
         )
         ++ (
-            if config.packages.gui.enable
+            if config.module.gui.enable
             then [
                 # Writing
                 logseq
@@ -53,7 +53,7 @@
             ] else []
         )
         ++ (
-            if config.packages.wayland.enable
+            if config.module.wayland.enable
             then [
                foot
                wofi
@@ -68,13 +68,13 @@
             ] else []
         )
         ++ (
-            if config.packages.x11.enable
+            if config.module.x11.enable
             then [] else []
         )
         ++ (
-            if config.packages.programming.enable
+            if config.module.programming.enable
             then [
-	    	inputs.nixvim.packages.${pkgs.system}.default
+	    	inputs.nixvim.module.${pkgs.system}.default
                 lua
                 libgcc
                 php83
@@ -90,7 +90,7 @@
             ] else []
         )
         ++ (
-            if config.packages.hacking.enable
+            if config.module.hacking.enable
             then [
                 metasploit
                 exploitdb
@@ -102,13 +102,13 @@
             ] else []
         )
         ++ (
-            if config.packages.mudding.enable
+            if config.module.mudding.enable
             then [
                 mudlet
             ] else []
         )
         ++ (
-            if config.packages.gaming.enable
+            if config.module.gaming.enable
             then [
                 steam
                 protonup-qt
