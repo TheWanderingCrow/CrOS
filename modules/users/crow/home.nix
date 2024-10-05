@@ -81,7 +81,7 @@ in
                     };
                     # Vimium
                     "{d7742d87-e61d-4b78-b8a1-b469842139fa}" = {
-                        installation_mode = "force_installed",
+                        installation_mode = "force_installed";
                         install_url = "https://addons.mozilla.org/firefox/downloads/latest/{d7742d87-e61d-4b78-b8a1-b469842139fa}/latest.xpl";
                         default_area = "menupanel";
                     };
