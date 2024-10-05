@@ -69,7 +69,7 @@
         };
 
         desktop = {
-            sway = lib.mkDefault false;
+            sway.enable = lib.mkDefault false;
         };
         
         # Configure pulseaudio
