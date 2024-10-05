@@ -50,7 +50,7 @@
             };
         };
 
-        fonts.module = with pkgs; [
+        fonts.packages = with pkgs; [
             font-awesome
             nerdfonts
         ];

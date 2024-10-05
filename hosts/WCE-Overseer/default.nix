@@ -10,10 +10,5 @@
   
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
-    packages.gui.enable = false;
-    packages.wayland.enable = false;
-    packages.programming.enable = false;
-
-    users.crow.enable = false;
-    users.overseer.enable = true;
+    user.overseer.enable = true;
 }
