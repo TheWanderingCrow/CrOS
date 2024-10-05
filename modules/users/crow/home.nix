@@ -1,10 +1,10 @@
 {osConfig, config, inputs, pkgs, lib, ...}: 
 let
-    hyprMonitorConfig = if osConfig.networking.hostName == "Parzival" then ./hypr/parzival-monitors.conf
-                    else if osConfig.networking.hostName == "Parzival-Mobile" then ./hypr/parzival_mobile-monitors.conf
+    hyprMonitorConfig = if osConfig.networking.hostName == "Parzival" then ./configs/hypr/parzival-monitors.conf
+                    else if osConfig.networking.hostName == "Parzival-Mobile" then ./configs/hypr/parzival_mobile-monitors.conf
                     else null;
-    swayMonitorConfig = if osConfig.networking.hostName == "Parzival" then ./sway/parzival-monitors.conf
-                        else if osConfig.networking.hostName == "Parzival-Mobile" then ./sway/parzival_mobile-monitors.conf
+    swayMonitorConfig = if osConfig.networking.hostName == "Parzival" then ./configs/sway/parzival-monitors.conf
+                        else if osConfig.networking.hostName == "Parzival-Mobile" then ./configs/sway/parzival_mobile-monitors.conf
                         else null;
 in                    
 {
@@ -12,14 +12,24 @@ in
         username = "crow";
         homeDirectory = "/home/crow";
         stateVersion = "24.05";
-#       file.".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
-#       file.".config/hypr/monitors.conf".source = lib.mkIf (hyprMonitorConfig != null) hyprMonitorConfig;
-        file.".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
-        file.".config/waybar/style.css".source = ./waybar/style.css;
-        file.".config/sway/config".source = ./sway/sway.conf;
+
+        # Tools
+        file.".config/tmux/tmux.conf".source = ./configs/tmux/tmux.conf;
+        file.".config/git/config".source = ./configs/git/git.conf;
+        
+        # Hyprland
+        file.".config/hypr/hyprland.conf".source = ./configs/hypr/hyprland.conf;
+        file.".config/hypr/monitors.conf".source = lib.mkIf (hyprMonitorConfig != null) hyprMonitorConfig;
+        
+        # Waybar
+        file.".config/waybar/config.jsonc".source = ./configs/waybar/config.jsonc;
+        file.".config/waybar/style.css".source = ./configs/waybar/style.css;
+        
+        # Sway
+        file.".config/sway/config".source = ./configs/sway/sway.conf;
         file.".config/sway/monitors.conf".source = lib.mkIf (swayMonitorConfig != null) swayMonitorConfig;
-        file.".config/sway/background-1".source = ./sway/cyber_defiance.jpg;
-        file.".config/sway/background-2".source = ./sway/cyber_skyscrapers.jpg;
+        file.".config/sway/background-1".source = ./configs/wallpapers/cyber_defiance.jpg;
+        file.".config/sway/background-2".source = ./configs/wallpapers/cyber_skyscrapers.jpg;
     };
 
     xdg = {
@@ -28,36 +38,6 @@ in
     };
     
     programs = {
-        waybar = {
-            enable = true;
-        };
-        git = {
-            enable = true;
-            userEmail = "contact@wanderingcrow.net";
-            userName = "TheWanderingCrow";
-        };
-        wofi = {
-            enable = true;
-        };
-        foot = {
-            enable = true;
-        };
-        tmux = {
-            enable = true;
-            extraConfig = ''
-            # split panes using | and -
-            bind | split-window -h
-            bind - split-window -v
-            unbind '"'
-            unbind %
-
-            # Alt-arrow pane nav
-            bind -n M-Left select-pane -L
-            bind -n M-Right select-pane -R
-            bind -n M-Up select-pane -U
-            bind -n M-Down select-pane -D
-            '';
-        };
         firefox = {
             enable = true;
             policies = {
