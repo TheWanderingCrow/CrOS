@@ -2,7 +2,7 @@
     options.desktop.sway.enable = lib.mkEnableOption "enables sway";
 
     config = {
-        programs.sway = lib.mkIf config.sway.enable {
+        programs.sway = lib.mkIf config.desktop.sway.enable {
             enable = true;
             xwayland.enable = true;
         };
