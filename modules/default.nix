@@ -5,7 +5,6 @@
         ./networking.nix
         ./programs.nix
         ./users
-        ./hypr
-        ./sway
+        ./desktops
     ];
 }
