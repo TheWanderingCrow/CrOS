@@ -74,7 +74,7 @@
         ++ (
             if config.module.programming.enable
             then [
-                inputs.nixvim.module.${pkgs.system}.default
+                inputs.nixvim.packages.${pkgs.system}.default
                 lua
                 libgcc
                 php83
