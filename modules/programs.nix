@@ -65,6 +65,7 @@
                swaylock-effects
                sway-contrib.grimshot
                glfw-wayland-minecraft
+               waybar
             ] else []
         )
         ++ (
