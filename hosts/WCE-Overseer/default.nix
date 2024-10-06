@@ -4,7 +4,6 @@
     ];
 
 	networking.hostName = "WCE-Overseer";
-    networking.firewall.allowedTCPPorts = [ 8123 ];
     proxmoxLXC.manageNetwork = true;
 
   
