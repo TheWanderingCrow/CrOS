@@ -193,11 +193,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1727383923,
-        "narHash": "sha256-4/vacp3CwdGoPf8U4e/N8OsGYtO09WTcQK5FqYfJbKs=",
+        "lastModified": 1728306985,
+        "narHash": "sha256-l/KpcWTv2SjxCnqFs5GYhvjeVYd40WQV4/F2+w9btd4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "ffe2d07e771580a005e675108212597e5b367d2d",
+        "rev": "3ac39b2a8b7cbfc0f96628d8a84867c885bc988b",
         "type": "github"
       },
       "original": {
@@ -270,11 +270,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1727714556,
-        "narHash": "sha256-l4cPDA3xGtGdQmdSCAO2VyWg9xwW6//KwDYefdWtovQ=",
+        "lastModified": 1728303775,
+        "narHash": "sha256-+DykzTwUrLGOLHQdnWB1Wp0WIfBGhpqXoyTXdwIOoiY=",
         "ref": "refs/heads/main",
-        "rev": "5c6c300abfea2539ffad9bcbf857325eec5ab765",
-        "revCount": 5285,
+        "rev": "97444ed7a8a83406970fcc05907db1110435b59b",
+        "revCount": 5302,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
@@ -456,11 +456,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1727634051,
-        "narHash": "sha256-S5kVU7U82LfpEukbn/ihcyNt2+EvG7Z5unsKW9H/yFA=",
+        "lastModified": 1728018373,
+        "narHash": "sha256-NOiTvBbRLIOe5F6RbHaAh6++BNjsb149fGZd1T4+KBg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "06cf0e1da4208d3766d898b7fdab6513366d45b9",
+        "rev": "bc947f541ae55e999ffdb4013441347d83b00feb",
         "type": "github"
       },
       "original": {
@@ -493,11 +493,11 @@
         "nixvim": "nixvim_2"
       },
       "locked": {
-        "lastModified": 1727790482,
-        "narHash": "sha256-9YKQkOMGbszYse6xg/wJOC1sYUUqGeMrD1mqf1Juj7M=",
+        "lastModified": 1728310297,
+        "narHash": "sha256-InMO+ai6j/cluGjjsQ0eLP/3vlVsF8eqWiwd4nwnpLA=",
         "ref": "refs/heads/main",
-        "rev": "6417ae6d89f5f482838620aff963494422ce7ea7",
-        "revCount": 16,
+        "rev": "54f24b1a082b7443c4beaca0e6dd459570c2e5b9",
+        "revCount": 17,
         "type": "git",
         "url": "https://git.wanderingcrow.net/TheWanderingCrow/nvix"
       },
@@ -537,11 +537,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1727789928,
-        "narHash": "sha256-MFzG9bcilmqr7E3wvd5+Y9JcYfJXKzd17Hpb/orBnn4=",
+        "lastModified": 1728308299,
+        "narHash": "sha256-8P46b728TLDoN6g1UZhvpEI+A90hyats8Nh/L3H3Orw=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "fa00c78e9507a52c8699651d56713ccc3e12918f",
+        "rev": "cd24bc1bd8547905b9518903bc61b134752b8774",
         "type": "github"
       },
       "original": {
