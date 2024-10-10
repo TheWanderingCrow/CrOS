@@ -82,9 +82,16 @@
             keyboards.default = {
                 ids = [ "*" ];
                 extraConfig = ''
-                [main]
-
+                include layouts/colemak
+                [global]
+                
+                default_layout = main
                 capslock = layer(l2)
+                
+                [control+shift]
+
+                m = setlayout(main)
+                c = setlayout(colemak)
 
                 [l2]
 
