@@ -86,7 +86,7 @@
                 
                 default_layout = main
 
-                [main]
+                [main:layout]
                 
                 capslock = layer(standardL2)
                 
