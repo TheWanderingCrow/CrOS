@@ -85,14 +85,17 @@
                 [global]
                 
                 default_layout = main
-                capslock = layer(l2)
+
+                [main]
+                
+                capslock = layer(standardL2)
                 
                 [control+shift]
 
                 m = setlayout(main)
                 c = setlayout(colemak)
 
-                [l2]
+                [standardL2]
 
                 w = up
                 s = down
@@ -111,7 +114,26 @@
 
                 home = end
 
+                [colemakL2]
+                w = up
+                r = down
+                a = left
+                s = right
+
+                b = C-b
+
+                space = playpause
+                . = nextsong
+                , = previoussong
+
+                [ = delete
+                ] = end
+                escape = ~
+
+                home = end
+
                 [colemak:layout]
+                capslock = layer(colemakL2)
                 w = w
                 , = ,
                 s = r
