@@ -82,7 +82,6 @@
             keyboards.default = {
                 ids = [ "*" ];
                 extraConfig = ''
-                include layouts/colemak
                 [global]
                 
                 default_layout = main
@@ -111,6 +110,41 @@
                 escape = ~
 
                 home = end
+
+                [colemak:layout]
+                w = w
+                , = ,
+                s = r
+                a = a
+                c = c
+                g = d
+                q = q
+                e = f
+                ] = ]
+                d = s
+                / = /
+                ; = o
+                ' = '
+                r = p
+                f = t
+                t = g
+                u = l
+                . = .
+                j = n
+                k = e
+                p = ;
+                o = y
+                z = z
+                h = h
+                i = u
+                [ = [
+                v = v
+                l = i
+                m = m
+                n = k
+                x = x
+                b = b
+                y = j
                 '';
             };
         };
