@@ -8,10 +8,10 @@
     "margin": 10, // float the bar off the edges of the screen
     // Choose the order of the modules
     "modules-left": [
-        "sway/workspaces",
+        "sway/workspaces"
     ],
     "modules-center": [
-        "clock",
+        "clock"
     ],
     "modules-right": [
         "network",
@@ -63,7 +63,7 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "format-icons": ["󰃞", "󰃟", "󰃠"]
     },
     "battery": {
         "states": {
