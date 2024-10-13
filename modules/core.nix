@@ -70,6 +70,7 @@
 
         desktop = {
             sway.enable = lib.mkDefault false;
+            i3.enable = lib.mkDefault false;
         };
         
         # Configure pulseaudio

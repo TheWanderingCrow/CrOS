@@ -30,6 +30,9 @@ in
         file.".config/sway/monitors.conf".source = lib.mkIf (swayMonitorConfig != null) swayMonitorConfig;
         file.".config/sway/background-1".source = ./configs/wallpapers/cyber_defiance.jpg;
         file.".config/sway/background-2".source = ./configs/wallpapers/cyber_skyscrapers.jpg;
+
+        # i3
+        file.".config/i3/config".source = ./configs/i3/i3.conf;
     };
 
     xdg = {
