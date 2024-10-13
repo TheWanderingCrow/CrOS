@@ -33,6 +33,7 @@ in
 
         # i3
         file.".config/i3/config".source = ./configs/i3/i3.conf;
+        file."/home/crow/.xinitrc".source = ./configs/x11/xinitrc;
     };
 
     xdg = {
