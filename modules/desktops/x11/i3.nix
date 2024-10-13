@@ -6,7 +6,6 @@
             displayManager.startx.enable = true;
             windowManager.i3 = {
                 enable = true;
-                configFile = ~/.config/i3/config;
             };
         };
     };
