@@ -70,7 +70,10 @@
         )
         ++ (
             if config.module.x11.enable
-            then [] else []
+            then [
+                xterm
+                rofi
+            ] else []
         )
         ++ (
             if config.module.programming.enable

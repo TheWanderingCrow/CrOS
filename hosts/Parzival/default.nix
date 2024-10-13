@@ -20,6 +20,7 @@
     module.gui.enable = true;
     module.programming.enable = true;
     module.wayland.enable = true;
+    module.x11.enable = true;
     module.mudding.enable = true;
     module.gaming.enable = true;
 }
