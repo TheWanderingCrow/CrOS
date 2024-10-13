@@ -8,5 +8,6 @@
                 enable = true;
                 configFile = "$HOME/.config/i3/config";
             };
+        };
     };
 }
