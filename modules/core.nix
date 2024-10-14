@@ -73,6 +73,12 @@
             i3.enable = lib.mkDefault false;
         };
         
+        xdg.portal = {
+            xdgOpenUsePortal = true;
+            enable = true;
+            wlr.enable = true;
+        };
+        
         # Configure pulseaudio
         hardware.graphics.enable32Bit = config.module.gaming.enable;
         hardware.pulseaudio.support32Bit = config.module.gaming.enable;
