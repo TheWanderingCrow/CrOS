@@ -77,11 +77,11 @@
             xdgOpenUsePortal = true;
             enable = true;
             wlr.enable = true;
-            extraPortals = with pkgs;
-            [
-                xdg-desktop-portal-wlr
-                xdg-desktop-portal-gtk
-                xdg-desktop-portal-kde
+            extraPortals = [
+                inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland
+                pkgs.xdg-desktop-portal-wlr
+                pkgs.xdg-desktop-portal-gtk
+                pkgs.xdg-desktop-portal-kde
             ];
         };
         
