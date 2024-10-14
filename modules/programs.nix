@@ -66,6 +66,7 @@
                sway-contrib.grimshot
                glfw-wayland-minecraft
                waybar
+               wl-clipboard
             ] else []
         )
         ++ (
