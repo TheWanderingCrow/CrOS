@@ -6,6 +6,7 @@
             enable = true;
             xwayland.enable = true;
         };
+        xdg.portal.wlr.enable = true;
     };
 
 
