@@ -88,8 +88,12 @@
         # Configure pulseaudio
         hardware.graphics.enable32Bit = config.module.gaming.enable;
         hardware.pulseaudio.support32Bit = config.module.gaming.enable;
-        hardware.pulseaudio.enable = lib.mkDefault true;
-        services.pipewire.enable = false;
+        services.pipewire = {
+            enable = true;
+            alsa.enable = true;
+            alsa.support32Bit = true;
+            pulse.enable = true;
+        };
         services.keyd = {
             enable = true;
             keyboards.default = {
