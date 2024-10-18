@@ -107,11 +107,6 @@
                 
                 capslock = layer(standardL2)
                 
-                [control+shift]
-
-                m = setlayout(main)
-                c = setlayout(colemak)
-
                 [standardL2]
 
                 w = up
