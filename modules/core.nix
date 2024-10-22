@@ -107,11 +107,6 @@
                 
                 capslock = layer(standardL2)
                 
-                [control+shift]
-
-                m = setlayout(main)
-                c = setlayout(colemak)
-
                 [standardL2]
 
                 w = up
@@ -130,60 +125,6 @@
                 escape = ~
 
                 home = end
-
-                [colemakL2]
-                w = up
-                r = down
-                a = left
-                s = right
-
-                b = C-b
-
-                space = playpause
-                . = nextsong
-                , = previoussong
-
-                [ = delete
-                ] = end
-                escape = ~
-
-                home = end
-
-                [colemak:layout]
-                capslock = layer(colemakL2)
-                w = w
-                , = ,
-                s = r
-                a = a
-                c = c
-                g = d
-                q = q
-                e = f
-                ] = ]
-                d = s
-                / = /
-                ; = o
-                ' = '
-                r = p
-                f = t
-                t = g
-                u = l
-                . = .
-                j = n
-                k = e
-                p = ;
-                o = y
-                z = z
-                h = h
-                i = u
-                [ = [
-                v = v
-                l = i
-                m = m
-                n = k
-                x = x
-                b = b
-                y = j
                 '';
             };
         };

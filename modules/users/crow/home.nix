@@ -4,8 +4,8 @@ let
                     else if osConfig.networking.hostName == "Parzival-Mobile" then ./configs/hypr/parzival_mobile-monitors.conf
                     else null;
     swayMonitorConfig = if osConfig.networking.hostName == "Parzival" then ./configs/sway/parzival-monitors.conf
-                        else if osConfig.networking.hostName == "Parzival-Mobile" then ./configs/sway/parzival_mobile-monitors.conf
-                        else null;
+                    else if osConfig.networking.hostName == "Parzival-Mobile" then ./configs/sway/parzival_mobile-monitors.conf
+                    else null;
 in                    
 {
     home = {
@@ -30,6 +30,7 @@ in
         file.".config/sway/monitors.conf".source = lib.mkIf (swayMonitorConfig != null) swayMonitorConfig;
         file.".config/sway/background-1".source = ./configs/wallpapers/cyber_defiance.jpg;
         file.".config/sway/background-2".source = ./configs/wallpapers/cyber_skyscrapers.jpg;
+        file.".config/sway/background-3".source = ./configs/wallpapers/kali_lol.jpg;
 
         # i3
         file.".config/i3/config".source = ./configs/i3/i3.conf;
