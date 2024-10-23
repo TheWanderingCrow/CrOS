@@ -92,6 +92,7 @@
                 cloc
                 ansible
                 flutter
+                waydroid
             ] else []
         )
         ++ (
