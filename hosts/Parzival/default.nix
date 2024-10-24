@@ -8,10 +8,6 @@
     networking.networkmanager.enable = lib.mkForce false;
     networking.wireless.iwd.enable = true;
 
-    hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.production;
-    hardware.nvidia.open = false;
-    hardware.nvidia.modesetting.enable = true;
-
     user.crow.enable = true;
 
     desktop.sway.enable = true;
