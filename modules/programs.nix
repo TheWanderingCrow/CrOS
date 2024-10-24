@@ -100,6 +100,7 @@
                 exploitdb
                 ghidra
                 wireshark
+                termshark
                 nmap
                 hashcat
                 dirstalk
@@ -116,6 +117,8 @@
             then [
                 flutter
                 waydroid
+                ungoogled-chromium
+                android-tools
             ] else []
         )
         ++ (
