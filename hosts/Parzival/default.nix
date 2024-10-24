@@ -19,4 +19,5 @@
     module.x11.enable = true;
     module.mudding.enable = true;
     module.gaming.enable = true;
+    module.appdevel.enable = true;
 }

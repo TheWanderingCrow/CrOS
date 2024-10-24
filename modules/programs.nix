@@ -91,8 +91,6 @@
                 ddev
                 cloc
                 ansible
-                flutter
-                waydroid
             ] else []
         )
         ++ (
@@ -111,6 +109,13 @@
             if config.module.mudding.enable
             then [
                 mudlet
+            ] else []
+        )
+        ++ (
+            if config.module.appdevel.enable
+            then [
+                flutter
+                waydroid
             ] else []
         )
         ++ (
