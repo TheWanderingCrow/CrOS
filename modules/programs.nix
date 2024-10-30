@@ -18,7 +18,6 @@
             if config.module.gui.enable
             then [
                 # Writing
-                logseq
                 hunspellDicts.en-us
                 libreoffice
                 hunspell
