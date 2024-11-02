@@ -66,6 +66,7 @@
                glfw-wayland-minecraft
                waybar
                wl-clipboard
+               xorg.xrandr
             ] else []
         )
         ++ (
@@ -73,6 +74,7 @@
             then [
                 xterm
                 rofi
+                xorg.xrandr
             ] else []
         )
         ++ (
