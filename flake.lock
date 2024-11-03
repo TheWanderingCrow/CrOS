@@ -521,11 +521,11 @@
         "nixvim": "nixvim_2"
       },
       "locked": {
-        "lastModified": 1728331903,
-        "narHash": "sha256-Eeu/85WFgjbteskP4IRV3JLA6vUfMAUs3WgNiVcxbu8=",
+        "lastModified": 1730661009,
+        "narHash": "sha256-A4fDuEggVQ3PLu2FbpA3onfRJGMOD/W2J3fYuY7Pag4=",
         "ref": "refs/heads/main",
-        "rev": "354fdcbf6cf93212d3900948d2c6e40ce6511c90",
-        "revCount": 21,
+        "rev": "fe6319fc564df4c7de247fe57eb6d9e1adfd3916",
+        "revCount": 22,
         "type": "git",
         "url": "https://git.wanderingcrow.net/TheWanderingCrow/nvix"
       },
