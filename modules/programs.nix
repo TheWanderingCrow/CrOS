@@ -135,5 +135,8 @@
                 gamescope
                 gamemode
             ] else []
+        ) ++ (
+            # Fish shell stuff
+            fishPlugins.tide
         );
 }
