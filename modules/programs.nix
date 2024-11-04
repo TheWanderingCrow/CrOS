@@ -137,6 +137,8 @@
             ] else []
         ) ++ (
             # Fish shell stuff
-            fishPlugins.tide
+            [
+                fishPlugins.tide
+            ]
         );
 }
