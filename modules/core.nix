@@ -91,6 +91,9 @@
         programs.fish = {
             enable = true;
         };
+
+        # Make fish default for all users
+        users.defaultUserShell = pkgs.fish;
         
         # Configure pulseaudio
         hardware.graphics.enable32Bit = config.module.gaming.enable;
