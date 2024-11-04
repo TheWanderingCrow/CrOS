@@ -139,6 +139,7 @@
             # Fish shell stuff
             [
                 fishPlugins.tide
+                procps
             ]
         );
 }
