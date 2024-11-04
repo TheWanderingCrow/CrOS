@@ -88,6 +88,10 @@
             ];
         };
         
+        programs.fish = {
+            enable = true;
+        };
+        
         # Configure pulseaudio
         hardware.graphics.enable32Bit = config.module.gaming.enable;
         hardware.pulseaudio.support32Bit = config.module.gaming.enable;
