@@ -94,7 +94,7 @@
                 enable = true;
                 async = true;
             };
-            syntaxHylighting = {
+            syntaxHighlighting = {
                 enable = true;
             };
         };
