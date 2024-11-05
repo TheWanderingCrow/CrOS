@@ -109,6 +109,26 @@
                     truncation_length = 3;
                     truncation_symbol = "…/";
                 };
+                git_branch = {
+                    symbol = "";
+                    style = "bg:#394260";
+                    format = "[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)";
+                };
+                git_status = {
+                    style = "bg:#394260";
+                    format = "[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)";
+                };
+                php = {
+                    symbol = "";
+                    style = "bg:#212736";
+                    format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
+                };
+                time = {
+                    disabled = false;
+                    time_format = "%R"; # Hour:Minute Format
+                    style = "bg:#1d2230";
+                    format = "[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)";
+                };
             };
         };
 
