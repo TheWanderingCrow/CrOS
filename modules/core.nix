@@ -98,6 +98,10 @@
 
         programs.starship = {
             enable = true;
+            presets = [
+                "nerd-font-symbols"
+                "tokyo-night"
+            ];
         };
 
         users.defaultUserShell = pkgs.zsh;
