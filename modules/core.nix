@@ -88,20 +88,15 @@
             ];
         };
         
-        # REASONING: fish is not a POSIX compliant shell so if something happens we need to use bash as the login shell to prevent an irrecoverable shell
-        programs.bash = {
-            interactiveShellInit = ''
-                if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-                then
-                    shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-                    exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-                fi
-            '';
-        };
-        
-        programs.fish = {
+        programs.zsh = {
             enable = true;
+            autosuggestions = {
+                enable = true;
+                async = true;
+            };
         };
+
+        users.defaultUserShell = pkgs.zsh;
 
         # Configure pulseaudio
         hardware.graphics.enable32Bit = config.module.gaming.enable;
