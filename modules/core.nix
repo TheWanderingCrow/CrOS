@@ -100,6 +100,7 @@
             enable = true;
             settings = {
                 format = ''
+                """
                 [░▒▓](#a3aed2)\
                 [  ](bg:#a3aed2 fg:#090c0c)\
                 [](bg:#769ff0 fg:#a3aed2)\
@@ -112,7 +113,7 @@
                 [](fg:#212736 bg:#1d2230)\
                 $time\
                 [ ](fg:#1d2230)\
-                \n$character
+                \n$character"""
                 '';
             };
         };
