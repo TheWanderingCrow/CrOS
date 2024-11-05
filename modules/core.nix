@@ -96,6 +96,10 @@
             };
         };
 
+        programs.starship = {
+            enable = true;
+        };
+
         users.defaultUserShell = pkgs.zsh;
 
         # Configure pulseaudio
