@@ -12,6 +12,7 @@
                 tmux
                 pulseaudio
                 keyd
+                unar
             ] else []
         )
         ++ (
