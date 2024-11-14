@@ -19,6 +19,7 @@
         pkgs = import inputs.nixpkgs {
             inherit system overlays;
             config.allowUnfree = true;
+            android_sdk.accept_license = true;
         };
 
         ns = host: (lib.nixosSystem {
