@@ -143,7 +143,7 @@
             then [
                 alvr
                 wlx-overlay-s
-                immersed-vr
+                immersed
             ] else []
         );
 }
