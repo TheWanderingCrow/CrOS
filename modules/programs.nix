@@ -142,6 +142,7 @@
             then [
                 alvr
                 wlx-overlay-s
+                immersed-vr
             ] else []
         );
 }
