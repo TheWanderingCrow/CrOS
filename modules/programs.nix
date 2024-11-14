@@ -120,8 +120,7 @@
                 flutter
                 waydroid
                 ungoogled-chromium
-                android-tools
-                android-studio
+                android-studio-full
             ] else []
         )
         ++ (
