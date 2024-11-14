@@ -17,6 +17,7 @@
             mudding.enable = lib.mkEnableOption "enables mudding packages";
             gaming.enable = lib.mkEnableOption "enables gaming packages";
             appdevel.enable = lib.mkEnableOption "enables app development in flutter";
+            vr.enable = lib.mkEnableOption "enables VR utilities";
         };
         
         user = {
@@ -69,6 +70,7 @@
             mudding.enable = lib.mkDefault false;
             gaming.enable = lib.mkDefault false;
             appdevel.enable = lib.mkDefault false;
+            vr.enable = lib.mkDefault false;
         };
 
         desktop = {

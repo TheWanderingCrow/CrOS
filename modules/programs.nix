@@ -136,5 +136,12 @@
                 gamescope
                 gamemode
             ] else []
+        )
+        ++ (
+            if config.module.vr.enable
+            then [
+                alvr
+                wlx-overlay-s
+            ] else []
         );
 }
