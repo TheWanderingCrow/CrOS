@@ -121,6 +121,7 @@
                 waydroid
                 ungoogled-chromium
                 android-tools
+                android-studio
             ] else []
         )
         ++ (
