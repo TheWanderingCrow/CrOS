@@ -135,6 +135,7 @@
                 wesnoth
                 gamescope
                 gamemode
+                r2modman
             ] else []
         )
         ++ (
