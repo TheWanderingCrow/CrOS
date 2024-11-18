@@ -45,7 +45,7 @@
 
                 # Utilities
                 taskwarrior3
-                hyfetch
+                neofetch
                 gimp
                 pulseaudio-ctl
                 playerctl
