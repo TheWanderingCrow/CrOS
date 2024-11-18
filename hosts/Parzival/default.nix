@@ -5,8 +5,6 @@
     ];
 
 	networking.hostName = "Parzival";
-    networking.networkmanager.enable = lib.mkForce false;
-    networking.wireless.iwd.enable = true;
 
     user.crow.enable = true;
 
