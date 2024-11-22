@@ -107,6 +107,7 @@
                 nmap
                 hashcat
                 dirstalk
+                rtl-sdr
             ] else []
         )
         ++ (
