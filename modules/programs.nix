@@ -33,6 +33,7 @@
                 slack
                 zoom-us
                 vesktop
+                discord
                 signal-desktop
                 teamspeak_client
 

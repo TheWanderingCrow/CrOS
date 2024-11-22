@@ -5,7 +5,7 @@
     ];
 
 	networking.hostName = "Parzival";
-
+    
     user.crow.enable = true;
 
     desktop.sway.enable = true;
