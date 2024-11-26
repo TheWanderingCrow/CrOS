@@ -20,4 +20,6 @@
     module.gaming.enable = true;
     module.appdevel.enable = true;
     module.vr.enable = true;
+
+    virtualisation.vmware.host.enable = true;
 }
