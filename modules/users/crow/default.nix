@@ -1,5 +1,9 @@
-{lib, config, ...}: {
-    imports = [
-        ./user.nix
-    ];
+{
+  lib,
+  config,
+  ...
+}: {
+  imports = [
+    ./user.nix
+  ];
 }

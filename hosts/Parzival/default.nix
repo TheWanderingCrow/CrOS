@@ -1,25 +1,30 @@
-{lib, config, pkgs, ...}:{
-    imports = [
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
     ./hardware-configuration.nix
     ../../modules
-    ];
+  ];
 
-	networking.hostName = "Parzival";
-    
-    user.crow.enable = true;
+  networking.hostName = "Parzival";
 
-    desktop.sway.enable = true;
-    desktop.i3.enable = true;
+  user.crow.enable = true;
 
-    module.gui.enable = true;
-    module.programming.enable = true;
-    module.hacking.enable = true;
-    module.wayland.enable = true;
-    module.x11.enable = true;
-    module.mudding.enable = true;
-    module.gaming.enable = true;
-    module.appdevel.enable = true;
-    module.vr.enable = true;
+  desktop.sway.enable = true;
+  desktop.i3.enable = true;
 
-    virtualisation.vmware.host.enable = true;
+  module.gui.enable = true;
+  module.programming.enable = true;
+  module.hacking.enable = true;
+  module.wayland.enable = true;
+  module.x11.enable = true;
+  module.mudding.enable = true;
+  module.gaming.enable = true;
+  module.appdevel.enable = true;
+  module.vr.enable = true;
+
+  virtualisation.vmware.host.enable = true;
 }

@@ -1,12 +1,12 @@
 {config, ...}: {
-    imports = [
-        ./crow
-        ./overseer
-    ];
+  imports = [
+    ./crow
+    ./overseer
+  ];
 
-    config.home-manager = {
-        useGlobalPkgs = true;
-        useUserPackages = true;
-        backupFileExtension = "backup";
-    };
+  config.home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    backupFileExtension = "backup";
+  };
 }

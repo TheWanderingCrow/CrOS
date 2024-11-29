@@ -1,18 +1,22 @@
-{config, pkgs, ...}:{
-    imports = [
+{
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
     ./hardware-configuration.nix
     ../../modules
-    ];
+  ];
 
-	networking.hostName = "Parzival-Mobile";
+  networking.hostName = "Parzival-Mobile";
 
-    user.crow.enable = true;
+  user.crow.enable = true;
 
-    desktop.sway.enable = true;
+  desktop.sway.enable = true;
 
-    module.gui.enable = true;
-    module.wayland.enable = true;
-    module.programming.enable = true;
-    module.hacking.enable = true;
-    module.mudding.enable = true;
+  module.gui.enable = true;
+  module.wayland.enable = true;
+  module.programming.enable = true;
+  module.hacking.enable = true;
+  module.mudding.enable = true;
 }

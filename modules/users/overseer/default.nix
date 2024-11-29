@@ -1,6 +1,10 @@
-{lib, config, ...}: {
-    imports = [
-        ./user.nix
-        ./podman.nix
-    ];
+{
+  lib,
+  config,
+  ...
+}: {
+  imports = [
+    ./user.nix
+    ./podman.nix
+  ];
 }
