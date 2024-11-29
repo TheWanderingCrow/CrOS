@@ -20,6 +20,7 @@
         keyd
         unar
         alejandra
+        nixos-generators
       ]
       else []
     )
