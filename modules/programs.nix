@@ -13,6 +13,7 @@
                 pulseaudio
                 keyd
                 unar
+                alejandra
             ] else []
         )
         ++ (
