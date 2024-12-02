@@ -57,7 +57,7 @@
 
     fonts.packages = with pkgs; [
       font-awesome
-      nerdfonts
+      nerdfonts.noto
     ];
 
     module = {
