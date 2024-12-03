@@ -10,6 +10,7 @@
     nixvim.url = "git+https://git.wanderingcrow.net/TheWanderingCrow/nvix";
     alejandra.url = "github:kamadorueda/alejandra/3.1.0";
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
+    sops-nix.url = "github:Mic92/sops-nix";
   };
 
   outputs = inputs: let
@@ -29,6 +30,7 @@
       modules = [
         (./hosts + "/${host}")
         inputs.home-manager.nixosModules.home-manager
+        inputs.sops-nix.nixosModules.sops
       ];
     });
   in {nixosConfigurations = lib.attrsets.genAttrs ["Parzival" "Parzival-Mobile" "WCE-Overseer"] ns;};
