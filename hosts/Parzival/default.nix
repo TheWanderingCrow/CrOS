@@ -26,5 +26,7 @@
   module.appdevel.enable = true;
   module.vr.enable = true;
 
+  programs.noisetorch.enable = true;
+
   virtualisation.vmware.host.enable = true;
 }
