@@ -137,7 +137,6 @@
         flutter
         waydroid
         ungoogled-chromium
-        android-studio-full
       ]
       else []
     )
