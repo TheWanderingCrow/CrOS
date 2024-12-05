@@ -41,7 +41,7 @@
       EDITOR = "nvim";
       VISUAL = "nvim";
     };
-    
+
     security.sudo.wheelNeedsPassword = false;
 
     user = {
