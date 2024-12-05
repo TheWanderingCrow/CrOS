@@ -15,7 +15,7 @@
 
   desktop.sway.enable = true;
 
-  config.systemd.services.note_sync.enable = lib.mkForce false;
+  systemd.services.note_sync.enable = lib.mkForce false;
 
   module.gui.enable = true;
   module.wayland.enable = true;
