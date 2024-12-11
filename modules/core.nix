@@ -18,6 +18,7 @@
       gaming.enable = lib.mkEnableOption "enables gaming packages";
       appdevel.enable = lib.mkEnableOption "enables app development in flutter";
       vr.enable = lib.mkEnableOption "enables VR utilities";
+      art.enable = lib.mkEnableOption "enabled graphical art stuff";
     };
 
     user = {
@@ -41,7 +42,7 @@
       EDITOR = "nvim";
       VISUAL = "nvim";
     };
-    
+
     security.sudo.wheelNeedsPassword = false;
 
     user = {
@@ -72,6 +73,7 @@
       gaming.enable = lib.mkDefault false;
       appdevel.enable = lib.mkDefault false;
       vr.enable = lib.mkDefault false;
+      art.enable = lib.mkDefault false;
     };
 
     desktop = {

@@ -164,5 +164,12 @@
         immersed
       ]
       else []
+    )
+    ++ (
+      if config.module.art.enable
+      then [
+        krita
+      ]
+      else []
     );
 }
