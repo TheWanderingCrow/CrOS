@@ -24,7 +24,7 @@
   module.mudding.enable = true;
   module.gaming.enable = true;
   module.appdevel.enable = true;
-  module.vr.enable = true;
+  module.art.enable = true;
 
   programs.noisetorch.enable = true;
 
