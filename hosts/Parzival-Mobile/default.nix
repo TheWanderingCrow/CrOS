@@ -1,4 +1,5 @@
 {
+  lib,
   config,
   pkgs,
   ...
@@ -13,6 +14,8 @@
   user.crow.enable = true;
 
   desktop.sway.enable = true;
+
+  systemd.services.note_sync.enable = lib.mkForce false;
 
   module.gui.enable = true;
   module.wayland.enable = true;
