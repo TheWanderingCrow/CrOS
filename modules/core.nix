@@ -37,6 +37,7 @@
     system.stateVersion = "24.05";
     time.timeZone = "America/New_York";
     nix.settings.experimental-features = ["flakes" "nix-command"];
+    nix.settings.trusted-users = ["wheel"];
 
     environment.variables = {
       EDITOR = "nvim";
