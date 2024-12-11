@@ -169,6 +169,7 @@
       if config.module.art.enable
       then [
         krita
+        pureref
       ]
       else []
     );
