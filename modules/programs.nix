@@ -106,6 +106,9 @@
         ddev
         cloc
         ansible
+        godot_4
+        cargo
+        rustc
       ]
       else []
     )
@@ -150,6 +153,7 @@
         mudlet
         widelands
         wesnoth
+        cataclysm-dda
         gamescope
         gamemode
         r2modman
