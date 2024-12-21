@@ -12,7 +12,7 @@
   networking.hostName = "Parzival";
 
 networking.firewall = {
-    enabled = false;
+    enable = false;
 };
 
   user.crow.enable = true;
