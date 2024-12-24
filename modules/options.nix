@@ -20,6 +20,11 @@
       art.enable = lib.mkEnableOption "enabled graphical art stuff";
     };
 
+    software = {
+      keyd = lib.mkEnableOption "enabled keyd overrides (useful for non-QMK enabled devices)";
+      usershell = lib.mkEnableOption "opinionated usershell";
+    };
+
     user = {
       enable = lib.mkEnableOption "enables users";
       crow = {
@@ -34,17 +39,6 @@
 
   # Set default option states in config
   config = {
-    user = {
-      enable = lib.mkDefault true;
-      crow = {
-        enable = lib.mkDefault false;
-        home.enable = lib.mkDefault config.user.crow.enable;
-      };
-      overseer = {
-        enable = lib.mkDefault false;
-      };
-    };
-
     module = {
       enable = lib.mkDefault true;
       core.enable = lib.mkDefault true;
@@ -60,6 +54,23 @@
       art.enable = lib.mkDefault false;
     };
 
+    software = {
+      keyd.enable = lib.mkDefault false;
+      usershell.enable = lib.mkDefault true;
+    };
+
+    user = {
+      enable = lib.mkDefault true;
+      crow = {
+        enable = lib.mkDefault false;
+        home.enable = lib.mkDefault config.user.crow.enable;
+      };
+      overseer = {
+        enable = lib.mkDefault false;
+      };
+    };
+
+    # Desktop options are declared in their relevant modules in module/desktops
     desktop = {
       sway.enable = lib.mkDefault false;
       i3.enable = lib.mkDefault false;

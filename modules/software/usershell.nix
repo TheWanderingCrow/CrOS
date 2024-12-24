@@ -1,5 +1,10 @@
-{pkgs, ...}: {
-  config = {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  config = lib.mkIf config.software.usershell.enable {
     programs.zsh = {
       enable = true;
       autosuggestions = {

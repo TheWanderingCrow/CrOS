@@ -1,5 +1,9 @@
-{...}: {
-  config.services.keyd = {
+{
+  lib,
+  config,
+  ...
+}: {
+  config.services.keyd = lib.mkIf config.software.keyd.enable {
     enable = true;
     keyboards.default = {
       ids = ["*"];

@@ -23,4 +23,5 @@
   module.hacking.enable = true;
   module.mudding.enable = true;
   module.gaming.enable = true;
+  software.keyd.enable = true;
 }
