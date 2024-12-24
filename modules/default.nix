@@ -6,6 +6,7 @@
     ./users
     ./desktops
     ./hardware
+    ./software
     ./security
   ];
 }
