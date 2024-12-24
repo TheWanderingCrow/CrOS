@@ -1,14 +1,11 @@
 {
-  lib,
-  config,
-  ...
-}: {
   imports = [
     ./core.nix
-    ./boot.nix
-    ./networking.nix
+    ./options.nix
     ./programs.nix
     ./users
     ./desktops
+    ./hardware
+    ./security
   ];
 }
