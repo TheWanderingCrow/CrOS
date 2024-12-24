@@ -11,10 +11,6 @@
 
   networking.hostName = "Parzival";
 
-networking.firewall = {
-    enable = false;
-};
-
   user.crow.enable = true;
 
   desktop.sway.enable = true;
