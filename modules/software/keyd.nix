@@ -1,5 +1,5 @@
 {
-  services.keyd = {
+  config.services.keyd = {
     enable = true;
     keyboards.default = {
       ids = ["*"];

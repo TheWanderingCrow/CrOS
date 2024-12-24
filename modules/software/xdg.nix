@@ -1,5 +1,5 @@
-{pkgs}: {
-  xdg.portal = {
+{config, pkgs, ...}: {
+  config.xdg.portal = {
     xdgOpenUsePortal = true;
     enable = true;
     wlr.enable = true;
