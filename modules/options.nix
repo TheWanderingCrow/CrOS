@@ -21,8 +21,8 @@
     };
 
     software = {
-      keyd = lib.mkEnableOption "enabled keyd overrides (useful for non-QMK enabled devices)";
-      usershell = lib.mkEnableOption "opinionated usershell";
+      keyd.enable = lib.mkEnableOption "enabled keyd overrides (useful for non-QMK enabled devices)";
+      usershell.enable = lib.mkEnableOption "opinionated usershell";
     };
 
     user = {
