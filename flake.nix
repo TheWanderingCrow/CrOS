@@ -56,6 +56,18 @@
           sops-nix.nixosModules.sops
         ];
       };
+      Parzival-Live = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          pkgs = import nixpkgs {
+            hostPlatform = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+        };
+        modules = [
+          ./hosts/Parzival-Live
+        ];
+      };
     };
   };
 }
