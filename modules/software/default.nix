@@ -1,5 +1,6 @@
 {
   imports = [
+    ./docker.nix
     ./programs.nix
     ./keyd.nix
     ./usershell.nix

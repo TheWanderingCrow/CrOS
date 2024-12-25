@@ -23,6 +23,7 @@
     software = {
       keyd.enable = lib.mkEnableOption "enabled keyd overrides (useful for non-QMK enabled devices)";
       usershell.enable = lib.mkEnableOption "opinionated usershell";
+      docker.enable = lib.mkEnableOption "enable rootless docker";
     };
 
     user = {
@@ -57,6 +58,7 @@
     software = {
       keyd.enable = lib.mkDefault false;
       usershell.enable = lib.mkDefault true;
+      docker.enable = lib.mkDefault false;
     };
 
     user = {
