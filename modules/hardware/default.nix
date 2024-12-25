@@ -7,5 +7,6 @@
     ./network.nix
     ./audio.nix
     ./boot.nix
+    ./graphics.nix
   ];
 }
