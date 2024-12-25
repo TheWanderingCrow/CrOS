@@ -12,13 +12,14 @@
   outputs = {
     nixpkgs,
     home-manager,
+    sops-nix,
     ...
   } @ inputs: {
     nixosConfigurations = {
         Parzival-Mobile = nixpkgs.lib.nixosSystem {
             specialArgs = {
                 inherit inputs;
-                nixpkgs = import nixpkgs {
+                pkgs = import nixpkgs {
                     system = "x86_64-linux";
                     config.allowUnfree = true;
                 };
