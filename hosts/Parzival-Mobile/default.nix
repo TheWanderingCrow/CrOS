@@ -24,4 +24,5 @@
   module.mudding.enable = true;
   module.gaming.enable = true;
   software.keyd.enable = true;
+  software.docker.enable = true;
 }
