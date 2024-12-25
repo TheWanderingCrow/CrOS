@@ -18,7 +18,7 @@
         Parzival-Mobile = nixpkgs.lib.nixosSystem {
             specialArgs = {
                 inherit inputs;
-                nixpkgs = {
+                nixpkgs = import nixpkgs {
                     system = "x86_64-linux";
                     config.allowUnfree = true;
                 };
