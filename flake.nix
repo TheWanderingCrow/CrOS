@@ -13,7 +13,7 @@
     system = "x86_64-linux";
     inherit (inputs.nixpkgs) lib;
 
-    overlays = [inputs.nur.overlay];
+    overlays = [];
 
     pkgs = import inputs.nixpkgs {
       inherit system overlays;
