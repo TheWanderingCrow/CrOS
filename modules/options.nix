@@ -36,6 +36,11 @@
         enable = lib.mkEnableOption "enable container overseer user";
       };
     };
+
+    desktop = {
+      sway.enable = lib.mkEnableOption "enables sway";
+      i3.enable = lib.mkEnableOption "enables i3";
+    };
   };
 
   # Set default option states in config
