@@ -16,54 +16,46 @@
     ...
   } @ inputs: {
     nixosConfigurations = {
-        Parzival = nixpkgs.lib.nixosSystem {
-            specialArgs = {
-                inherit inputs;
-                pkgs = import nixpkgs {
-                    system = "x86_64-linux";
-                    config.allowUnfree = true;
-                };
-            };
-            modules = [
-                ./hosts/Parzival
-                home-manager.nixosModules.home-manager
-            ];
+      Parzival = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
         };
-        Parzival-Mobile = nixpkgs.lib.nixosSystem {
-            specialArgs = {
-                inherit inputs;
-                pkgs = import nixpkgs {
-                    system = "x86_64-linux";
-                    config.allowUnfree = true;
-                };
-            };
-            modules = [
-                ./hosts/Parzival-Mobile
-                home-manager.nixosModules.home-manager
-            ];
+        modules = [
+          ./hosts/Parzival
+          home-manager.nixosModules.home-manager
+        ];
+      };
+      Parzival-Mobile = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
         };
+        modules = [
+          ./hosts/Parzival-Mobile
+          home-manager.nixosModules.home-manager
+        ];
+      };
+      WCE-Overseer = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+        };
+        modules = [
+          ./hosts/WCE-Overseer
+          home-manager.nixosModules.home-manager
+          sops-nix.nixosModules.sops
+        ];
+      };
     };
   };
-
-  #outputs = inputs: let
-  #  system = "x86_64-linux";
-  #  inherit (inputs.nixpkgs) lib;
-
-  #  overlays = [];
-
-  #  pkgs = import inputs.nixpkgs {
-  #    inherit system overlays;
-  #    config.allowUnfree = true;
-  #    config.android_sdk.accept_license = true;
-  #  };
-
-  #  ns = host: (lib.nixosSystem {
-  #    specialArgs = {inherit pkgs inputs;};
-  #    modules = [
-  #      (./hosts + "/${host}")
-  #      inputs.home-manager.nixosModules.home-manager
-  #      inputs.sops-nix.nixosModules.sops
-  #    ];
-  #  });
-  #in {nixosConfigurations = lib.attrsets.genAttrs ["Parzival" "Parzival-Mobile" "WCE-Overseer"] ns;};
 }
