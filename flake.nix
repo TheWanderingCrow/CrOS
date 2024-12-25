@@ -16,8 +16,13 @@
   } @ inputs: {
     nixosConfigurations = {
         Parzival-Mobile = nixpkgs.lib.nixosSystem {
-            nixpkgs.config.allowUnfree = true;
-            specialArgs = {inherit nixpkgs inputs;};
+            specialArgs = {
+                inherit inputs;
+                nixpkgs = {
+                    system = "x86_64-linux";
+                    config.allowUnfree = true;
+                };
+            };
             modules = [
                 ./hosts/Parzival-Mobile
                 home-manager.nixosModules.home-manager
