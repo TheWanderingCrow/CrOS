@@ -1,3 +1,3 @@
 {config, ...}: {
-  hardware.graphics.enable32Bit = config.modules.gaming.enable;
+  hardware.graphics.enable32Bit = config.module.gaming.enable;
 }
