@@ -3,13 +3,9 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nur.url = "github:nix-community/NUR";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     nixvim.url = "git+https://git.wanderingcrow.net/TheWanderingCrow/nvix";
-    alejandra.url = "github:kamadorueda/alejandra/3.1.0";
-    alejandra.inputs.nixpkgs.follows = "nixpkgs";
     sops-nix.url = "github:Mic92/sops-nix";
   };
 
