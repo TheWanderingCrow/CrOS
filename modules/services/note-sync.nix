@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  ...
 }: {
   config.systemd.services.note_sync = lib.mkIf config.service.note-sync.enable {
     enable = true;
