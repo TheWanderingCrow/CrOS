@@ -66,6 +66,7 @@
         };
         modules = [
           ./hosts/Parzival-Live
+          home-manager.nixosModules.home-manager
         ];
       };
     };
