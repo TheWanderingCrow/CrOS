@@ -26,6 +26,8 @@
   module.appdevel.enable = true;
   module.art.enable = true;
 
+  service.note-sync.enable = true;
+
   programs.noisetorch.enable = true;
 
   virtualisation.vmware.host.enable = true;

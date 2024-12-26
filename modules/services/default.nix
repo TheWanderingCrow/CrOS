@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./note-sync.nix
+  ];
+}

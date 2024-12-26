@@ -7,5 +7,6 @@
     ./hardware
     ./software
     ./security
+    ./services
   ];
 }

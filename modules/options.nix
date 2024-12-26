@@ -41,6 +41,10 @@
       sway.enable = lib.mkEnableOption "enables sway";
       i3.enable = lib.mkEnableOption "enables i3";
     };
+
+    service = {
+      note-sync.enable = lib.mkEnableOption "enable note sync to repo";
+    };
   };
 
   # Set default option states in config
@@ -81,6 +85,10 @@
     desktop = {
       sway.enable = lib.mkDefault false;
       i3.enable = lib.mkDefault false;
+    };
+
+    service = {
+      note-sync.enable = lib.mkDefault false;
     };
   };
 }
