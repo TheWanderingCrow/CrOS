@@ -5,11 +5,11 @@
   config,
   ...
 }: {
-  config.programs.sway = lib.mkIf config.desktop.sway.enable {
-    enable = true;
-    xwayland.enable = true;
-    extraPackages = with pkgs;
-    [
+  config = {
+    programs.sway = lib.mkIf config.desktop.sway.enable {
+      enable = true;
+      xwayland.enable = true;
+      extraPackages = with pkgs; [
         foot
         wofi
         swaynotificationcenter
@@ -22,13 +22,14 @@
         waybar
         wl-clipboard
         xorg.xrandr
-    ];
-  };
-  config.programs.dconf.enable = true;
+      ];
+    };
+    programs.dconf.enable = true;
 
-  config.environment = lib.mkIf config.desktop.sway.enable {
-    sessionVariables = {
-      NIXOS_OZONE_WL = "1";
+    environment = lib.mkIf config.desktop.sway.enable {
+      sessionVariables = {
+        NIXOS_OZONE_WL = "1";
+      };
     };
   };
 }
