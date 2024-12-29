@@ -44,6 +44,10 @@
     service = {
       note-sync.enable = lib.mkEnableOption "enable note sync to repo";
     };
+
+    ricing = {
+        basic.enable = lib.mkEnableOption "enable basic ricing";
+    };
   };
 
   # Set default option states in config
@@ -87,6 +91,10 @@
 
     service = {
       note-sync.enable = lib.mkDefault false;
+    };
+
+    ricing = {
+        basic.enable = lib.mkDefault true;
     };
   };
 }
