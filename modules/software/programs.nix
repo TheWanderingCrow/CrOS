@@ -64,15 +64,6 @@
       else []
     )
     ++ (
-      if config.module.x11.enable
-      then [
-        xterm
-        rofi
-        xorg.xrandr
-      ]
-      else []
-    )
-    ++ (
       if config.module.programming.enable
       then [
         inputs.nixvim.packages.${pkgs.system}.default

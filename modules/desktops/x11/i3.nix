@@ -10,6 +10,12 @@
       displayManager.startx.enable = true;
       windowManager.i3 = {
         enable = true;
+        extraPackages = with pkgs;
+        [
+            xorg.xrandr
+            xterm
+            rofi
+        ];
       };
     };
   };
