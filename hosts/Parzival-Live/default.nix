@@ -16,5 +16,4 @@
 
   module.gui.enable = true;
   module.programming.enable = true;
-  module.wayland.enable = true;
 }
