@@ -5,13 +5,26 @@
   config,
   ...
 }: {
-  config = {
-    programs.sway = lib.mkIf config.desktop.sway.enable {
-      enable = true;
-      xwayland.enable = true;
-    };
-    programs.dconf.enable = true;
+  config.programs.sway = lib.mkIf config.desktop.sway.enable {
+    enable = true;
+    xwayland.enable = true;
+    extraPackages = with pkgs;
+    [
+        foot
+        wofi
+        swaynotificationcenter
+        udiskie
+        polkit_gnome
+        swayidle
+        sway-audio-idle-inhibit
+        swaylock-effects
+        sway-contrib.grimshot
+        waybar
+        wl-clipboard
+        xorg.xrandr
+    ];
   };
+  programs.dconf.enable = true;
 
   config.environment = lib.mkIf config.desktop.sway.enable {
     sessionVariables = {

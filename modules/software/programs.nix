@@ -64,25 +64,6 @@
       else []
     )
     ++ (
-      if config.module.wayland.enable
-      then [
-        foot
-        wofi
-        swaynotificationcenter
-        udiskie
-        polkit_gnome
-        swayidle
-        sway-audio-idle-inhibit
-        swaylock-effects
-        sway-contrib.grimshot
-        glfw-wayland-minecraft
-        waybar
-        wl-clipboard
-        xorg.xrandr
-      ]
-      else []
-    )
-    ++ (
       if config.module.x11.enable
       then [
         xterm

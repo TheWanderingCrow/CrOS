@@ -16,7 +16,6 @@
   desktop.sway.enable = true;
 
   module.gui.enable = true;
-  module.wayland.enable = true;
   module.programming.enable = true;
   module.hacking.enable = true;
   module.mudding.enable = true;
