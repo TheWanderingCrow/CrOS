@@ -23,6 +23,7 @@ in {
     ./configs/firefox.nix
     ./configs/waybar.nix
     ./configs/tmux.nix
+    ./contigs/git.nix
   ];
   home = {
     username = "crow";
