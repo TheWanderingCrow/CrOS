@@ -21,6 +21,7 @@
 in {
   imports = [
     ./configs/firefox.nix
+    ./configs/waybar.nix
   ];
   home = {
     username = "crow";
@@ -36,8 +37,8 @@ in {
     file.".config/hypr/monitors.conf".source = lib.mkIf (hyprMonitorConfig != null) hyprMonitorConfig;
 
     # Waybar
-    file.".config/waybar/config.jsonc".source = ./configs/waybar/config.jsonc;
-    file.".config/waybar/style.css".source = ./configs/waybar/style.css;
+    #file.".config/waybar/config.jsonc".source = ./configs/waybar/config.jsonc;
+    #file.".config/waybar/style.css".source = ./configs/waybar/style.css;
 
     # Sway
     file.".config/sway/config".source = ./configs/sway/sway.conf;
