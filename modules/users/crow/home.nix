@@ -30,9 +30,6 @@ in {
     homeDirectory = "/home/crow";
     stateVersion = "24.05";
 
-    # Tools
-    file.".config/git/config".source = ./configs/git/git.conf;
-
     # Hyprland
     file.".config/hypr/hyprland.conf".source = ./configs/hypr/hyprland.conf;
     file.".config/hypr/monitors.conf".source = lib.mkIf (hyprMonitorConfig != null) hyprMonitorConfig;
@@ -46,7 +43,6 @@ in {
 
     # i3
     file.".config/i3/config".source = ./configs/i3/i3.conf;
-    file."/home/crow/.xinitrc".source = ./configs/x11/xinitrc;
   };
 
   xdg = {
