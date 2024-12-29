@@ -57,6 +57,7 @@
           format-plugged = "{capacity}% ";
           format-alt = "{time} {icon}";
           format-icons = ["" "" "" "" ""];
+          interval = 30;
         };
         backlight = {
           format = "{percent}% {icon}";
