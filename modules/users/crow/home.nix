@@ -36,10 +36,6 @@ in {
     file.".config/hypr/hyprland.conf".source = ./configs/hypr/hyprland.conf;
     file.".config/hypr/monitors.conf".source = lib.mkIf (hyprMonitorConfig != null) hyprMonitorConfig;
 
-    # Waybar
-    #file.".config/waybar/config.jsonc".source = ./configs/waybar/config.jsonc;
-    #file.".config/waybar/style.css".source = ./configs/waybar/style.css;
-
     # Sway
     file.".config/sway/config".source = ./configs/sway/sway.conf;
     file.".config/sway/monitors.conf".source = lib.mkIf (swayMonitorConfig != null) swayMonitorConfig;
