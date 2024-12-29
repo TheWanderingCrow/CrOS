@@ -14,7 +14,7 @@
 
   boot.supportedFilesystems = lib.mkForce ["btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs"];
 
-  networking.wireless = lib.mkForce false;
+  networking.wireless = false;
 
   desktop.sway.enable = true;
 
