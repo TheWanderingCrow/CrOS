@@ -19,7 +19,7 @@
     then ./configs/sway/parzival_mobile-monitors.conf
     else null;
 in {
-  import = [
+  imports = [
     ./configs/firefox.nix
   ];
   home = {
