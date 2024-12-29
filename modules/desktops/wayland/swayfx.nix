@@ -25,7 +25,7 @@
         xorg.xrandr
     ];
   };
-  programs.dconf.enable = true;
+  config.programs.dconf.enable = true;
 
   config.environment = lib.mkIf config.desktop.swayfx.enable {
     sessionVariables = {
