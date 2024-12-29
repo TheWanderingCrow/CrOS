@@ -221,7 +221,7 @@
   };
 in {
   programs.waybar = {
-    enable = config.desktop.sway.enable or config.desktop.swayfx.enable;
+    enable = true;
     settings = og_waybar.jsonc;
     style = og_waybar.style;
   };
