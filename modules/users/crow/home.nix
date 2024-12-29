@@ -22,6 +22,7 @@ in {
   imports = [
     ./configs/firefox.nix
     ./configs/waybar.nix
+    ./configs/tmux.nix
   ];
   home = {
     username = "crow";
@@ -29,7 +30,6 @@ in {
     stateVersion = "24.05";
 
     # Tools
-    file.".config/tmux/tmux.conf".source = ./configs/tmux/tmux.conf;
     file.".config/git/config".source = ./configs/git/git.conf;
 
     # Hyprland
