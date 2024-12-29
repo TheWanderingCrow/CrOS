@@ -37,6 +37,7 @@
 
     desktop = {
       sway.enable = lib.mkEnableOption "enables sway";
+      swayfx.enable = lib.mkEnableOption "enable sway with eye candy";
       i3.enable = lib.mkEnableOption "enables i3";
     };
 
@@ -80,6 +81,7 @@
     # Desktop options are declared in their relevant modules in module/desktops
     desktop = {
       sway.enable = lib.mkDefault false;
+      swayfx.enable = lib.mkDefault false;
       i3.enable = lib.mkDefault false;
     };
 
