@@ -10,6 +10,8 @@
     "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
   ];
 
+  nixpkgs.hostPlatform = "x86_64-linux";
+
   boot.supportedFilesystems = lib.mkForce ["btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs"];
 
   desktop.sway.enable = true;

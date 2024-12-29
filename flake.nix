@@ -60,7 +60,6 @@
         specialArgs = {
           inherit inputs;
           pkgs = import nixpkgs {
-            localSystem = "x86_64-linux";
             config.allowUnfree = true;
           };
         };
