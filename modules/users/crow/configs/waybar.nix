@@ -8,7 +8,7 @@
         height = 30;
         spacing = 4;
         mode = "dock";
-        margin = 10;
+        margin = "10";
         modules-left = ["sway/workspaces"];
         modules-center = ["clock"];
         modules-right = ["network" "battery" "backlight" "pulseaudio" "tray"];
