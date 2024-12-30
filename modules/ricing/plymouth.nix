@@ -4,30 +4,27 @@
   pkgs,
   ...
 }: let
-  basic = {
-    theme = "breeze";
-    logo = "${pkgs.nixos-icons}/share/icons/hicolor/48x48/apps/nix-snowflake-white.png";
-    font = "${pkgs.dejavu_fonts.minimal}/share/fonts/truetype/DejaVuSans.ttf";
-    extraConfig = "";
+  rices = {
+    basic = {
+      theme = "deus_ex";
+      logo = null;
+      font = null;
+      extraConfig = "";
+    };
   };
+
+  rice = let
+    enabledSet = lib.filter (set: config.ricing.${set}.enable) (lib.attrNames rices) // [null];
+  in
+    if enabledSet != [null]
+    then rices.${enabledSet.head}
+    else null;
 in {
   boot.plymouth = {
     enable = true;
-    theme =
-      if config.ricing.basic.enable
-      then basic.theme
-      else null;
-    logo =
-      if config.ricing.basic.enable
-      then basic.logo
-      else null;
-    font =
-      if config.ricing.basic.enable
-      then basic.font
-      else null;
-    extraConfig =
-      if config.ricing.basic.enable
-      then basic.extraConfig
-      else null;
+    theme = rice.theme;
+    logo = rice.logo;
+    font = rice.font;
+    extraConfig = rice.extraConfig;
   };
 }
