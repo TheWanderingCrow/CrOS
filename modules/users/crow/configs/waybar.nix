@@ -1,4 +1,4 @@
-{config, ...}: let
+{osConfig, ...}: let
   # screenshots/og_waybar.jpg
   og_waybar = {
     jsonc = {
@@ -223,7 +223,7 @@
 in {
   programs.waybar = {
     enable = true;
-    settings = if config.ricing.basic.enable then og_waybar else {};
-    style = if config.ricing.basic.enable then og_waybar.style else "";
+    settings = if osConfig.ricing.basic.enable then og_waybar else {};
+    style = if osConfig.ricing.basic.enable then og_waybar.style else "";
   };
 }
