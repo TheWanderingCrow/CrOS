@@ -7,6 +7,11 @@
   rices = {
     basic = {
       enable = true;
+      themePackages = with pkgs; [
+        (adi1090x-plymouth-themes.override {
+          selected_themes = ["deus_ex"];
+        })
+      ];
       theme = "deus_ex";
       extraConfig = "";
     };
