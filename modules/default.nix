@@ -8,5 +8,6 @@
     ./software
     ./security
     ./services
+    ./ricing
   ];
 }

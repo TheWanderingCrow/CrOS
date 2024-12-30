@@ -47,7 +47,8 @@
     };
 
     ricing = {
-        basic.enable = lib.mkEnableOption "enable basic ricing";
+      basic.enable = lib.mkEnableOption "enable basic ricing";
+      wasteland.enable = lib.mkEnableOptin "post-collapse themed rice";
     };
   };
 
@@ -96,7 +97,8 @@
     };
 
     ricing = {
-        basic.enable = lib.mkDefault true;
+      basic.enable = lib.mkDefault true;
+      wasteland.enable = lib.mkDefault false;
     };
   };
 }
