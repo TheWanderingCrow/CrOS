@@ -38,6 +38,7 @@
     desktop = {
       sway.enable = lib.mkEnableOption "enables sway";
       swayfx.enable = lib.mkEnableOption "enable sway with eye candy";
+      niri.enable = lib.mkEnableOption "enable niri window manager";
       i3.enable = lib.mkEnableOption "enables i3";
     };
 
@@ -86,6 +87,7 @@
     desktop = {
       sway.enable = lib.mkDefault false;
       swayfx.enable = lib.mkDefault false;
+      niri.enable = lib.mkDefault false;
       i3.enable = lib.mkDefault false;
     };
 
