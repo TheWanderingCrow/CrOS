@@ -12,6 +12,7 @@
   };
 in {
   boot.plymouth = {
+    enable = true;
     theme =
       if config.ricing.basic.enable
       then basic.theme
