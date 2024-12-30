@@ -223,7 +223,7 @@
 in {
   programs.waybar = {
     enable = true;
-    settings = if osConfig.ricing.basic.enable then og_waybar else {};
+    settings = if osConfig.ricing.basic.enable then og_waybar.jsonc else {};
     style = if osConfig.ricing.basic.enable then og_waybar.style else "";
   };
 }
