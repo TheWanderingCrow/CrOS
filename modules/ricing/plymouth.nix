@@ -17,7 +17,7 @@
     enabledSet = lib.filter (set: config.ricing.${set}.enable) (lib.attrNames rices) // [null];
   in
     if enabledSet != [null]
-    then enabledSet.head
+    then import enabledSet.head
     else null;
 in {
   boot.plymouth = {
