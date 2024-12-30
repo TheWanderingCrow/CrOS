@@ -48,7 +48,7 @@
 
     ricing = {
       basic.enable = lib.mkEnableOption "enable basic ricing";
-      wasteland.enable = lib.mkEnableOptin "post-collapse themed rice";
+      wasteland.enable = lib.mkEnableOption "post-collapse themed rice";
     };
   };
 
