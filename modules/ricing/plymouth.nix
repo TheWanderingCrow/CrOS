@@ -14,9 +14,9 @@
   };
 
   rice = let
-    enabledSet = lib.filter (set: config.ricing.${set}.enable) (lib.attrNames rices) // [null];
+    enabledSet = lib.filter (set: config.ricing.${set}.enable) (lib.attrNames rices);
   in
-    rices.${lib.head enabledSet} // null;
+    rices.${lib.head enabledSet};
 in {
   boot.plymouth = {
     enable = true;
