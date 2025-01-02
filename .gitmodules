@@ -1,0 +1,3 @@
+[submodule "nix-secrets"]
+	path = nix-secrets
+	url = gitea@ssh.git.wanderingcrow.net:TheWanderingCrow/nix-secrets.git
