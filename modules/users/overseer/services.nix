@@ -32,13 +32,6 @@ in
           "${volumePath}/NPM/letsencrypt"
         ];
       };
-      vault = {
-        user = "root";
-        timerConfig = {
-          OnCalendar = "hourly";
-          Persistent = true;
-        };
-      };
     };
 
     # Vault Service
