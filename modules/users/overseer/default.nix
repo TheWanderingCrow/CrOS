@@ -4,8 +4,5 @@
   ...
 }: {
   imports = [
-    ./user.nix
-    ./routing.nix
-    ./services.nix
   ];
 }
