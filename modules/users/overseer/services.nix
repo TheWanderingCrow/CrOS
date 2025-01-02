@@ -14,10 +14,24 @@ in
 
       "d ${volumePath}/paperless/data 700 overseer overseer"
       "d ${volumePath}/paperless/media 700 overseer overseer"
+
+      "d ${volumePath}/NPM/data 700 overseer overseer"
+      "d ${volumePath}/NPM/letsencrypt 700 overseer overseer"
     ];
 
     # (Arguably) Most Important Service - backups
     services.restic.backups = {
+      npm = {
+        user = "root";
+        timerConfig = {
+          OnCalendar = "hourly";
+          Persistent = true;
+        };
+        paths = [
+          "${volumePath}/NPM/data"
+          "${volumePath}/NPM/letsencrypt"
+        ];
+      };
       vault = {
         user = "root";
         timerConfig = {
