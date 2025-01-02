@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./user.nix
-    ./podman.nix
+    ./routing.nix
+    ./services.nix
   ];
 }
