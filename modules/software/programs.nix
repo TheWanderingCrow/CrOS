@@ -21,6 +21,7 @@
         unar
         alejandra
         nixos-generators
+        restic
       ]
       else []
     )
