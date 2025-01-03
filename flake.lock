@@ -217,6 +217,21 @@
         "type": "github"
       }
     },
+    "nix-secrets": {
+      "locked": {
+        "lastModified": 1735940708,
+        "narHash": "sha256-nYTZwgl3uz4qHjSRkuSLtECYt8MrTeSHLqzqJMNmIf0=",
+        "ref": "refs/heads/master",
+        "rev": "d9f347574dc82029cd52837d1e12cb017894d3b9",
+        "revCount": 14,
+        "type": "git",
+        "url": "ssh://gitea@ssh.git.wanderingcrow.net/TheWanderingCrow/nix-secrets"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://gitea@ssh.git.wanderingcrow.net/TheWanderingCrow/nix-secrets"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1733212471,
@@ -340,6 +355,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "nix-secrets": "nix-secrets",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
         "sops-nix": "sops-nix"
