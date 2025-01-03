@@ -8,6 +8,7 @@
     nixvim.url = "git+https://git.wanderingcrow.net/TheWanderingCrow/nvix";
     sops-nix.url = "github:Mic92/sops-nix";
     nix-secrets.url = "git+file://./nix-secrets";
+    nix-secrets.flake = false;
   };
 
   outputs = {
