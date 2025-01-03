@@ -7,7 +7,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.url = "git+https://git.wanderingcrow.net/TheWanderingCrow/nvix";
     sops-nix.url = "github:Mic92/sops-nix";
-    nix-secrets.url = "path:./nix-secrets";
+    nix-secrets.url = "git+file://./nix-secrets";
   };
 
   outputs = {
