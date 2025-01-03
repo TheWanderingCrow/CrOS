@@ -7,12 +7,14 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.url = "git+https://git.wanderingcrow.net/TheWanderingCrow/nvix";
     sops-nix.url = "github:Mic92/sops-nix";
+    nix-secrets.url = "path:./nix-secrets";
   };
 
   outputs = {
     nixpkgs,
     home-manager,
     sops-nix,
+    nix-secrets,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -54,6 +56,7 @@
           ./hosts/WCE-Overseer
           home-manager.nixosModules.home-manager
           sops-nix.nixosModules.sops
+          nix-secrets
         ];
       };
       Parzival-Live = nixpkgs.lib.nixosSystem {
