@@ -14,7 +14,6 @@
     nixpkgs,
     home-manager,
     sops-nix,
-    nix-secrets,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -56,7 +55,6 @@
           ./hosts/WCE-Overseer
           home-manager.nixosModules.home-manager
           sops-nix.nixosModules.sops
-          nix-secrets
         ];
       };
       Parzival-Live = nixpkgs.lib.nixosSystem {
