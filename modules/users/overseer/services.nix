@@ -10,7 +10,7 @@ in
   }: {
     # Some scafolding for secrets
     sops = {
-        defaultSopsFile = "${inputs.nix-secrets}/secrets/overseer.json";
+        defaultSopsFile = inputs.nix-secrets.secrets.overseer;
         age.keyFile = "/var/lib/sops-nix/key.txt";
         age.generateKey = true;
     };
