@@ -28,6 +28,7 @@
         modules = [
           ./hosts/Parzival
           home-manager.nixosModules.home-manager
+          sops-nix.nixosModules.sops
         ];
       };
       Parzival-Mobile = nixpkgs.lib.nixosSystem {
@@ -41,6 +42,7 @@
         modules = [
           ./hosts/Parzival-Mobile
           home-manager.nixosModules.home-manager
+          sops-nix.nixosModules.sops
         ];
       };
       WCE-Overseer = nixpkgs.lib.nixosSystem {
@@ -67,6 +69,7 @@
         modules = [
           ./hosts/Parzival-Live
           home-manager.nixosModules.home-manager
+          sops-nix.nixosModules.sops
         ];
       };
     };
