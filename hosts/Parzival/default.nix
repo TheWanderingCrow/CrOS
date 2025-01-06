@@ -13,8 +13,6 @@
 
   user.crow.enable = true;
 
-    networking.firewall.enable = false;
-
   desktop.sway.enable = true;
   desktop.i3.enable = true;
 
