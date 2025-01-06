@@ -12,6 +12,8 @@
 
   nix.settings.auto-optimise-store = true;
 
+  virtualisation.qemu.guestAgent.enable = true;
+
   nixpkgs.hostPlatform = "x86_64-linux";
 
   boot.supportedFilesystems = lib.mkForce ["btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs"];
