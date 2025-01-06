@@ -7,7 +7,7 @@ in
     config,
     pkgs,
     ...
-  }: {
+  }: lib.mkIf config.user.overseer.enable {
     # Some scafolding for secrets
     sops = {
         defaultSopsFile = inputs.nix-secrets.secrets.overseer;
