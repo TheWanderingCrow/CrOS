@@ -47,6 +47,12 @@
           style = "bg:#1d2230";
           format = "[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)";
         };
+        nix_shell = {
+            disabled = false;
+            symbol = "❄️ ";
+            style = "bold blue";
+        };
+            
       };
     };
     users.defaultUserShell = pkgs.zsh;
