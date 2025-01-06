@@ -24,6 +24,7 @@ in {
     ./configs/waybar.nix
     ./configs/tmux.nix
     ./configs/git.nix
+    ./configs/direnv.nix
   ];
   home = {
     username = "crow";
