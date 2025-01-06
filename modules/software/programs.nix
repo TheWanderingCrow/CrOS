@@ -17,10 +17,7 @@
         curl
         tmux
         pulseaudio
-        keyd
         unar
-        alejandra
-        nixos-generators
         restic
       ]
       else []
