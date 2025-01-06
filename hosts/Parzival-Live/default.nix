@@ -12,7 +12,7 @@
 
   nix.settings.auto-optimise-store = true;
 
-  virtualisation.qemu.guestAgent.enable = true;
+  services.qemuGuest.enable = true;
 
   nixpkgs.hostPlatform = "x86_64-linux";
 

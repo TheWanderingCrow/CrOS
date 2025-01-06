@@ -8,7 +8,7 @@
     initialPassword = "changeme";
     extraGroups = ["wheel" "libvirtd"];
     openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKCBmjkaAWNBQ6NwiK56miuv30pjheNTZfrULRfPRmed"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKCBmjkaAWNBQ6NwiK56miuv30pjheNTZfrULRfPRmed"
     ];
   };
 }
