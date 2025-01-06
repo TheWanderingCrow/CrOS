@@ -49,7 +49,7 @@
         };
         nix_shell = {
             disabled = false;
-            symbol = "❄️ ";
+            format = "via [(\($name\))]($style) ";
             style = "bold blue";
         };
             
