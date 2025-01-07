@@ -49,7 +49,8 @@
         };
         nix_shell = {
             disabled = false;
-            format = "via [(\($name\))]($style) ";
+            symbol = "";
+            format = "via [(\($symbol-$name\))]($style) ";
             style = "bold blue";
         };
             
