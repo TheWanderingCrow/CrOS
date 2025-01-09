@@ -33,6 +33,9 @@
       overseer = {
         enable = lib.mkEnableOption "enable container overseer user";
       };
+      live = {
+        enable = lib.mkEnableOption "enable live disk user";
+        };
     };
 
     desktop = {
@@ -80,6 +83,9 @@
         home.enable = lib.mkDefault config.user.crow.enable;
       };
       overseer = {
+        enable = lib.mkDefault false;
+      };
+      live = {
         enable = lib.mkDefault false;
       };
     };
