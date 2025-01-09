@@ -225,11 +225,11 @@
         "rev": "2f4386ba30caf6e9f41d32df54c5ef96ff9b740e",
         "revCount": 15,
         "type": "git",
-        "url": "ssh://gitea@ssh.git.wanderingcrow.net/TheWanderingCrow/nix-secrets"
+        "url": "ssh://git@github.com/TheWanderingCrow/nix-secrets"
       },
       "original": {
         "type": "git",
-        "url": "ssh://gitea@ssh.git.wanderingcrow.net/TheWanderingCrow/nix-secrets"
+        "url": "ssh://git@github.com/TheWanderingCrow/nix-secrets"
       }
     },
     "nixpkgs": {
