@@ -2,11 +2,11 @@
   default = pkgs.mkShell {
     NIX_CONFIG = "extra-experimental-features = nix-command flakes";
     nativeBuildInputs = with pkgs; [
-        git 
-        vim
-        nix
-        alejandra
-        nixos-generators
+      git
+      vim
+      nix
+      alejandra
+      nixos-generators
     ];
   };
 }

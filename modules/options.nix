@@ -35,7 +35,7 @@
       };
       live = {
         enable = lib.mkEnableOption "enable live disk user";
-        };
+      };
     };
 
     desktop = {
