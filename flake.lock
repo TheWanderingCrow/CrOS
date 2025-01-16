@@ -289,15 +289,15 @@
       "locked": {
         "lastModified": 1731074697,
         "narHash": "sha256-UUWprSht7l/TEt0RbyaOGWGUG6bFFs3oMYOjfIpHg6I=",
-        "ref": "refs/heads/main",
+        "owner": "TheWanderingCrow",
+        "repo": "nvix",
         "rev": "2de249808d4402830ba8d97c8048c10af39d1730",
-        "revCount": 23,
-        "type": "git",
-        "url": "https://git.wanderingcrow.net/TheWanderingCrow/nvix"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "https://git.wanderingcrow.net/TheWanderingCrow/nvix"
+        "owner": "TheWanderingCrow",
+        "repo": "nvix",
+        "type": "github"
       }
     },
     "nixvim_2": {

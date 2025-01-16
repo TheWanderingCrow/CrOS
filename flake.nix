@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nixvim.url = "git+https://git.wanderingcrow.net/TheWanderingCrow/nvix";
+    nixvim.url = "github:TheWanderingCrow/nvix";
     sops-nix.url = "github:Mic92/sops-nix";
     nix-secrets.url = "git+ssh://git@github.com/TheWanderingCrow/nix-secrets";
   };
