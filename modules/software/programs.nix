@@ -58,6 +58,7 @@
         pulseaudio-ctl
         playerctl
         brightnessctl
+        ganttproject-bin
       ]
       else []
     )
