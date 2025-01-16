@@ -48,9 +48,9 @@
         };
         # Cookie CURL Dumper
         "{12cf650b-1822-40aa-bff0-996df6948878}" = {
-            installation_mode = "force_installed";
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/{12cf650b-1822-40aa-bff0-996df6948878}/latest.xpl";
-            default_area = "menupanel";
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/{12cf650b-1822-40aa-bff0-996df6948878}/latest.xpl";
+          default_area = "menupanel";
         };
       };
     };

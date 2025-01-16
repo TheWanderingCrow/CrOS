@@ -30,16 +30,16 @@
       };
     };
     zpool = {
-        zroot = {
-            name = "Root zpool";
-            mode = "mirror";
-            rootFsOptions = {
-                compression = "zstd";
-                "com.sun:auto-snapshot" = "false";
-            };
-            mountpoint = "/";
-            postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
+      zroot = {
+        name = "Root zpool";
+        mode = "mirror";
+        rootFsOptions = {
+          compression = "zstd";
+          "com.sun:auto-snapshot" = "false";
         };
+        mountpoint = "/";
+        postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
+      };
     };
   };
 }
