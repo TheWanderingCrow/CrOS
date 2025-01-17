@@ -31,7 +31,6 @@
     };
     zpool = {
       zroot = {
-        name = "Root zpool";
         mode = "mirror";
         rootFsOptions = {
           compression = "zstd";
