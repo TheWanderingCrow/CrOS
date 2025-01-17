@@ -14,7 +14,7 @@
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
-  boot.supportedFilesystems = lib.mkForce ["btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs"];
+  boot.supportedFilesystems = lib.mkForce ["zfs" "btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs"];
   networking.wireless.enable = false;
 
   user.live.enable = true;
