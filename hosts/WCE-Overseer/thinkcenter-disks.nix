@@ -31,7 +31,7 @@
     };
     zpool = {
       zroot = {
-        mode = "mirror";
+        mode = "";
         rootFsOptions = {
           compression = "zstd";
           "com.sun:auto-snapshot" = "false";
