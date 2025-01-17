@@ -22,7 +22,7 @@
               size = "100%";
               content = {
                 type = "zfs";
-                pool = "zpool";
+                pool = "zroot";
               };
             };
           };
