@@ -17,6 +17,9 @@
     ...
   } @ inputs: {
     nixosConfigurations = {
+      ###################
+      # Primary Desktop #
+      ###################
       Parzival = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
@@ -31,6 +34,9 @@
           sops-nix.nixosModules.sops
         ];
       };
+      ###################
+      # Personal Laptop #
+      ###################
       Parzival-Mobile = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
@@ -45,6 +51,26 @@
           sops-nix.nixosModules.sops
         ];
       };
+      ######################
+      # Work Issued Laptop #
+      ######################
+      Parzival-Framework = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+        };
+        modules = [
+          ./hosts/Parzival-Mobile
+          home-manager.nixosModules.home-manager
+          sops-nix.nixosModules.sops
+        ];
+      };
+      ###############
+      # Home Server #
+      ###############
       WCE-Overseer = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
@@ -59,6 +85,9 @@
           sops-nix.nixosModules.sops
         ];
       };
+      ###################################
+      # ISO Installer w/ recovery tools #
+      ###################################
       Parzival-Live = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
