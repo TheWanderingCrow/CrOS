@@ -19,7 +19,7 @@
   boot.extraModulePackages = [];
 
   fileSystems."/" = {
-    device = "zpool/zroot";
+    device = "zroot";
     fsType = "zfs";
   };
 
