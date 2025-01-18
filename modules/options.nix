@@ -13,6 +13,7 @@
       hacking.enable = lib.mkEnableOption "enables hacking packages";
       mudding.enable = lib.mkEnableOption "enables mudding packages";
       gaming.enable = lib.mkEnableOption "enables gaming packages";
+      os-gaming.enable = lib.mkEnableOption "enables some neat but obscure open-source games";
       appdevel.enable = lib.mkEnableOption "enables app development in flutter";
       vr.enable = lib.mkEnableOption "enables VR utilities";
       art.enable = lib.mkEnableOption "enabled graphical art stuff";
@@ -65,6 +66,7 @@
       hacking.enable = lib.mkDefault false;
       mudding.enable = lib.mkDefault false;
       gaming.enable = lib.mkDefault false;
+      os-gaming.enable = lib.mkDefault false;
       appdevel.enable = lib.mkDefault false;
       vr.enable = lib.mkDefault false;
       art.enable = lib.mkDefault false;

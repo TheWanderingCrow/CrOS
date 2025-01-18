@@ -122,13 +122,27 @@
         steamtinkerlaunch
         prismlauncher
         mudlet
+        gamescope
+        gamemode
+        r2modman
+      ]
+      else []
+    )
+    ++ (
+      if config.module.os-gaming.enable
+      then [
         widelands
         wesnoth
         ufoai
         cataclysm-dda
-        gamescope
-        gamemode
-        r2modman
+        redeclipse
+        megaglest
+        # savagexr if it existed
+        superTuxKart
+        openra
+        opentdd
+        xonotic
+        supermariowar
       ]
       else []
     )
