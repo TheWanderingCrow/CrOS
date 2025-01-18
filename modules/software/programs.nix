@@ -139,7 +139,7 @@
         megaglest
         # savagexr if it existed
         superTuxKart
-        openra
+        # openra but it's insecure
         openttd
         xonotic
         supermariowar
