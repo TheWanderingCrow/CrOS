@@ -63,7 +63,7 @@
           };
         };
         modules = [
-          ./hosts/Parzival-Mobile
+          ./hosts/Parzival-Framework
           home-manager.nixosModules.home-manager
           sops-nix.nixosModules.sops
         ];
