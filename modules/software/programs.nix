@@ -124,6 +124,7 @@
         mudlet
         widelands
         wesnoth
+        ufoai
         cataclysm-dda
         gamescope
         gamemode
