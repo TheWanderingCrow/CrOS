@@ -140,7 +140,7 @@
         # savagexr if it existed
         superTuxKart
         openra
-        opentdd
+        openttd
         xonotic
         supermariowar
       ]
