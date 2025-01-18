@@ -19,8 +19,8 @@
   boot.extraModulePackages = [];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-label/zroot";
-    fsType = "auto";
+    device = "zpool/zroot";
+    fsType = "zfs";
   };
 
   fileSystems."/boot" = {
