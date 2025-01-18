@@ -20,42 +20,48 @@ in
       systemd.tmpfiles.rules = [
         "d ${volumePath}"
 
-        "d ${volumePath}/paperless/data 700 overseer overseer"
-        "d ${volumePath}/paperless/media 700 overseer overseer"
-
         "d ${volumePath}/NPM/data 700 overseer overseer"
         "d ${volumePath}/NPM/letsencrypt 700 overseer overseer"
       ];
 
+      # Pull in the restic secrets from sops
+      sops.secrets."restic/url" = {};
+      sops.secrets."restic/key" = {};
       # (Arguably) Most Important Service - backups
       services.restic.backups = {
+        NPM = {
+            user = "root";
+            timerConfig = {
+                OnCalendar = "daily";
+                Persistent = true;
+            };
+            paths = [
+               "${volumePath}/NPM/data"
+               "${volumePath}/NPM/letsencrypt"
+            ];
+            repositoryFile = config.sops.secrets."restic/url".path;
+            passwordFile = config.sops.secrets."restic/key".path;
+        };
       };
-
-      # Paperless-ngx
-      #services.paperless = {
-      #    enable = true;
-      #    mediaDir = "${volumePath}/paperless/media";
-      #    dataDir = "${volumePath}/paperless/data";
-      #};
 
       # OCI services
       virtualisation.podman.enable = true;
       virtualisation.oci-containers.backend = "podman";
 
       virtualisation.oci-containers.containers = {
-        ## NGINX Proxy Manager
-        #NPM = {
-        #  image = "jc21/nginx-proxy-manager:latest";
-        #  autoStart = true;
-        #  ports = [
-        #    "80:80"
-        #    "443:443"
-        #    "81:81"
-        #  ];
-        #  volumes = [
-        #    "${volumePath}/NPM/data:/data"
-        #    "${volumePath}/NPM/letsencrypt:/etc/letsencrypt"
-        #  ];
-        #};
+        # NGINX Proxy Manager
+        NPM = {
+          image = "jc21/nginx-proxy-manager:latest";
+          autoStart = true;
+          ports = [
+            "80:80"
+            "443:443"
+            "81:81"
+          ];
+          volumes = [
+            "${volumePath}/NPM/data:/data"
+            "${volumePath}/NPM/letsencrypt:/etc/letsencrypt"
+          ];
+        };
       };
     }
