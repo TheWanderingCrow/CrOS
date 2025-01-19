@@ -17,7 +17,7 @@
         curl
         tmux
         pulseaudio
-        unar
+        ouch
         restic
       ]
       else []
