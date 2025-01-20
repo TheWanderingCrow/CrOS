@@ -13,9 +13,7 @@ in
       sops = {
         defaultSopsFile = inputs.nix-secrets.secrets.overseer;
         age.keyFile = "/var/lib/sops-nix/key.txt";
-        age.sshKeyPaths = [
-            /home/overseer/.ssh/id_overseer
-        ];
+        age.generageKey = true;
       };
 
       # Create the dirs we need
