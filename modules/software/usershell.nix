@@ -36,7 +36,7 @@
         # Left Modules
         username = {
             disabled = false;
-            format = "[ $user]($style)";
+            format = "[  $user]($style)";
             style_user = "fg:${keppel} bg:${rich_lemon}";
             style_root = "fg:${blood_red} bg:${rich_lemon}";
         };
