@@ -36,15 +36,15 @@
         # Left Modules
         username = {
             disabled = false;
-            format = "[$user]($style)";
+            format = "[ $user]($style)";
             style_user = "fg:${keppel} bg:${rich_lemon}";
             style_root = "fg:${blood_red} bg:${rich_lemon}";
         };
         hostname = {
             disabled = false;
-            format = "[@$hostname]($style)";
+            format = "[@$hostname ]($style)";
             style = "fg:${keppel} bg:${rich_lemon}";
-            ssh_only = true;
+            ssh_only = false;
             ssh_symbol = "";
         };
         directory = {
