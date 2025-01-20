@@ -47,6 +47,12 @@ in
       # OCI services
       virtualisation.podman.enable = true;
       virtualisation.oci-containers.backend = "podman";
+    
+        networking.firewall.allowedTCPPorts = [
+            81
+            443
+            80
+        ];
 
       virtualisation.oci-containers.containers = {
         # NGINX Proxy Manager
