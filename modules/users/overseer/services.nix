@@ -13,7 +13,7 @@ in
       sops = {
         defaultSopsFile = inputs.nix-secrets.secrets.overseer;
         age.keyFile = "/var/lib/sops-nix/key.txt";
-        age.generageKey = true;
+        age.generateKey = true;
       };
 
       # Create the dirs we need
