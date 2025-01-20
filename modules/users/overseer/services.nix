@@ -20,8 +20,8 @@ in
       systemd.tmpfiles.rules = [
         "d ${volumePath}"
 
-        "d ${volumePath}/NPM/data 700 overseer overseer"
-        "d ${volumePath}/NPM/letsencrypt 700 overseer overseer"
+        "d ${volumePath}/NPM/data 700 overseer"
+        "d ${volumePath}/NPM/letsencrypt 700 overseer"
       ];
 
       # Pull in the restic secrets from sops
