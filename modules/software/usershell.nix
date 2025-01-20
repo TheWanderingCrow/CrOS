@@ -16,42 +16,66 @@
       };
     };
 
-    programs.starship = {
+    programs.starship = let
+        raisin_black = "#262932";
+        blood_red = "#710000";
+        rich_lemon = "#FDF500";
+        keppel = "#1AC5B0";
+        electric_blue = "#36EBF3";
+        blushing_purple = "#9370DB";
+        frostbite = "#E455AE";
+        steel_pink = "#CB1DCD";
+        pale_silver = "#D1C5C0";
+
+    in {
       enable = true;
       settings = {
-        format = "[░▒▓](#a3aed2)[  ](bg:#a3aed2 fg:#090c0c)[](bg:#769ff0 fg:#a3aed2)$directory[](fg:#769ff0 bg:#394260)$git_branch$git_status[](fg:#394260 bg:#212736)$nix_shell$php[](fg:#212736 bg:#1d2230)$time[ ](fg:#1d2230)$character";
-
+        format = "[ ](${rich_lemon})[ CrOS](bg:${rich_lemon} fg:${raisin_black})$username$hostname[ ](fg:${rich_lemon} bg:${blushing_purple})$directory[ ](fg:${blushing_purple} bg:${frostbite})$git_branch$git_status[ ](fg:${frostbite} bg:${steel_pink})$nix_shell[ ](${steel_pink})";
+        right_format = "[ ](${rich_lemon})$time[ ](${rich_lemon})";
+        
+        # Left Modules
+        username = {
+            disabled = false;
+            format = "[$user]($style)";
+            style_user = electric_blue;
+            style_root = blood_red;
+        };
+        hostname = {
+            disabled = false;
+            format = "@$hostname";
+            ssh_only = true;
+            ssh_symbol = "";
+        };
         directory = {
-          style = "fg:#e3e5e5 bg:#769ff0";
-          format = "[ $path ]($style)";
-          truncation_length = 3;
-          truncation_symbol = "…/";
+            disabled = false;
+            format = "[ $path ]($style)";
+            style = "bg:${blushing_purple} fg:${raisin_black}";
+            truncation_length = 3;
+            truncation_symbol = "…/";
         };
         git_branch = {
-          symbol = "";
-          style = "bg:#394260";
-          format = "[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)";
+            disabled = false;
+            format = "[ $symbol $branch ]($style)";
+            symbol = "";
+            style = "fg:${raisin_black} bg:${frostbite}";
         };
         git_status = {
-          style = "bg:#394260";
-          format = "[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)";
-        };
-        php = {
-          symbol = "";
-          style = "bg:#212736";
-          format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)";
-        };
-        time = {
-          disabled = false;
-          time_format = "%R"; # Hour:Minute Format
-          style = "bg:#1d2230";
-          format = "[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)";
+            disabled = false;
+            format = "[$all_status$ahead_behind]($style)";
+            style = "fg:${raisin_black} bg:${frostbite}";
         };
         nix_shell = {
-          disabled = false;
-          symbol = "";
-          format = "via [(\($symbol-$name\))]($style) ";
-          style = "bold blue";
+            disabled = false;
+            format = "[$symbol $name]($style)";
+            style = "bg:${steel_pink} fg:${electric_blue}";
+            symbol = "";
+        };
+
+        # Right Modules
+        time = {
+            disabled = false;
+            format = "[$time]($style)";
+            style = "fg:${raisin_black} bg:${rich_lemon}";
         };
       };
     };
