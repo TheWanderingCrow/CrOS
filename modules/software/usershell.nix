@@ -37,12 +37,13 @@
         username = {
             disabled = false;
             format = "[$user]($style)";
-            style_user = electric_blue;
-            style_root = blood_red;
+            style_user = "fg:${keppel} bg:${rich_lemon}";
+            style_root = "fg:${blood_red} bg:${rich_lemon}";
         };
         hostname = {
             disabled = false;
-            format = "@$hostname";
+            format = "[@$hostname]($style)";
+            style = "fg:${keppel} bg:${rich_lemon}";
             ssh_only = true;
             ssh_symbol = "";
         };
