@@ -30,17 +30,17 @@ in
       # (Arguably) Most Important Service - backups
       services.restic.backups = {
         NPM = {
-            user = "root";
-            timerConfig = {
-                OnCalendar = "daily";
-                Persistent = true;
-            };
-            paths = [
-               "${volumePath}/NPM/data"
-               "${volumePath}/NPM/letsencrypt"
-            ];
-            repositoryFile = config.sops.secrets."restic/url".path;
-            passwordFile = config.sops.secrets."restic/key".path;
+          user = "root";
+          timerConfig = {
+            OnCalendar = "daily";
+            Persistent = true;
+          };
+          paths = [
+            "${volumePath}/NPM/data"
+            "${volumePath}/NPM/letsencrypt"
+          ];
+          repositoryFile = config.sops.secrets."restic/url".path;
+          passwordFile = config.sops.secrets."restic/key".path;
         };
       };
 
