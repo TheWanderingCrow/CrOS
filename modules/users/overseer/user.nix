@@ -1,4 +1,5 @@
 {
+  inputs,
   lib,
   config,
   ...
@@ -7,8 +8,9 @@
     isNormalUser = true;
     initialPassword = "changeme";
     extraGroups = ["wheel" "libvirtd"];
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKCBmjkaAWNBQ6NwiK56miuv30pjheNTZfrULRfPRmed"
+    openssh.authorizedKeys.keyFiles = [
+        inputs.nix-secrets.keys.default
+        inputs.nix-secrets.keys.overseer
     ];
   };
 }
