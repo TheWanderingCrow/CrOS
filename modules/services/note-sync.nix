@@ -2,8 +2,8 @@
   config,
   lib,
   ...
-}: {
-  config.systemd.services.note_sync = lib.mkIf config.service.note-sync.enable {
+}: lib.mkIf config.service.note-sync.enable {
+  config.systemd.services.note_sync = {
     enable = true;
     description = "Auto sync notes to remote";
     serviceConfig = {
