@@ -54,13 +54,6 @@ in
         enable = true;
         virtualHosts = {
           "homebox.wanderingcrow.net" = {
-            listen = [
-              {
-                addr = "0.0.0.0";
-                port = 80;
-                ssl = false;
-              }
-            ];
             locations."/" = {
               proxyPass = "http://localhost:7745";
               proxyWebsockets = true;
