@@ -79,7 +79,7 @@ in
           enable = true;
           settings = {
             HBOX_STORAGE_DATA = "${volumePath}/homebox/data/";
-            HBOX_STORAGE_SQLITE_URL = "${volumePath}/homebox/data/homebox.db?_fk=1&_time_format=sqlite";
+            HBOX_STORAGE_SQLITE_URL = "${volumePath}/homebox/data/homebox.db?_pragma=busy_timeout=999&_pragma=journal_mode=WAL&_fk=1";
           };
         };
       };
