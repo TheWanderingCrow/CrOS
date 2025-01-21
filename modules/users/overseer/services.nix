@@ -60,6 +60,12 @@ in
               proxyWebsockets = true;
             };
           };
+          "home.wanderingcrow.net" = {
+            locations."/" = {
+              proxyPass = "http://localhost:8082";
+              proxyWebsockets = true;
+            };
+          };
         };
       };
 
@@ -69,6 +75,86 @@ in
           settings = {
             HBOX_OPTIONS_ALLOW_REGISTRATION = "true";
           };
+        };
+        homepage-dashboard = {
+          enable = true;
+          settings = {
+            theme = "dark";
+          };
+          widgets = [
+            {
+              search = {
+                provider = "duckduckgo";
+                target = "_blank";
+              };
+            }
+          ];
+          bookmarks = [
+            {
+              WCE = [
+                {
+                  Homebox = [
+                    {
+                      icon = "http://homebox.wanderingcrow.net/favicon.svg";
+                      href = "http://homebox.wanderingcrow.net";
+                    }
+                  ];
+                }
+              ];
+            }
+            {
+              "Day to Day" = [
+                {
+                    Messages = [
+                        {
+                            icon = "google-messages.svg";
+                            href = "https://messages.google.com/web";
+                        }
+                    ];
+                }
+                {
+                    YouTube = [
+                        {
+                            icon = "youtube.svg";
+                            href = "https://youtube.com";
+                        }
+                    ];
+                }
+                {
+                    "Proton Mail" = [
+                        {
+                            icon = "proton-mail.svg";
+                            href = "https://mail.proton.me";
+                        }
+                    ];
+                }
+                {
+                    Instagram = [
+                        {
+                            icon = "instagram.svg";
+                            href = "https://instagram.com";
+                        }
+                    ];
+                }
+                {
+                    Aetolia = [
+                        {
+                            icon = "https://aetolia.com/wp-content/uploads/2020/04/favicon.ico";
+                            href = "https://aetolia.com";
+                        }
+                    ];
+                }
+                {
+                    Amazon = [
+                        {
+                            icon = "amazon.svg";
+                            href = "https://amazon.com";
+                        }
+                    ];
+                }
+              ];
+            }
+          ];
         };
       };
     }
