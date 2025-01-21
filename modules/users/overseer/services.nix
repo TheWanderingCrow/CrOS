@@ -52,6 +52,7 @@ in
 
       services.nginx = {
         enable = true;
+        recommendedProxySettings = true;
         virtualHosts = {
           "homebox.wanderingcrow.net" = {
             locations."/" = {
@@ -67,8 +68,6 @@ in
           enable = true;
           settings = {
             HBOX_OPTIONS_ALLOW_REGISTRATION = "true";
-            HBOX_SWAGGER_HOST = "localhost:7745";
-            HBOX_SWAGGER_SCHEME = "http";
           };
         };
       };
