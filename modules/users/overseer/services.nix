@@ -73,12 +73,12 @@ in
         };
       };
 
-        sops.secrets."homepage/openmeteo/lat" = {};
-        sops.secrets."homepage/openmeteo/long" = {};
-        sops.templates."homepage-environment".content = ''
-            HOMEPAGE_VAR_LAT = ${config.sops.placeholder."homepage/openmeteo/lat"}
-            HOMEPAGE_VAR_LONG = ${config.sops.placeholder."homepage/openmeteo/long"}
-        '';
+      sops.secrets."homepage/openmeteo/lat" = {};
+      sops.secrets."homepage/openmeteo/long" = {};
+      sops.templates."homepage-environment".content = ''
+        HOMEPAGE_VAR_LAT = ${config.sops.placeholder."homepage/openmeteo/lat"}
+        HOMEPAGE_VAR_LONG = ${config.sops.placeholder."homepage/openmeteo/long"}
+      '';
 
       services = {
         homebox = {
