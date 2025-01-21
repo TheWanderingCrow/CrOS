@@ -18,7 +18,7 @@
 
   users.users.nixos.authorizedKeys.keyFiles = lib.mkForce [
     inputs.nix-secrets.keys.default
-];
+  ];
 
   user.live.enable = true;
 

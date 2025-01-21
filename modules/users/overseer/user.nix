@@ -9,8 +9,8 @@
     initialPassword = "changeme";
     extraGroups = ["wheel" "libvirtd"];
     openssh.authorizedKeys.keyFiles = [
-        inputs.nix-secrets.keys.default
-        inputs.nix-secrets.keys.overseer
+      inputs.nix-secrets.keys.default
+      inputs.nix-secrets.keys.overseer
     ];
   };
 }

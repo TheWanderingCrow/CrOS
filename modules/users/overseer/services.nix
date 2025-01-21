@@ -22,6 +22,8 @@ in
 
         "d ${volumePath}/NPM/data 700 overseer"
         "d ${volumePath}/NPM/letsencrypt 700 overseer"
+
+        "d ${volumePath}/homebox/data 700 overseer"
       ];
 
       # Pull in the restic secrets from sops
@@ -47,12 +49,13 @@ in
       # OCI services
       virtualisation.podman.enable = true;
       virtualisation.oci-containers.backend = "podman";
-    
-        networking.firewall.allowedTCPPorts = [
-            81
-            443
-            80
-        ];
+
+      # These ports are needed for NGINX Proxy Manager
+      networking.firewall.allowedTCPPorts = [
+        81
+        443
+        80
+      ];
 
       virtualisation.oci-containers.containers = {
         # NGINX Proxy Manager
@@ -68,6 +71,16 @@ in
             "${volumePath}/NPM/data:/data"
             "${volumePath}/NPM/letsencrypt:/etc/letsencrypt"
           ];
+        };
+      };
+
+      services = {
+        homebox = {
+          enable = true;
+          settings = {
+            HBOX_STORAGE_DATA = "${volumePath}/homebox/data";
+            HBOX_STORAGE_SQLITE_URL = "${volumePath}/homebox/data/homebox.db?_fk=1&_time_format=sqlite";
+          };
         };
       };
     }

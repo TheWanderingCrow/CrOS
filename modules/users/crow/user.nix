@@ -9,7 +9,7 @@
     initialPassword = "changeme";
     extraGroups = ["wheel" "networkmanager" "audio" "plugdev" "dialout"];
     openssh.authorizedKeys.keyFiles = [
-        inputs.nix-secrets.keys.default
+      inputs.nix-secrets.keys.default
     ];
   };
 

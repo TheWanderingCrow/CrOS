@@ -10,7 +10,7 @@ lib.mkIf config.user.live.enable {
     initialPassword = "live";
     extraGroups = ["wheel" "networkmanager" "audio" "plugdev"];
     openssh.authorizedKeys.keyFiles = [
-        inputs.nix-secrets.keys.default
+      inputs.nix-secrets.keys.default
     ];
   };
 }
