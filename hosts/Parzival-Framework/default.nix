@@ -18,5 +18,6 @@
   module.gui.enable = true;
   module.programming.enable = true;
   module.hacking.enable = true;
+  module.mudding.enable = true;
   software.keyd.enable = true;
 }

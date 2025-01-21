@@ -9,7 +9,7 @@
   hyprMonitorConfig =
     if osConfig.networking.hostName == "Parzival"
     then ./configs/hypr/parzival-monitors.conf
-    else if osConfig.networking.hostName == "Parzival-Mobile"
+    else if osConfig.networking.hostName == "Parzival-Mobile" || osConfig.networking.hostName == "Parzival-Framework"
     then ./configs/hypr/parzival_mobile-monitors.conf
     else null;
   swayMonitorConfig =
