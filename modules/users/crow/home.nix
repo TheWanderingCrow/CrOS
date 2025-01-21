@@ -15,7 +15,7 @@
   swayMonitorConfig =
     if osConfig.networking.hostName == "Parzival"
     then ./configs/sway/parzival-monitors.conf
-    else if osConfig.networking.hostName == "Parzival-Mobile"
+    else if osConfig.networking.hostName == "Parzival-Mobile" || osConfig.networking.hostName == "Parzival-Framework"
     then ./configs/sway/parzival_mobile-monitors.conf
     else null;
 in {
