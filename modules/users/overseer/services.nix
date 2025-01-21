@@ -19,11 +19,6 @@ in
       # Create the dirs we need
       systemd.tmpfiles.rules = [
         "d ${volumePath}"
-
-        "d ${volumePath}/NPM/data 700 overseer"
-        "d ${volumePath}/NPM/letsencrypt 700 overseer"
-
-        "d ${volumePath}/homebox 700 homebox"
       ];
 
       # Pull in the restic secrets from sops
@@ -31,15 +26,14 @@ in
       sops.secrets."restic/key" = {};
       # (Arguably) Most Important Service - backups
       services.restic.backups = {
-        NPM = {
+        homebox = {
           user = "root";
           timerConfig = {
-            OnCalendar = "daily";
+            OnCalendar = "hourly";
             Persistent = true;
           };
           paths = [
-            "${volumePath}/NPM/data"
-            "${volumePath}/NPM/letsencrypt"
+            "/var/lib/homebox/data"
           ];
           repositoryFile = config.sops.secrets."restic/url".path;
           passwordFile = config.sops.secrets."restic/key".path;
@@ -52,25 +46,26 @@ in
 
       # These ports are needed for NGINX Proxy Manager
       networking.firewall.allowedTCPPorts = [
-        81
         443
         80
       ];
 
-      virtualisation.oci-containers.containers = {
-        # NGINX Proxy Manager
-        NPM = {
-          image = "jc21/nginx-proxy-manager:latest";
-          autoStart = true;
-          ports = [
-            "80:80"
-            "443:443"
-            "81:81"
-          ];
-          volumes = [
-            "${volumePath}/NPM/data:/data"
-            "${volumePath}/NPM/letsencrypt:/etc/letsencrypt"
-          ];
+      services.nginx = {
+        enable = true;
+        virtualHosts = {
+          "homebox.wanderingcrow.net" = {
+            listen = [
+              {
+                addr = "0.0.0.0";
+                port = 80;
+                ssl = false;
+              }
+            ];
+            locations."/" = {
+              proxyPass = "http://localhost:7745";
+              proxyWebsockets = true;
+            };
+          };
         };
       };
 
@@ -78,8 +73,9 @@ in
         homebox = {
           enable = true;
           settings = {
-            HBOX_STORAGE_DATA = "${volumePath}/homebox/data/";
-            HBOX_STORAGE_SQLITE_URL = "${volumePath}/homebox/data/homebox.db?_pragma=busy_timeout=999&_pragma=journal_mode=WAL&_fk=1";
+            HBOX_OPTIONS_ALLOW_REGISTRATION = "true";
+            HBOX_SWAGGER_HOST = "localhost:7745";
+            HBOX_SWAGGER_SCHEME = "http";
           };
         };
       };
