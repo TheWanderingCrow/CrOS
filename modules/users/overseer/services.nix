@@ -23,7 +23,7 @@ in
         "d ${volumePath}/NPM/data 700 overseer"
         "d ${volumePath}/NPM/letsencrypt 700 overseer"
 
-        "d ${volumePath}/homebox/data 700 overseer"
+        "d ${volumePath}/homebox/data 700 homebox"
       ];
 
       # Pull in the restic secrets from sops
