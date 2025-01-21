@@ -62,6 +62,10 @@ in
           };
           "home.wanderingcrow.net" = {
             locations."/" = {
+              extraConfig = ''
+              allow 192.168.0.0/16;
+              deny all;
+              '';
               proxyPass = "http://localhost:8082";
               proxyWebsockets = true;
             };
