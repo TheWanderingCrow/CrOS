@@ -10,20 +10,15 @@ in
   }:
     lib.mkIf config.user.overseer.enable {
       # Some scafolding for secrets
-      sops = {
-        defaultSopsFile = inputs.nix-secrets.secrets.overseer;
-        age.keyFile = "/var/lib/sops-nix/key.txt";
-        age.generateKey = true;
-      };
 
       # Create the dirs we need
       systemd.tmpfiles.rules = [
         "d ${volumePath}"
+
+        "d ${volumePath}/bar-assistant"
+        "d ${volumePath}/meilisearch"
       ];
 
-      # Pull in the restic secrets from sops
-      sops.secrets."restic/url" = {};
-      sops.secrets."restic/key" = {};
       # (Arguably) Most Important Service - backups
       services.restic.backups = {
         homebox = {
@@ -39,10 +34,6 @@ in
           passwordFile = config.sops.secrets."restic/key".path;
         };
       };
-
-      # OCI services
-      virtualisation.podman.enable = true;
-      virtualisation.oci-containers.backend = "podman";
 
       # These ports are needed for NGINX Proxy Manager
       networking.firewall.allowedTCPPorts = [
@@ -70,15 +61,25 @@ in
               proxyWebsockets = true;
             };
           };
+          "bar.wanderingcrow.net" = {
+            extraConfig = ''
+              allow 192.168.0.0/16;
+              deny all;
+            '';
+            locations = {
+              "/bar/" = {
+                proxyPass = "http://localhost:3000";
+              };
+              "/search/" = {
+                proxyPass = "http://localhost:7700";
+              };
+              "/" = {
+                proxyPass = "http://localhost:3001";
+              };
+            };
+          };
         };
       };
-
-      sops.secrets."homepage/openmeteo/lat" = {};
-      sops.secrets."homepage/openmeteo/long" = {};
-      sops.templates."homepage-environment".content = ''
-        HOMEPAGE_VAR_LAT = ${config.sops.placeholder."homepage/openmeteo/lat"}
-        HOMEPAGE_VAR_LONG = ${config.sops.placeholder."homepage/openmeteo/long"}
-      '';
 
       services = {
         homebox = {
@@ -176,6 +177,44 @@ in
               ];
             }
           ];
+        };
+      };
+
+      virtualisation.oci-containers = {
+        backend = "podman";
+        containers = {
+          "meilisearch" = {
+            image = "getmeili/meilisearch:v1.8";
+            volumes = ["${volumePath}/meilisearch:/meili_data"];
+            ports = ["7700:7700"];
+            environmentFile = [config.sops.templates."meilisearch-environment".path];
+            environment = {
+              MEILI_ENV = "production";
+            };
+          };
+          "bar-assistant" = {
+            image = "barassistant/server:v4";
+            volumes = ["${volumePath}/bar-assistant:/var/www/cocktails/storage/bar-assistant"];
+            ports = ["3000:3000"];
+            dependsOn = ["meilisearch"];
+            environmentFile = [config.sops.templates."barassistant-environment".path];
+            environment = {
+              APP_URL = "bar.wanderingcrow.net/bar";
+              MEILISEARCH_HOST = "http://localhost:7700";
+              CACHE_DRIVER = "file";
+              SESSION_DRIVER = "file";
+              ALLOW_REGISTRATION = "true";
+            };
+          };
+          "salt-rim" = {
+            image = "barassistant/salt-rim:v3";
+            ports = ["3001:8080"];
+            dependsOn = ["bar-assistant"];
+            environment = {
+              API_URL = "bar.wanderingcrow.net/bar";
+              MEILIESEARCH_URL = "bar.wanderingcrow.net/search";
+            };
+          };
         };
       };
     }
