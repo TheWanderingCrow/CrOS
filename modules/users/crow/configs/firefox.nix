@@ -16,7 +16,7 @@
         Fingerprinting = true;
       };
       Homepage = {
-        URL = "https://home.wanderingcrow.net";
+        URL = "http://home.wanderingcrow.net";
         StartPage = "homepage";
       };
       OfferToSaveLogins = false;
