@@ -5,7 +5,7 @@
 }: {
   imports = [
     ./user.nix
-    ./services.nix
     ./secrets.nix
+    ./services.nix
   ];
 }

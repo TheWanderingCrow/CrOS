@@ -27,11 +27,11 @@ lib.mkIf config.user.overseer.enable {
   # Meilisearch secrets
   sops.secrets."meilisearch/masterkey" = {};
   sops.templates."meilisearch-environment".content = ''
-    MEILI_MASTER_KEY = ${config.sops.placeholder."meilisearch/masterkey"}
+    MEILI_MASTER_KEY=${config.sops.placeholder."meilisearch/masterkey"}
   '';
 
   # Bar Assistant secrets
-  sops.templates."barassistant-environment".content = ''
-    MEILISEARCH_KEY = ${config.sops.placeholder."meilisearch/masterkey"}
+  sops.templates."bar_assistant-env".content = ''
+    MEILISEARCH_KEY=${config.sops.placeholder."meilisearch/masterkey"}
   '';
 }
