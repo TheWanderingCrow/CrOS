@@ -66,6 +66,14 @@ lib.mkIf config.user.overseer.enable {
                 }
               ];
             }
+            {
+              Bar = [
+                {
+                  icon = "http://bar.wanderingcrow.net/favicon.svg";
+                  href = "http://bar.wanderingcrow.net";
+                }
+              ];
+            }
           ];
         }
         {
