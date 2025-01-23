@@ -32,6 +32,19 @@ in
           repositoryFile = config.sops.secrets."restic/url".path;
           passwordFile = config.sops.secrets."restic/key".path;
         };
+        bar-assistant = {
+          user = "root";
+          timerConfig = {
+            OnCalendar = "daily";
+            Persistent = true;
+          };
+          paths = [
+            "${volumePath}/bar-assistant"
+            "${volumePath}/meilisearch"
+          ];
+          repositoryFile = config.sops.secrets."restic/url".path;
+          passwordFile = config.sops.secrets."restic/key".path;
+        };
       };
 
       # These ports are needed for NGINX Proxy Manager
