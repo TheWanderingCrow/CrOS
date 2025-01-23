@@ -62,14 +62,22 @@ in
           };
           "bar.wanderingcrow.net" = {
             locations = {
-              "/bar/" = {
-                proxyPass = "http://localhost:3000";
-              };
-              "/search/" = {
-                proxyPass = "http://localhost:7700";
-              };
               "/" = {
-                proxyPass = "http://localhost:3001";
+                proxyPass = "http://10.88.0.5:8080";
+              };
+            };
+          };
+          "api.bar.wanderingcrow.net" = {
+            locations = {
+              "/" = {
+                proxyPass = "http://10.88.0.4:8080";
+              };
+            };
+          };
+          "search.bar.wanderingcrow.net" = {
+            locations = {
+              "/" = {
+                proxyPass = "http://10.88.0.3:7700";
               };
             };
           };
@@ -175,22 +183,13 @@ in
         };
       };
 
-      systemd.services.podman-create-pod-bar-assistant = {
-        serviceConfig.Type = "oneshot";
-        wantedBy = [ "podman-bar-assistant.service" ];
-        script = ''
-            ${pkgs.podman}/bin/podman pod exists bar-assistant || \
-             ${pkgs.podman}/bin/podman pod create -n bar-assistant -p 3000:8080 -p 7700:7700
-        '';
-    };
-    
       virtualisation.oci-containers = {
         backend = "podman";
         containers = {
           "meilisearch" = {
             image = "getmeili/meilisearch:v1.8";
             volumes = ["${volumePath}/meilisearch:/meili_data"];
-            extraOptions = [ "--pod=bar-assistant" ];
+            extraOptions = [ "--ip=10.88.0.3" ];
             environmentFiles = [config.sops.templates."meilisearch-environment".path];
             environment = {
               MEILI_ENV = "production";
@@ -201,11 +200,11 @@ in
             image = "barassistant/server:v4";
             volumes = ["${volumePath}/bar-assistant:/var/www/cocktails/storage/bar-assistant"];
             dependsOn = ["meilisearch"];
-            extraOptions = [ "--pod=bar-assistant" ];
+            extraOptions = [ "--ip=10.88.0.4" ];
             environmentFiles = [config.sops.templates."bar_assistant-env".path];
             environment = {
-              APP_URL = "bar.wanderingcrow.net/bar";
-              MEILISEARCH_HOST = "http://localhost:7700";
+              APP_URL = "http://api.bar.wanderingcrow.net";
+              MEILISEARCH_HOST = "http://search.bar.wanderingcrow.net";
               CACHE_DRIVER = "file";
               SESSION_DRIVER = "file";
               ALLOW_REGISTRATION = "true";
@@ -214,10 +213,11 @@ in
           "salt-rim" = {
             image = "barassistant/salt-rim:v3";
             dependsOn = ["bar-assistant"];
+            extraOptions = [ "--ip=10.88.0.5" ];
             ports = [ "3001:8080" ];
             environment = {
-              API_URL = "bar.wanderingcrow.net/bar";
-              MEILIESEARCH_URL = "bar.wanderingcrow.net/search";
+              API_URL = "http://api.bar.wanderingcrow.net";
+              MEILIESEARCH_URL = "http://search.bar.wanderingcrow.net";
             };
           };
         };
