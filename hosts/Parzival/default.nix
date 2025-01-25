@@ -21,8 +21,8 @@
   module.hacking.enable = true;
   module.mudding.enable = true;
   module.gaming.enable = true;
+  module.os-gaming.enable = true;
   module.appdevel.enable = true;
-  module.art.enable = true;
   module.hobbies.enable = true;
 
   service.note-sync.enable = true;
