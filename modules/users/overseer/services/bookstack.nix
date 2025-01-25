@@ -4,7 +4,9 @@
   ...
 }:
 lib.mkIf config.user.overseer.enable {
-    sops.secrets."bookstack/key" = {};
+    sops.secrets."bookstack/key" = {
+        owner = "bookstack";
+    };
         
     services.bookstack = {
         enable = true;
