@@ -8,5 +8,6 @@
     ./homebox.nix
     ./homepage.nix
     ./invidious.nix
+    ./bookstack.nix
   ];
 }
