@@ -147,17 +147,10 @@
       else []
     )
     ++ (
-      if config.module.vr.enable
+      if config.module.hobbies.enable
       then [
-        alvr
-        wlx-overlay-s
-        immersed
-      ]
-      else []
-    )
-    ++ (
-      if config.module.art.enable
-      then [
+        python312Packages.meshtastic
+        brewtarget
         krita
         pureref
       ]

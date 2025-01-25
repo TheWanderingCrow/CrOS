@@ -17,6 +17,7 @@
       appdevel.enable = lib.mkEnableOption "enables app development in flutter";
       vr.enable = lib.mkEnableOption "enables VR utilities";
       art.enable = lib.mkEnableOption "enabled graphical art stuff";
+      hobbies.enable = lib.mkEnableOption "some misc packages related to hobbies";
     };
 
     software = {
@@ -70,6 +71,7 @@
       appdevel.enable = lib.mkDefault false;
       vr.enable = lib.mkDefault false;
       art.enable = lib.mkDefault false;
+      hobbies.enable = lib.mkDefault false;
     };
 
     software = {
