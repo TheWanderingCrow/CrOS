@@ -12,6 +12,7 @@ in
       # Base dir
       systemd.tmpfiles.rules = [
         "d ${volumePath}"
+        "D ${volumePath}/tmp - - - 30m"
       ];
 
       # NGINX Ports
