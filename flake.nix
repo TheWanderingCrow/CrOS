@@ -102,6 +102,25 @@
           sops-nix.nixosModules.sops
         ];
       };
+      #########################
+      # AWS Nebula Lighthouse #
+      #########################
+      WCE-Lighthouse-AWS = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
+        };
+        modules = [
+          ./hosts/WCE-Lighthouse
+          "${nixpkgs}/nixos/modules/virtualisation/amazon-image.nix"
+          home-manager.nixosModules.home-manager
+          sops-nix.nixosModules.sops
+        ];
+
+      };
     };
   };
 }
