@@ -9,5 +9,6 @@
     ./homepage.nix
     ./invidious.nix
     ./bookstack.nix
+    ./grocy.nix
   ];
 }
