@@ -102,10 +102,10 @@
           sops-nix.nixosModules.sops
         ];
       };
-      #########################
-      # AWS Nebula Lighthouse #
-      #########################
-      WCE-Lighthouse-AWS = nixpkgs.lib.nixosSystem {
+      ##########################
+      # AWS Nebula Lighthouse1 #
+      ##########################
+      WCE-Lighthouse1 = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
           pkgs = import nixpkgs {
@@ -116,10 +116,12 @@
         modules = [
           ./hosts/WCE-Lighthouse
           "${nixpkgs}/nixos/modules/virtualisation/amazon-image.nix"
+          {
+            networking.hostName = "WCE-Lighthouse1";
+          }
           home-manager.nixosModules.home-manager
           sops-nix.nixosModules.sops
         ];
-
       };
     };
   };
