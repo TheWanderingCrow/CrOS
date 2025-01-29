@@ -111,6 +111,14 @@ lib.mkIf config.user.overseer.enable {
               ];
             }
             {
+              Crunchyroll = [
+                {
+                  icon = "crunchyroll.svg";
+                  href = "https://crunchyroll.com";
+                }
+              ];
+            }
+            {
               Instagram = [
                 {
                   icon = "instagram.svg";
