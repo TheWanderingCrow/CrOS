@@ -17,6 +17,12 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = [];
   boot.extraModulePackages = [];
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi = {
+      canTouchEfiVariables = true;
+    };
+  };
 
   fileSystems."/" = {
     device = "zroot";

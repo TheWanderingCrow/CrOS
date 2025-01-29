@@ -97,7 +97,7 @@
       };
       lighthouse = {
         enable = lib.mkDefault false;
-    };
+      };
     };
 
     # Desktop options are declared in their relevant modules in module/desktops

@@ -16,6 +16,12 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi = {
+      canTouchEfiVariables = true;
+    };
+  };
 
   fileSystems."/" = {
     device = "/dev/disk/by-label/nixos";
