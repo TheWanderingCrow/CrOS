@@ -118,6 +118,7 @@
           "${nixpkgs}/nixos/modules/virtualisation/amazon-image.nix"
           {
             networking.hostName = "WCE-Lighthouse1";
+            defaultSopsFile = inputs.nix-secrets.secrets.lighthouse1;
           }
           home-manager.nixosModules.home-manager
           sops-nix.nixosModules.sops
