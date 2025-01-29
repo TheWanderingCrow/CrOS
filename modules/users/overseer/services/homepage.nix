@@ -111,6 +111,14 @@ lib.mkIf config.user.overseer.enable {
               ];
             }
             {
+              Crunchyroll = [
+                {
+                  icon = "https://www.crunchyroll.com/build/assets/img/favicons/favicon-v2-32x32.png";
+                  href = "https://crunchyroll.com";
+                }
+              ];
+            }
+            {
               Instagram = [
                 {
                   icon = "instagram.svg";
