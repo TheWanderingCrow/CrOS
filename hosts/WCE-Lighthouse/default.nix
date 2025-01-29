@@ -10,4 +10,6 @@
 
   nixpkgs.hostPlatform = "x86_64-linux";
   ricing.basic.enable = false;
+
+  user.lighthouse.enable = true;
 }
