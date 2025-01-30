@@ -15,7 +15,12 @@
     home-manager,
     sops-nix,
     ...
-  } @ inputs: {
+  } @ inputs: let 
+    baseModules = [
+        home-manager.nixosModules.home-manager
+        sops-nix.nixosModules.sops
+    ];
+  in {
     nixosConfigurations = {
       ###################
       # Primary Desktop #
@@ -30,9 +35,7 @@
         };
         modules = [
           ./hosts/Parzival
-          home-manager.nixosModules.home-manager
-          sops-nix.nixosModules.sops
-        ];
+        ] ++ baseModules;
       };
       ###################
       # Personal Laptop #
@@ -47,9 +50,7 @@
         };
         modules = [
           ./hosts/Parzival-Mobile
-          home-manager.nixosModules.home-manager
-          sops-nix.nixosModules.sops
-        ];
+        ] ++ baseModules;
       };
       ######################
       # Work Issued Laptop #
@@ -64,9 +65,7 @@
         };
         modules = [
           ./hosts/Parzival-Framework
-          home-manager.nixosModules.home-manager
-          sops-nix.nixosModules.sops
-        ];
+        ] ++ baseModules;
       };
       ###############
       # Home Server #
@@ -81,9 +80,7 @@
         };
         modules = [
           ./hosts/WCE-Overseer
-          home-manager.nixosModules.home-manager
-          sops-nix.nixosModules.sops
-        ];
+        ] ++ baseModules;
       };
       ###################################
       # ISO Installer w/ recovery tools #
@@ -98,9 +95,7 @@
         };
         modules = [
           ./hosts/Parzival-Live
-          home-manager.nixosModules.home-manager
-          sops-nix.nixosModules.sops
-        ];
+        ] ++ baseModules;
       };
       #########################
       # DO Nebula Lighthouse1 #
@@ -129,9 +124,7 @@
               sops.defaultSopsFile = inputs.nix-secrets.secrets.lighthouse1;
             };
           }
-          home-manager.nixosModules.home-manager
-          sops-nix.nixosModules.sops
-        ];
+        ] ++ baseModules;
       };
     };
   };
