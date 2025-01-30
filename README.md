@@ -31,3 +31,5 @@ services.cloud-init = {
 };
 ```
 
+### AWS
+You will need to import the following module to be able to build NixOS on EC2: `"${nixpkgs}/nixos/modules/virtualisation/amazon-image.nix"`
