@@ -102,9 +102,9 @@
           sops-nix.nixosModules.sops
         ];
       };
-      ##########################
-      # AWS Nebula Lighthouse1 #
-      ##########################
+      #########################
+      # DO Nebula Lighthouse1 #
+      #########################
       WCE-Lighthouse1 = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
@@ -115,10 +115,19 @@
         };
         modules = [
           ./hosts/WCE-Lighthouse
-          "${nixpkgs}/nixos/modules/virtualisation/amazon-image.nix"
           {
             networking.hostName = "WCE-Lighthouse1";
-            sops.defaultSopsFile = inputs.nix-secrets.secrets.lighthouse1;
+            networking.useDHCP = nixpkgs.lib.mkForce false;
+
+            services.cloud-init = {
+              enable = true;
+              network.enable = true;
+
+              # not strictly needed, just for good measure
+              datasource_list = ["DigitalOcean"];
+              datasource.DigitalOcean = {};
+              sops.defaultSopsFile = inputs.nix-secrets.secrets.lighthouse1;
+            };
           }
           home-manager.nixosModules.home-manager
           sops-nix.nixosModules.sops

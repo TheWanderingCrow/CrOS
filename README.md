@@ -13,3 +13,21 @@
 ## Deploying to the remote
 Note: If you need to specify the ssh key, you may inject extra cli options to the ssh command via the NIX_SSHOPTS environment variable
 * Anywhere from local: `nixos-rebuild switch --flake .#<host> --target-host root@<ipaddr> --use-remote-sudo`
+
+## Vendor Specific Idiosyncrasies
+### Digital Ocean
+
+Digital Ocean assigns IPs through cloud init so we need to not use DHCP
+
+```
+networking.useDHCP = nixpkgs.lib.mkForce false;
+services.cloud-init = {
+    enable = true;
+    network.enable = true;
+
+    # not strictly needed, just for good measure
+    datasource_list = [ "DigitalOcean" ];
+    datasource.DigitalOcean = { };sops.defaultSopsFile = inputs.nix-secrets.secrets.lighthouse1;
+};
+```
+
