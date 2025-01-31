@@ -74,12 +74,12 @@
     "nil": {
       "inputs": {
         "flake-utils": [
-          "nixvim",
+          "nvix",
           "nvf",
           "flake-utils"
         ],
         "nixpkgs": [
-          "nixvim",
+          "nvix",
           "nvf",
           "nixpkgs"
         ],
@@ -187,25 +187,6 @@
         "owner": "NixOS",
         "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixvim": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_2",
-        "nvf": "nvf"
-      },
-      "locked": {
-        "lastModified": 1738334840,
-        "narHash": "sha256-lerAHv5LTvuy3Tj7FKA4sLm5q1/4q4iwsXy2OPMXVYY=",
-        "owner": "TheWanderingCrow",
-        "repo": "nvix",
-        "rev": "0856f3ca4779c8edeaa1a0d5f8b3e0c7eef4c490",
-        "type": "github"
-      },
-      "original": {
-        "owner": "TheWanderingCrow",
-        "repo": "nvix",
         "type": "github"
       }
     },
@@ -412,6 +393,25 @@
       "original": {
         "owner": "notashelf",
         "repo": "nvf",
+        "type": "github"
+      }
+    },
+    "nvix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2",
+        "nvf": "nvf"
+      },
+      "locked": {
+        "lastModified": 1738334840,
+        "narHash": "sha256-lerAHv5LTvuy3Tj7FKA4sLm5q1/4q4iwsXy2OPMXVYY=",
+        "owner": "TheWanderingCrow",
+        "repo": "nvix",
+        "rev": "0856f3ca4779c8edeaa1a0d5f8b3e0c7eef4c490",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TheWanderingCrow",
+        "repo": "nvix",
         "type": "github"
       }
     },
@@ -3078,14 +3078,14 @@
         "home-manager": "home-manager",
         "nix-secrets": "nix-secrets",
         "nixpkgs": "nixpkgs",
-        "nixvim": "nixvim",
+        "nvix": "nvix",
         "sops-nix": "sops-nix"
       }
     },
     "rust-overlay": {
       "inputs": {
         "nixpkgs": [
-          "nixvim",
+          "nvix",
           "nvf",
           "nil",
           "nixpkgs"
