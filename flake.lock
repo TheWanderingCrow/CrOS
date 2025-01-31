@@ -287,11 +287,11 @@
         "nixvim": "nixvim_2"
       },
       "locked": {
-        "lastModified": 1731074697,
-        "narHash": "sha256-UUWprSht7l/TEt0RbyaOGWGUG6bFFs3oMYOjfIpHg6I=",
+        "lastModified": 1738283378,
+        "narHash": "sha256-t2SpInDMpEDl9rAcj8rta0VZMdLucO4jtUNOtm3D3Yc=",
         "owner": "TheWanderingCrow",
         "repo": "nvix",
-        "rev": "2de249808d4402830ba8d97c8048c10af39d1730",
+        "rev": "e703429037575a8f9f7739bd167b8b9e68b538a7",
         "type": "github"
       },
       "original": {
