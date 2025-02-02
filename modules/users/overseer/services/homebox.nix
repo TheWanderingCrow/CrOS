@@ -23,6 +23,8 @@ lib.mkIf config.user.overseer.enable {
       recommendedProxySettings = true;
       virtualHosts = {
         "homebox.wanderingcrow.net" = {
+          forceSSL = true;
+          useACMEHost = "homebox.wanderingcrow.net";
           locations."/" = {
             proxyPass = "http://localhost:7745";
             proxyWebsockets = true;

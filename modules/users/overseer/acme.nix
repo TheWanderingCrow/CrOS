@@ -37,6 +37,9 @@ lib.mkIf config.user.overseer.enable {
     };
     certs = {
       "bar.wanderingcrow.net" = {};
+      "home.wanderingcrow.net" = {};
+      "homebox.wanderingcrow.net" = {};
+      "bookstack.wanderingcrow.net" = {};
     };
   };
 }

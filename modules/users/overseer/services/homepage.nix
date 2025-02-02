@@ -19,6 +19,8 @@ lib.mkIf config.user.overseer.enable {
     recommendedProxySettings = true;
     virtualHosts = {
       "home.wanderingcrow.net" = {
+        forceSSL = true;
+        useACMEHost = "home.wanderingcrow.net";
         locations."/" = {
           extraConfig = ''
             allow 192.168.0.0/16;

@@ -33,5 +33,9 @@ in
         hostname = "bookstack.wanderingcrow.net";
         database.createLocally = true;
         appKeyFile = config.sops.secrets."bookstack/key".path;
+        nginx = {
+          forceSSL = true;
+          useACMEHost = "bookstack.wanderingcrow.net";
+        };
       };
     }
