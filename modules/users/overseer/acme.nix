@@ -17,9 +17,8 @@ lib.mkIf config.user.overseer.enable {
         aws_access_key_id=${config.sops.placeholder."aws/access_key"}
         aws_secret_access_key=${config.sops.placeholder."aws/secret_key"}
       '';
-      "aws_config".content = ''
-        [default]
-        region=${config.sops.placeholder."aws/region"}
+      "aws_env".content = ''
+        AWS_REGION=${config.sops.placeholder."aws/region"}
       '';
     };
   };
@@ -33,13 +32,14 @@ lib.mkIf config.user.overseer.enable {
       credentialFiles = {
         "AWS_SHARED_CREDENTIALS_FILE" = config.sops.templates."aws_shared_credentials".path;
       };
-      environmentFile = config.sops.templates."aws_config".path;
+      environmentFile = config.sops.templates."aws_env".path;
     };
     certs = {
       "bar.wanderingcrow.net" = {};
       "home.wanderingcrow.net" = {};
       "homebox.wanderingcrow.net" = {};
       "bookstack.wanderingcrow.net" = {};
+      "grocy.wanderingcrow.net" = {};
     };
   };
 }
