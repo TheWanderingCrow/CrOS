@@ -38,18 +38,20 @@ in
         recommendedProxySettings = true;
         virtualHosts = {
           "bar.wanderingcrow.net" = {
-            locations ."/" = {
-              proxyPass = "http://10.88.0.5:8080";
-            };
-          };
-          "api.bar.wanderingcrow.net" = {
-            locations."/" = {
-              proxyPass = "http://10.88.0.4:8080";
-            };
-          };
-          "search.bar.wanderingcrow.net" = {
-            locations."/" = {
-              proxyPass = "http://10.88.0.3:7700";
+            forceSSL = true;
+            useACMEHost = "bar.wanderingcrow.net";
+            locations = {
+              "/search/" = {
+                proxyPass = "http://10.88.0.3:7700";
+                priority = 1;
+              };
+              "/api/" = {
+                proxyPass = "http://10.88.0.4:8080";
+                priority = 1;
+              };
+              "/" = {
+                proxyPass = "http://10.88.0.5:8080";
+              };
             };
           };
         };
@@ -96,8 +98,8 @@ in
             extraOptions = ["--ip=10.88.0.4"];
             environmentFiles = [config.sops.templates."bar_assistant-env".path];
             environment = {
-              APP_URL = "http://api.bar.wanderingcrow.net";
-              MEILISEARCH_HOST = "http://search.bar.wanderingcrow.net";
+              APP_URL = "https://bar.wanderingcrow.net/api";
+              MEILISEARCH_HOST = "https://bar.wanderingcrow.net/search";
               CACHE_DRIVER = "file";
               SESSION_DRIVER = "file";
               ALLOW_REGISTRATION = "true";
@@ -109,8 +111,8 @@ in
             extraOptions = ["--ip=10.88.0.5"];
             ports = ["3001:8080"];
             environment = {
-              API_URL = "http://api.bar.wanderingcrow.net";
-              MEILIESEARCH_URL = "http://search.bar.wanderingcrow.net";
+              API_URL = "https://bar.wanderingcrow.net/api";
+              MEILIESEARCH_URL = "https://bar.wanderingcrow.net/search";
             };
           };
         };

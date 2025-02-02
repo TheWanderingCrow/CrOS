@@ -28,6 +28,7 @@ lib.mkIf config.user.overseer.enable {
     acceptTerms = true;
     defaults = {
       email = "infrastructure@wanderingcrow.net";
+      group = config.services.nginx.group;
       dnsProvider = "route53";
       credentialFiles = {
         "AWS_SHARED_CREDENTIALS_FILE" = config.sops.templates."aws_shared_credentials".path;
@@ -35,10 +36,7 @@ lib.mkIf config.user.overseer.enable {
       environmentFile = config.sops.templates."aws_config".path;
     };
     certs = {
-      "home.wanderingcrow.net" = {};
-      "homebox.wanderingcrow.net" = {};
       "bar.wanderingcrow.net" = {};
-      "bookstack.wanderingcrow.net" = {};
     };
   };
 }
