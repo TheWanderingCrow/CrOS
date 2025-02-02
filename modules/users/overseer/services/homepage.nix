@@ -1,18 +1,18 @@
 {
   lib,
-  inputs,
   config,
-  pkgs,
   ...
 }:
 lib.mkIf config.user.overseer.enable {
   # Homepage.dev secrets
-  sops.secrets."homepage/openmeteo/lat" = {};
-  sops.secrets."homepage/openmeteo/long" = {};
-  sops.templates."homepage-environment".content = ''
-    HOMEPAGE_VAR_LAT = ${config.sops.placeholder."homepage/openmeteo/lat"}
-    HOMEPAGE_VAR_LONG = ${config.sops.placeholder."homepage/openmeteo/long"}
-  '';
+  sops = {
+    secrets."homepage/openmeteo/lat" = {};
+    secrets."homepage/openmeteo/long" = {};
+    templates."homepage-environment".content = ''
+      HOMEPAGE_VAR_LAT = ${config.sops.placeholder."homepage/openmeteo/lat"}
+      HOMEPAGE_VAR_LONG = ${config.sops.placeholder."homepage/openmeteo/long"}
+    '';
+  };
 
   services.nginx = {
     enable = true;

@@ -1,8 +1,4 @@
 {
-  lib,
-  config,
-  ...
-}: {
   imports = [
     ./bar-assistant.nix
     ./homebox.nix

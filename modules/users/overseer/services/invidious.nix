@@ -1,8 +1,6 @@
 {
   lib,
-  inputs,
   config,
-  pkgs,
   ...
 }:
 lib.mkIf config.user.overseer.enable {

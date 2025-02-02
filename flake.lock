@@ -101,11 +101,11 @@
     },
     "nix-secrets": {
       "locked": {
-        "lastModified": 1738161184,
-        "narHash": "sha256-8ma/3Ynp2AzRm9ER5IqFm3pV05WVf0MtVDKHkxZSftA=",
+        "lastModified": 1738516276,
+        "narHash": "sha256-ZA8mBJ0pogSL+gZYg+DUHJ8Arwi0bBIsLy+/OeHKwvk=",
         "ref": "refs/heads/master",
-        "rev": "300319bbe2c60b201e451fc74a49465a2f1c2681",
-        "revCount": 28,
+        "rev": "7c110c28d15076b694c534ffda14dcf8f69c98ed",
+        "revCount": 30,
         "type": "git",
         "url": "ssh://git@github.com/TheWanderingCrow/nix-secrets"
       },

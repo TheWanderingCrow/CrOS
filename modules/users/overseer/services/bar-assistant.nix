@@ -3,9 +3,7 @@ let
 in
   {
     lib,
-    inputs,
     config,
-    pkgs,
     ...
   }:
     lib.mkIf config.user.overseer.enable {
@@ -13,16 +11,18 @@ in
       # SECRETS #
       ###########
 
-      # Meilisearch secrets
-      sops.secrets."meilisearch/masterkey" = {};
-      sops.templates."meilisearch-environment".content = ''
-        MEILI_MASTER_KEY=${config.sops.placeholder."meilisearch/masterkey"}
-      '';
+      sops = {
+        # Meilisearch secrets
+        secrets."meilisearch/masterkey" = {};
+        templates."meilisearch-environment".content = ''
+          MEILI_MASTER_KEY=${config.sops.placeholder."meilisearch/masterkey"}
+        '';
 
-      # Bar Assistant secrets
-      sops.templates."bar_assistant-env".content = ''
-        MEILISEARCH_KEY=${config.sops.placeholder."meilisearch/masterkey"}
-      '';
+        # Bar Assistant secrets
+        templates."bar_assistant-env".content = ''
+          MEILISEARCH_KEY=${config.sops.placeholder."meilisearch/masterkey"}
+        '';
+      };
 
       systemd.tmpfiles.rules = [
         "d ${volumePath}/bar-assistant 770 33 33"
