@@ -42,15 +42,15 @@ in
             useACMEHost = "bar.wanderingcrow.net";
             locations = {
               "/search/" = {
-                proxyPass = "http://10.88.0.3:7700";
+                proxyPass = "http://10.88.0.3:7700/";
                 priority = 1;
               };
               "/api/" = {
-                proxyPass = "http://10.88.0.4:8080";
+                proxyPass = "http://10.88.0.4:8080/";
                 priority = 1;
               };
               "/" = {
-                proxyPass = "http://10.88.0.5:8080";
+                proxyPass = "http://10.88.0.5:8080/";
               };
             };
           };
