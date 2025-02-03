@@ -34,6 +34,7 @@ in {
     # Hyprland
     file.".config/hypr/hyprland.conf".source = ./configs/hypr/hyprland.conf;
     file.".config/hypr/monitors.conf".source = lib.mkIf (hyprMonitorConfig != null) hyprMonitorConfig;
+    file.".config/hypr/hyprlock.conf".source = ./configs/hypr/hyprlock.conf;
 
     # Sway
     file.".config/sway/config".source = ./configs/sway/sway.conf;
