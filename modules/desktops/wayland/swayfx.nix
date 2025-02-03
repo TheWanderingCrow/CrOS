@@ -23,6 +23,7 @@
         waybar
         wl-clipboard
         xorg.xrandr
+        hyprlock
       ];
     };
     programs.dconf.enable = true;
