@@ -63,16 +63,16 @@ lib.mkIf config.user.overseer.enable {
             {
               Homebox = [
                 {
-                  icon = "http://homebox.wanderingcrow.net/favicon.svg";
-                  href = "http://homebox.wanderingcrow.net";
+                  icon = "https://homebox.wanderingcrow.net/favicon.svg";
+                  href = "https://homebox.wanderingcrow.net";
                 }
               ];
             }
             {
               Bar = [
                 {
-                  icon = "http://bar.wanderingcrow.net/favicon.svg";
-                  href = "http://bar.wanderingcrow.net";
+                  icon = "https://bar.wanderingcrow.net/favicon.svg";
+                  href = "https://bar.wanderingcrow.net";
                 }
               ];
             }
@@ -80,7 +80,15 @@ lib.mkIf config.user.overseer.enable {
               Bookstack = [
                 {
                   icon = "bookstack.svg";
-                  href = "http://bookstack.wanderingcrow.net";
+                  href = "https://bookstack.wanderingcrow.net";
+                }
+              ];
+            }
+            {
+              Grocy = [
+                {
+                  icon = "grocy.svg";
+                  href = "https://grocy.wanderingcrow.net";
                 }
               ];
             }
