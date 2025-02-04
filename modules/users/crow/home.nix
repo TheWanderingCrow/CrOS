@@ -42,6 +42,7 @@ in {
     file.".config/sway/background-1".source = ./configs/wallpapers/cyber_defiance.jpg;
     file.".config/sway/background-2".source = ./configs/wallpapers/cyber_skyscrapers.jpg;
     file.".config/sway/background-3".source = ./configs/wallpapers/kali_lol.jpg;
+    file.".config/hypr/lockscreen-1".source = ./configs/wallpapers/wrecked_ship.jpg;
 
     # i3
     file.".config/i3/config".source = ./configs/i3/i3.conf;
