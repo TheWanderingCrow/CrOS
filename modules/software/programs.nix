@@ -19,6 +19,8 @@
         pulseaudio
         ouch
         restic
+        file
+        usbutils
       ]
       else []
     )
