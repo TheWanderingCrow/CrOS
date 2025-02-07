@@ -7,6 +7,7 @@
       nix
       alejandra
       nixos-generators
+      terraform
     ];
   };
 }

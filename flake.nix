@@ -8,12 +8,14 @@
     nvix.url = "github:TheWanderingCrow/nvix";
     sops-nix.url = "github:Mic92/sops-nix";
     nix-secrets.url = "git+ssh://git@github.com/TheWanderingCrow/nix-secrets";
+    terranix.url = "github:terranix/terranix";
   };
 
   outputs = {
     nixpkgs,
     home-manager,
     sops-nix,
+    terranix,
     ...
   } @ inputs: let
     baseModules = [
@@ -109,6 +111,15 @@
             }
           ]
           ++ baseModules;
+      };
+    };
+    ############
+    # Terranix #
+    ############
+    terranix = {
+      wce = terranix.lib.terranixConfiguration {
+        system = "x86_64-linux";
+        modules = [./infrastructure/wce.nix];
       };
     };
   };
