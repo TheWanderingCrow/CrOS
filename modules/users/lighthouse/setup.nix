@@ -2,7 +2,6 @@
   lib,
   inputs,
   config,
-  pkgs,
   ...
 }:
 lib.mkIf config.user.lighthouse.enable {
@@ -15,9 +14,9 @@ lib.mkIf config.user.lighthouse.enable {
   sops.secrets.key = {};
 
   services.nebula.networks.WCE = {
+    inherit (inputs.nix-secrets.nebula) ca;
     enable = true;
     isLighthouse = true;
-    ca = inputs.nix-secrets.nebula.ca;
     cert = config.sops.secrets.cert.path;
     key = config.sops.secrets.key.path;
     settings = {
