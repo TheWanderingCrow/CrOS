@@ -3,8 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nvix.url = "github:TheWanderingCrow/nvix";
     sops-nix.url = "github:Mic92/sops-nix";
     nix-secrets.url = "git+ssh://git@github.com/TheWanderingCrow/nix-secrets";
