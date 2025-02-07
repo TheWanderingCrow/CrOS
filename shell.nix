@@ -9,5 +9,8 @@
       nixos-generators
       terraform
     ];
+    shellHook = ''
+      zsh
+    '';
   };
 }
