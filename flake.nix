@@ -95,6 +95,7 @@
         modules =
           [
             ./hosts/WCE-Lighthouse
+            "${nixpkgs}/nixos/modules/virtualisation/digital-ocean-image.nix"
             {
               networking.hostName = "WCE-Lighthouse1";
               networking.useDHCP = nixpkgs.lib.mkForce false;
@@ -103,10 +104,6 @@
               services.cloud-init = {
                 enable = true;
                 network.enable = true;
-
-                # not strictly needed, just for good measure
-                datasource_list = ["DigitalOcean"];
-                datasource.DigitalOcean = {};
               };
             }
           ]
