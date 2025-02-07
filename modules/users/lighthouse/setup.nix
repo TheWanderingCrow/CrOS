@@ -14,7 +14,7 @@ lib.mkIf config.user.lighthouse.enable {
   sops.secrets.cert = {};
   sops.secrets.key = {};
 
-  services.nebula.networks.test = {
+  services.nebula.networks.WCE = {
     enable = true;
     isLighthouse = true;
     ca = inputs.nix-secrets.nebula.ca;

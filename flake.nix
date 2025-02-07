@@ -22,11 +22,11 @@
     ];
 
     mkSpecialArgs = system: {
-        inherit inputs;
-        pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-        };
+      inherit inputs;
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
     };
   in {
     nixosConfigurations = {
@@ -96,6 +96,7 @@
             {
               networking.hostName = "WCE-Lighthouse1";
               networking.useDHCP = nixpkgs.lib.mkForce false;
+              sops.defaultSopsFile = inputs.nix-secrets.secrets.lighthouse1;
 
               services.cloud-init = {
                 enable = true;
@@ -104,7 +105,6 @@
                 # not strictly needed, just for good measure
                 datasource_list = ["DigitalOcean"];
                 datasource.DigitalOcean = {};
-                sops.defaultSopsFile = inputs.nix-secrets.secrets.lighthouse1;
               };
             }
           ]
