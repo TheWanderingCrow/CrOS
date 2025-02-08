@@ -22,18 +22,27 @@
     profile = "wce";
   };
 
-  resource."aws_s3_bucket"."state" = {
-    bucket_prefix = "wce-";
-    tags = {
-      Name = "WCE State Bucket";
+  resource = {
+    "aws_s3_bucket"."state" = {
+      bucket_prefix = "wce-";
+      tags = {
+        Name = "WCE State Bucket";
+      };
     };
-  };
 
-  resource."digitalocean_droplet"."do-wce-lighthouse1" = {
-    image = "177939596"; # nixos-digitalocean
-    name = "WCE-Lighthouse1";
-    region = "nyc3";
-    size = "s-1vcpu-1gb";
-    ssh_keys = ["45378200"];
+    "aws_s3_bucket"."attic-cache" = {
+      bucket_prefix = "wce-";
+      tags = {
+        Name = "WCE Attic Binary Cache";
+      };
+    };
+
+    "digitalocean_droplet"."do-wce-lighthouse1" = {
+      image = "177939596"; # nixos-digitalocean
+      name = "WCE-Lighthouse1";
+      region = "nyc3";
+      size = "s-1vcpu-1gb";
+      ssh_keys = ["45378200"];
+    };
   };
 }
