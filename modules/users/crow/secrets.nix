@@ -37,4 +37,12 @@ lib.mkIf config.user.crow.enable {
     mkdir -p /home/crow/.aws
     ln -s ${config.sops.templates."aws_shared_config".path} /home/crow/.aws/credentials
   '';
+
+  ################
+  # DigitalOcean #
+  ################
+
+  sops.secrets."digitalocean/token" = {
+    owner = config.users.users.crow.name;
+  };
 }
