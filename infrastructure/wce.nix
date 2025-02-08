@@ -31,7 +31,7 @@
 
   resource."digitalocean_droplet"."do-wce-lighthouse1" = {
     image = "177939596"; # nixos-digitalocean
-    name = "do-wce-lighthouse1";
+    name = "WCE-Lighthouse1";
     region = "nyc3";
     size = "s-1vcpu-1gb";
     ssh_keys = ["45378200"];
