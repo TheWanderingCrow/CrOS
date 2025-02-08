@@ -9,7 +9,6 @@
       terraform
       doctl
       awscli2
-      morph
     ];
     shellHook = ''
       nix build .#terranix.wce -o config.tf.json
