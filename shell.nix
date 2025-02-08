@@ -4,10 +4,9 @@
     nativeBuildInputs = with pkgs; [
       git
       vim
-      nix
-      alejandra
-      nixos-generators
       terraform
+      doctl
+      awscli2
     ];
     shellHook = ''
       nix build .#terranix.wce -o config.tf.json
