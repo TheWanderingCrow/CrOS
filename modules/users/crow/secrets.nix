@@ -32,4 +32,9 @@ lib.mkIf config.user.crow.enable {
       aws_secret_access_key=${config.sops.placeholder."aws/wce/secret_key"}
     '';
   };
+  system.userActivationScripts.link_aws_secrets.text = ''
+    rm -rf /home/crow/.aws
+    mkdir -p /home/crow/.aws
+    ln -s ${config.sops.templates."aws_shared_config".path} /home/crow/.aws/credentials
+  '';
 }
