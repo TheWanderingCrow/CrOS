@@ -37,12 +37,12 @@
       };
     };
 
-    "digitalocean_droplet"."do-wce-lighthouse1" = {
-      image = "177939596"; # nixos-digitalocean
-      name = "WCE-Lighthouse1";
-      region = "nyc3";
-      size = "s-1vcpu-1gb";
-      ssh_keys = ["45378200"];
-    };
+    #"digitalocean_droplet"."do-wce-lighthouse1" = {
+    #  image = "177939596"; # nixos-digitalocean
+    #  name = "WCE-Lighthouse1";
+    #  region = "nyc3";
+    #  size = "s-1vcpu-1gb";
+    #  ssh_keys = ["45378200"];
+    #};
   };
 }
