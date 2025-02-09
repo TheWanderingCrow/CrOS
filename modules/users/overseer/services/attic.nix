@@ -6,12 +6,12 @@
 lib.mkIf config.user.overseer.enable {
   sops = {
     secrets."attic/server_token" = {};
-    secrets."aws/access_key" = {};
-    secrets."aws/secret_key" = {};
+    secrets."cloudflare/r2/access_key" = {};
+    secrets."cloudflare/r2/secret_key" = {};
     templates."attic-env".content = ''
       ATTIC_SERVER_TOKEN_RS256_SECRET_BASE64=${config.sops.placeholder."attic/server_token"}
-      AWS_ACCESS_KEY_ID=${config.sops.placeholder."aws/access_key"}
-      AWS_SECRET_ACCESS_KEY=${config.sops.placeholder."aws/secret_key"}
+      AWS_ACCESS_KEY_ID=${config.sops.placeholder."cloudflare/r2/access_key"}
+      AWS_SECRET_ACCESS_KEY=${config.sops.placeholder."cloudflare/r2/secret_key"}
     '';
   };
   services = {
@@ -31,8 +31,8 @@ lib.mkIf config.user.overseer.enable {
         };
         storage = {
           type = "s3";
-          region = "us-east-1";
-          bucket = "wce-20250209044958802100000001";
+          bucket = "wce-attic-cache";
+          endpoint = "https://68c4b3ab47c1a97037ab5a938f772d69.r2.cloudflarestorage.com";
         };
       };
     };
