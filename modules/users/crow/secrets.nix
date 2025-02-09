@@ -45,4 +45,12 @@ lib.mkIf config.user.crow.enable {
   sops.secrets."digitalocean/token" = {
     owner = config.users.users.crow.name;
   };
+
+  ##############
+  # Cloudflare #
+  ##############
+
+  sops.secrets."cloudflare/token" = {
+    owner = config.users.users.crow.name;
+  };
 }

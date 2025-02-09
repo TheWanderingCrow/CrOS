@@ -9,6 +9,10 @@
         source = "hashicorp/aws";
         version = "5.86.0";
       };
+      cloudflare = {
+        source = "cloudflare/cloudflare";
+        version = "5.0.0";
+      };
     };
     backend."s3" = {
       bucket = "wce-20250207201121178400000001";
@@ -28,6 +32,12 @@
       tags = {
         Name = "WCE State Bucket";
       };
+    };
+
+    "cloudflare_r2_bucket"."cache" = {
+      account = "68c4b3ab47c1a97037ab5a938f772d69";
+      name = "wce-attic-cache";
+      storage_class = "Standard";
     };
 
     #"digitalocean_droplet"."do-wce-lighthouse1" = {
