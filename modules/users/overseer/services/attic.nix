@@ -21,7 +21,7 @@ lib.mkIf config.user.overseer.enable {
       environmentFile = config.sops.templates."attic-env".path;
       settings = {
         listen = "[::]:8080";
-        api-endpoint = "cache.wanderingcrow.net";
+        api-endpoint = "https://cache.wanderingcrow.net/";
         jwt = {};
         chunking = {
           nar-size-threshold = 64 * 1024; # 64 KiB
