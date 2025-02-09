@@ -14,7 +14,7 @@
 
 ## Pushing systems to the binary cache
 
-`nix path-info -r .#nixosConfigurations.<hostname>.config.system.build.toplevel | attic push <your-attic-cache-name>`
+`nix path-info -r .#nixosConfigurations.<hostname>.config.system.build.toplevel | attic push <your-attic-cache-name> --stdin`
 
 ## Deploying to the remote
 
