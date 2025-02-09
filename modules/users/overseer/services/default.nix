@@ -5,5 +5,6 @@
     ./homepage.nix
     ./bookstack.nix
     ./grocy.nix
+    ./attic.nix
   ];
 }
