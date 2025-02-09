@@ -34,17 +34,17 @@ lib.mkIf config.user.overseer.enable {
           bucket = "wce-20250209044958802100000001";
         };
       };
-      nginx = {
-        enable = true;
-        recommendedProxySettings = true;
-        virtualHosts = {
-          "cache.wanderingcrow.net" = {
-            forceSSL = true;
-            useACMEHost = "cache.wanderingcrow.net";
-            locations."/" = {
-              proxyPass = "http://localhost:8080";
-              proxyWebsockets = true;
-            };
+    };
+    nginx = {
+      enable = true;
+      recommendedProxySettings = true;
+      virtualHosts = {
+        "cache.wanderingcrow.net" = {
+          forceSSL = true;
+          useACMEHost = "cache.wanderingcrow.net";
+          locations."/" = {
+            proxyPass = "http://localhost:8080";
+            proxyWebsockets = true;
           };
         };
       };
