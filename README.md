@@ -12,6 +12,10 @@
 
 `sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount <disk config path>`
 
+## Pushing systems to the binary cache
+
+`nix path-info -r .#nixosConfigurations.<hostname>.config.system.build.toplevel | attic push <your-attic-cache-name>`
+
 ## Deploying to the remote
 
 Note: If you need to specify the ssh key, you may inject extra cli options to
