@@ -43,6 +43,9 @@ lib.mkIf config.user.overseer.enable {
       virtualHosts = {
         "cache.wanderingcrow.net" = {
           forceSSL = true;
+          extraConfig = ''
+            client_max_body_size 0;
+          '';
           useACMEHost = "cache.wanderingcrow.net";
           locations."/" = {
             proxyPass = "http://localhost:8080";
