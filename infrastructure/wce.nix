@@ -30,13 +30,6 @@
       };
     };
 
-    "aws_s3_bucket"."attic-cache" = {
-      bucket_prefix = "wce-";
-      tags = {
-        Name = "WCE Attic Binary Cache";
-      };
-    };
-
     #"digitalocean_droplet"."do-wce-lighthouse1" = {
     #  image = "177939596"; # nixos-digitalocean
     #  name = "WCE-Lighthouse1";
