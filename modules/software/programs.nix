@@ -21,6 +21,7 @@
         restic
         file
         usbutils
+        attic-client
       ]
       else []
     )
