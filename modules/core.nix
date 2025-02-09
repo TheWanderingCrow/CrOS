@@ -5,8 +5,8 @@
     nix.settings = {
       experimental-features = ["flakes" "nix-command"];
       trusted-users = ["@wheel"];
-      substituters = [" https://cache.wanderingcrow.net/main"];
-      trusted-public-keys = ["main:w2Ryiog6zSARbqXfTTYZmhg+FrEodWjCgyy9tYLZIAw="];
+      substituters = [" https://cache.wanderingcrow.net/wce-cache"];
+      trusted-public-keys = ["wce-cache:s5otDeH048aZEGwQ2EQn6UfFJn6YgP71bcOok1jX1Q0="];
     };
 
     environment.variables = {
