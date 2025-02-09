@@ -8,7 +8,6 @@ lib.mkIf config.user.overseer.enable {
     secrets."attic/server_token" = {};
     secrets."aws/access_key" = {};
     secrets."aws/secret_key" = {};
-    secrets."aws/region" = {};
     templates."attic-env".content = ''
       ATTIC_SERVER_TOKEN_RS256_SECRET_BASE64=${config.sops.placeholder."attic/server_token"}
       AWS_ACCESS_KEY_ID=${config.sops.placeholder."aws/access_key"}
@@ -30,7 +29,7 @@ lib.mkIf config.user.overseer.enable {
       };
       storage = {
         type = "s3";
-        region = builtins.readFile config.sops.secrets."aws/region".path;
+        region = "us-east-1";
         bucket = "wce-20250209044958802100000001";
       };
     };
