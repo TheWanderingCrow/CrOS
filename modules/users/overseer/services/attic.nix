@@ -31,6 +31,7 @@ lib.mkIf config.user.overseer.enable {
         };
         storage = {
           type = "s3";
+          region = "";
           bucket = "wce-attic-cache";
           endpoint = "https://68c4b3ab47c1a97037ab5a938f772d69.r2.cloudflarestorage.com";
         };
