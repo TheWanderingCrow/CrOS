@@ -102,11 +102,6 @@
               networking.hostName = "WCE-Lighthouse1";
               networking.useDHCP = nixpkgs.lib.mkForce false;
               sops.defaultSopsFile = inputs.nix-secrets.secrets.lighthouse1;
-
-              services.cloud-init = {
-                enable = true;
-                network.enable = true;
-              };
             }
           ]
           ++ baseModules;
