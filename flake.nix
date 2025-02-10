@@ -100,7 +100,6 @@
             "${nixpkgs}/nixos/modules/virtualisation/digital-ocean-image.nix"
             {
               networking.hostName = "WCE-Lighthouse1";
-              networking.useDHCP = nixpkgs.lib.mkForce false;
               sops.defaultSopsFile = inputs.nix-secrets.secrets.lighthouse1;
             }
           ]
