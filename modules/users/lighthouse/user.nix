@@ -3,8 +3,9 @@
   lib,
   config,
   ...
-}: {
-  config.users.users.lighthouse = lib.mkIf config.user.lighthouse.enable {
+}:
+lib.mkIf config.user.lighthouse.enable {
+  config.users.users.lighthouse = {
     isNormalUser = true;
     initialPassword = "changeme";
     extraGroups = ["wheel"];
