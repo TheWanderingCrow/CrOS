@@ -154,6 +154,18 @@ lib.mkIf config.user.overseer.enable {
             }
           ];
         }
+        {
+          Work = [
+            {
+              Jira = [
+                {
+                  icon = "jira.svg";
+                  href = "https://home.atlassian.com/";
+                }
+              ];
+            }
+          ];
+        }
       ];
     };
   };
