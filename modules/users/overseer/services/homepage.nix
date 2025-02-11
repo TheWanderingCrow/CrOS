@@ -164,6 +164,14 @@ lib.mkIf config.user.overseer.enable {
                 }
               ];
             }
+            {
+              AWS = [
+                {
+                  icon = "aws.svg";
+                  href = "https://console.aws.amazon.com/";
+                }
+              ];
+            }
           ];
         }
       ];
