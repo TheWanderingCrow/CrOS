@@ -3336,11 +3336,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1739392451,
-        "narHash": "sha256-sjRB3bMim1fRknlBNNMbRoqlP5dW4CVGh7//quslxW0=",
+        "lastModified": 1739393461,
+        "narHash": "sha256-4YmOE6On88tUj4hm0k6uXDUG+WNUNsQAsgWLP0jG6jY=",
         "owner": "TheWanderingCrow",
         "repo": "the-nest",
-        "rev": "c952fbc31e08812d20eb0f3fd300feedf455e097",
+        "rev": "1cd771e91c9723ea58d79e256b3c6fe8a5aaefb3",
         "type": "github"
       },
       "original": {
