@@ -13,7 +13,9 @@ lib.mkIf config.user.overseer.enable {
         "wanderingcrow.net" = {
           forceSSL = true;
           useACMEHost = "wanderingcrow.net";
-          root = inputs.the-nest;
+          locations."/" = {
+            root = inputs.the-nest.outputs.packages.x86_64-linux.default;
+          };
         };
       };
     };

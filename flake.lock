@@ -67,6 +67,24 @@
         "type": "indirect"
       }
     },
+    "flake-parts_3": {
+      "inputs": {
+        "nixpkgs-lib": "nixpkgs-lib_3"
+      },
+      "locked": {
+        "lastModified": 1738453229,
+        "narHash": "sha256-7H9XgNiGLKN1G1CgRh0vUL4AheZSYzPm+zmZ7vxbJdo=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "32ea77a06711b758da0ad9bd6a844c5740a87abd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -203,6 +221,18 @@
         "url": "https://github.com/NixOS/nixpkgs/archive/fb192fec7cc7a4c26d51779e9bab07ce6fa5597a.tar.gz"
       }
     },
+    "nixpkgs-lib_3": {
+      "locked": {
+        "lastModified": 1738452942,
+        "narHash": "sha256-vJzFZGaCpnmo7I6i416HaBLpC+hvcURh/BQwROcGIp8=",
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/072a6db25e947df2f31aab9eccd0ab75d5b2da11.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/072a6db25e947df2f31aab9eccd0ab75d5b2da11.tar.gz"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1738142207,
@@ -262,6 +292,22 @@
       },
       "original": {
         "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_6": {
+      "locked": {
+        "lastModified": 1739214665,
+        "narHash": "sha256-26L8VAu3/1YRxS8MHgBOyOM8xALdo6N0I04PgorE7UM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "64e75cd44acf21c7933d61d7721e812eac1b5a0a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -3156,7 +3202,8 @@
         "nixpkgs": "nixpkgs",
         "nvix": "nvix",
         "sops-nix": "sops-nix",
-        "terranix": "terranix"
+        "terranix": "terranix",
+        "the-nest": "the-nest"
       }
     },
     "rust-overlay": {
@@ -3280,6 +3327,25 @@
       "original": {
         "owner": "terranix",
         "repo": "terranix-examples",
+        "type": "github"
+      }
+    },
+    "the-nest": {
+      "inputs": {
+        "flake-parts": "flake-parts_3",
+        "nixpkgs": "nixpkgs_6"
+      },
+      "locked": {
+        "lastModified": 1739392451,
+        "narHash": "sha256-sjRB3bMim1fRknlBNNMbRoqlP5dW4CVGh7//quslxW0=",
+        "owner": "TheWanderingCrow",
+        "repo": "the-nest",
+        "rev": "c952fbc31e08812d20eb0f3fd300feedf455e097",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TheWanderingCrow",
+        "repo": "the-nest",
         "type": "github"
       }
     }

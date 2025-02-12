@@ -6,5 +6,6 @@
     ./bookstack.nix
     ./grocy.nix
     ./attic.nix
+    ./the-nest.nix
   ];
 }
