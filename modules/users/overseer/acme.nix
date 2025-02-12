@@ -35,6 +35,7 @@ lib.mkIf config.user.overseer.enable {
       environmentFile = config.sops.templates."aws_env".path;
     };
     certs = {
+      "wanderingcrow.net" = {};
       "bar.wanderingcrow.net" = {};
       "home.wanderingcrow.net" = {};
       "homebox.wanderingcrow.net" = {};

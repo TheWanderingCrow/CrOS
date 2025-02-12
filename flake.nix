@@ -11,6 +11,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
     nix-secrets.url = "git+ssh://git@github.com/TheWanderingCrow/nix-secrets";
     terranix.url = "github:terranix/terranix";
+    the-nest.url = "github:TheWanderingCrow/the-nest";
   };
 
   outputs = {
