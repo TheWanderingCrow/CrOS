@@ -7,5 +7,6 @@
     ./grocy.nix
     ./attic.nix
     ./the-nest.nix
+    ./umami.nix
   ];
 }

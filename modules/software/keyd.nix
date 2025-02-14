@@ -7,34 +7,29 @@
     enable = true;
     keyboards.default = {
       ids = ["*"];
-      extraConfig = ''
-        [global]
+      settings = {
+        main = {
+          capslock = "layer(standardL2)";
+        };
+        standardL2 = {
+          w = "up";
+          s = "down";
+          a = "left";
+          d = "right";
 
-        default_layout = main
+          b = "C-b";
 
-        [main:layout]
+          space = "playpause";
+          "." = "nextsong";
+          "," = "previoussong";
 
-        capslock = layer(standardL2)
+          "[" = "delete";
+          "]" = "end";
+          escape = "~";
 
-        [standardL2]
-
-        w = up
-        s = down
-        a = left
-        d = right
-
-        b = C-b
-
-        space = playpause
-        . = nextsong
-        , = previoussong
-
-        [ = delete
-        ] = end
-        escape = ~
-
-        home = end
-      '';
+          home = "end";
+        };
+      };
     };
   };
 }
