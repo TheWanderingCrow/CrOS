@@ -30,5 +30,4 @@
   programs.noisetorch.enable = true;
 
   virtualisation.vmware.host.enable = true;
-  software.keyd.enable = true;
 }

@@ -23,7 +23,11 @@ lib.mkIf config.user.overseer.enable {
 
   services.mysql = {
     enable = true;
-    initialDatabases = ["umami"];
+    initialDatabases = [
+      {
+        name = "umami";
+      }
+    ];
     initialScript = config.sops.templates."umami-sql".path;
     ensureUsers = [
       {

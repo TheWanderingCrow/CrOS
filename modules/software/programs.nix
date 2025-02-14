@@ -21,6 +21,7 @@
         restic
         file
         usbutils
+        fastfetch
         attic-client
       ]
       else []
@@ -56,7 +57,6 @@
 
         # Utilities
         taskwarrior3
-        neofetch
         gimp
         pulseaudio-ctl
         playerctl
