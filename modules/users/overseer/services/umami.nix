@@ -11,6 +11,7 @@ lib.mkIf config.user.overseer.enable {
   sops = {
     secrets."umami/secret" = {};
     secrets."umami/db_url" = {};
+    secrets."umami/db_pass" = {};
     templates."umami-env".content = ''
       APP_SECRET=${config.sops.placeholder."umami/secret"}
       DATABASE_TYPE=mysql
