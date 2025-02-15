@@ -37,12 +37,13 @@ in
         enable = true;
         recommendedProxySettings = true;
         virtualHosts = {
-          extraConfig = ''
-            allow 192.168.0.0/16;
-            allow 10.8.0.0/24;
-            deny all;
-          '';
           "bar.wanderingcrow.net" = {
+            extraConfig = ''
+              allow 192.168.0.0/16;
+              allow 10.8.0.0/24;
+              allow 24.179.20.202;
+              deny all;
+            '';
             forceSSL = true;
             useACMEHost = "bar.wanderingcrow.net";
             locations = {
