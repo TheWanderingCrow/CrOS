@@ -7,12 +7,6 @@ lib.mkIf config.user.overseer.enable {
   services.nginx.virtualHosts."grocy.wanderingcrow.net" = {
     forceSSL = true;
     useACMEHost = "grocy.wanderingcrow.net";
-    extraConfig = ''
-      allow 192.168.0.0/16;
-      allow 10.8.0.0/24;
-      allow 24.179.20.202;
-      deny all;
-    '';
   };
 
   services.grocy = {
