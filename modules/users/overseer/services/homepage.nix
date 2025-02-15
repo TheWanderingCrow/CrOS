@@ -24,6 +24,7 @@ lib.mkIf config.user.overseer.enable {
         locations."/" = {
           extraConfig = ''
             allow 192.168.0.0/16;
+            allow 10.8.0.0/24;
             deny all;
           '';
           proxyPass = "http://localhost:8082";

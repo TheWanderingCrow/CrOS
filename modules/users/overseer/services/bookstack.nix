@@ -35,6 +35,11 @@ in
         appKeyFile = config.sops.secrets."bookstack/key".path;
         nginx = {
           forceSSL = true;
+          extraConfig = ''
+            allow 192.168.0.0/16;
+            allow 10.8.0.0/24;
+            deny all;
+          '';
           useACMEHost = "bookstack.wanderingcrow.net";
         };
       };
