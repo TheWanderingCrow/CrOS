@@ -23,6 +23,9 @@
         wl-clipboard
         xorg.xrandr
         hyprlock
+        grim
+        slurp
+        swappy
       ];
     };
     programs.dconf.enable = true;
