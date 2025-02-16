@@ -43,6 +43,11 @@ in
               proxyPass = "http://10.88.0.6:3000";
               proxyWebsockets = true;
             };
+            locations."/script.js" = {
+              extraConfig = ''
+                deny 24.179.20.202;
+              '';
+            };
           };
         };
       };
