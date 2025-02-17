@@ -42,7 +42,6 @@ lib.mkIf config.user.overseer.enable {
       "home.wanderingcrow.net" = {};
       "homebox.wanderingcrow.net" = {};
       "bookstack.wanderingcrow.net" = {};
-      "grocy.wanderingcrow.net" = {};
       "cache.wanderingcrow.net" = {};
     };
   };
