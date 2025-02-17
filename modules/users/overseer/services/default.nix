@@ -8,5 +8,6 @@
     ./attic.nix
     ./the-nest.nix
     ./umami.nix
+    ./lubelogger.nix
   ];
 }

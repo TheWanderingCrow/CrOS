@@ -53,7 +53,7 @@ in
       virtualisation.oci-containers = {
         backend = "podman";
         containers = {
-          "umami" = {
+          "lubelogger" = {
             image = "ghcr.io/hargata/lubelogger:latest";
             extraOptions = ["--ip=10.88.0.8"];
             environmentFiles = [config.sops.templates."lubelogger-env".path];
