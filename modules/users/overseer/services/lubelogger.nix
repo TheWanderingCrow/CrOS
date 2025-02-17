@@ -18,8 +18,8 @@ in
 
       sops = {
         secrets = {
-          "lubelogger/user" = {};
-          "lubelogger/pass" = {};
+          "lubelogger/user_hash" = {};
+          "lubelogger/pass_hash" = {};
         };
         templates."lubelogger-env".content = ''
           LC_ALL=en_US.UTF-8
@@ -29,8 +29,8 @@ in
           MailConfig__Port=587
           MailConfig__Username=""
           MailConfig__Password=""
-          UserNameHash="${config.sops.placeholder."lubelogger/user"}"
-          UserPasswordHash="${config.sops.placeholder."lubelogger/pass"}"
+          UserNameHash="${config.sops.placeholder."lubelogger/user_hash"}"
+          UserPasswordHash="${config.sops.placeholder."lubelogger/pass_hash"}"
           LUBELOGGER_CUSTOM_WIDGETS=true
         '';
       };

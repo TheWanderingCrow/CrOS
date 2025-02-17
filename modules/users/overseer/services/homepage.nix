@@ -6,11 +6,17 @@
 lib.mkIf config.user.overseer.enable {
   # Homepage.dev secrets
   sops = {
-    secrets."homepage/openmeteo/lat" = {};
-    secrets."homepage/openmeteo/long" = {};
+    secrets = {
+      "homepage/openmeteo/lat" = {};
+      "homepage/openmeteo/long" = {};
+      "lubelogger/user" = {};
+      "lubelogger/pass" = {};
+    };
     templates."homepage-environment".content = ''
       HOMEPAGE_VAR_LAT = ${config.sops.placeholder."homepage/openmeteo/lat"}
       HOMEPAGE_VAR_LONG = ${config.sops.placeholder."homepage/openmeteo/long"}
+      HOMEPAGE_VAR_LUBELOGGERUSER = ${config.sops.placeholder."lubelogger/user"}
+      HOMEPAGE_VAR_LUBELOGGERPASS = ${config.sops.placeholder."lubelogger/pass"}
     '';
   };
 
@@ -42,6 +48,24 @@ lib.mkIf config.user.overseer.enable {
       settings = {
         theme = "dark";
       };
+      services = [
+        {
+          "Services" = [
+            {
+              "Garage" = {
+                href = "https://garage.wanderingcrow.net";
+                description = "Vehicle management";
+                widget = {
+                  type = "lubelogger";
+                  url = "https://garage.wanderingcrow.net";
+                  username = "{{HOMEPAGE_VAR_LUBELOGGERUSER}}";
+                  password = "{{HOMEPAGE_VAR_LUBELOGGERPASS}}";
+                };
+              };
+            }
+          ];
+        }
+      ];
       widgets = [
         {
           search = {
