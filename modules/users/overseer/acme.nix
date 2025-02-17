@@ -37,6 +37,7 @@ lib.mkIf config.user.overseer.enable {
     certs = {
       "wanderingcrow.net" = {};
       "umami.wanderingcrow.net" = {};
+      "garage.wanderingcrow.net" = {};
       "bar.wanderingcrow.net" = {};
       "home.wanderingcrow.net" = {};
       "homebox.wanderingcrow.net" = {};
