@@ -53,6 +53,7 @@ lib.mkIf config.user.overseer.enable {
           "Services" = [
             {
               "Garage" = {
+                icon = "https://garage.wanderingcrow.net/favicon.ico";
                 href = "https://garage.wanderingcrow.net";
                 description = "Vehicle management";
                 widget = {
