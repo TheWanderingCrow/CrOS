@@ -128,6 +128,7 @@
         gamescope
         gamemode
         r2modman
+        vintagestory
       ]
       else []
     )
