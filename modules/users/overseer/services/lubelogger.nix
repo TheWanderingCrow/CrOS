@@ -16,10 +16,25 @@ in
       # Service #
       ###########
 
+      services.restic.backups.bar-assistant = {
+        user = "root";
+        timerConfig = {
+          OnCalendar = "daily";
+          Persistent = true;
+        };
+        paths = [
+          "${volumePath}/lubelogger"
+        ];
+        repositoryFile = config.sops.secrets."restic/url".path;
+        passwordFile = config.sops.secrets."restic/key".path;
+      };
+
       sops = {
         secrets = {
           "lubelogger/user_hash" = {};
           "lubelogger/pass_hash" = {};
+          "restic/url" = {};
+          "restic/key" = {};
         };
         templates."lubelogger-env".content = ''
           LC_ALL=en_US.UTF-8
