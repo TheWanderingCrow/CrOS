@@ -57,6 +57,10 @@ in
             image = "ghcr.io/hargata/lubelogger:latest";
             extraOptions = ["--ip=10.88.0.8"];
             environmentFiles = [config.sops.templates."lubelogger-env".path];
+            volumes = [
+              "${volumePath}/lubelogger/data:/App/data"
+              "${volumePath}/lubelogger/keys:/root/.aspnet/DataProtection-Keys"
+            ];
           };
         };
       };
