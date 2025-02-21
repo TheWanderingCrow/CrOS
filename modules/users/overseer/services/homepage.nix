@@ -111,14 +111,6 @@ lib.mkIf config.user.overseer.enable {
                 }
               ];
             }
-            {
-              Grocy = [
-                {
-                  icon = "grocy.svg";
-                  href = "https://grocy.wanderingcrow.net";
-                }
-              ];
-            }
           ];
         }
         {
