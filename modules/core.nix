@@ -21,5 +21,16 @@
       nerd-fonts.hack
       nerd-fonts.jetbrains-mono
     ];
+
+    nixpkgs = {
+      config = {
+        allowUnfree = true;
+        config.permittedInsecurePackages = [
+          "dotnet-runtime-wrapped-7.0.20"
+          "dotnet-runtime-7.0.20"
+          "SDL_ttf-2.0.11"
+        ];
+      };
+    };
   };
 }

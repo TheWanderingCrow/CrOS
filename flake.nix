@@ -25,26 +25,13 @@
       home-manager.nixosModules.home-manager
       sops-nix.nixosModules.sops
     ];
-
-    mkSpecialArgs = system: {
-      inherit inputs;
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-        config.permittedInsecurePackages = [
-          "dotnet-runtime-wrapped-7.0.20"
-          "dotnet-runtime-7.0.20"
-          "SDL_ttf-2.0.11"
-        ];
-      };
-    };
   in {
     nixosConfigurations = {
       ###################
       # Primary Desktop #
       ###################
       Parzival = nixpkgs.lib.nixosSystem {
-        specialArgs = mkSpecialArgs "x86_64-linux";
+        specialArgs = {inherit inputs;};
         modules =
           [
             ./hosts/Parzival
@@ -55,7 +42,7 @@
       # Personal Laptop #
       ###################
       Parzival-Mobile = nixpkgs.lib.nixosSystem {
-        specialArgs = mkSpecialArgs "x86_64-linux";
+        specialArgs = {inherit inputs;};
         modules =
           [
             ./hosts/Parzival-Mobile
@@ -66,7 +53,7 @@
       # Work Issued Laptop #
       ######################
       Parzival-Framework = nixpkgs.lib.nixosSystem {
-        specialArgs = mkSpecialArgs "x86_64-linux";
+        specialArgs = {inherit inputs;};
         modules =
           [
             ./hosts/Parzival-Framework
@@ -77,7 +64,7 @@
       # Home Server #
       ###############
       WCE-Overseer = nixpkgs.lib.nixosSystem {
-        specialArgs = mkSpecialArgs "x86_64-linux";
+        specialArgs = {inherit inputs;};
         modules =
           [
             ./hosts/WCE-Overseer
@@ -88,7 +75,7 @@
       # ISO Installer w/ recovery tools #
       ###################################
       Parzival-Live = nixpkgs.lib.nixosSystem {
-        specialArgs = mkSpecialArgs "x86_64-linux";
+        specialArgs = {inherit inputs;};
         modules =
           [
             ./hosts/Parzival-Live
@@ -99,7 +86,7 @@
       # DO Nebula Lighthouse1 #
       #########################
       WCE-Lighthouse1 = nixpkgs.lib.nixosSystem {
-        specialArgs = mkSpecialArgs "x86_64-linux";
+        specialArgs = {inherit inputs;};
         modules =
           [
             ./hosts/WCE-Lighthouse
