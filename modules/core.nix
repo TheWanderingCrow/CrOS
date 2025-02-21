@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   config = {
     system.stateVersion = "24.05";
     time.timeZone = "America/New_York";
@@ -25,11 +29,18 @@
     nixpkgs = {
       config = {
         allowUnfree = true;
-        permittedInsecurePackages = [
-          "dotnet-runtime-wrapped-7.0.20"
-          "dotnet-runtime-7.0.20"
-          "SDL_ttf-2.0.11"
-        ];
+        permittedInsecurePackages =
+          [
+            "SDL_ttf-2.0.11"
+          ]
+          ++ (
+            if config.module.gaming.enable
+            then [
+              "dotnet-runtime-wrapped-7.0.20"
+              "dotnet-runtime-7.0.20"
+            ]
+            else []
+          );
       };
     };
   };
