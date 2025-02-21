@@ -1,6 +1,6 @@
 {
   config = {
-    hardware.pulseaudio.support32Bit = true;
+    services.pulseaudio.support32Bit = true;
     services.pipewire = {
       enable = true;
       alsa.enable = true;
