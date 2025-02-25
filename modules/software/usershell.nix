@@ -14,6 +14,9 @@
       syntaxHighlighting = {
         enable = true;
       };
+      shellAliases = {
+        lah = "ls -lah";
+      };
     };
 
     programs.starship = let
