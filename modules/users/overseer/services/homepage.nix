@@ -191,6 +191,14 @@ lib.mkIf config.user.overseer.enable {
                 }
               ];
             }
+            {
+              Email = [
+                {
+                  icon = "gmail.svg";
+                  href = "https://mail.google.com/mail/u/1/#inbox";
+                }
+              ];
+            }
           ];
         }
       ];
