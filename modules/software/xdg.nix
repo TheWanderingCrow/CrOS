@@ -3,6 +3,11 @@
     xdgOpenUsePortal = true;
     enable = true;
     wlr.enable = true;
+    wlr.settings.screencast = {
+      output_name = "DP-1";
+      chooser_type = "simple";
+      chooser_cmd = "${pkgs.slurp}/bin/slurp -f %o -or";
+    };
     lxqt.enable = true;
     extraPortals = [
       pkgs.xdg-desktop-portal-wlr
