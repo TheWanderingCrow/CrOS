@@ -43,6 +43,7 @@ lib.mkIf config.user.overseer.enable {
       "homebox.wanderingcrow.net" = {};
       "bookstack.wanderingcrow.net" = {};
       "cache.wanderingcrow.net" = {};
+      "openhab.wanderingcrow.net" = {};
     };
   };
 }
