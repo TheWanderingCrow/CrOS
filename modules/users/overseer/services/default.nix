@@ -8,5 +8,6 @@
     ./the-nest.nix
     ./umami.nix
     ./lubelogger.nix
+    ./openhab.nix
   ];
 }

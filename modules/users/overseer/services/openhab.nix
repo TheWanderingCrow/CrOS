@@ -8,10 +8,10 @@ in
   }:
     lib.mkIf config.user.overseer.enable {
       systemd.tmpfiles.rules = [
-        "d ${volumePath}/openhab"
-        "d ${volumePath}/openhab/conf"
-        "d ${volumePath}/openhab/userdata"
-        "d ${volumePath}/openhab/addons"
+        "d ${volumePath}/openhab openhab"
+        "d ${volumePath}/openhab/conf openhab"
+        "d ${volumePath}/openhab/userdata openhab"
+        "d ${volumePath}/openhab/addons openhab"
       ];
       ###########
       # Service #
@@ -21,12 +21,32 @@ in
         backend = "podman";
         containers."openhab" = {
           image = "openhab/openhab:5.0.0.M1";
-          user = "openhab:openhab";
+          extraOptions = ["--ip=10.88.0.9"];
           volumes = [
             "${volumePath}/openhab/conf:/openhab/conf"
             "${volumePath}/openhab/userdata:/openhab/userdata"
             "${volumePath}/openhab/addons:/openhab/addons"
           ];
+        };
+      };
+
+      services.nginx = {
+        enable = true;
+        recommendedProxySettings = true;
+        virtualHosts = {
+          "openhab.wanderingcrow.net" = {
+            forceSSL = true;
+            useACMEHost = "openhab.wanderingcrow.net";
+            locations."/" = {
+              extraConfig = ''
+                allow 192.168.0.0/16;
+                allow 10.8.0.0/24;
+                allow 24.179.20.202;
+                deny all;
+              '';
+              proxyPass = "http://10.88.0.9:8080";
+            };
+          };
         };
       };
     }
