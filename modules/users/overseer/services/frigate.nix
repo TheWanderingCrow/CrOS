@@ -2,7 +2,8 @@
   lib,
   config,
   ...
-}: {
+}:
+lib.mkIf config.user.overseer.enable {
   services.frigate = {
     enable = true;
     hostname = "frigate.wanderingcrow.net";
