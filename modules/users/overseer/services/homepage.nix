@@ -206,7 +206,7 @@ lib.mkIf config.user.overseer.enable {
             {
               Search = [
                 {
-                  icon = "https://search.nixos.org/favicon.svg";
+                  icon = "https://search.nixos.org/images/nix-logo.png";
                   href = "https://search.nixos.org";
                 }
               ];
