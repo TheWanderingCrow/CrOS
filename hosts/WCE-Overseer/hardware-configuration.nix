@@ -24,6 +24,11 @@
     };
   };
 
+  fileSystems."/boot" = {
+    device = "/dev/sda1";
+    fsType = "vfat";
+    options = ["fmask=0022" "dmask=0022"];
+  };
   fileSystems."/" = {
     device = "zroot";
     fsType = "zfs";

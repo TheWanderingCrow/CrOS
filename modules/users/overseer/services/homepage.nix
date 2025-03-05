@@ -201,6 +201,25 @@ lib.mkIf config.user.overseer.enable {
             }
           ];
         }
+        {
+          Nix = [
+            {
+              Search = [
+                {
+                  icon = "https://search.nixos.org/favicon.svg";
+                  href = "https://search.nixos.org";
+                }
+              ];
+            }
+            {
+              "PR Tracker" = [
+                {
+                  href = "https://nixpk.gs/pr-tracker.html";
+                }
+              ];
+            }
+          ];
+        }
       ];
     };
   };
