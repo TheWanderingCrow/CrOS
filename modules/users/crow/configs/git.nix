@@ -9,4 +9,8 @@
       };
     };
   };
+  lfs = {
+    enable = true;
+    skipSmudge = true;
+  };
 }
