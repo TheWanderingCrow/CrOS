@@ -4,26 +4,29 @@
   ...
 }:
 lib.mkIf config.user.overseer.enable {
+  services.go2rtc = {
+    enable = true;
+    settings.streams = {
+      wce-0001 = [
+        "ffmpeg:#input=-timeout 30000000 -i rtsp://thingino:thingino@192.168.0.173:554/ch0"
+        "ffmpeg:wce-0001#audio=opus"
+      ];
+      wce-0001_sub = "ffmpeg:#input=-timeout 30000000 -i rtsp://thingino:thingino@192.168.0.173:554/ch1";
+      wce-0002 = [
+        "ffmpeg:#input=-timeout 30000000 -i rtsp://thingino:thingino@192.168.0.26:554/ch0"
+        "ffmpeg:wce-0002#audio=opus"
+      ];
+      wce-0002_sub = "ffmpeg:#input=-timeout 30000000 -i rtsp://thingino:thingino@192.168.0.26:554/ch1";
+    };
+  };
+
   services.frigate = {
     enable = true;
     hostname = "frigate.wanderingcrow.net";
     settings = {
-      go2rtc = {
-        streams = {
-          wce-0001 = [
-            "ffmpeg:#input=-timeout 30000000 -i rtsp://thingino:thingino@192.168.0.173:554/ch0"
-            "ffmpeg:wce-0001#audio=opus"
-          ];
-          wce-0001_sub = "ffmpeg:#input=-timeout 30000000 -i rtsp://thingino:thingino@192.168.0.173:554/ch1";
-          wce-0002 = [
-            "ffmpeg:#input=-timeout 30000000 -i rtsp://thingino:thingino@192.168.0.26:554/ch0"
-            "ffmpeg:wce-0002#audio=opus"
-          ];
-          wce-0002_sub = "ffmpeg:#input=-timeout 30000000 -i rtsp://thingino:thingino@192.168.0.26:554/ch1";
-        };
-      };
       cameras = {
         wce-0001 = {
+          detect.enabled = false;
           ffmpeg = {
             inputs = [
               {
@@ -47,6 +50,7 @@ lib.mkIf config.user.overseer.enable {
           live.stream_name = "wce-0001";
         };
         wce-0002 = {
+          detect.enabled = false;
           ffmpeg = {
             inputs = [
               {
@@ -68,6 +72,29 @@ lib.mkIf config.user.overseer.enable {
             ];
           };
           live.stream_name = "wce-0002";
+        };
+      };
+    };
+  };
+
+  services.nginx.virtualHosts."${config.services.frigate.hostname}" = {
+    forceSSL = true;
+    useACMEHost = "frigate.wanderingcrow.net";
+  };
+  services.nginx = {
+    enable = true;
+    recommendedProxySettings = true;
+    virtualHosts = {
+      "rtc.wanderingcrow.net" = {
+        locations."/" = {
+          extraConfig = ''
+            allow 192.168.0.0/16;
+            allow 10.8.0.0/24;
+            allow 24.179.20.202;
+            deny all;
+          '';
+          proxyPass = "http://localhost:1984";
+          proxyWebsockets = true;
         };
       };
     };
