@@ -10,7 +10,7 @@
     nix.settings = {
       experimental-features = ["flakes" "nix-command"];
       trusted-users = ["@wheel"];
-      substituters = [" https://cache.wanderingcrow.net/wce-cache"];
+      #substituters = [" https://cache.wanderingcrow.net/wce-cache"];
       trusted-public-keys = ["wce-cache:s5otDeH048aZEGwQ2EQn6UfFJn6YgP71bcOok1jX1Q0="];
     };
 
