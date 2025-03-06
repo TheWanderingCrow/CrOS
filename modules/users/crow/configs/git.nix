@@ -8,5 +8,9 @@
         defaultBranch = "main";
       };
     };
+    lfs = {
+      enable = true;
+      skipSmudge = true;
+    };
   };
 }
