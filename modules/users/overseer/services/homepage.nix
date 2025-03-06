@@ -34,7 +34,7 @@ lib.mkIf config.user.overseer.enable {
             allow 24.179.20.202;
             deny all;
           '';
-          proxyPass = "http://localhost:8082";
+          proxyPass = "http://localhost:8089";
           proxyWebsockets = true;
         };
       };
@@ -44,6 +44,7 @@ lib.mkIf config.user.overseer.enable {
   services = {
     homepage-dashboard = {
       enable = true;
+      listenPort = 8089;
       environmentFile = config.sops.templates."homepage-environment".path;
       settings = {
         theme = "dark";

@@ -8,6 +8,5 @@
     ./umami.nix
     ./lubelogger.nix
     ./openhab.nix
-    ./frigate.nix
   ];
 }
