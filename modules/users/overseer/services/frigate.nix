@@ -8,6 +8,7 @@ in
     ...
   }: let
     frigateConfig = pkgs.writeText "config.yaml" (lib.generators.toYAML {} {
+      auth.reset_admin_password = true; # roll the admin password every restart, depend on user accounts for long-lived access
       tls.enabled = false; # off because we're doing ssl through nginx
       mqtt = {
         # TODO: add mqtt broker
@@ -35,9 +36,6 @@ in
       #############
       # Detectors #
       #############
-      detectors = {
-        onnx_0.type = "onnx";
-      };
       #################
       # Camera config #
       #################
@@ -90,6 +88,14 @@ in
     });
   in
     lib.mkIf config.user.overseer.enable {
+      sops = {
+        templates."frigate_env".content = ''
+          FRIGATE_JWT_SECRET=${config.sops.placeholder."frigate/jwt"}
+        '';
+        secrets = {
+          "frigate/jwt" = {};
+        };
+      };
       systemd.tmpfiles.rules = [
         "d ${volumePath}/frigate"
         "d ${volumePath}/frigate/config"
@@ -104,6 +110,7 @@ in
         containers = {
           "frigate" = {
             image = "ghcr.io/blakeblackshear/frigate:stable";
+            environmentFiles = [config.sops.templates."frigate_env".path];
             volumes = [
               "/etc/localtime:/etc/localtime:ro"
               "${volumePath}/frigate/media/frigate:/media/frigate"
