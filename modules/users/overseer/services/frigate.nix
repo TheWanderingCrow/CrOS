@@ -1,103 +1,128 @@
-{
-  lib,
-  config,
-  ...
-}: {
-  services.go2rtc = {
-    enable = true;
-
-    settings = {
-      streams = {
-        wce-0001 = [
-          "ffmpeg:#input=-timeout 30000000 -i rtsp://thingino:thingino@192.168.0.173:554/ch0"
-
-          "ffmpeg:wce-0001#audio=opus"
-        ];
-
-        wce-0001_sub = "ffmpeg:#input=-timeout 30000000 -i rtsp://thingino:thingino@192.168.0.173:554/ch1";
-
-        wce-0002 = [
-          "ffmpeg:#input=-timeout 30000000 -i rtsp://thingino:thingino@192.168.0.26:554/ch0"
-
-          "ffmpeg:wce-0002#audio=opus"
-        ];
-
-        wce-0002_sub = "ffmpeg:#input=-timeout 30000000 -i rtsp://thingino:thingino@192.168.0.26:554/ch1";
+let
+  volumePath = "/overseer/services";
+in
+  {
+    pkgs,
+    lib,
+    config,
+    ...
+  }: let
+    frigateConfig = pkgs.writeText "config.yaml" (lib.generators.toYAML {} {
+      tls.enabled = false; # off because we're doing ssl through nginx
+      mqtt = {
+        # TODO: add mqtt broker
+        enabled = false;
       };
-    };
-  };
-
-  services.frigate = {
-    enable = true;
-
-    hostname = "frigate.wanderingcrow.net";
-
-    settings = {
+      ###################
+      # go2rtc restream #
+      ###################
+      go2rtc = {
+        streams = {
+          wce-0001 = [
+            "rtsp://thingino:thingino@192.168.0.173:554/ch0"
+          ];
+          wce-0001_sub = [
+            "rtsp://thingino:thingino@192.168.0.173:554/ch1"
+          ];
+          wce-0002 = [
+            "rtsp://thingino:thingino@192.168.0.26:554/ch0"
+          ];
+          wce-0002_sub = [
+            "rtsp://thingino:thingino@192.168.0.26:554/ch1"
+          ];
+        };
+      };
+      #################
+      # Camera config #
+      #################
       cameras = {
         wce-0001 = {
           ffmpeg = {
             inputs = [
               {
-                path = "rtsp://127.0.0.1:8554/wce-0001?timeout=30";
-
-                input_args = "preset-rtsp-restream-low-latency";
-
+                path = "rtsp://127.0.0.1:8554/wce-0001";
                 roles = ["record"];
               }
-
               {
-                path = "rtsp://127.0.0.1:8554/wce-0001_sub?timeout=30";
-
-                input_args = "preset-rtsp-restream-low-latency";
-
-                roles = ["detect" "audio"];
+                path = "rtsp://127.0.0.1:8554/wce-0001_sub";
+                roles = ["detect"];
               }
             ];
           };
-
           motion = {
             mask = [
-              "0.005,0.006,0.005,0.041,0.195,0.041,0.196,0.008"
-
-              "0.904,0.007,0.903,0.042,0.994,0.042,0.994,0.006"
+              "0,0,0,0.04,0.201,0.043,0.199,0.005"
+              "0.864,0,0.865,0.043,1,0.043,1,0"
             ];
           };
-
-          live.stream_name = "wce-0001";
+          live.stream_name = "wce-0001_sub";
+          detect.enabled = false;
         };
-
         wce-0002 = {
           ffmpeg = {
             inputs = [
               {
-                path = "rtsp://127.0.0.1:8554/wce-0002?timeout=30";
-
-                input_args = "preset-rtsp-restream-low-latency";
-
+                path = "rtsp://127.0.0.1:8554/wce-0002";
                 roles = ["record"];
               }
-
               {
-                path = "rtsp://127.0.0.1:8554/wce-0002_sub?timeout=30";
-
-                input_args = "preset-rtsp-restream-low-latency";
-
-                roles = ["detect" "audio"];
+                path = "rtsp://127.0.0.1:8554/wce-0002_sub";
+                roles = ["detect"];
               }
             ];
           };
-
           motion = {
             mask = [
-              "0.005,0.006,0.005,0.041,0.195,0.041,0.196,0.008"
-
-              "0.904,0.007,0.903,0.042,0.994,0.042,0.994,0.006"
+              "0,0,0,0.04,0.201,0.043,0.199,0.005"
+              "0.864,0,0.865,0.043,1,0.043,1,0"
             ];
           };
-
-          live.stream_name = "wce-0002";
+          live.stream_name = "wce-0002_sub";
+          detect.enabled = false;
         };
       };
-    };
-  };
-}
+    });
+  in
+    lib.mkIf config.user.overseer.enable {
+      systemd.tmpfiles.rules = [
+        "d ${volumePath}/frigate"
+        "d ${volumePath}/frigate/config"
+        "d ${volumePath}/frigate/media/frigate"
+      ];
+      ###########
+      # Service #
+      ###########
+
+      virtualisation.oci-containers = {
+        backend = "podman";
+        containers = {
+          "frigate" = {
+            image = "ghcr.io/blakeblackshear/frigate:stable";
+            volumes = [
+              "/etc/localtime:/etc/localtime:ro"
+              "${volumePath}/frigate/media/frigate:/media/frigate"
+              "${frigateConfig}:/config/config.yaml:ro"
+            ];
+            extraOptions = [
+              "--shm-size=612m"
+              "--ip=10.88.0.10"
+            ];
+          };
+        };
+      };
+
+      services.nginx = {
+        enable = true;
+        recommendedProxySettings = true;
+        virtualHosts = {
+          "frigate.wanderingcrow.net" = {
+            forceSSL = true;
+            useACMEHost = "frigate.wanderingcrow.net";
+            locations."/" = {
+              proxyPass = "http://10.88.0.10:8971";
+              proxyWebsockets = true;
+            };
+          };
+        };
+      };
+    }
