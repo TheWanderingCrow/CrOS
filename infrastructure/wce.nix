@@ -34,11 +34,11 @@
       };
     };
 
-    "cloudflare_r2_bucket"."cache" = {
-      account_id = "68c4b3ab47c1a97037ab5a938f772d69";
-      name = "wce-attic-cache";
-      storage_class = "Standard";
-    };
+    # "cloudflare_r2_bucket"."cache" = {
+    #   account_id = "68c4b3ab47c1a97037ab5a938f772d69";
+    #   name = "wce-attic-cache";
+    #   storage_class = "Standard";
+    # };
 
     #"digitalocean_droplet"."do-wce-lighthouse1" = {
     #  image = "177939596"; # nixos-digitalocean

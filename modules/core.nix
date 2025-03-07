@@ -44,7 +44,6 @@
           );
       };
       overlays = [
-        (final: prev: {frigate = inputs.unstable-small.legacyPackages.${prev.system}.frigate;})
       ];
     };
   };
