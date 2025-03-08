@@ -219,6 +219,13 @@ lib.mkIf config.user.overseer.enable {
                 }
               ];
             }
+            {
+              "Home Manager Options" = [
+                {
+                  href = "https://home-manager-options.extranix.com/";
+                }
+              ];
+            }
           ];
         }
       ];
