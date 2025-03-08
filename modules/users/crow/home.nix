@@ -27,6 +27,7 @@ in {
     ./configs/tmux.nix
     ./configs/git.nix
     ./configs/direnv.nix
+    ./configs/ssh.nix
   ];
   home = {
     username = "crow";
