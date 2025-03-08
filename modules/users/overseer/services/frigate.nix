@@ -98,7 +98,6 @@ in
       };
       systemd.tmpfiles.rules = [
         "d ${volumePath}/frigate"
-        "d ${volumePath}/frigate/config"
         "d ${volumePath}/frigate/media/frigate"
       ];
       ###########
