@@ -38,6 +38,7 @@
         pavucontrol
         pulsemixer
         noisetorch
+        easyeffects
 
         # Communication
         mattermost-desktop
