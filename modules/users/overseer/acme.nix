@@ -41,10 +41,10 @@ lib.mkIf config.user.overseer.enable {
       "bar.wanderingcrow.net" = {};
       "home.wanderingcrow.net" = {};
       "homebox.wanderingcrow.net" = {};
-      "bookstack.wanderingcrow.net" = {};
       "cache.wanderingcrow.net" = {};
       "openhab.wanderingcrow.net" = {};
       "frigate.wanderingcrow.net" = {};
+      "wiki.wanderingcrow.net" = {};
     };
   };
 }
