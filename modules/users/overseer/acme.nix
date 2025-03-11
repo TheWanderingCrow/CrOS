@@ -44,7 +44,7 @@ lib.mkIf config.user.overseer.enable {
       "cache.wanderingcrow.net" = {};
       "openhab.wanderingcrow.net" = {};
       "frigate.wanderingcrow.net" = {};
-      "wiki.wanderingcrow.net" = {};
+      "notes.wanderingcrow.net" = {};
     };
   };
 }
