@@ -8,5 +8,6 @@
     ./lubelogger.nix
     ./openhab.nix
     ./frigate.nix
+    ./dokuwiki.nix
   ];
 }
