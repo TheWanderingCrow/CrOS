@@ -33,6 +33,7 @@
         hunspellDicts.en-us
         libreoffice
         hunspell
+        trilium-next-desktop
 
         # Audio
         pavucontrol
