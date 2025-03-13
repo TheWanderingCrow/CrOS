@@ -71,9 +71,6 @@
       if config.module.programming.enable
       then [
         inputs.nvix.packages.${pkgs.system}.default
-        lua
-        libgcc
-        python3
         jwt-cli
         jq
         cloc
