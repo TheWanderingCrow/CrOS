@@ -73,18 +73,10 @@
         inputs.nvix.packages.${pkgs.system}.default
         lua
         libgcc
-        php83
-        php83Packages.composer
         python3
-        serverless
         jwt-cli
         jq
-        ddev
         cloc
-        ansible
-        godot_4
-        cargo
-        rustc
       ]
       else []
     )
