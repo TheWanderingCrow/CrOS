@@ -63,23 +63,6 @@ in
         };
       };
 
-      ##########
-      # Backup #
-      ##########
-      services.restic.backups.bar-assistant = {
-        user = "root";
-        timerConfig = {
-          OnCalendar = "daily";
-          Persistent = true;
-        };
-        paths = [
-          "${volumePath}/bar-assistant"
-          "${volumePath}/meilisearch"
-        ];
-        repositoryFile = config.sops.secrets."restic/url".path;
-        passwordFile = config.sops.secrets."restic/key".path;
-      };
-
       ###########
       # Service #
       ###########

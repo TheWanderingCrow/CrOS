@@ -5,19 +5,6 @@
 }:
 lib.mkIf config.user.overseer.enable {
   services = {
-    restic.backups.homebox = {
-      user = "root";
-      timerConfig = {
-        OnCalendar = "hourly";
-        Persistent = true;
-      };
-      paths = [
-        "/var/lib/homebox/data"
-      ];
-      repositoryFile = config.sops.secrets."restic/url".path;
-      passwordFile = config.sops.secrets."restic/key".path;
-    };
-
     nginx = {
       enable = true;
       recommendedProxySettings = true;

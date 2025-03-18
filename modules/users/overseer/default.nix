@@ -4,6 +4,7 @@
     ./setup.nix
     ./secrets.nix
     ./acme.nix
+    ./backups.nix
     ./services
   ];
 }
