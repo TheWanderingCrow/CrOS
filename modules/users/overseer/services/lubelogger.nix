@@ -20,8 +20,6 @@ in
         secrets = {
           "lubelogger/user_hash" = {};
           "lubelogger/pass_hash" = {};
-          "restic/url" = {};
-          "restic/key" = {};
         };
         templates."lubelogger-env".content = ''
           LC_ALL=en_US.UTF-8
