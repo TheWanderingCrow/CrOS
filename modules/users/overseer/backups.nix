@@ -7,6 +7,10 @@ in
     ...
   }:
     lib.mkIf config.user.overseer.enable {
+      # Restic secrets
+      sops.secrets."restic/borg-base/url" = {};
+      sops.secrets."restic/borg-base/key" = {};
+
       services.restic.backups.borg-base = {
         user = "root";
         timerConfig = {
@@ -27,7 +31,7 @@ in
           # trilium.nix
           "/var/lib/trilium/backup"
         ];
-        repositoryFile = config.sops.secrets."restic/url".path;
-        passwordFile = config.sops.secrets."restic/key".path;
+        repositoryFile = config.sops.secrets."restic/borg-base/url".path;
+        passwordFile = config.sops.secrets."restic/borg-base/key".path;
       };
     }

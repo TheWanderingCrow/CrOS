@@ -11,8 +11,4 @@ lib.mkIf config.user.overseer.enable {
     age.keyFile = "/var/lib/sops-nix/key.txt";
     age.generateKey = true;
   };
-
-  # Restic secrets
-  sops.secrets."restic/url" = {};
-  sops.secrets."restic/key" = {};
 }
