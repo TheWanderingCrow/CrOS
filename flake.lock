@@ -170,6 +170,25 @@
         "type": "github"
       }
     },
+    "nix-darwin": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1742165923,
+        "narHash": "sha256-WKzuVsHXjuxYjS9KxKdpoPWpT37LofyS5llSssEw058=",
+        "owner": "LnL7",
+        "repo": "nix-darwin",
+        "rev": "95eac71bf52b271523d0ca81dbbeb3182990fc24",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LnL7",
+        "ref": "master",
+        "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
     "nix-secrets": {
       "locked": {
         "lastModified": 1742303949,
@@ -187,16 +206,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1741246872,
-        "narHash": "sha256-Q6pMP4a9ed636qilcYX8XUguvKl/0/LGXhHcRI91p0U=",
-        "owner": "nixos",
+        "lastModified": 1736241350,
+        "narHash": "sha256-CHd7yhaDigUuJyDeX0SADbTM9FXfiWaeNyY34FL1wQU=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "10069ef4cf863633f57238f179a0297de84bd8d3",
+        "rev": "8c9fd3e564728e90829ee7dbac6edc972971cd0f",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixos-unstable",
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -227,6 +246,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1741246872,
+        "narHash": "sha256-Q6pMP4a9ed636qilcYX8XUguvKl/0/LGXhHcRI91p0U=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "10069ef4cf863633f57238f179a0297de84bd8d3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1738142207,
         "narHash": "sha256-NGqpVVxNAHwIicXpgaVqJEJWeyqzoQJ9oc8lnK9+WC4=",
         "owner": "NixOS",
@@ -241,7 +276,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1737370608,
         "narHash": "sha256-hFA6SmioeqvGW/XvZa9bxniAeulksCOcj3kokdNT/YE=",
@@ -257,7 +292,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_4": {
+    "nixpkgs_5": {
       "locked": {
         "lastModified": 1731763621,
         "narHash": "sha256-ddcX4lQL0X05AYkrkV2LMFgGdRvgap7Ho8kgon3iWZk=",
@@ -273,7 +308,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
+    "nixpkgs_6": {
       "locked": {
         "lastModified": 1728956102,
         "narHash": "sha256-J8zo+UYNjHATsxn2/ROl8iaji2RgLm+sG7b3VcD36YM=",
@@ -288,7 +323,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_6": {
+    "nixpkgs_7": {
       "locked": {
         "lastModified": 1739214665,
         "narHash": "sha256-26L8VAu3/1YRxS8MHgBOyOM8xALdo6N0I04PgorE7UM=",
@@ -326,7 +361,7 @@
         "flake-utils": "flake-utils",
         "mnw": "mnw",
         "nil": "nil",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_4",
         "nmd": "nmd",
         "plugin-aerial-nvim": "plugin-aerial-nvim",
         "plugin-alpha-nvim": "plugin-alpha-nvim",
@@ -512,7 +547,7 @@
     },
     "nvix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs_3",
         "nvf": "nvf"
       },
       "locked": {
@@ -3190,8 +3225,9 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "nix-darwin": "nix-darwin",
         "nix-secrets": "nix-secrets",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "nvix": "nvix",
         "sops-nix": "sops-nix",
         "terranix": "terranix",
@@ -3224,7 +3260,7 @@
     },
     "sops-nix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_5"
       },
       "locked": {
         "lastModified": 1739262228,
@@ -3290,7 +3326,7 @@
         "bats-assert": "bats-assert",
         "bats-support": "bats-support",
         "flake-parts": "flake-parts_2",
-        "nixpkgs": "nixpkgs_5",
+        "nixpkgs": "nixpkgs_6",
         "systems": "systems_3",
         "terranix-examples": "terranix-examples"
       },
@@ -3326,7 +3362,7 @@
     "the-nest": {
       "inputs": {
         "flake-parts": "flake-parts_3",
-        "nixpkgs": "nixpkgs_6"
+        "nixpkgs": "nixpkgs_7"
       },
       "locked": {
         "lastModified": 1739682369,
