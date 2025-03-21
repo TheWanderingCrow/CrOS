@@ -15,5 +15,6 @@ lib.mkIf config.user.overseer.enable {
         ensureDBOwnership = true;
       }
     ];
+    ensureDatabases = ["matrix-synapse"];
   };
 }
