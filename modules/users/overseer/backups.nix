@@ -1,5 +1,26 @@
 let
   volumePath = "/overseer/services";
+  restic-default = {
+    user = "root";
+    timerConfig = {
+      OnCalendar = "hourly";
+      Persistent = true;
+    };
+    paths = [
+      # bar-assistant.nix
+      "${volumePath}/bar-assistant"
+      "${volumePath}/meilisearch"
+
+      # homebox.nix
+      "/var/lib/homebox/data"
+
+      # lubelogger.nix
+      "${volumePath}/lubelogger"
+
+      # trilium.nix
+      "/var/lib/trilium/backup"
+    ];
+  };
 in
   {
     lib,
@@ -11,27 +32,11 @@ in
       sops.secrets."restic/borg-base/url" = {};
       sops.secrets."restic/borg-base/key" = {};
 
-      services.restic.backups.borg-base = {
-        user = "root";
-        timerConfig = {
-          OnCalendar = "hourly";
-          Persistent = true;
+      services.restic.backups = {
+        borg-base = {
+          inherit restic-default;
+          repositoryFile = config.sops.secrets."restic/borg-base/url".path;
+          passwordFile = config.sops.secrets."restic/borg-base/key".path;
         };
-        paths = [
-          # bar-assistant.nix
-          "${volumePath}/bar-assistant"
-          "${volumePath}/meilisearch"
-
-          # homebox.nix
-          "/var/lib/homebox/data"
-
-          # lubelogger.nix
-          "${volumePath}/lubelogger"
-
-          # trilium.nix
-          "/var/lib/trilium/backup"
-        ];
-        repositoryFile = config.sops.secrets."restic/borg-base/url".path;
-        passwordFile = config.sops.secrets."restic/borg-base/key".path;
       };
     }
