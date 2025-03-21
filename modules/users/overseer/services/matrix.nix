@@ -17,4 +17,11 @@ lib.mkIf config.user.overseer.enable {
     ];
     ensureDatabases = ["matrix-synapse"];
   };
+
+  services.matrix-synapse = {
+    enable = true;
+    settings = {
+      server_name = "wanderingcrow.net";
+    };
+  };
 }
