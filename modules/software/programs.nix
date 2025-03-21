@@ -23,6 +23,7 @@
         usbutils
         fastfetch
         attic-client
+        rclone
       ]
       else []
     )
