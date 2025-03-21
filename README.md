@@ -24,6 +24,10 @@ the ssh command via the NIX_SSHOPTS environment variable
 - Anywhere from local:
   `nixos-rebuild switch --flake .#<host> --target-host root@<ipaddr> --use-remote-sudo`
 
+## Generating Topology Files
+
+`nix build .#topology.x86_64-linux.config.output`
+
 ## Vendor Specific Idiosyncrasies
 
 ### Digital Ocean
