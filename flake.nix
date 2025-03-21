@@ -15,18 +15,22 @@
     nix-secrets.url = "git+ssh://git@github.com/TheWanderingCrow/nix-secrets";
     terranix.url = "github:terranix/terranix";
     the-nest.url = "github:TheWanderingCrow/the-nest";
+    nix-topology.url = "github:oddlama/nix-topology";
   };
 
   outputs = {
+    self,
     nixpkgs,
     home-manager,
     sops-nix,
     terranix,
+    nix-topology,
     ...
   } @ inputs: let
     baseModules = [
       home-manager.nixosModules.home-manager
       sops-nix.nixosModules.sops
+      nix-topology.nixosModules.default
     ];
   in {
     #########
@@ -124,5 +128,20 @@
         modules = [./infrastructure/wce.nix];
       };
     };
+    ################
+    # Nix Topology #
+    ################
+    topology.x86_64-linux = let
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        overlays = [nix-topology.overlays.default];
+      };
+    in
+      import nix-topology {
+        inherit pkgs;
+        modules = [
+          {nixosConfigurations = self.nixosConfigurations;}
+        ];
+      };
   };
 }
