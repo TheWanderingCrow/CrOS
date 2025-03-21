@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    ./topology-config.nix
     ../../modules
   ];
 

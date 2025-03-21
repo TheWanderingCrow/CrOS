@@ -49,7 +49,8 @@
           [
             ./hosts/Parzival
           ]
-          ++ baseModules;
+          ++ baseModules
+          ++ topology;
       };
       ###################
       # Personal Laptop #
@@ -148,6 +149,7 @@
           {
             nixosConfigurations = {
               WCE-Overseer = self.nixosConfigurations.WCE-Overseer;
+              Parzival = self.nixosConfigurations.Parzival;
             };
           }
         ];
