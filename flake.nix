@@ -30,6 +30,9 @@
     baseModules = [
       home-manager.nixosModules.home-manager
       sops-nix.nixosModules.sops
+    ];
+
+    topology = [
       nix-topology.nixosModules.default
     ];
   in {
@@ -79,7 +82,8 @@
           [
             ./hosts/WCE-Overseer
           ]
-          ++ baseModules;
+          ++ baseModules
+          ++ topology;
       };
       ###################################
       # ISO Installer w/ recovery tools #
@@ -140,7 +144,12 @@
       import nix-topology {
         inherit pkgs;
         modules = [
-          {nixosConfigurations = self.nixosConfigurations;}
+          ./infrastructure/topology.nix
+          {
+            nixosConfigurations = {
+              WCE-Overseer = self.nixosConfigurations.WCE-Overseer;
+            };
+          }
         ];
       };
   };
