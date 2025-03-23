@@ -46,6 +46,7 @@ lib.mkIf config.user.overseer.enable {
       "frigate.wanderingcrow.net" = {};
       "notes.wanderingcrow.net" = {};
       "grocy.wanderingcrow.net" = {};
+      "barcodebuddy.grocy.wanderingcrow.net" = {};
     };
   };
 }
