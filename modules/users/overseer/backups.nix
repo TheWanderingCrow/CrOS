@@ -33,10 +33,11 @@ in
       sops.secrets."restic/borg-base/key" = {};
 
       services.restic.backups = {
-        borg-base = {
-          inherit restic-default;
-          repositoryFile = config.sops.secrets."restic/borg-base/url".path;
-          passwordFile = config.sops.secrets."restic/borg-base/key".path;
-        };
+        borg-base =
+          restic-default
+          // {
+            repositoryFile = config.sops.secrets."restic/borg-base/url".path;
+            passwordFile = config.sops.secrets."restic/borg-base/key".path;
+          };
       };
     }
