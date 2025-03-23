@@ -9,5 +9,6 @@
     ./openhab.nix
     ./frigate.nix
     ./trilium.nix
+    ./grocy.nix
   ];
 }
