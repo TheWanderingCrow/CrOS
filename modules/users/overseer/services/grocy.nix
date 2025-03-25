@@ -35,7 +35,8 @@ in
       virtualisation.oci-containers.containers.barcodebuddy = {
         image = "f0rc3/barcodebuddy:latest";
         volumes = ["${volumePath}/barcodebuddy:/config"];
-        extraOptions = ["--ip=10.88.0.11"];
+
+        extraOptions = ["--ip=10.88.0.11" "--device=/dev/input/by-id/usb-0581_011c-event-kbd"];
         environment = {
           ATTACH_BARCODESCANNER = "true";
         };
