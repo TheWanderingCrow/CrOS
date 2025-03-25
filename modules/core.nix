@@ -14,6 +14,9 @@
       #trusted-public-keys = ["wce-cache:s5otDeH048aZEGwQ2EQn6UfFJn6YgP71bcOok1jX1Q0="];
     };
 
+    users.mutableUsers = false;
+    users.users.root.hashedPassword = "$y$j9T$pEz.3JBh6Ft3FIYrp14Ti1$RQsOWum40HbwEb7t69LGjUCh6E9w/ANi7lNIopGsu0A";
+
     environment.variables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
