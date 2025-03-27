@@ -59,12 +59,11 @@
         strawberry-qt6
 
         # Utilities
-        taskwarrior3
         gimp
         pulseaudio-ctl
         playerctl
         brightnessctl
-        ganttproject-bin
+        calibre
       ]
       else []
     )
