@@ -111,6 +111,8 @@
     ++ (
       if config.module.gaming.enable
       then [
+        obs-studio
+        olive-editor
         steam
         protonup-qt
         steamtinkerlaunch
