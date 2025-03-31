@@ -104,14 +104,6 @@ lib.mkIf config.user.overseer.enable {
                 }
               ];
             }
-            {
-              Bookstack = [
-                {
-                  icon = "bookstack.svg";
-                  href = "https://bookstack.wanderingcrow.net";
-                }
-              ];
-            }
           ];
         }
         {
