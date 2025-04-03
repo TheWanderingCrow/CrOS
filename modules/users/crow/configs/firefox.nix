@@ -22,7 +22,7 @@
       OfferToSaveLogins = false;
       PasswordManagerEnabled = false;
       ExtensionSettings = {
-        "*".installation_mode = "blocked";
+        #"*".installation_mode = "blocked";
         "*".blocked_install_message = "Please manage extensions through your NixOS config";
         # Bitwarden
         "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
@@ -52,10 +52,10 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/{12cf650b-1822-40aa-bff0-996df6948878}/latest.xpl";
           default_area = "menupanel";
         };
-        # Greasemonkey
-        "{e4a8a97b-f2ed-450b-b12d-ee082ba24781}" = {
+        # Violentmonkey
+        "{aecec67f-0d10-4fa7-b7c7-609a2db280cf}" = {
           installation_mode = "force_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/{e4a8a97b-f2ed-450b-b12d-ee082ba24781}/latest.xpl";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/{aecec67f-0d10-4fa7-b7c7-609a2db280cf}/latest.xpl";
           default_area = "menupanel";
         };
       };
