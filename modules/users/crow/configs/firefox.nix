@@ -52,6 +52,12 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/{12cf650b-1822-40aa-bff0-996df6948878}/latest.xpl";
           default_area = "menupanel";
         };
+        # Greasemonkey
+        "{e4a8a97b-f2ed-450b-b12d-ee082ba24781}" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/{e4a8a97b-f2ed-450b-b12d-ee082ba24781}/latest.xpl";
+          default_area = "menupanel";
+        };
       };
     };
   };
