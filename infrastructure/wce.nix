@@ -9,9 +9,9 @@
         source = "hashicorp/aws";
         version = "5.86.0";
       };
-      cloudflare = {
-        source = "cloudflare/cloudflare";
-        version = "5.0.0";
+      b2 = {
+        source = "Backblaze/b2";
+        version = "0.10.0";
       };
     };
     backend."s3" = {
@@ -32,6 +32,11 @@
       tags = {
         Name = "WCE State Bucket";
       };
+    };
+
+    "b2_bucket"."media" = {
+      bucket_name = "wce-media-backup";
+      bucket_type = "allPrivate";
     };
 
     # "cloudflare_r2_bucket"."cache" = {
