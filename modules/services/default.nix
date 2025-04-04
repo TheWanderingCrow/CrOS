@@ -1,5 +1,4 @@
 {
   imports = [
-    ./note-sync.nix
   ];
 }
