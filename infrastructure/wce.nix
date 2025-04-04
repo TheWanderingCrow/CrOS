@@ -37,6 +37,11 @@
     "b2_bucket"."media" = {
       bucket_name = "wce-media-backup";
       bucket_type = "allPrivate";
+      lifecycle_rules = {
+        file_name_prefix = "";
+        days_from_uploading_to_hiding = 1;
+        days_from_hiding_to_deleting = 1;
+      };
     };
 
     # "cloudflare_r2_bucket"."cache" = {

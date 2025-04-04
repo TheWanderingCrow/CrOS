@@ -1,6 +1,7 @@
 # Nix
 result
 *.qcow2
+.direnv/
 
 # Terraform
 config.tf.json

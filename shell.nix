@@ -15,7 +15,6 @@
     ];
     shellHook = ''
       nix build .#terranix.wce -o config.tf.json
-      zsh
     '';
   };
 }
