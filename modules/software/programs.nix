@@ -74,6 +74,7 @@
         jwt-cli
         jq
         cloc
+        meld
       ]
       else []
     )
