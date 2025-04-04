@@ -61,4 +61,11 @@ lib.mkIf config.user.crow.enable {
   sops.secrets."backblaze/key" = {
     owner = config.users.users.crow.name;
   };
+
+  sops.secrets."restic/wce-media-backup/endpoint" = {
+    owner = config.users.users.crow.name;
+  };
+  sops.secrets."restic/wce-media-backup/password" = {
+    owner = config.users.users.crow.name;
+  };
 }
