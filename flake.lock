@@ -488,11 +488,11 @@
         "nvf": "nvf"
       },
       "locked": {
-        "lastModified": 1743459624,
-        "narHash": "sha256-UCyEB+RuT7sZ7vxS0SaqFE1Wi7GMU9LgvuzvcG426Kg=",
+        "lastModified": 1743793029,
+        "narHash": "sha256-Bc1PGjBv8qUXimCaBFN0OmpWpu6JF2ku+NlN5Am6gH0=",
         "owner": "TheWanderingCrow",
         "repo": "nvix",
-        "rev": "f6362b822b3d32b458576b689645e2761ebf1205",
+        "rev": "1c204563ef9bff09c8b1571e038185d2f38fdf36",
         "type": "github"
       },
       "original": {
