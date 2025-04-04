@@ -53,4 +53,12 @@ lib.mkIf config.user.crow.enable {
   sops.secrets."cloudflare/token" = {
     owner = config.users.users.crow.name;
   };
+
+  sops.secrets."backblaze/id" = {
+    owner = config.users.users.crow.name;
+  };
+
+  sops.secrets."backblaze/key" = {
+    owner = config.users.users.crow.name;
+  };
 }
