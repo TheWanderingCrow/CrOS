@@ -10,6 +10,5 @@
     ./frigate.nix
     ./trilium.nix
     ./grocy.nix
-    ./gitlab.nix
   ];
 }
