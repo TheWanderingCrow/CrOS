@@ -58,6 +58,11 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/{aecec67f-0d10-4fa7-b7c7-609a2db280cf}/latest.xpl";
           default_area = "menupanel";
         };
+        "sponsorBlocker@ajay.app" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/sponsorBlocker@ajay.app/latest.xpl";
+          default_area = "menupanel";
+        };
       };
     };
   };
