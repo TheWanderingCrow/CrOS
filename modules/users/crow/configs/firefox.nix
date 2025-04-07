@@ -30,11 +30,6 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/{446900e4-71c2-419f-a6a7-df9c091e268b}/latest.xpl";
           default_area = "navbar";
         };
-        "contact@grimoire.pro" = {
-          installation_mode = "force_installed";
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/contact@grimoire.pro/latest.xpl";
-          default_area = "navbar";
-        };
         "uBlock0@raymondhill.net" = {
           installation_mode = "force_installed";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/uBlock0@raymondhill.net/latest.xpl";
