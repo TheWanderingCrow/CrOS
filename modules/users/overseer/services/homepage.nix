@@ -200,6 +200,14 @@ lib.mkIf config.user.overseer.enable {
                 }
               ];
             }
+            {
+              Groups = [
+                {
+                  icon = "https://www.gstatic.com/images/branding/product/1x/groups_32dp.png";
+                  href = "https://groups.google.com/u/1/";
+                }
+              ];
+            }
           ];
         }
         {
