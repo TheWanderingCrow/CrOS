@@ -51,9 +51,6 @@
         signal-desktop
         teamspeak_client
 
-        # Browsing
-        tor-browser
-
         # Music
         spotify
         strawberry-qt6
