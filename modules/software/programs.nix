@@ -128,7 +128,7 @@
         wesnoth
         ufoai
         cataclysm-dda
-        redeclipse
+        # redeclipse
         megaglest
         # savagexr if it existed
         superTuxKart
