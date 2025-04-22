@@ -6,8 +6,4 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  environment.variables = {
-    GST_PLUGIN_PATH = "/run/current-system/sw/lib/gstreamer-1.0/";
-  };
 }
