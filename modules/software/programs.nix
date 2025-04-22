@@ -22,7 +22,6 @@
         file
         usbutils
         fastfetch
-        attic-client
         rclone
       ]
       else []
@@ -34,7 +33,6 @@
         hunspellDicts.en-us
         libreoffice
         hunspell
-        trilium-next-desktop
 
         # Audio
         pavucontrol
@@ -54,6 +52,12 @@
         # Music
         spotify
         strawberry-qt6
+        gst_all_1.gstreamer
+        gst_all_1.gst-plugins-base
+        gst_all_1.gst-plugins-good
+        gst_all_1.gst-plugins-rs
+        gst_all_1.gst-libav
+        gst_all_1.gst-vaapi
 
         # Utilities
         gimp
