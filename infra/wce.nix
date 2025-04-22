@@ -43,19 +43,5 @@
         days_from_hiding_to_deleting = 1;
       };
     };
-
-    # "cloudflare_r2_bucket"."cache" = {
-    #   account_id = "68c4b3ab47c1a97037ab5a938f772d69";
-    #   name = "wce-attic-cache";
-    #   storage_class = "Standard";
-    # };
-
-    #"digitalocean_droplet"."do-wce-lighthouse1" = {
-    #  image = "177939596"; # nixos-digitalocean
-    #  name = "WCE-Lighthouse1";
-    #  region = "nyc3";
-    #  size = "s-1vcpu-1gb";
-    #  ssh_keys = ["45378200"];
-    #};
   };
 }

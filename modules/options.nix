@@ -42,9 +42,6 @@
       live = {
         enable = lib.mkEnableOption "enable live disk user";
       };
-      lighthouse = {
-        enable = lib.mkEnableOption "enable nebula lighthouse server";
-      };
     };
 
     desktop = {
@@ -98,9 +95,6 @@
         enable = lib.mkDefault false;
       };
       live = {
-        enable = lib.mkDefault false;
-      };
-      lighthouse = {
         enable = lib.mkDefault false;
       };
     };

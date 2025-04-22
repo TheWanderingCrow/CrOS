@@ -108,32 +108,6 @@
           ]
           ++ baseModules;
       };
-      #########################
-      # DO Nebula Lighthouse1 #
-      #########################
-      WCE-Lighthouse1 = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules =
-          [
-            ./hosts/WCE-Lighthouse
-            "${nixpkgs}/nixos/modules/virtualisation/digital-ocean-image.nix"
-            {
-              networking.hostName = "WCE-Lighthouse1";
-              sops.defaultSopsFile = inputs.nix-secrets.secrets.lighthouse1;
-            }
-          ]
-          ++ baseModules;
-      };
-    };
-    ##############
-    # Nix Darwin #
-    ##############
-    darwinConfigurations = {
-      tests-iMac-Pro = inputs.nix-darwin.lib.darwinSystem {
-        modules = [
-          ./hosts/OSX-Darwin
-        ];
-      };
     };
     ############
     # Terranix #
