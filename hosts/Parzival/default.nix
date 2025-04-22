@@ -15,7 +15,6 @@
   user.crow.enable = true;
 
   desktop.sway.enable = true;
-  desktop.i3.enable = true;
 
   module.gui.enable = true;
   module.programming.enable = true;
