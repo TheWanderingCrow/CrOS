@@ -55,10 +55,6 @@
       kde.enable = lib.mkEnableOption "KDE with Plasma6";
     };
 
-    service = {
-      note-sync.enable = lib.mkEnableOption "enable note sync to repo";
-    };
-
     ricing = {
       basic.enable = lib.mkEnableOption "enable basic ricing";
       wasteland.enable = lib.mkEnableOption "post-collapse themed rice";
@@ -116,10 +112,6 @@
       niri.enable = lib.mkDefault false;
       i3.enable = lib.mkDefault false;
       kde.enable = lib.mkDefault false;
-    };
-
-    service = {
-      note-sync.enable = lib.mkDefault false;
     };
 
     ricing = {
