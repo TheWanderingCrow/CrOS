@@ -141,7 +141,7 @@
     terranix = {
       wce = terranix.lib.terranixConfiguration {
         system = "x86_64-linux";
-        modules = [./infrastructure/wce.nix];
+        modules = [./infra/wce.nix];
       };
     };
     ################
@@ -156,7 +156,7 @@
       import nix-topology {
         inherit pkgs;
         modules = [
-          ./infrastructure/topology.nix
+          ./infra/topology.nix
           {
             nixosConfigurations = {
               WCE-Overseer = self.nixosConfigurations.WCE-Overseer;
