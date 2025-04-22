@@ -51,7 +51,6 @@
 
         # Music
         spotify
-        strawberry-qt6
 
         # Utilities
         gimp
