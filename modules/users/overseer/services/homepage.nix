@@ -17,6 +17,7 @@ lib.mkIf config.user.overseer.enable {
       HOMEPAGE_VAR_LONG = ${config.sops.placeholder."homepage/openmeteo/long"}
       HOMEPAGE_VAR_LUBELOGGERUSER = ${config.sops.placeholder."lubelogger/user"}
       HOMEPAGE_VAR_LUBELOGGERPASS = ${config.sops.placeholder."lubelogger/pass"}
+      HOMEPAGE_ALLOWED_HOSTS = home.wanderingcrow.net
     '';
   };
 
