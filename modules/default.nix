@@ -7,7 +7,5 @@
     ./hardware
     ./software
     ./security
-    ./services
-    ./ricing
   ];
 }
