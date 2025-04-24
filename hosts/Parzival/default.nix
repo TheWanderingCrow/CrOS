@@ -26,4 +26,10 @@
   module.hobbies.enable = true;
 
   programs.noisetorch.enable = true;
+
+  virtualisation.virtualbox.host = {
+    enableKvm = true;
+    enable = true;
+    addNetworkInterface = false;
+  };
 }
