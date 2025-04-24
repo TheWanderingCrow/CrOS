@@ -2,7 +2,7 @@
   volumePath = "/overseer/services";
 in {
   systemd.tmpfiles.rules = [
-    "d ${volumePath}/actualbudet"
+    "d ${volumePath}/actualbudget"
   ];
 
   services.nginx = {
@@ -28,7 +28,7 @@ in {
         volumes = ["${volumePath}/actualbudget:/data"];
         extraOptions = ["--ip=10.88.0.12"];
         environment = {
-          ACTUAL_PORT = 80;
+          ACTUAL_PORT = "80";
         };
       };
     };
