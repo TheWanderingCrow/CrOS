@@ -11,5 +11,6 @@
     ./trilium.nix
     ./grocy.nix
     ./actualbudget.nix
+    ./glances.nix
   ];
 }

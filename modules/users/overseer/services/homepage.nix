@@ -85,6 +85,11 @@ lib.mkIf config.user.overseer.enable {
             longitude = "{{HOMEPAGE_VAR_LONG}}";
           };
         }
+        {
+          glances = {
+            url = "localhost:61208";
+          };
+        }
       ];
       bookmarks = [
         {
