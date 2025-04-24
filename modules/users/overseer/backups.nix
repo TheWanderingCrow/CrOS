@@ -22,6 +22,9 @@ let
 
       # grocy
       "/var/lib/grocy"
+
+      # actualbudget
+      "${volumePath}/actualbudget"
     ];
   };
 in
