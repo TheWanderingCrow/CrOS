@@ -4,7 +4,7 @@
   ...
 }:
 lib.mkIf config.user.overseer.enable {
-  servicess.glances = {
+  services.glances = {
     enable = true;
   };
 }

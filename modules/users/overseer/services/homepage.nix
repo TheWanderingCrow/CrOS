@@ -87,7 +87,10 @@ lib.mkIf config.user.overseer.enable {
         }
         {
           glances = {
-            url = "localhost:61208";
+            url = "http://localhost:61208";
+            version = 4;
+            disk = "/";
+            label = "Overseer";
           };
         }
       ];
