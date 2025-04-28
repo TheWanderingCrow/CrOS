@@ -45,7 +45,7 @@ in
             };
             locations."/script.js" = {
               extraConfig = ''
-                deny 24.179.20.202;
+                deny 172.220.132.255;
               '';
             };
           };

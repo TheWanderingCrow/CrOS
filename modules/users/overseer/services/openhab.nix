@@ -41,7 +41,7 @@ in
               extraConfig = ''
                 allow 192.168.0.0/16;
                 allow 10.8.0.0/24;
-                allow 24.179.20.202;
+                allow 172.220.132.255;
                 deny all;
               '';
               proxyPass = "http://10.88.0.9:8080";
