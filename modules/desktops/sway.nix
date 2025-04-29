@@ -26,6 +26,7 @@
         grim
         slurp
         swappy
+        joystickwake
       ];
     };
     programs.dconf.enable = true;
