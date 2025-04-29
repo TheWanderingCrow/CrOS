@@ -117,6 +117,7 @@
         gamemode
         r2modman
         vintagestory
+        joystickwake
       ]
       else []
     )
