@@ -31,4 +31,8 @@
     enable = true;
     addNetworkInterface = false;
   };
+
+  environment.systemPackages = [
+    pkgs.antimicrox
+  ];
 }

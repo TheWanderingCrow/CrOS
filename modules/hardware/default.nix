@@ -8,4 +8,6 @@
     ./audio.nix
     ./graphics.nix
   ];
+
+  hardware.uinput.enable = true;
 }
