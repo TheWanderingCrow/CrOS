@@ -58,6 +58,7 @@
         playerctl
         brightnessctl
         calibre
+        freecad-wayland
       ]
       else []
     )
