@@ -17,73 +17,82 @@ in
       ###################
       # go2rtc restream #
       ###################
-      go2rtc = {
-        streams = {
-          wce-0001 = [
-            "rtsp://thingino:thingino@192.168.0.173:554/ch0"
-          ];
-          wce-0001_sub = [
-            "rtsp://thingino:thingino@192.168.0.173:554/ch1"
-          ];
-          wce-0002 = [
-            "rtsp://thingino:thingino@192.168.0.26:554/ch0"
-          ];
-          wce-0002_sub = [
-            "rtsp://thingino:thingino@192.168.0.26:554/ch1"
-          ];
-        };
-      };
+      # go2rtc = {
+      #   streams = {
+      #     wce-0001 = [
+      #       "rtsp://thingino:thingino@192.168.0.173:554/ch0"
+      #     ];
+      #     wce-0001_sub = [
+      #       "rtsp://thingino:thingino@192.168.0.173:554/ch1"
+      #     ];
+      #     wce-0002 = [
+      #       "rtsp://thingino:thingino@192.168.0.26:554/ch0"
+      #     ];
+      #     wce-0002_sub = [
+      #       "rtsp://thingino:thingino@192.168.0.26:554/ch1"
+      #     ];
+      #   };
+      # };
       #############
       # Detectors #
       #############
+      detectors = {
+        ov_0 = {
+          type = "openvino";
+          device = "CPU";
+        };
+      };
+      model = {
+        path = "/openvino-model/ssdlite_mobilenet_v2.xml";
+      };
       #################
       # Camera config #
       #################
       cameras = {
-        wce-0001 = {
-          ffmpeg = {
-            inputs = [
-              {
-                path = "rtsp://127.0.0.1:8554/wce-0001";
-                roles = ["record"];
-              }
-              {
-                path = "rtsp://127.0.0.1:8554/wce-0001_sub";
-                roles = ["detect"];
-              }
-            ];
-          };
-          motion = {
-            mask = [
-              "0,0,0,0.04,0.201,0.043,0.199,0.005"
-              "0.864,0,0.865,0.043,1,0.043,1,0"
-            ];
-          };
-          live.stream_name = "wce-0001_sub";
-          detect.enabled = false;
-        };
-        wce-0002 = {
-          ffmpeg = {
-            inputs = [
-              {
-                path = "rtsp://127.0.0.1:8554/wce-0002";
-                roles = ["record"];
-              }
-              {
-                path = "rtsp://127.0.0.1:8554/wce-0002_sub";
-                roles = ["detect"];
-              }
-            ];
-          };
-          motion = {
-            mask = [
-              "0,0,0,0.04,0.201,0.043,0.199,0.005"
-              "0.864,0,0.865,0.043,1,0.043,1,0"
-            ];
-          };
-          live.stream_name = "wce-0002_sub";
-          detect.enabled = false;
-        };
+        #      wce-0001 = {
+        #        ffmpeg = {
+        #          inputs = [
+        #            {
+        #              path = "rtsp://127.0.0.1:8554/wce-0001";
+        #              roles = ["record"];
+        #            }
+        #            {
+        #              path = "rtsp://127.0.0.1:8554/wce-0001_sub";
+        #              roles = ["detect"];
+        #            }
+        #          ];
+        #        };
+        #        motion = {
+        #          mask = [
+        #            "0,0,0,0.04,0.201,0.043,0.199,0.005"
+        #            "0.864,0,0.865,0.043,1,0.043,1,0"
+        #          ];
+        #        };
+        #        live.stream_name = "wce-0001_sub";
+        #        detect.enabled = false;
+        #      };
+        #      wce-0002 = {
+        #        ffmpeg = {
+        #          inputs = [
+        #            {
+        #              path = "rtsp://127.0.0.1:8554/wce-0002";
+        #              roles = ["record"];
+        #            }
+        #            {
+        #              path = "rtsp://127.0.0.1:8554/wce-0002_sub";
+        #              roles = ["detect"];
+        #            }
+        #          ];
+        #        };
+        #        motion = {
+        #          mask = [
+        #            "0,0,0,0.04,0.201,0.043,0.199,0.005"
+        #            "0.864,0,0.865,0.043,1,0.043,1,0"
+        #          ];
+        #        };
+        #        live.stream_name = "wce-0002_sub";
+        #        detect.enabled = false;
+        #      };
       };
     });
   in
@@ -99,6 +108,8 @@ in
       systemd.tmpfiles.rules = [
         "d ${volumePath}/frigate"
         "d ${volumePath}/frigate/media/frigate"
+        "d ${volumePath}/frigate/db"
+        "f ${volumePath}/frigate/db/frigate.db"
       ];
       ###########
       # Service #
@@ -114,6 +125,7 @@ in
               "/etc/localtime:/etc/localtime:ro"
               "${volumePath}/frigate/media/frigate:/media/frigate"
               "${frigateConfig}:/config/config.yaml:ro"
+              "${volumePath}/frigate/db/frigate.db:/config/frigate.db"
             ];
             extraOptions = [
               "--shm-size=612m"
