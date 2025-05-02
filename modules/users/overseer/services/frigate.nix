@@ -17,22 +17,16 @@ in
       ###################
       # go2rtc restream #
       ###################
-      # go2rtc = {
-      #   streams = {
-      #     wce-0001 = [
-      #       "rtsp://thingino:thingino@192.168.0.173:554/ch0"
-      #     ];
-      #     wce-0001_sub = [
-      #       "rtsp://thingino:thingino@192.168.0.173:554/ch1"
-      #     ];
-      #     wce-0002 = [
-      #       "rtsp://thingino:thingino@192.168.0.26:554/ch0"
-      #     ];
-      #     wce-0002_sub = [
-      #       "rtsp://thingino:thingino@192.168.0.26:554/ch1"
-      #     ];
-      #   };
-      # };
+      go2rtc = {
+        streams = {
+          wce-0001 = [
+            "rtsp://thingino:thingino@192.168.150.1:554/ch0"
+          ];
+          wce-0001_sub = [
+            "rtsp://thingino:thingino@192.168.150.1:554/ch1"
+          ];
+        };
+      };
       #############
       # Detectors #
       #############
@@ -43,56 +37,68 @@ in
         };
       };
       model = {
+        width = 300;
+        height = 300;
+        input_tensor = "nhwc";
+        input_pixel_format = "bgr";
         path = "/openvino-model/ssdlite_mobilenet_v2.xml";
+        labelmap_path = "/openvino-model/coco_91cl_bkgr.txt";
+      };
+      objects = {
+        track = [
+          "person"
+          "cat"
+          "car"
+          "dog"
+        ];
+      };
+      review = {
+        alerts = {
+          labels = [
+            "person"
+          ];
+        };
+      };
+      ####################
+      # Data Persistence #
+      ####################
+      record = {
+        enabled = true;
+        retain.days = 0; # as per official documentation
+        alerts = {
+          retain.days = 14;
+        };
+        detections = {
+          retain.days = 14;
+        };
       };
       #################
       # Camera config #
       #################
       cameras = {
-        #      wce-0001 = {
-        #        ffmpeg = {
-        #          inputs = [
-        #            {
-        #              path = "rtsp://127.0.0.1:8554/wce-0001";
-        #              roles = ["record"];
-        #            }
-        #            {
-        #              path = "rtsp://127.0.0.1:8554/wce-0001_sub";
-        #              roles = ["detect"];
-        #            }
-        #          ];
-        #        };
-        #        motion = {
-        #          mask = [
-        #            "0,0,0,0.04,0.201,0.043,0.199,0.005"
-        #            "0.864,0,0.865,0.043,1,0.043,1,0"
-        #          ];
-        #        };
-        #        live.stream_name = "wce-0001_sub";
-        #        detect.enabled = false;
-        #      };
-        #      wce-0002 = {
-        #        ffmpeg = {
-        #          inputs = [
-        #            {
-        #              path = "rtsp://127.0.0.1:8554/wce-0002";
-        #              roles = ["record"];
-        #            }
-        #            {
-        #              path = "rtsp://127.0.0.1:8554/wce-0002_sub";
-        #              roles = ["detect"];
-        #            }
-        #          ];
-        #        };
-        #        motion = {
-        #          mask = [
-        #            "0,0,0,0.04,0.201,0.043,0.199,0.005"
-        #            "0.864,0,0.865,0.043,1,0.043,1,0"
-        #          ];
-        #        };
-        #        live.stream_name = "wce-0002_sub";
-        #        detect.enabled = false;
-        #      };
+        wce-0001 = {
+          ffmpeg = {
+            inputs = [
+              {
+                path = "rtsp://127.0.0.1:8554/wce-0001";
+                roles = ["record"];
+              }
+              {
+                path = "rtsp://127.0.0.1:8554/wce-0001_sub";
+                roles = ["detect"];
+              }
+            ];
+          };
+          live.stream_name = "wce-0001_sub";
+          motion = {
+            enabled = true;
+            mask = [
+              "0,0,0.196,0.002,0.195,0.045,0,0.043" # timestamp
+              "0.898,0,0.896,0.045,1,0.048,0.999,0.002" # uptime
+            ];
+          };
+          detect.enabled = true;
+        };
       };
     });
   in
