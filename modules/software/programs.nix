@@ -110,6 +110,7 @@
         obs-studio
         olive-editor
         steam
+        protontricks
         protonup-qt
         steamtinkerlaunch
         prismlauncher
