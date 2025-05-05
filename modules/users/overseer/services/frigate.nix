@@ -14,6 +14,10 @@ in
         # TODO: add mqtt broker
         enabled = false;
       };
+      notifications = {
+        enabled = true;
+        email = "frigate@wanderingcrow.net";
+      };
       ###################
       # go2rtc restream #
       ###################
@@ -56,6 +60,7 @@ in
         alerts = {
           labels = [
             "person"
+            "cat"
           ];
         };
       };
