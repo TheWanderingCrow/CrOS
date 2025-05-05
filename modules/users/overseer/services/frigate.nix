@@ -29,6 +29,12 @@ in
           wce-0001_sub = [
             "rtsp://thingino:thingino@192.168.150.1:554/ch1"
           ];
+          wce-0002 = [
+            "rtsp://thingino:thingino@192.168.150.2:554/ch0"
+          ];
+          wce-0002_sub = [
+            "rtsp://thingino:thingino@192.168.150.2:554/ch1"
+          ];
         };
       };
       #############
@@ -95,6 +101,29 @@ in
             ];
           };
           live.stream_name = "wce-0001_sub";
+          motion = {
+            enabled = true;
+            mask = [
+              "0,0,0.196,0.002,0.195,0.045,0,0.043" # timestamp
+              "0.898,0,0.896,0.045,1,0.048,0.999,0.002" # uptime
+            ];
+          };
+          detect.enabled = true;
+        };
+        wce-0002 = {
+          ffmpeg = {
+            inputs = [
+              {
+                path = "rtsp://127.0.0.1:8554/wce-0002";
+                roles = ["record"];
+              }
+              {
+                path = "rtsp://127.0.0.1:8554/wce-0002_sub";
+                roles = ["detect"];
+              }
+            ];
+          };
+          live.stream_name = "wce-0002_sub";
           motion = {
             enabled = true;
             mask = [
