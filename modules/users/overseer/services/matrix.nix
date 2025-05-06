@@ -34,10 +34,10 @@ in
       recommendedOptimisation = true;
       recommendedGzipSettings = true;
       recommendedProxySettings = true;
-      vitualHosts = {
+      virtualHosts = {
         "wanderingcrow.net" = {
           forceSSL = lib.mkDefault true;
-          useACMEHosst = lib.mkDefault "wanderingcrow.net";
+          useACMEHost = lib.mkDefault "wanderingcrow.net";
           locations = {
             "= /.well-known/matrix/server".extraConfig = mkWellKnown serverConfig;
             "= /.well-known/matrix/client".extraConfig = mkWellKnown clientConfig;
