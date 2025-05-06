@@ -12,5 +12,6 @@
     ./grocy.nix
     ./actualbudget.nix
     ./glances.nix
+    ./matrix.nix
   ];
 }
