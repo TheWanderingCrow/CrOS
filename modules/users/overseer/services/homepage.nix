@@ -243,6 +243,13 @@ lib.mkIf config.user.overseer.enable {
                 }
               ];
             }
+            {
+              "Nixpkgs Versions" = [
+                {
+                  href = "https://lazamar.co.uk/nix-versions/";
+                }
+              ];
+            }
           ];
         }
       ];
