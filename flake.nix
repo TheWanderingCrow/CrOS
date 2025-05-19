@@ -1,13 +1,15 @@
 {
-  description = "CrOS Flake";
+  description = "CrOS Ecosystem";
 
   inputs = {
+    # Official inputs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    crowpkgs.url = "github:TheWanderingCrow/crowpkgs";
-    nix-secrets = "github:TheWanderingCrow/nix-secrets";
-
+    # 3rd party inputs
     sops-nix.url = "github:Mic92/sops-nix";
+
+    # CrOS inputs
+    nix-secrets = "github:TheWanderingCrow/nix-secrets";
   };
 }
