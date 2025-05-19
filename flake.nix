@@ -10,6 +10,6 @@
     sops-nix.url = "github:Mic92/sops-nix";
 
     # CrOS inputs
-    nix-secrets = "github:TheWanderingCrow/nix-secrets";
+    nix-secrets.url = "github:TheWanderingCrow/nix-secrets";
   };
 }
