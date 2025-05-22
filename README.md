@@ -3,7 +3,7 @@
 ## Directory Structure
 
 - `flake.nix` - Entrypoint for hosts and user home configurations. Also exposes
-  a devshell for manual bootstrapping tasks (`nix develop` or `nix-shell`).
+  a devshell for manual bootstrapping tasks (`nix develop`).
 - `hosts` - NixOS configurations accessible via
   `sudo nixos-rebuild switch --flake .#<host>`.
   - `common` - Shared configurations consumed by the machine specific ones.
