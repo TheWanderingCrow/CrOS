@@ -13,6 +13,7 @@
       "x86_64-linux"
     ];
     # Extend lib with lib.custom
+    # make sure to inherit this once we do lib extensions
     #lib = nixpkgs.lib.extend (self: super: {custom = import ./lib {inherit (nixpkgs) lib;};});
   in {
     # Overlays
@@ -24,7 +25,7 @@
         name = host;
         value = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs outputs lib;
+            inherit inputs outputs;
             isDarwin = false;
           };
           modules = [./hosts/nixos/${host}];
