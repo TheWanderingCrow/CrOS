@@ -13,8 +13,7 @@
       "x86_64-linux"
     ];
     # Extend lib with lib.custom
-    # make sure to inherit this once we do lib extensions
-    #lib = nixpkgs.lib.extend (self: super: {custom = import ./lib {inherit (nixpkgs) lib;};});
+    lib = nixpkgs.lib.extend (self: super: {custom = import ./lib {inherit (nixpkgs) lib;};});
   in {
     # Overlays
     # overlays = import ./overlays {inherit inputs;};
