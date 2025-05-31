@@ -89,6 +89,11 @@
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
 
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # 3rd party inputs
     disko = {
       # Declarative partitioning
@@ -98,6 +103,11 @@
 
     sops-nix = {
       url = "github:mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixvirt = {
+      url = "https://flakehub.com/f/AshleyYakeley/NixVirt/*.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

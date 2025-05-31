@@ -1,3 +1,59 @@
-{lib, ...}: {
-  imports = lib.custom.scanPaths ./.;
+{
+  inputs,
+  outputs,
+  config,
+  lib,
+  pkgs,
+  isDarwin,
+  ...
+}: let
+  platform =
+    if isDarwin
+    then "darwin"
+    else "nixos";
+  platformModules = "${platform}Modules";
+in {
+  imports = lib.flatten [
+    inputs.home-manager.${platformModules}.home-manager
+    inputs.sops-nix.${platformModules}.sops
+
+    (map lib.custom.relativeToRoot [
+      "hosts/common/core/${platform}.nix"
+      "hosts/common/core/shell.nix"
+      "hosts/common/core/sops.nix"
+      "hosts/common/core/ssh.nix"
+    ])
+  ];
+
+  hostSpec = {
+    username = "crow";
+    handle = "TheWanderingCrow";
+  };
+
+  networking.hostName = config.hostSpec.hostName;
+
+  environment.systemPackages = [pkgs.openssh];
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.backupFileExtension = "bk";
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+  };
+
+  nix = {
+    connect-timeout = 5;
+    log-lines = 25;
+    min-free = 128000000;
+    max-free = 1000000000;
+
+    experimental-features = ["nix-command" "flakes"];
+
+    fallback = true;
+    auto-optimise-store = true;
+
+    trusted-users = ["@wheel"];
+  };
 }
