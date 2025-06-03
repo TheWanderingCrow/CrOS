@@ -39,8 +39,6 @@
   - `darwin` - Custom modules specific to dariwn-based hosts
   - `home-manager` - Custom modules to home-manager
   - `nixos` - Custom modules specific to nixos-based hosts
-- `nixos-installer` - A stripped down version of the main nix-config flake used
-  exclusively during installation of NixOS and nix-config on hosts.
 - `overlays` - Custom modifications to upstream packages.
   - Currently not using overlays.
 - `pkgs` - Custom packages meant to be shared or upstreamed.
