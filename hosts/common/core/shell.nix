@@ -84,6 +84,5 @@
         };
       };
     };
-    users.defaultUserShell = pkgs.zsh;
   };
 }
