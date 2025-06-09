@@ -21,7 +21,6 @@
     }
 
     # Misc
-    # inputs.stylix.nixosModules.stylix
 
     (map lib.custom.relativeToRoot [
       # Required configs
@@ -34,6 +33,8 @@
   hostSpec = {
     hostName = "bulwark";
   };
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   networking = {
     networkmanager.enable = true;

@@ -13,6 +13,8 @@
     else "nixos";
   platformModules = "${platform}Modules";
 in {
+  system.stateVersion = "24.05";
+
   imports = lib.flatten [
     inputs.home-manager.${platformModules}.home-manager
     inputs.sops-nix.${platformModules}.sops
@@ -22,6 +24,9 @@ in {
       "hosts/common/core/shell.nix"
       "hosts/common/core/sops.nix"
       "hosts/common/core/ssh.nix"
+      "hosts/common/users/primary"
+      "hosts/common/users/primary/${platform}.nix"
+      "modules/common"
     ])
   ];
 
@@ -43,7 +48,7 @@ in {
     };
   };
 
-  nix = {
+  nix.settings = {
     connect-timeout = 5;
     log-lines = 25;
     min-free = 128000000;

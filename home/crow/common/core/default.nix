@@ -13,10 +13,14 @@ in {
   imports = lib.flatten [
     (map lib.custom.relativeToRoot [
       "modules/common/host-spec.nix"
-      "modules/home"
+      #"modules/home"
     ])
-    ./${platform.nix}
+    #./${platform.nix}
     ./xdg.nix
+    ./direnv.nix
+    ./firefox.nix
+    ./tmux.nix
+    ./git.nix
   ];
 
   inherit hostSpec;
