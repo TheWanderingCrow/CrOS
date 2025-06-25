@@ -24,6 +24,7 @@ in {
       "hosts/common/core/shell.nix"
       "hosts/common/core/sops.nix"
       "hosts/common/core/ssh.nix"
+      "hosts/common/core/editor.nix"
       "hosts/common/users/primary"
       "hosts/common/users/primary/${platform}.nix"
       "modules/common"

@@ -5,6 +5,7 @@
       protontricks = {
         enable = true;
       };
+      extraCompatPackages = [pkgs.unstable.proton-ge-bin];
     };
     gamescope = {
       enable = true;
@@ -21,4 +22,11 @@
       };
     };
   };
+  environment.systemPackages = with pkgs; [
+    vintagestory
+    mudlet
+    r2modman
+    prismlauncher
+    obs-studio
+  ];
 }
