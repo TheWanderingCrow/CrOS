@@ -6,4 +6,8 @@ pkgs.mkShell {
     git
     vim
   ];
+
+  shellHook = ''
+    git pull
+  '';
 }
