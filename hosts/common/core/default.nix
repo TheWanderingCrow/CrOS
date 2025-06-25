@@ -44,6 +44,9 @@ in {
   home-manager.backupFileExtension = "bk";
 
   nixpkgs = {
+    overlays = [
+      outputs.overlays.default
+    ];
     config = {
       allowUnfree = true;
     };

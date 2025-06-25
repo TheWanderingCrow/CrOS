@@ -16,7 +16,7 @@
     lib = nixpkgs.lib.extend (self: super: {custom = import ./lib {inherit (nixpkgs) lib;};});
   in {
     # Overlays
-    # overlays = import ./overlays {inherit inputs;};
+    overlays = import ./overlays {inherit inputs;};
 
     # Host Configurations
     nixosConfigurations = builtins.listToAttrs (
@@ -112,6 +112,8 @@
       url = "https://flakehub.com/f/AshleyYakeley/NixVirt/*.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    niri-flake.url = "github:sodiboo/niri-flake";
 
     # CrOS inputs
     nix-secrets.url = "git+ssh://git@github.com/TheWanderingCrow/nix-secrets";
