@@ -16,9 +16,11 @@
   - `dariwn` - machine specific configurations for darwin-based hosts
     - Currently not using any darwin hosts
   - `nixos` - machine specific configurations for NixOS-based hosts
-    - `Parzival` - Primary Box - Ryzen 5 7600 - 32GB DDR5 - RX 7800 XT
+    - `Parzival` - Primary Box - Ryzen 5 7600 - RX 7800 XT - 32GB DDR5
     - `Incarceron` - Work issued framework 13 - AMD Ryzen 7 7840U - 32GB DDR5
+    - `Dragneel` - Partner's Box - AMD Ryzen 5 3600 - RTX 2070 - 32GB - DDR4
     - `Bulwark` - Forensics and RE VM
+    - `Infiltrator` - Pentesting VM
 - `home/<user>` - Home-manager configurations, built automatically during host
   rebuilds.
   - `common` - Shared home-manager configurations consumed the user's machine

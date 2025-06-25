@@ -83,6 +83,8 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    hardware.url = "github:nixos/nixos-hardware";
+
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-25.05-darwin";
     nix-darwin = {
       url = "github:lnl7/nix-darwin";
