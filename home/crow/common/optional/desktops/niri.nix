@@ -4,11 +4,11 @@
   config,
   ...
 }: {
+  imports = [
+    inputs.niri-flake.homeModules.niri
+  ];
   nixpkgs.overlays = [
     inputs.niri-flake.overlays.niri
-  ];
-  home.packages = [
-    pkgs.niri
   ];
 
   programs.niri = {
@@ -16,7 +16,7 @@
     settings = {
       binds = with config.lib.niri.actions; {
         "Mod+Shift+Slash".action = show-hotkey-overlay;
-        "Mod+Enter" = {
+        "Mod+Return" = {
           hotkey-overlay.title = "Open terminal";
           action = spawn "foot";
         };
@@ -44,10 +44,7 @@
         gaps = 16;
       };
       spawn-at-startup = [
-        "waybar"
-        "swaync"
-        "udiskie"
-        "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+        {command = ["waybar"];}
       ];
     };
   };

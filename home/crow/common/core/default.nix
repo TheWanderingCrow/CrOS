@@ -18,7 +18,6 @@ in {
     #./${platform.nix}
     ./xdg.nix
     ./direnv.nix
-    ./firefox.nix
     ./tmux.nix
     ./git.nix
   ];

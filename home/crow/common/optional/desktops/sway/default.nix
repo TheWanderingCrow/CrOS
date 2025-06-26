@@ -1,12 +1,11 @@
-{config, ...}: {
-  home.file."${config.xdg.configHome}/sway/sway.conf" = {
-    source = ./sway.conf;
-  };
-
+{
+  lib,
+  config,
+  ...
+}: {
   wayland.windowManager.sway = {
     enable = true;
-    systemd.enable = true;
-    xwayland = true;
+    config = null;
+    extraConfig = builtins.readFile ./sway.conf;
   };
 }
-
