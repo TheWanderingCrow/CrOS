@@ -42,7 +42,6 @@ in {
         shell = pkgs.zsh;
         hashedPasswordFile = config.users.users.${hostSpec.username}.hashedPasswordFile;
         hashedPassword = config.users.users.${hostSpec.username}.hashedPassword;
-        password = "test";
         openssh.authorizedKeys.keys = config.users.users.${hostSpec.username}.openssh.authorizedKeys.keys; # root's ssh keys are mainly used for remote deployment.
       };
     };
