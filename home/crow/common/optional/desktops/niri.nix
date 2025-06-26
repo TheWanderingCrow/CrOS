@@ -14,6 +14,41 @@
   programs.niri = {
     enable = true;
     settings = {
+      binds = with config.lib.niri.actions; {
+        "Mod+Shift+Slash".action = show-hotkey-overlay;
+        "Mod+Enter" = {
+          hotkey-overlay.title = "Open terminal";
+          action = spawn "foot";
+        };
+        "Mod+D" = {
+          hotkey-overlay.title = "Open Application Picker";
+          action = spawn "wofi" "--show" "run";
+        };
+        "Mod+Shift+Z" = {
+          hotkey-overlay.title = "Lock computer";
+          action = spawn "";
+        };
+      };
+      input = {
+        keyboard = {
+          numlock = true;
+        };
+        touchpad = {
+          tap = false;
+          natural-scroll = true;
+          click-method = "button-areas";
+          disabled-on-external-mouse = true;
+        };
+      };
+      layout = {
+        gaps = 16;
+      };
+      spawn-at-startup = [
+        "waybar"
+        "swaync"
+        "udiskie"
+        "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+      ];
     };
   };
 }
