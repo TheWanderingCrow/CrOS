@@ -5,6 +5,7 @@ pkgs.mkShell {
   buildInputs = with pkgs; [
     git
     vim
+    nixos-anywhere
   ];
 
   shellHook = ''
