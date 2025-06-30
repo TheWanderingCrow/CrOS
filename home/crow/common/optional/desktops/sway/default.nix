@@ -4,6 +4,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ./waybar.nix
+  ];
+
   home.packages = with pkgs; [
     foot
     wofi
@@ -19,7 +23,7 @@
     grim
     slurp
     swappy
-    wwljoywake
+    wljoywake
   ];
 
   wayland.windowManager.sway = {
