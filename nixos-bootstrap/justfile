@@ -2,4 +2,4 @@ default:
   just -l
 
 iso:
-  nix build .#nixosConfigurations.ISO.config.system.build.isoImage -o install.iso
+  nix build .#nixosConfigurations.ISO.config.system.build.isoImage && ln -sf result/iso/*.iso install.iso
