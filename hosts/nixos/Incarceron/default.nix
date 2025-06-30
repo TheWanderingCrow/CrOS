@@ -13,7 +13,6 @@
   imports = lib.flatten [
     # Hardware
     inputs.hardware.nixosModules.framework-13-7040-amd
-    ./hardware-configuration.nix # I want to use factor if possible
 
     # Disks
     inputs.disko.nixosModules.disko
