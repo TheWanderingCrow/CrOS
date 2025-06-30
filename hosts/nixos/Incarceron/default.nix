@@ -17,7 +17,7 @@
 
     # Disks
     inputs.disko.nixosModules.disko
-    (lib.custom.relativeToRoot "hosts/common/disks/btrfs-impermanence-disk.nix")
+    (lib.custom.relativeToRoot "hosts/common/disks/btrfs-disk.nix")
     {
       _module.args = {
         disk = "/dev/nvme0n1";
