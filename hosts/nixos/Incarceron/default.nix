@@ -33,7 +33,10 @@
       "hosts/common/core"
 
       # Optional configs
+      "hosts/common/optional/audio.nix"
+      "hosts/common/optional/bluetooth.nix"
       "hosts/common/optional/keyd.nix"
+      "hosts/common/optional/pentesting.nix"
     ])
   ];
 
