@@ -40,7 +40,6 @@ in {
       # Root user setup
       root = {
         shell = pkgs.zsh;
-        initialPassword = "install"; # initial password for install, gets overwritten by sops
         hashedPasswordFile = config.users.users.${hostSpec.username}.hashedPasswordFile;
         openssh.authorizedKeys.keys = config.users.users.${hostSpec.username}.openssh.authorizedKeys.keys; # root's ssh keys are mainly used for remote deployment.
       };
