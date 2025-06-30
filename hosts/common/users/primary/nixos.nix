@@ -40,8 +40,8 @@ in {
       # Root user setup
       root = {
         shell = pkgs.zsh;
+        initialHashedPassword = "$y$j9T$xK9d9psdUDXilZld6Kn/l1$8aqdwzchX8hjlvalDIInRkEXKfVPQWrs1qRFiPSwjKB"; # Initial root password for installs
         hashedPasswordFile = config.users.users.${hostSpec.username}.hashedPasswordFile;
-        hashedPassword = config.users.users.${hostSpec.username}.hashedPassword;
         openssh.authorizedKeys.keys = config.users.users.${hostSpec.username}.openssh.authorizedKeys.keys; # root's ssh keys are mainly used for remote deployment.
       };
     };
