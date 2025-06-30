@@ -6,6 +6,7 @@ pkgs.mkShell {
     git
     vim
     nixos-anywhere
+    ssh-to-age
   ];
 
   shellHook = ''
