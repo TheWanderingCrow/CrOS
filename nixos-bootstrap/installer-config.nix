@@ -5,7 +5,9 @@
   modulesPath,
   lib,
   ...
-}: {
+}: let
+  loginKey = builtins.readFile ./installer.pub;
+in {
   imports = [
     inputs.disko.nixosModules.disko
     "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
@@ -28,5 +30,13 @@
     wireless.enable = lib.mkForce false;
     networkmanager.enable = true;
     enableIPv6 = false;
+  };
+
+  users.users.nixos.openssh.authorizedKeys.keys = [loginKey];
+  users.users.root.openssh.authorizedKeys.keys = [loginKey];
+
+  services.openssh = {
+    enable = true;
+    openFirewall = true;
   };
 }
