@@ -27,7 +27,7 @@
     slurp
     swappy
     wljoywake
-    pactl
+    pulseaudio
     playerctl
     brightnessctl
   ];
