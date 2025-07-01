@@ -42,6 +42,7 @@
   - `darwin` - Custom modules specific to dariwn-based hosts
   - `home` - Custom modules to home-manager
   - `nixos` - Custom modules specific to nixos-based hosts
+  - `services` - Definitions for hosted services
 - `overlays` - Custom modifications to upstream packages.
   - Currently not using overlays.
 - `pkgs` - Custom packages meant to be shared or upstreamed.
