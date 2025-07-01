@@ -54,6 +54,44 @@
         "Mod+O" = {
           action = toggle-overview;
         };
+        # Audio Control
+        XF86AudioRaiseVolume = {
+          action = spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "+5%";
+          allow-when-locked = true;
+        };
+        XF86AudioLowerVolume = {
+          action = spawn "pactl" "set-sink-volume" "@DEFAULT_SINK@" "-5%";
+          allow-when-locked = true;
+        };
+        XF86AudioMute = {
+          action = spawn "pactl" "set-sink-mute" "@DEFAULT_SINK@" "toggle";
+          allow-when-locked = true;
+        };
+        XF86AudioMicMute = {
+          action = spawn "pulseaudio-ctl" "mute-input";
+          allow-when-locked = true;
+        };
+        XF86AudioPlay = {
+          action = spawn "playerctl" "play-pause";
+          allow-when-locked = true;
+        };
+        XF86AudioNext = {
+          action = spawn "playerctl" "next";
+          allow-when-locked = true;
+        };
+        XF86AudioPrev = {
+          action = spawn "playerctl" "previous";
+          allow-when-locked = true;
+        };
+        # Brightness Control
+        XF86MonBrightnessUp = {
+          action = spawn "brightnessctl" "s" "+5%";
+          allow-when-locked = true;
+        };
+        XF86MonBrightnessDown = {
+          action = spawn "brightnessctl" "s" "-5%";
+          allow-when-locked = true;
+        };
         # Application Controls
         "Mod+Shift+Q" = {
           action = close-window;
