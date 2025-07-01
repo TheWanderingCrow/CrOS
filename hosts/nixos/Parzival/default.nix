@@ -11,12 +11,11 @@
 }: {
   imports = lib.flatten [
     # Hardware
-    inputs.hardware.nixosModules.framework-13-7040-amd
     ./hardware-configuration.nix # I want to use factor if possible
 
     # Disks
     inputs.disko.nixosModules.disko
-    (lib.custom.relativeToRoot "hosts/common/disks/btrfs-impermanence-disk.nix")
+    (lib.custom.relativeToRoot "hosts/common/disks/btrfs-disk.nix")
     {
       _module.args = {
         disk = "/dev/nvme0n1";
@@ -32,14 +31,17 @@
       "hosts/common/core"
 
       # Optional configs
-      "hosts/common/optional/keyd.nix"
+      "hosts/common/optional/audio.nix"
+      "hosts/common/optional/bluetooth.nix"
+      "hosts/common/optional/pentesting.nix"
+      "hosts/common/optional/gaming.nix"
     ])
   ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   hostSpec = {
-    hostName = "Incarceron";
+    hostName = "Parzival";
     persistFolder = "/persist";
   };
 

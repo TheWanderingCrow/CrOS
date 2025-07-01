@@ -27,6 +27,7 @@
       "hosts/common/core"
 
       # Optional configs
+      "hosts/common/optional/pentesting.nix"
     ])
   ];
 
