@@ -6,9 +6,28 @@
 }: {
   imports = [
     inputs.niri-flake.homeModules.niri
+    ../sway/waybar.nix
   ];
   nixpkgs.overlays = [
     inputs.niri-flake.overlays.niri
+  ];
+
+  home.packages = with pkgs; [
+    foot
+    wofi
+    swaynotificationcenter
+    polkit_gnome
+    swayidle
+    sway-audio-idle-inhibit
+    swaylock-effects
+    sway-contrib.grimshot
+    waybar
+    wl-clipboard
+    hyprlock
+    grim
+    slurp
+    swappy
+    wljoywake
   ];
 
   programs.niri = {
@@ -27,6 +46,9 @@
         "Mod+Shift+Z" = {
           hotkey-overlay.title = "Lock computer";
           action = spawn "";
+        };
+        "Mod+Shift+E" = {
+          action = quit;
         };
       };
       input = {
