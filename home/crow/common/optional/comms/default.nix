@@ -1,5 +1,9 @@
 {pkgs, ...}: {
-  home.packages = [
-    pkgs.ferdium
+  home.packages = with pkgs; [
+    ferdium
+    discord
+    mattermost
+    slack
+    zoom
   ];
 }
