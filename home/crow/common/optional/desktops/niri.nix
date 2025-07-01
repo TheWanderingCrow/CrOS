@@ -19,7 +19,6 @@
     polkit_gnome
     swayidle
     sway-audio-idle-inhibit
-    swaylock-effects
     sway-contrib.grimshot
     waybar
     wl-clipboard
@@ -28,6 +27,9 @@
     slurp
     swappy
     wljoywake
+    pactl
+    playerctl
+    brightnessctl
   ];
 
   programs.niri = {
