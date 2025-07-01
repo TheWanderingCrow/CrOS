@@ -40,7 +40,7 @@
   - `common` - Custom modules that will work on either nixos or dariwn but that
     aren't specific to home-manager
   - `darwin` - Custom modules specific to dariwn-based hosts
-  - `home-manager` - Custom modules to home-manager
+  - `home` - Custom modules to home-manager
   - `nixos` - Custom modules specific to nixos-based hosts
 - `overlays` - Custom modifications to upstream packages.
   - Currently not using overlays.
