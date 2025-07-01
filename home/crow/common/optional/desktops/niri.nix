@@ -180,7 +180,7 @@
 
         "Mod+Escape" = {
           action = toggle-keyboard-shortcuts-inhibit;
-          allow-ingibiting = false;
+          allow-inhibiting = false;
         };
       };
       input = {
