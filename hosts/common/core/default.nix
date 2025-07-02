@@ -26,6 +26,7 @@ in {
       "hosts/common/core/ssh.nix"
       "hosts/common/core/editor.nix"
       "hosts/common/core/fonts.nix"
+      "hosts/common/core/sudo.nix"
       "hosts/common/users/primary"
       "hosts/common/users/primary/${platform}.nix"
       "modules/common"
