@@ -33,7 +33,7 @@ in {
         locations."/" = {
           extraConfig = ''
             allow 192.168.0.0/16;
-            allow ${s.network.primary.publicIP}
+            allow ${s.network.primary.publicIP};
             deny all;
           '';
           proxyPass = "http://localhost:8089";
