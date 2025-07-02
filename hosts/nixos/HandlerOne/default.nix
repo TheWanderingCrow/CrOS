@@ -49,6 +49,9 @@
   networking = {
     networkmanager.enable = true;
     enableIPv6 = false;
+    firewall = {
+      allowedTCPPorts = [80 443];
+    };
   };
 
   boot.loader = {
