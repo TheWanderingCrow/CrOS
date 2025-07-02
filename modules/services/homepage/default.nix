@@ -184,7 +184,6 @@ in {
             }
           ];
         }
-        s.work.homepage
         {
           Nix = [
             {
