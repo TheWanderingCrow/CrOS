@@ -2,25 +2,25 @@
   lib,
   inputs,
   config,
+  pkgs,
   ...
 }: let
   s = inputs.nix-secrets;
 in {
   # Homepage.dev secrets
   sops = {
-    secrets = {
-      "homepage/openmeteo/lat" = {};
-      "homepage/openmeteo/long" = {};
-      "lubelogger/user" = {};
-      "lubelogger/pass" = {};
-    };
+    #secrets = {
+    #"lubelogger/user" = {};
+    #"lubelogger/pass" = {};
+    #};
     templates."homepage-environment".content = ''
-      HOMEPAGE_VAR_LAT = ${config.sops.placeholder."homepage/openmeteo/lat"}
-      HOMEPAGE_VAR_LONG = ${config.sops.placeholder."homepage/openmeteo/long"}
-      HOMEPAGE_VAR_LUBELOGGERUSER = ${config.sops.placeholder."lubelogger/user"}
-      HOMEPAGE_VAR_LUBELOGGERPASS = ${config.sops.placeholder."lubelogger/pass"}
+      HOMEPAGE_VAR_LAT = ${s.crow.location.lat}
+      HOMEPAGE_VAR_LONG = ${s.crow.location.long}
       HOMEPAGE_ALLOWED_HOSTS = home.wanderingcrow.net
     '';
+    #Need to put these back in later
+    #HOMEPAGE_VAR_LUBELOGGERUSER = ${config.sops.placeholder."lubelogger/user"}
+    #HOMEPAGE_VAR_LUBELOGGERPASS = ${config.sops.placeholder."lubelogger/pass"}
   };
 
   services.nginx = {
@@ -33,8 +33,7 @@ in {
         locations."/" = {
           extraConfig = ''
             allow 192.168.0.0/16;
-            allow 10.8.0.0/24;
-            allow 172.220.134.108;
+            allow ${s.network.primary.publicIP}
             deny all;
           '';
           proxyPass = "http://localhost:8089";
@@ -63,8 +62,8 @@ in {
                 widget = {
                   type = "lubelogger";
                   url = "https://garage.wanderingcrow.net";
-                  username = "{{HOMEPAGE_VAR_LUBELOGGERUSER}}";
-                  password = "{{HOMEPAGE_VAR_LUBELOGGERPASS}}";
+                  # username = "{{HOMEPAGE_VAR_LUBELOGGERUSER}}";
+                  # password = "{{HOMEPAGE_VAR_LUBELOGGERPASS}}";
                 };
               };
             }
@@ -185,42 +184,7 @@ in {
             }
           ];
         }
-        {
-          Work = [
-            {
-              Jira = [
-                {
-                  icon = "jira.svg";
-                  href = "https://home.atlassian.com/";
-                }
-              ];
-            }
-            {
-              AWS = [
-                {
-                  icon = "aws.svg";
-                  href = "https://console.aws.amazon.com/";
-                }
-              ];
-            }
-            {
-              Email = [
-                {
-                  icon = "gmail.svg";
-                  href = "https://mail.google.com/mail/u/1/#inbox";
-                }
-              ];
-            }
-            {
-              Groups = [
-                {
-                  icon = "https://www.gstatic.com/images/branding/product/1x/groups_32dp.png";
-                  href = "https://groups.google.com/u/1/";
-                }
-              ];
-            }
-          ];
-        }
+        s.work.homepage
         {
           Nix = [
             {

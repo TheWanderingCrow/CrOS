@@ -1,8 +1,4 @@
-{
-  lib,
-  config,
-  ...
-}: {
+{inputs, ...}: {
   services = {
     nginx = {
       enable = true;
@@ -15,7 +11,7 @@
             extraConfig = ''
               allow 192.168.0.0/16;
               allow 10.8.0.0/24;
-              allow 172.220.132.255;
+              allow ${inputs.nix-secrets.network.primary.publicIP}
               deny all;
             '';
             proxyPass = "http://localhost:7745";
