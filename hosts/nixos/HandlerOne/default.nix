@@ -36,6 +36,14 @@
 
       # Hosted services
       "modules/services/actualbudget"
+      "modules/services/bar-assistant"
+      "modules/services/frigate"
+      "modules/services/grocy"
+      "modules/services/homebox"
+      "modules/services/homepage"
+      "modules/services/lubelogger"
+      "modules/services/trilium"
+      "modules/services/umami"
     ])
   ];
 
