@@ -14,6 +14,9 @@
     # Hardware
     ./hardware-configuration.nix
 
+    # FIXME(TODO): Turn this into it's own backup module
+    ./backup.nix
+
     # Disks
     inputs.disko.nixosModules.disko
     (lib.custom.relativeToRoot "hosts/common/disks/btrfs-disk.nix")
