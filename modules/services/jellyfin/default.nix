@@ -21,7 +21,7 @@ in {
         useACMEHost = "ta.wanderingcrow.net";
         locations = {
           "/" = {
-            proxyPass = "http://10.88.0.14";
+            proxyPass = "http://10.88.0.14:8000";
             proxyWebsockets = true;
           };
         };
