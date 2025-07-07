@@ -84,7 +84,7 @@ in {
         "path.repo" = "/usr/share/elasticsearch/data/snapshot";
       };
       volumes = [
-        "${volumePath}/tubearchivist/es:/usr/share/elasticsearch/data"
+        #        "${volumePath}/tubearchivist/es:/usr/share/elasticsearch/data"
       ];
     };
   };
