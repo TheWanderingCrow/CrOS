@@ -62,7 +62,10 @@ in {
     };
     archivist-redis = {
       image = "redis";
-      extraOptions = ["--ip=10.88.0.15"];
+      extraOptions = [
+        "--ip=10.88.0.15"
+        "--ulimit=memlock=-1:-1"
+      ];
       volumes = [
         "${volumePath}/tubearchivist/redis:/data"
       ];
