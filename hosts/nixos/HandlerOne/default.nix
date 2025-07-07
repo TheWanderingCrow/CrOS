@@ -118,6 +118,7 @@
       "barcodebuddy.grocy.wanderingcrow.net" = {};
       "budget.wanderingcrow.net" = {};
       "matrix.wanderingcrow.net" = {};
+      "ta.wanderingcrow.net" = {};
     };
   };
 }

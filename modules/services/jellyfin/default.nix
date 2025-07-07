@@ -12,6 +12,23 @@ in {
   };
 
   # Tube Archivist
+  services.nginx = {
+    enable = true;
+    recommendedProxySettings = true;
+    virtualHosts = {
+      "ta.wanderingcrow.net" = {
+        forceSSL = true;
+        useACMEHost = "ta.wanderingcrow.net";
+        locations = {
+          "/" = {
+            proxyPass = "http://10.88.0.14";
+            proxyWebsockets = true;
+          };
+        };
+      };
+    };
+  };
+
   systemd.tmpfiles.rules = [
     "d ${volumePath}/tubearchivist"
     "d ${volumePath}/tubearchivist/redis"
@@ -32,7 +49,7 @@ in {
         REDIS_CON = "redis://10.88.0.15:6379";
         HOST_UID = "1000";
         HOST_GID = "1000";
-        TA_HOST = "http://192.168.0.30:8000";
+        TA_HOST = "https://ta.wanderingcrow.net";
         TA_USERNAME = "tubearchivist";
         TA_PASSWORD = "verysecret";
         ELASTIC_PASSWORD = "verysecret";
