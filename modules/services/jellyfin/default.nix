@@ -12,6 +12,13 @@ in {
   };
 
   # Tube Archivist
+  systemd.tmpfiles.rules = [
+    "d ${volumePath}/tubearchivist"
+    "d ${volumePath}/tubearchivist/redis"
+    "d ${volumePath}/tubearchivist/es"
+    "d ${volumePath}/tubearchivist/ta/youtube"
+    "d ${volumePath}/tubearchivist/ta/cache"
+  ];
   virtualisation.oci-containers.containers = {
     tubearchivist = {
       image = "bbilly1/tubearchivist";
