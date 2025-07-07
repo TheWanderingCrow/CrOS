@@ -54,6 +54,8 @@ in {
     };
   };
 
+  virtualisation.oci-containers.backend = lib.mkDefault "podman";
+
   nix.settings = {
     connect-timeout = 5;
     log-lines = 25;
