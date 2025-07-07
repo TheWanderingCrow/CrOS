@@ -54,7 +54,7 @@ in {
       ];
     };
     archivist-es = {
-      image = "bbilly1/tubearchivist-es";
+      image = "elasticsearch:8.18.0";
       extraOptions = ["--ip=10.88.0.16"];
       environment = {
         ELASTIC_PASSWORD = "verysecret";
