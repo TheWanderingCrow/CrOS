@@ -32,7 +32,7 @@ in {
   systemd.tmpfiles.rules = [
     "d ${volumePath}/tubearchivist"
     "d ${volumePath}/tubearchivist/redis"
-    "d ${volumePath}/tubearchivist/es"
+    "d ${volumePath}/tubearchivist/es - 1000 0"
     "d ${volumePath}/tubearchivist/ta/youtube"
     "d ${volumePath}/tubearchivist/ta/cache"
   ];
