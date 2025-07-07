@@ -216,11 +216,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1751808010,
-        "narHash": "sha256-pUDoAvUMFe5ywEzGaT8jvqisTGb6jfKvOjpwmxj/FZw=",
+        "lastModified": 1751920685,
+        "narHash": "sha256-s9GVjhBppOjPirNe4caE8cb9DcsA7RuATamqE7nOMLQ=",
         "ref": "refs/heads/master",
-        "rev": "1d4475279230e5eb6b9adfc100dbe1b4d6b411e9",
-        "revCount": 89,
+        "rev": "b518d9cc05c04dfdf52eda31be7ec10859e722d0",
+        "revCount": 90,
         "type": "git",
         "url": "ssh://git@github.com/TheWanderingCrow/nix-secrets"
       },
