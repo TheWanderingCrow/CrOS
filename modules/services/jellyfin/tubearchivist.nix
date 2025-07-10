@@ -56,7 +56,7 @@ in {
         TA_USERNAME = "admin";
         TZ = "America/New_York";
       };
-      environmentFile = config.sops.templates.tubearchivist.path;
+      environmentFiles = [config.sops.templates.tubearchivist.path];
       dependsOn = [
         "archivist-redis"
         "archivist-es"
@@ -84,7 +84,7 @@ in {
         "discovery.type" = "single-node";
         "path.repo" = "/usr/share/elasticsearch/data/snapshot";
       };
-      environmentFile = config.sops.templates.archivist-es.path;
+      environmentFiles = [config.sops.templates.archivist-es.path];
       volumes = [
         "${volumePath}/tubearchivist/es:/usr/share/elasticsearch/data"
       ];
