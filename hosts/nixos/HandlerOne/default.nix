@@ -47,7 +47,6 @@
       "modules/services/lubelogger"
       "modules/services/trilium"
       "modules/services/umami"
-      "modules/services/jellyfin"
     ])
   ];
 
