@@ -28,6 +28,7 @@ in
     environment.systemPackages = [
       pkgs.git
       pkgs.vim
+      pkgs.just
     ];
   }
   // lib.optionalAttrs (inputs ? "home-manager") {
