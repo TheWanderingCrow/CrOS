@@ -35,6 +35,7 @@
       "hosts/common/optional/bluetooth.nix"
       "hosts/common/optional/pentesting.nix"
       "hosts/common/optional/gaming.nix"
+      "modules/services/ollama"
     ])
   ];
 
