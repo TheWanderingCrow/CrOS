@@ -7,6 +7,7 @@
   imports = [
     inputs.niri-flake.homeModules.niri
     ./sway/waybar.nix
+    ./swww
   ];
   nixpkgs.overlays = [
     inputs.niri-flake.overlays.niri

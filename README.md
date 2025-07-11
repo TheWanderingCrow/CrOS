@@ -50,6 +50,7 @@
   - `darwin` - Custom packages specific to dariwn-based hosts
   - `nixos` - Custom packages specific to nixos-based hosts
 - `devshells` - Custom development shells and environments
+- `assets` - Storage for things like wallpapers
 
 # Credits
 

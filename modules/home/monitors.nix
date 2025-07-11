@@ -61,6 +61,11 @@
             description = "Variable Refresh Rate aka Adaptive Sync aka AMD FreeSync.\nValues are oriented towards hyprland's vrr values which are:\n0 = off, 1 = on, 2 = fullscreen only\nhttps://wiki.hyprland.org/Configuring/Variables/#misc";
             default = 0;
           };
+          background = lib.mkOption {
+            type = lib.types.path;
+            description = "Path to background in assets to get handled with swww";
+            default = null;
+          };
         };
       }
     );

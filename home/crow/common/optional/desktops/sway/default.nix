@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./waybar.nix
+    ../swww
   ];
 
   home.packages = with pkgs; [
