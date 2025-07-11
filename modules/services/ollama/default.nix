@@ -20,6 +20,7 @@
     enable = true;
     redisCreateLocally = true;
     settings = {
+      server.limiter = false;
       server.secret_key = "temptestsecret";
       server.port = 3001;
       server.bind_address = "0.0.0.0";
