@@ -3,7 +3,16 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  monitorConfig =
+    (
+      map (m:
+        if m.enabled
+        then "output ${m.name} mode ${toString m.width}x${toString m.height}@${toString m.refreshRate}Hz pos ${toString m.x} ${toString m.y} bg ${toString m.background} stretch"
+        else "output ${m.name} disable")
+    )
+    config.monitors;
+in {
   imports = [
     ./waybar.nix
     ../swww
@@ -33,6 +42,6 @@
   wayland.windowManager.sway = {
     enable = true;
     config = null;
-    extraConfig = builtins.readFile ./sway.conf;
+    extraConfig = builtins.readFile ./sway.conf + lib.strings.concatStringsSep "\n" monitorConfig;
   };
 }
