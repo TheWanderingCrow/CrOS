@@ -23,10 +23,12 @@
     };
   };
   environment.systemPackages = with pkgs; [
-    # vintagestory
-    # mudlet
-    # r2modman
-    # prismlauncher
-    # obs-studio
+    vintagestory
+    mudlet
+    r2modman
+    prismlauncher
+  ];
+  nixpkgs.config.permittedInsecurePackages = [
+    "dotnet-runtime-7.0.20" # VintageStory dep
   ];
 }
