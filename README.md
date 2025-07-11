@@ -44,7 +44,6 @@
   - `nixos` - Custom modules specific to nixos-based hosts
   - `services` - Definitions for hosted services
 - `overlays` - Custom modifications to upstream packages.
-  - Currently not using overlays.
 - `pkgs` - Custom packages meant to be shared or upstreamed.
   - `common` - Custom packages that will work on either nixos or dariwn
   - `darwin` - Custom packages specific to dariwn-based hosts

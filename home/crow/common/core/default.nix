@@ -22,6 +22,10 @@ in {
     ./git.nix
   ];
 
+  home.packages = with pkgs; [
+    screen
+  ];
+
   inherit hostSpec;
 
   home = {
