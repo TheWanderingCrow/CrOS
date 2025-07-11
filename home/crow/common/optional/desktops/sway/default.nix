@@ -25,6 +25,9 @@
     slurp
     swappy
     wljoywake
+    pulseaudio
+    playerctl
+    brightnessctl
   ];
 
   wayland.windowManager.sway = {
