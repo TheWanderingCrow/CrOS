@@ -35,13 +35,9 @@
 in {
   home.packages = [
     steam-session
-    pkgs.vintagestory
+    #pkgs.vintagestory
     pkgs.mudlet
     pkgs.r2modman
     pkgs.prismlauncher
-  ];
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "dotnet-runtime-7.0.20" # VintageStory dep
   ];
 }

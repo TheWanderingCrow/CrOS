@@ -8,7 +8,7 @@
     (
       map (m:
         if m.enabled
-        then "output ${m.name} mode ${toString m.width}x${toString m.height}@${toString m.refreshRate}Hz pos ${toString m.x} ${toString m.y} bg ${toString m.background} stretch"
+        then lib.strings.concatStringsSep "\n" ["output ${m.name} mode ${toString m.width}x${toString m.height}@${toString m.refreshRate}Hz pos ${toString m.x} ${toString m.y} transform ${toString m.transform}" "exec swww img -o ${m.name} ${m.background}"]
         else "output ${m.name} disable")
     )
     config.monitors;
