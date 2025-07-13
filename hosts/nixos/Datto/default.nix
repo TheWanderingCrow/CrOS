@@ -1,8 +1,8 @@
-#######################
-#                     #
-# Datto - OctoPi Node #
-#                     #
-#######################
+##########################
+#                        #
+# Datto - OctoPrint Node #
+#                        #
+##########################
 {
   inputs,
   lib,
@@ -30,6 +30,12 @@
       # Optional configs
     ])
   ];
+
+  services.octoprint = {
+    enable = true;
+    openFirewall = true;
+    port = 5000;
+  };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
