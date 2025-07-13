@@ -1,9 +1,11 @@
-{config, ...}: {
+{config, ...}: let
+  volumePath = "/overseer/services";
+in {
   virtualisation.oci-containers = {
     backend = "podman";
     containers = {
       "wishthis" = {
-        image = "wishthis:latest";
+        image = "hiob/wishthis:stable";
         extraOptions = [
           "--ip=10.88.0.15"
         ];
