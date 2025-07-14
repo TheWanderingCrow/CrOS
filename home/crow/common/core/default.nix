@@ -20,6 +20,8 @@ in {
     ./direnv.nix
     ./tmux.nix
     ./git.nix
+    ./nushell.nix
+    ./starship.nix
   ];
 
   home.packages = with pkgs; [
@@ -35,7 +37,7 @@ in {
     stateVersion = lib.mkDefault "24.05";
 
     sessionVariables = {
-      SHELL = "zsh";
+      SHELL = "nu";
       TERM = "foot";
       TERMINAL = "foot";
       VISUAL = "nvim";
