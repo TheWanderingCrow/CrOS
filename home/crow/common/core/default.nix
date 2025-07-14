@@ -24,6 +24,7 @@ in {
 
   home.packages = with pkgs; [
     screen
+    ouch
   ];
 
   inherit hostSpec;
