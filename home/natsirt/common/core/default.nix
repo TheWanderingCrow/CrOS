@@ -31,6 +31,7 @@ in {
       TERMINAL = "konsole";
       VISUAL = "nvim";
       EDITOR = "nvim";
+      NIX_AUTO_RUN = "1";
     };
   };
 }
