@@ -124,6 +124,7 @@ in {
             }
           ];
         }
+        s.work.homepage
         {
           "Day to Day" = [
             {
