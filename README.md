@@ -22,6 +22,7 @@
     - `Dragneel` - Partner's Box - AMD Ryzen 5 3600 - RTX 2070 - 32GB - DDR4
     - `Bulwark` - Forensics and RE VM
     - `Infiltrator` - Pentesting VM
+  - `droid` - nix-on-droid configurations
 - `home/<user>` - Home-manager configurations, built automatically during host
   rebuilds.
   - `common` - Shared home-manager configurations consumed the user's machine

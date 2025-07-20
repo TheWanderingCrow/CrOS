@@ -4,6 +4,7 @@
   outputs = {
     self,
     nixpkgs,
+    nix-on-droid,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -11,6 +12,7 @@
     # Architectures
     forAllSystems = nixpkgs.lib.genAttrs [
       "x86_64-linux"
+      "aarch64-linux"
     ];
     # Extend lib with lib.custom
     lib = nixpkgs.lib.extend (self: super: {custom = import ./lib {inherit (nixpkgs) lib;};});
@@ -75,6 +77,18 @@
           }) (builtins.attrNames (builtins.readDir ./devshells))
         )
     );
+
+    nixOnDroidConfigurations = builtins.listToAttrs (
+      map (host: {
+        name = host;
+        value = nix-on-droid.lib.nixOnDroidConfiguration {
+          pkgs = import nixpkgs {
+            system = "aarch64-linux";
+          };
+          modules = [./hosts/droid/${host}];
+        };
+      }) (builtins.attrNames (builtins.readDir ./hosts/droid))
+    );
   };
 
   inputs = {
@@ -93,6 +107,11 @@
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
