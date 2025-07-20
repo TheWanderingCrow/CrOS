@@ -8,7 +8,7 @@
   environment.packages = with pkgs; [
     inputs.nvix.packages.${pkgs.system}.default
     git
-    ssh
+    openssh
   ];
 
   environment.etcBackupExtension = ".bak";
