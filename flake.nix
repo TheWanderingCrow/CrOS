@@ -85,6 +85,9 @@
           pkgs = import nixpkgs {
             system = "aarch64-linux";
           };
+          extraSpecialArgs = {
+            inherit inputs outputs lib;
+          };
           modules = [./hosts/droid/${host}];
         };
       }) (builtins.attrNames (builtins.readDir ./hosts/droid))
