@@ -140,5 +140,6 @@
     # CrOS inputs
     nix-secrets.url = "git+ssh://git@github.com/TheWanderingCrow/nix-secrets";
     nvix.url = "github:TheWanderingCrow/nvix";
+    the-nest.url = "github:TheWanderingCrow/the-nest";
   };
 }

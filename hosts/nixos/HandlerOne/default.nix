@@ -38,6 +38,7 @@
       "hosts/common/optional/keyd.nix"
 
       # Hosted services
+      "modules/services/the-nest"
       "modules/services/actualbudget"
       "modules/services/bar-assistant"
       "modules/services/frigate"
