@@ -37,7 +37,7 @@ in {
     stateVersion = lib.mkDefault "24.05";
 
     sessionVariables = {
-      SHELL = "nu";
+      SHELL = "zsh";
       TERM = "foot";
       TERMINAL = "foot";
       VISUAL = "nvim";
