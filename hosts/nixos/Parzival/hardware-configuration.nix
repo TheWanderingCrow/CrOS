@@ -22,4 +22,6 @@
     amdvlk.enable = true;
     opencl.enable = true;
   };
+
+  hardware.keyboard.qmk.enable = true; # QMK development stuff
 }
