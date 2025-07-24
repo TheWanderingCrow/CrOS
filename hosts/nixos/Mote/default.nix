@@ -1,8 +1,8 @@
-##########################
-#                        #
-# Datto - OctoPrint Node #
-#                        #
-##########################
+#########################
+#                       #
+# Mote - OctoPrint Node #
+#                       #
+#########################
 {
   inputs,
   lib,
@@ -40,7 +40,7 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   hostSpec = {
-    hostName = "Datto";
+    hostName = "Mote";
     persistFolder = "/persist";
   };
 
