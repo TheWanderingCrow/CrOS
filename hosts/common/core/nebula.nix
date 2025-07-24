@@ -13,7 +13,7 @@ in {
 
   services.nebula.networks.wce = lib.mkIf builtins.hasAttr "${config.hostSpec.hostName}" s.hosts {
     inherit (s) ca;
-    inherit (s.hosts.${config.hostSpec.hostName}) key cert;
+    inherit (s.hosts.${config.hostSpec.hostName}) key cert isLighthouse;
     enable = true;
   };
 }
