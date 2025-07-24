@@ -18,7 +18,7 @@
   - `nixos` - machine specific configurations for NixOS-based hosts
     - `Parzival` - Primary Box - Ryzen 5 7600 - RX 7800 XT - 32GB DDR5
     - `Incarceron` - Work issued framework 13 - AMD Ryzen 7 7840U - 32GB DDR5
-    - `Nyx` - My X1 Carbon, personal laptop
+    - `Nyx` - My X1 Carbon, personal laptop - i7-8650U - 16GB DDR4
     - `HandlerOne` - Lenovo m710q - i5-7500T - 16GB DDR4
     - `Mote` - Some dinky little datto appliance that does my bidding now
     - `Michishirube` - Nebula lighthouse node hosted on Digital Ocean
