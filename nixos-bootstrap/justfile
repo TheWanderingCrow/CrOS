@@ -3,3 +3,5 @@ default:
 
 iso:
   nix build .#nixosConfigurations.ISO.config.system.build.isoImage && ln -sf result/iso/*.iso install.iso
+do:
+  nix-build ./installers/DigitalOcean.nix

@@ -16,6 +16,7 @@
       ISO = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
+          ./installers/ISO.nix
           ./installer-config.nix
         ];
       };
