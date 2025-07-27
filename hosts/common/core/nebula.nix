@@ -12,8 +12,8 @@ in {
     else [];
 
   services.nebula.networks.wce = lib.mkIf (builtins.hasAttr "${config.hostSpec.hostName}" s.hosts) {
-    inherit (s) ca;
-    inherit (s.hosts.${config.hostSpec.hostName}) key cert isLighthouse;
+    inherit (s) ca lighthouses staticHostMap;
+    inherit (s.hosts.${config.hostSpec.hostName}) key cert isLighthouse firewall;
     enable = true;
   };
 }
