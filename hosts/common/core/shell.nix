@@ -16,7 +16,8 @@
     shellAliases = {
       lah = "ls -lah";
       set-nixpkgs-upstream = "git remote add upstream https://github.com/NixOS/nixpkgs.git";
-      nup = "sudo nixos-rebuild switch --flake .";
+      nup = "sudo nixos-rebuild switch --flake github:TheWanderingCrow/CrOS";
+      lnup = "sudo nixos-rebuild switch --flake ."; # Local test rebuilds
     };
   };
 }
