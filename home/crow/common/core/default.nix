@@ -24,10 +24,14 @@ in {
     ./starship.nix
   ];
 
-  home.packages = with pkgs; [
-    screen
-    ouch
-  ];
+  home.packages = builtins.attrValues {
+    inherit
+      (pkgs)
+      screen
+      ouch
+      bitwarden-cli
+      ;
+  };
 
   inherit hostSpec;
 
