@@ -15,9 +15,8 @@
     (lib.custom.relativeToRoot "hosts/common/disks/btrfs-disk.nix")
     {
       _module.args = {
-        disk = "/dev/sda";
-        withSwap = true;
-        swapSize = "8";
+        disk = "/dev/vda";
+        withSwap = false;
       };
     }
 
