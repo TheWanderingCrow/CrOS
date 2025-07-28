@@ -10,8 +10,11 @@
 in {
   home.file.".config/makima/Wacom One by Wacom S Pen.toml".text = makimaConfig;
 
-  home.packages = with pkgs; [
-    makima
-    gromit-mpx
-  ];
+  home.packages = builtins.attrValues {
+    inherit
+      (pkgs)
+      makima
+      gromit-mpx
+      ;
+  };
 }

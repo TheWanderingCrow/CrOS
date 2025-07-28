@@ -1,7 +1,10 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
-    spotify
-    vlc
-    libreoffice-qt6-fresh
-  ];
+  home.packages = builtins.attrValues {
+    inherit
+      (pkgs)
+      spotify
+      vlc
+      libreoffice-qt6-fresh
+      ;
+  };
 }

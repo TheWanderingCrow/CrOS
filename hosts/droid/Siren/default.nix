@@ -5,11 +5,14 @@
   pkgs,
   ...
 }: {
-  environment.packages = with pkgs; [
-    inputs.nvix.packages.${pkgs.system}.default
-    git
-    openssh
-  ];
+  environment.packages = builtins.attrValues {
+    inherit (inputs.nvix.packages.${pkgs.system}) default;
+    inherit
+      (pkgs)
+      git
+      openssh
+      ;
+  };
 
   environment.etcBackupExtension = ".bak";
 

@@ -77,7 +77,8 @@
 
   services.cups.enable = true;
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = builtins.attrValues {
+    inherit (pkgs)
     wine
     krita
     appimage-run
@@ -93,6 +94,6 @@
         pcsx-rearmed
       ];
     })
-    supermariowar
+    supermariowar;
   ];
 }

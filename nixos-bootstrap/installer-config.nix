@@ -6,15 +6,18 @@
 }: let
   loginKey = builtins.readFile ./installer.pub;
 in {
-  environment.systemPackages = with pkgs; [
-    inputs.nvix.packages.${pkgs.system}.default
-    vim
-    git
-    just
-    curl
-    wget
-    disko
-  ];
+  environment.systemPackages = builtins.attrValues {
+    inherit (inputs.nvix.packages.${pkgs.system}) default;
+    inherit
+      (pkgs)
+      vim
+      git
+      just
+      curl
+      wget
+      disko
+      ;
+  };
 
   boot.supportedFilesystems = lib.mkForce ["zfs" "btrfs" "reiserfs" "vfat" "f2fs" "xfs" "ntfs" "cifs"];
 

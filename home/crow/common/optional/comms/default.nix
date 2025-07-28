@@ -1,9 +1,12 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
-    ferdium
-    discord
-    mattermost
-    slack
-    zoom
-  ];
+  home.packages = builtins.attrValues {
+    inherit
+      (pkgs)
+      ferdium
+      discord
+      mattermost
+      slack
+      zoom
+      ;
+  };
 }
