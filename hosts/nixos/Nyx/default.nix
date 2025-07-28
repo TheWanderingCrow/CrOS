@@ -37,6 +37,7 @@
       "hosts/common/optional/bluetooth.nix"
       "hosts/common/optional/pentesting.nix"
       "hosts/common/optional/gaming.nix"
+      "hosts/common/optional/keyd.nix"
     ])
   ];
 
