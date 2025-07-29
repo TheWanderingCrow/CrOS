@@ -15,11 +15,9 @@
     (lib.custom.relativeToRoot "hosts/common/disks/btrfs-disk.nix")
     {
       _module.args = {
-        disk = "/dev/vda";
         withSwap = false;
       };
     }
-
     # Misc
 
     (map lib.custom.relativeToRoot [
