@@ -36,6 +36,7 @@
       "hosts/common/optional/pentesting.nix"
       "hosts/common/optional/gaming.nix"
       "hosts/common/optional/vbox.nix"
+      "hosts/common/optional/docker.nix"
       "modules/services/ollama"
     ])
   ];
