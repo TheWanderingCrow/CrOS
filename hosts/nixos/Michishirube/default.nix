@@ -11,13 +11,9 @@
 }: {
   imports = lib.flatten [
     # Disks
-    inputs.disko.nixosModules.disko
-    (lib.custom.relativeToRoot "hosts/common/disks/btrfs-disk.nix")
-    {
-      _module.args = {
-        withSwap = false;
-      };
-    }
+    (map lib.custom.relativeToRoot [
+      "hosts/common/disks/digital-ocean-disks.nix"
+    ])
     # Misc
 
     (map lib.custom.relativeToRoot [
@@ -38,6 +34,7 @@
 
   hostSpec = {
     hostName = "Michishirube";
+    isMinimal = true;
   };
 
   networking = {
