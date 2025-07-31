@@ -1,9 +1,15 @@
 {
+  hostSpec,
   pkgs,
   inputs,
   ...
 }: {
-  environment.systemPackages = [
-    inputs.nvix.packages.${pkgs.system}.default
-  ];
+  environment.systemPackages =
+    if hostSpec.isMinimal
+    then [
+      inputs.nvix.packages.${pkgs.system}.mini
+    ]
+    else [
+      inputs.nvix.packages.${pkgs.system}.default
+    ];
 }
