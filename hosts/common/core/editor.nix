@@ -1,11 +1,11 @@
 {
-  hostSpec,
+  config,
   pkgs,
   inputs,
   ...
 }: {
   environment.systemPackages =
-    if hostSpec.isMinimal
+    if config.hostSpec.isMinimal
     then [
       inputs.nvix.packages.${pkgs.system}.mini
     ]

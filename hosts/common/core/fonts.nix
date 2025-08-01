@@ -1,10 +1,10 @@
 {
   lib,
-  hostSpec,
+  config,
   pkgs,
   ...
 }:
-lib.mkIf (!hostSpec.isMinimal) {
+lib.mkIf (!config.hostSpec.isMinimal) {
   fonts = {
     packages = with pkgs; [
       # Emoji and general symbols
