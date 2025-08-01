@@ -11,9 +11,8 @@
 }: {
   imports = lib.flatten [
     # Disks
-    (map lib.custom.relativeToRoot [
-      "hosts/common/disks/hetzner-disks.nix"
-    ])
+    (lib.custom.relativeToRoot "hosts/common/disks/hetzner-disks.nix")
+
     # Misc
 
     (map lib.custom.relativeToRoot [
@@ -24,17 +23,11 @@
     ])
   ];
 
-  services.octoprint = {
-    enable = true;
-    openFirewall = true;
-    port = 5000;
-  };
-
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   hostSpec = {
     hostName = "Michishirube";
-    isMinimal = true;
+    persistFolder = "/persist";
   };
 
   networking = {
