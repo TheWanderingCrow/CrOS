@@ -11,8 +11,14 @@
 }: {
   imports = lib.flatten [
     # Disks
-    (lib.custom.relativeToRoot "hosts/common/disks/hetzner-disks.nix")
-
+    inputs.disko.nixosModules.disko
+    (lib.custom.relativeToRoot "hosts/common/disks/btrfs-disk.nix")
+    {
+      _module.args = {
+        disk = "/dev/sda";
+        withSwap = false;
+      };
+    }
     # Misc
 
     (map lib.custom.relativeToRoot [
