@@ -37,21 +37,19 @@ in
         inherit pkgs inputs;
         hostSpec = config.hostSpec;
       };
-      users.${hostSpec.username}.imports = lib.flatten (
-        lib.optional (!hostSpec.isMinimal) [
-          (
-            {config, ...}:
-              import (lib.custom.relativeToRoot "home/${hostSpec.username}/${hostSpec.hostName}.nix") {
-                inherit
-                  pkgs
-                  inputs
-                  config
-                  lib
-                  hostSpec
-                  ;
-              }
-          )
-        ]
-      );
+      users.${hostSpec.username}.imports = lib.flatten [
+        (
+          {config, ...}:
+            import (lib.custom.relativeToRoot "home/${hostSpec.username}/${hostSpec.hostName}.nix") {
+              inherit
+                pkgs
+                inputs
+                config
+                lib
+                hostSpec
+                ;
+            }
+        )
+      ];
     };
   }
