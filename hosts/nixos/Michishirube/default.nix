@@ -12,7 +12,7 @@
   imports = lib.flatten [
     # Disks
     (map lib.custom.relativeToRoot [
-      "hosts/common/disks/digital-ocean-disks.nix"
+      "hosts/common/disks/hetzner-disks.nix"
     ])
     # Misc
 
