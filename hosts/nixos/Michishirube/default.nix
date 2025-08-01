@@ -34,7 +34,6 @@
   hostSpec = {
     hostName = "Michishirube";
     persistFolder = "/persist";
-    isMinimal = true;
   };
 
   networking = {
