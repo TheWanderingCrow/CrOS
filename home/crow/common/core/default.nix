@@ -30,7 +30,6 @@ in {
       screen
       ouch
       bitwarden-cli
-      aider-chat-full
       ;
   };
 
