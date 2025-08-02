@@ -50,6 +50,7 @@
 
   networking = {
     networkmanager.enable = true;
+    modemmanager.enable = true;
     enableIPv6 = false;
   };
 
