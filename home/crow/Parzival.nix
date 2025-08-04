@@ -7,6 +7,7 @@
     common/optional/media
     common/optional/gaming
     common/optional/misc/gromit-mpx.nix
+    common/optional/misc/art.nix
   ];
 
   monitors = [
