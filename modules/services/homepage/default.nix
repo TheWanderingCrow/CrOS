@@ -152,26 +152,10 @@ in {
               ];
             }
             {
-              Crunchyroll = [
+              Termbin = [
                 {
-                  icon = "https://www.crunchyroll.com/build/assets/img/favicons/favicon-v2-32x32.png";
-                  href = "https://crunchyroll.com";
-                }
-              ];
-            }
-            {
-              Instagram = [
-                {
-                  icon = "instagram.svg";
-                  href = "https://instagram.com";
-                }
-              ];
-            }
-            {
-              Aetolia = [
-                {
-                  icon = "https://aetolia.com/wp-content/uploads/2020/04/favicon.ico";
-                  href = "https://aetolia.com";
+                  icon = "https://www.termbin.com/favicon.ico";
+                  href = "https://www.termbin.com";
                 }
               ];
             }
