@@ -97,6 +97,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    srvos.url = "github:nix-community/srvos";
+
     # 3rd party inputs
     disko = {
       # Declarative partitioning
