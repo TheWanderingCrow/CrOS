@@ -33,6 +33,8 @@ in {
     ])
   ];
 
+  time.timeZone = "UTC"; # Have to declare because of srvos
+
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   hostSpec = {
