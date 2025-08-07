@@ -11,21 +11,14 @@ in {
     then [''Hey you don't have a nebula config for this host, you should fix this ASAP so you can be connected to the mesh. If you don't know how to do this then contact your admin'']
     else [];
 
-  sops.secrets."keys/nebula" = lib.mkIf (builtins.hasAttr "${config.hostSpec.hostName}" s.hosts) {};
+  sops.secrets."keys/nebula" = lib.mkIf (builtins.hasAttr "${config.hostSpec.hostName}" s.hosts) {
+    owner = "nebula-wce";
+    inherit (config.users.users.${config.hostSpec.username}) group;
+  };
   services.nebula.networks.wce = lib.mkIf (builtins.hasAttr "${config.hostSpec.hostName}" s.hosts) {
     inherit (s) ca lighthouses staticHostMap;
     inherit (s.hosts.${config.hostSpec.hostName}) cert isLighthouse;
     key = config.sops.secrets."keys/nebula".path;
     enable = true;
-    firewall.outbound = {
-      host = lib.mkDefault "any";
-      port = lib.mkDefault "any";
-      proto = lib.mkDefault "any";
-    };
-    firewall.inbound = {
-      host = lib.mkDefault "any";
-      port = lib.mkDefault "any";
-      proto = lib.mkDefault "any";
-    };
   };
 }
