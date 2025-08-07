@@ -14,7 +14,7 @@ in {
   imports = lib.flatten [
     # Disks
     inputs.disko.nixosModules.disko
-    (lib.custom.relativeToRoot "hosts/common/disks/btrfs-disk.nix")
+    (lib.custom.relativeToRoot "hosts/common/disks/test-disk.nix")
     {
       _module.args = {
         disk = "/dev/sda";
@@ -49,9 +49,6 @@ in {
   };
 
   boot.loader = {
-    systemd-boot.enable = true;
-    efi = {
-      canTouchEfiVariables = true;
-    };
+    grub.device = "/dev/sda";
   };
 }
