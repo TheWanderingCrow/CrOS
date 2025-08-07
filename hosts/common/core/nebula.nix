@@ -20,5 +20,21 @@ in {
     inherit (s.hosts.${config.hostSpec.hostName}) cert isLighthouse;
     key = config.sops.secrets."keys/nebula".path;
     enable = true;
+    firewall = lib.mkIf (!config.services.nebula.networks.wce.isLighthouse) {
+      inbound = [
+        {
+          host = "any";
+          port = "any";
+          proto = "any";
+        }
+      ];
+      outbound = [
+        {
+          host = "any";
+          port = "any";
+          proto = "any";
+        }
+      ];
+    };
   };
 }
