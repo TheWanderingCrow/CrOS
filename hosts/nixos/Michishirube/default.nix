@@ -49,6 +49,6 @@ in {
   };
 
   boot.loader = {
-    grub.device = "/dev/sda";
+    grub.device = "/dev/sda1";
   };
 }
