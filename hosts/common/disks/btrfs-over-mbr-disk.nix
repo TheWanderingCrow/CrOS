@@ -12,15 +12,16 @@
         type = "disk";
         device = disk;
         content = {
-          type = "table";
-          format = "gpt";
+          type = "gpt";
           partitions = {
-            ESP = {
+            MBR = {
+              type = "EF02";
+              size = "1M";
               priority = 1;
-              name = "ESP";
-              start = "1M";
-              end = "512M";
-              bootable = true;
+            };
+            ESP = {
+              type = "EF00";
+              size = "500M";
               content = {
                 type = "filesystem";
                 format = "vfat";
@@ -30,8 +31,6 @@
             };
             root = {
               size = "100%";
-              part-type = "primary";
-              bootable = true;
               content = {
                 type = "btrfs";
                 extraArgs = ["-f"]; # Override existing partition

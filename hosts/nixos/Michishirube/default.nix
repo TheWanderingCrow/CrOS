@@ -14,11 +14,12 @@ in {
   imports = lib.flatten [
     # Disks
     inputs.disko.nixosModules.disko
-    (lib.custom.relativeToRoot "hosts/common/disks/btrfs-disk.nix")
+    (lib.custom.relativeToRoot "hosts/common/disks/btrfs-over-mbr-disk.nix")
     {
       _module.args = {
         disk = "/dev/sda";
         withSwap = false;
+        swapSize = "0";
       };
     }
     # Misc
@@ -49,6 +50,10 @@ in {
   };
 
   boot.loader = {
-    grub.device = "/dev/sda1";
+    limine = {
+      enable = true;
+      biosSupport = true;
+      biosDevice = "/dev/sda";
+    };
   };
 }
