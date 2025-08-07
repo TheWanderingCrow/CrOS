@@ -14,7 +14,7 @@ in {
   imports = lib.flatten [
     # Disks
     inputs.disko.nixosModules.disko
-    (lib.custom.relativeToRoot "hosts/common/disks/test-disk.nix")
+    (lib.custom.relativeToRoot "hosts/common/disks/btrfs-disk.nix")
     {
       _module.args = {
         disk = "/dev/sda";
