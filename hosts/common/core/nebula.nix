@@ -14,8 +14,18 @@ in {
   sops.secrets."keys/nebula" = lib.mkIf (builtins.hasAttr "${config.hostSpec.hostName}" s.hosts) {};
   services.nebula.networks.wce = lib.mkIf (builtins.hasAttr "${config.hostSpec.hostName}" s.hosts) {
     inherit (s) ca lighthouses staticHostMap;
-    inherit (s.hosts.${config.hostSpec.hostName}) cert isLighthouse firewall;
+    inherit (s.hosts.${config.hostSpec.hostName}) cert isLighthouse;
     key = config.sops.secrets."keys/nebula".path;
     enable = true;
+    firewall.outbound = {
+      host = lib.mkDefault "any";
+      port = lib.mkDefault "any";
+      proto = lib.mkDefault "any";
+    };
+    firewall.inbound = {
+      host = lib.mkDefault "any";
+      port = lib.mkDefault "any";
+      proto = lib.mkDefault "any";
+    };
   };
 }
