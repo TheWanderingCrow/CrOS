@@ -8,9 +8,7 @@
   lib,
   pkgs,
   ...
-}: let
-  srvos = inputs.srvos.nixosModules;
-in {
+}: {
   imports = lib.flatten [
     # Disks
     inputs.disko.nixosModules.disko
@@ -23,9 +21,6 @@ in {
       };
     }
     # Misc
-
-    srvos.server
-    srvos.hardware-hetzner-cloud
 
     (map lib.custom.relativeToRoot [
       # Required configs
