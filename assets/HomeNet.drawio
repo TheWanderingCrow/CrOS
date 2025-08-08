@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" version="28.0.7">
+  <diagram name="Page-1" id="4lg9Ij-tR0_6OGk0GC-D">
+    <mxGraphModel dx="447" dy="634" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RbSU1DOdoflaOKAcuaY9-2" value="" style="strokeColor=#666666;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;outlineConnect=0;shadow=0;dashed=0;shape=mxgraph.rackGeneral.rackCabinet3;fillColor2=#f4f4f4;container=1;collapsible=0;childLayout=rack;allowGaps=1;marginLeft=33;marginRight=9;marginTop=21;marginBottom=22;textColor=#666666;numDisp=ascend;" vertex="1" parent="1">
+          <mxGeometry x="50" y="90" width="270" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="RbSU1DOdoflaOKAcuaY9-119" value="" style="group" vertex="1" connectable="0" parent="RbSU1DOdoflaOKAcuaY9-2">
+          <mxGeometry x="33" y="160" width="228" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="RbSU1DOdoflaOKAcuaY9-116" value="" style="group" vertex="1" connectable="0" parent="RbSU1DOdoflaOKAcuaY9-119">
+          <mxGeometry y="9" width="228" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="RbSU1DOdoflaOKAcuaY9-111" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="RbSU1DOdoflaOKAcuaY9-116">
+          <mxGeometry width="228" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RbSU1DOdoflaOKAcuaY9-112" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;" vertex="1" parent="RbSU1DOdoflaOKAcuaY9-116">
+          <mxGeometry width="10" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RbSU1DOdoflaOKAcuaY9-114" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;" vertex="1" parent="RbSU1DOdoflaOKAcuaY9-116">
+          <mxGeometry x="218" width="10" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RbSU1DOdoflaOKAcuaY9-115" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6F6F6F;" vertex="1" parent="RbSU1DOdoflaOKAcuaY9-116">
+          <mxGeometry x="170" y="5" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="RbSU1DOdoflaOKAcuaY9-118" value="" style="shape=image;verticalLabelPosition=bottom;verticalAlign=top;imageAspect=0;aspect=fixed;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PGcgZmlsbD0iI2UyMTgzNiIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJtOC4xMjYgMzAuMTMtMS42MTItMi44NzNoNS44MjJMOS40MSAyMS4wNjUgNS4xMjYgMzAuMTNIMGw2LjcxMi0xMi4yMzZoNS40bDYuNjYzIDEyLjIzNkg4LjEyNU0xOC44IDIzLjAyMWg2LjM5YzEuNjExIDAgMi4yNTQtLjEgMi4yNTQtMS4yMzggMC0xLjA5MS0uNTItMS4yMTQtMi4xOC0xLjIxNGgtNi40OWwtMS40MzYtMi42NzVoOS4wMTZjNC4yNjIgMCA1Ljg0NiAxLjg1OCA1Ljg0NiAzLjgzOSAwIDEuOTA4LTEuNDYxIDQuMDEzLTYuMTQyIDQuMDEzaC0yLjEzMXY0LjM4NGgtNS4xNTJ2LTcuMTFoLjAyNiIvPjxwYXRoIGQ9Ik00NS41NTIgMjkuMjE0Yy0xLjUzNy43MTgtMy40NDQgMS4wNjUtNS40NzUgMS4wNjUtNi4xNDMgMC04LjI0OC0zLjQxOC04LjI0OC02LjI0MiAwLTMuNTY2IDMuMTItNi4zMTYgOC40OTYtNi4zMTYgMS45NTYgMCAzLjY2NS4yOTYgNS4xMDIuODQxdjMuNTQzYy0xLjQ4NS0uNzkyLTIuNzc0LTEuMTQtNC4yODUtMS4xNC0yLjU3NiAwLTQuNjgyIDEuMTY0LTQuNjgyIDMuMDIxIDAgMS44MzQgMi4xNTYgMy4wMjMgNC43MzEgMy4wMjMgMS40ODcgMCAyLjctLjI5NyA0LjM2MS0xLjA2NXYzLjI3bS41MzYtMTAuNDkxYy0uMDUgMC0uMDc3LS4wMjYtLjA3Ny0uMDd2LS4wMDdjMC0uMDQ1LjAyOC0uMDY4LjA3Ny0uMDY4aC43MjVjLjA1IDAgLjA3NC4wMjMuMDc0LjA2OHYuMDA3YzAgLjA0NC0uMDI1LjA3LS4wNzQuMDdoLS4yOHYuODExYzAgLjA1LS4wMjUuMDc1LS4wNzQuMDc1aC0uMDIxYy0uMDQ2IDAtLjA3LS4wMjYtLjA3LS4wNzV2LS44MWgtLjI4bS45NDIuODF2LS44NzNjMC0uMDU1LjAzNy0uMDkuMDkzLS4wOWguMDQzYy4wNjQgMCAuMDguMDI0LjEwNy4wODJsLjI0Mi41NDcuMjQzLS41NDdjLjAyNi0uMDYuMDQ1LS4wODIuMTA1LS4wODJoLjA0Yy4wNiAwIC4wOTcuMDM1LjA5Ny4wOXYuODczYzAgLjA1LS4wMjEuMDc1LS4wNjguMDc1aC0uMDIzYy0uMDQ2IDAtLjA2NC0uMDI2LS4wNjQtLjA3NXYtLjc1MmwtLjIyNy41MWMtLjAxNy4wNDEtLjAzNi4wNy0uMTA0LjA3LS4wNzIgMC0uMDg2LS4wMjktLjEwNS0uMDdsLS4yMjQtLjUwNnYuNzQ4YzAgLjA1LS4wMTkuMDc1LS4wNjYuMDc1aC0uMDI1Yy0uMDQ1IDAtLjA2NC0uMDI2LS4wNjQtLjA3NSIvPjwvZz48L3N2Zz4=" vertex="1" parent="RbSU1DOdoflaOKAcuaY9-119">
+          <mxGeometry x="40" width="48" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="RbSU1DOdoflaOKAcuaY9-3" value="Front" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=27;" vertex="1" parent="1">
+          <mxGeometry x="212.65" y="40" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="RbSU1DOdoflaOKAcuaY9-120" value="APC 1500VA SmartUPS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="330" y="260" width="137" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
