@@ -28,6 +28,7 @@ in {
       "hosts/common/core/fonts.nix"
       "hosts/common/core/sudo.nix"
       "hosts/common/core/nebula.nix"
+      "hosts/common/core/dns.nix"
       "hosts/common/users/primary"
       "hosts/common/users/primary/${platform}.nix"
       "modules/common"
