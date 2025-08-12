@@ -160,6 +160,14 @@ in {
               ];
             }
             {
+              Wishthis = [
+                {
+                  icon = "https://wishthis.online/src/assets/img/favicon/favicon-32x32.png";
+                  href = "https://wishthis.online";
+                }
+              ];
+            }
+            {
               Amazon = [
                 {
                   icon = "amazon.svg";
