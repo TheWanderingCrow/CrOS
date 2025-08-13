@@ -34,5 +34,7 @@ in {
     listenAddress = "0.0.0.0";
     port = 9099;
     secretKeyFile = config.sops.secrets."netbox/secret-key".path;
+    plugins = ps: with ps; [ps.netbox-topology-views];
+    settings.PLUGINS = ["netbox_topology_views"];
   };
 }
