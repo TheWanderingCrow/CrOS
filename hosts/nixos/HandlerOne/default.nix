@@ -49,6 +49,7 @@
       "modules/services/trilium"
       "modules/services/fail2ban"
       "modules/services/ollama/nginx.nix" # Just host the nginx path back to Parzival
+      "modules/services/netbox"
     ])
   ];
 
@@ -121,6 +122,7 @@
       "matrix.wanderingcrow.net" = {};
       "ta.wanderingcrow.net" = {};
       "chat.wanderingcrow.net" = {};
+      "netbox.wanderingcrow.net" = {};
     };
   };
 }
