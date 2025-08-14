@@ -42,7 +42,10 @@ in {
 
   networking.hostName = config.hostSpec.hostName;
 
-  environment.systemPackages = [pkgs.openssh];
+  environment.systemPackages = [
+    pkgs.openssh
+    pkgs.file
+  ];
 
   home-manager.useGlobalPkgs = true;
   home-manager.backupFileExtension = "bk";
