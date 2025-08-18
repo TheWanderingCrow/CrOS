@@ -39,6 +39,7 @@
       "hosts/common/optional/gaming.nix"
       "hosts/common/optional/vbox.nix"
       "hosts/common/optional/keyd.nix"
+      "hosts/common/optional/printing.nix"
     ])
   ];
 

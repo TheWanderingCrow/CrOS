@@ -37,6 +37,7 @@
       "hosts/common/optional/gaming.nix"
       "hosts/common/optional/vbox.nix"
       "hosts/common/optional/docker.nix"
+      "hosts/common/optional/printing.nix"
       "modules/services/ollama"
     ])
   ];
