@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  virtualisation.docker = {
+  virtualisation.podman = {
     enable = true;
   };
 }
