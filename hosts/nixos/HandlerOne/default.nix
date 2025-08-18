@@ -36,6 +36,7 @@
 
       # Optional configs
       "hosts/common/optional/keyd.nix"
+      "hosts/common/optional/podman.nix"
 
       # Hosted services
       "modules/services/the-nest"
