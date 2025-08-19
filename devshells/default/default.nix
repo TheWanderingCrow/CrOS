@@ -9,6 +9,7 @@ pkgs.mkShell {
       vim
       nixos-anywhere
       ssh-to-age
+      nvd
       ;
   };
 
