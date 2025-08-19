@@ -7,7 +7,7 @@
         forceSSL = true;
         useACMEHost = "swgalaxyproject.com";
         locations."/" = {
-          proxyPass = "";
+          proxyPass = "http://localhost:8080";
           proxyWebsockets = true;
         };
       };
@@ -15,7 +15,7 @@
         forceSSL = true;
         useACMEHost = "test.swgalaxyproject.com";
         locations."/" = {
-          proxyPass = "";
+          proxyPass = "http://localhost:8080";
           proxyWebsockets = true;
         };
       };
