@@ -29,6 +29,8 @@ let
       # flamesites
       "${volumePath}/flamesites/swgalaxyproject"
       "${volumePath}/flamesites/nnsbluegrass"
+      "/home/crow/swgalaxysite/public_html"
+      "/home/crow/flamebandsite/public_html"
     ];
   };
 in
