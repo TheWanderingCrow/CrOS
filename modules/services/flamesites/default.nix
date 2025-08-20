@@ -48,7 +48,7 @@ in {
         forceSSL = true;
         useACMEHost = "nnsbluegrass.com";
         locations."/" = {
-          proxyPass = "http://localhost:8085";
+          proxyPass = "http://localhost:9821";
           proxyWebsockets = true;
         };
       };
