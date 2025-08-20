@@ -49,6 +49,7 @@
       "modules/services/lubelogger"
       "modules/services/trilium"
       "modules/services/fail2ban"
+      "modules/services/ntfy-sh"
       "modules/services/ollama/nginx.nix" # Just host the nginx path back to Parzival
       "modules/services/netbox"
       "modules/services/flamesites"
@@ -125,6 +126,7 @@
       "ta.wanderingcrow.net" = {};
       "chat.wanderingcrow.net" = {};
       "netbox.wanderingcrow.net" = {};
+      "notify.wanderingcrow.net" = {};
       # Sites I host for someone else
       "test.swgalaxyproject.com" = {};
       "swgalaxyproject.com" = {};
