@@ -128,8 +128,8 @@
       "netbox.wanderingcrow.net" = {};
       "notify.wanderingcrow.net" = {};
       # Sites I host for someone else
-      "test.swgalaxyproject.com" = {};
       "swgalaxyproject.com" = {};
+      "nnsbluegrass.com" = {};
     };
   };
 }

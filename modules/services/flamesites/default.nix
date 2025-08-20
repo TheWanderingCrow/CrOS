@@ -44,11 +44,11 @@ in {
           proxyWebsockets = true;
         };
       };
-      "test.swgalaxyproject.com" = {
+      "nnsbluegrass.com" = {
         forceSSL = true;
-        useACMEHost = "test.swgalaxyproject.com";
+        useACMEHost = "nnsbluegrass.com";
         locations."/" = {
-          proxyPass = "http://localhost:8080";
+          proxyPass = "http://localhost:8085";
           proxyWebsockets = true;
         };
       };
