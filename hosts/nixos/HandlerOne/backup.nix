@@ -25,6 +25,10 @@ let
 
       # actualbudget
       "${volumePath}/actualbudget"
+
+      # flamesites
+      "${volumePath}/flamesites/swgalaxyproject"
+      "${volumePath}/flamesites/nnsbluegrass"
     ];
   };
 in
