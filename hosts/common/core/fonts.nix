@@ -25,6 +25,8 @@ lib.mkIf (!config.hostSpec.isMinimal) {
       # Icon fonts
       font-awesome
       material-design-icons
+
+      google-fonts
     ];
 
     fontconfig = {
