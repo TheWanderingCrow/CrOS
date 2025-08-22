@@ -24,6 +24,7 @@
     ];
     ignoreIP = [
       inputs.nix-secrets.network.primary.publicIP
+      "64.189.142.0/23"
     ];
     jails = {
       nginx-url-probe.settings = {
