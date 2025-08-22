@@ -40,6 +40,7 @@ in {
         forceSSL = true;
         useACMEHost = "swgalaxyproject.com";
         locations."/" = {
+          recommendedProxySettings = true;
           extraConfig = ''
             client_max_body_size 200M;
           '';
@@ -51,6 +52,7 @@ in {
         forceSSL = true;
         useACMEHost = "nnsbluegrass.com";
         locations."/" = {
+          recommendedProxySettings = true;
           extraConfig = ''
             client_max_body_size 200M;
           '';
