@@ -40,6 +40,9 @@ in {
         forceSSL = true;
         useACMEHost = "swgalaxyproject.com";
         locations."/" = {
+          extraConfig = ''
+            client_max_body_size 200M;
+          '';
           proxyPass = "http://localhost:8080";
           proxyWebsockets = true;
         };
@@ -48,6 +51,9 @@ in {
         forceSSL = true;
         useACMEHost = "nnsbluegrass.com";
         locations."/" = {
+          extraConfig = ''
+            client_max_body_size 200M;
+          '';
           proxyPass = "http://localhost:9821";
           proxyWebsockets = true;
         };

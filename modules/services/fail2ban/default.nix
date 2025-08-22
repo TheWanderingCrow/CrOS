@@ -18,7 +18,7 @@
     '');
   };
   services.fail2ban = {
-    enable = true;
+    enable = false;
     extraPackages = [
       pkgs.curl
     ];
