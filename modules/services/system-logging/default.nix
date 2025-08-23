@@ -34,9 +34,51 @@
       filesystem:
         directory: /tmp/loki/chunks
   '';
-
-  alloyConfig = pkgs.writeText "alloyconfig" '''';
 in {
+  # As per the entrry in nixos options
+  environment.etc."allow/config.alloy".text = ''
+        loki.write "local" {
+      endpoint {
+        url = "http://localhost:3100/loki/api/v1/push"
+      }
+    }
+
+    loki.relabel "journal" {
+      forward_to = []
+
+      rule {
+        source_labels = ["__journal__systemd_unit"]
+        target_label  = "unit"
+      }
+      rule {
+        source_labels = ["__journal__boot_id"]
+        target_label  = "boot_id"
+      }
+      rule {
+        source_labels = ["__journal__transport"]
+        target_label  = "transport"
+      }
+      rule {
+        source_labels = ["__journal_priority_keyword"]
+        target_label  = "level"
+      }
+      rule {
+        source_labels = ["__journal__hostname"]
+        target_label  = "instance"
+      }
+    }
+
+    loki.source.journal "read" {
+      forward_to = [
+        loki.write.local.receiver,
+      ]
+      relabel_rules = loki.relabel.journal.rules
+      labels = {
+        "job" = "integrations/node_exporter",
+      }
+    }
+  '';
+
   services = {
     grafana = {
       enable = true;
@@ -58,7 +100,6 @@ in {
     };
     alloy = {
       enable = true;
-      configPath = alloyConfig;
     };
   };
 }
