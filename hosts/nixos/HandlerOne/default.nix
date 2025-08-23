@@ -52,6 +52,8 @@
       "modules/services/ntfy-sh"
       "modules/services/ollama/nginx.nix" # Just host the nginx path back to Parzival
       "modules/services/netbox"
+      "modules/services/system-logging"
+      "modules/services/system-logging/nginx.nix"
       "modules/services/flamesites"
     ])
   ];
@@ -127,6 +129,7 @@
       "chat.wanderingcrow.net" = {};
       "netbox.wanderingcrow.net" = {};
       "notify.wanderingcrow.net" = {};
+      "logs.wanderingcrow.net" = {};
       # Sites I host for someone else
       "swgalaxyproject.com" = {};
       "nnsbluegrass.com" = {};
