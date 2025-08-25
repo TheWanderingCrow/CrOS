@@ -22,7 +22,7 @@ in {
         isNormalUser = true;
         hashedPasswordFile =
           if config.hostSpec.isVirtual
-          then virtPass
+          then builtins.toString virtPass
           else sopsHashedPasswordFile;
         linger = true;
 
