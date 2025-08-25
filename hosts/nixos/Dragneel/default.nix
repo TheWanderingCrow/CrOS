@@ -39,6 +39,8 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   hostSpec = {
+    username = "drag";
+    handle = "drag";
     hostName = "Dragneel";
     isVirtual = true;
     persistFolder = "/persist";

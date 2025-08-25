@@ -36,8 +36,8 @@ in {
   ];
 
   hostSpec = {
-    username = "crow";
-    handle = "TheWanderingCrow";
+    username = lib.mkDefault "crow";
+    handle = lib.mkDefault "TheWanderingCrow";
   };
 
   networking.hostName = config.hostSpec.hostName;

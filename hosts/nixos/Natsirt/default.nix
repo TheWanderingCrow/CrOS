@@ -42,8 +42,8 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   hostSpec = {
-    username = lib.mkForce "natsirt";
-    handle = lib.mkForce "natsirt";
+    username = "natsirt";
+    handle = "natsirt";
     hostName = "Natsirt";
     persistFolder = "/persist";
   };
