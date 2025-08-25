@@ -11,6 +11,7 @@
 
   # Decrypt password to /run/secrets-for-users/ so it can be used to create the user
   sopsHashedPasswordFile = lib.optionalString (!config.hostSpec.isMinimal) config.sops.secrets."passwords/${hostSpec.username}".path;
+  virtPass = pkgs.writeText "password" "$y$j9T$ZbQbNHUSFsePoP0X.TdwR/$.EKJWDSY7ZO/nqf4FxgUYA3a47CYAKLzaV7ZAy745R/";
 in {
   users = {
     mutableUsers = false; # Only allow declarative credentials; Required for password to be set via sops during system activation!
@@ -19,7 +20,10 @@ in {
       ${hostSpec.username} = {
         home = "/home/${hostSpec.username}";
         isNormalUser = true;
-        hashedPasswordFile = sopsHashedPasswordFile; # Blank if sops is not working.
+        hashedPasswordFile =
+          if config.hostSpec.isVirtual
+          then virtPass
+          else sopsHashedPasswordFile;
         linger = true;
 
         extraGroups = lib.flatten [

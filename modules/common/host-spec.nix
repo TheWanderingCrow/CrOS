@@ -84,6 +84,11 @@
       default = false;
       description = "Used to indicate a host that is darwin";
     };
+    isVirtual = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = "Used to indicate a virtual host";
+    };
   };
 
   config = {
