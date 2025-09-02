@@ -20,7 +20,7 @@
     - `Incarceron` - Work issued framework 13 - AMD Ryzen 7 7840U - 32GB DDR5
     - `Nyx` - My X1 Carbon, personal laptop - i7-8650U - 16GB DDR4
     - `HandlerOne` - Lenovo m710q - i5-7500T - 16GB DDR4
-    - `Dragneel` - Secondary Box - Ryzen 5 3600 - RTX 2070 - 32GB DDR5
+    - `Dragneel` - Partner's Box - Ryzen 5 3600 - RTX 2070 - 32GB DDR5
 - `home/<user>` - Home-manager configurations, built automatically during host
   rebuilds.
   - `common` - Shared home-manager configurations consumed the user's machine
