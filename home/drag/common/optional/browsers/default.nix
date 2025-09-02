@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.chromium = {
     enable = true;
-    package = pkgs.ungoogled-chromium;
+    package = pkgs.chromium;
   };
 
   programs.firefox = {
