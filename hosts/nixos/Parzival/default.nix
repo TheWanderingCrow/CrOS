@@ -37,6 +37,7 @@
       "hosts/common/optional/gaming.nix"
       "hosts/common/optional/vbox.nix"
       "hosts/common/optional/printing.nix"
+      "hosts/common/optional/docker.nix"
       "modules/services/ollama"
     ])
   ];
@@ -46,25 +47,6 @@
   hostSpec = {
     hostName = "Parzival";
     persistFolder = "/persist";
-  };
-
-  specialisation = {
-    podman = {
-      inheritParentConfig = true;
-      configuration = let
-        podman = lib.custom.relativeToRoot "hosts/common/optional/podman.nix";
-      in {
-        imports = [podman];
-      };
-    };
-    docker = {
-      inheritParentConfig = true;
-      configuration = let
-        docker = lib.custom.relativeToRoot "hosts/common/optional/docker.nix";
-      in {
-        imports = [docker];
-      };
-    };
   };
 
   networking = {
