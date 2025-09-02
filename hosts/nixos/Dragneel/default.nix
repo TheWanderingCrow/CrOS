@@ -45,7 +45,6 @@
     username = "drag";
     handle = "drag";
     hostName = "Dragneel";
-    isVirtual = true;
     persistFolder = "/persist";
   };
 
