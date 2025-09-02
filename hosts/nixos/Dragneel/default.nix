@@ -10,6 +10,9 @@
   ...
 }: {
   imports = lib.flatten [
+    # Hardware
+    ./hardware-configuration.nix # I want to use factor if possible
+
     # Disks
     inputs.disko.nixosModules.disko
     (lib.custom.relativeToRoot "hosts/common/disks/btrfs-disk.nix")
