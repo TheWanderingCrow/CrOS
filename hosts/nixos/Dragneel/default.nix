@@ -58,6 +58,9 @@
   networking = {
     networkmanager.enable = true;
     enableIPv6 = false;
+    interfaces.enp3s0 = {
+      wakeOnLan.enable = true;
+    };
   };
 
   boot.loader = {
