@@ -18,6 +18,6 @@
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   hardware.graphics.enable = true;
-  services.xerver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia.open = true;
 }
