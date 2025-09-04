@@ -8,10 +8,10 @@ in
     ...
   }: {
     systemd.tmpfiles.rules = [
-      "d ${volumePath}/openhab openhab"
-      "d ${volumePath}/openhab/conf openhab"
-      "d ${volumePath}/openhab/userdata openhab"
-      "d ${volumePath}/openhab/addons openhab"
+      "d ${volumePath}/openhab"
+      "d ${volumePath}/openhab/conf"
+      "d ${volumePath}/openhab/userdata"
+      "d ${volumePath}/openhab/addons"
     ];
     ###########
     # Service #
