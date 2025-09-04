@@ -20,7 +20,7 @@ in
     virtualisation.oci-containers = {
       backend = "podman";
       containers."openhab" = {
-        image = "openhab/openhab:5.0.0.M1";
+        image = "openhab/openhab:milestone";
         extraOptions = ["--ip=10.88.0.9"];
         volumes = [
           "${volumePath}/openhab/conf:/openhab/conf"
