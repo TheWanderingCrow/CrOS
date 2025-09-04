@@ -46,6 +46,7 @@
       "modules/services/grocy"
       "modules/services/homebox"
       "modules/services/homepage"
+      "modules/services/openhab"
       "modules/services/lubelogger"
       "modules/services/trilium"
       "modules/services/fail2ban"

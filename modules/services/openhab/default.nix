@@ -40,7 +40,6 @@ in
           locations."/" = {
             extraConfig = ''
               allow 192.168.0.0/16;
-              allow 10.8.0.0/24;
               allow ${inputs.nix-secrets.network.primary.publicIP};
               deny all;
             '';
