@@ -27,6 +27,9 @@
     settings = {
       PermitRootLogin = "no";
       PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
     };
   };
+
+  services.fail2ban.enable = lib.mkDefault true; # This comes with an SSH jail preconfigured, expanded fail2ban can be found in modules/services
 }
