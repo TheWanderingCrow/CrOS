@@ -72,4 +72,11 @@
       canTouchEfiVariables = true;
     };
   };
+
+  services.unifi = {
+    enable = true;
+    openFirewall = true;
+    unifiPackage = pkgs.unifi;
+    mongodbPackage = pkgs.mongodb-7_0;
+  };
 }
