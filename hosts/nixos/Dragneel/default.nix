@@ -73,27 +73,11 @@
     };
   };
 
+  services.firewall.enable = false;
   services.unifi = {
     enable = true;
     openFirewall = true;
-    unifiPackage = pkgs.unifi;
+    unifiPackage = pkgs.unstable.unifi;
     mongodbPackage = pkgs.mongodb-7_0;
-  };
-
-  services.nginx = {
-    enable = true;
-    recommendedProxySettings = true;
-    virtualHosts = {
-      "dragneel.local" = {
-        locations."/" = {
-          extraConfig = ''
-            allow 192.168.0.0/16;
-            allow ${inputs.nix-secrets.network.primary.publicIP};
-            deny all;
-          '';
-          proxyPass = "http://localhost:8080";
-        };
-      };
-    };
   };
 }
