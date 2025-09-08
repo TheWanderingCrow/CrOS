@@ -56,6 +56,7 @@
       "modules/services/netbox"
       "modules/services/system-logging"
       "modules/services/system-logging/nginx.nix"
+      "modules/services/matrix"
       "modules/services/flamesites"
     ])
   ];
