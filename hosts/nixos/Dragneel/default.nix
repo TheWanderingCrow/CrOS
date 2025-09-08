@@ -73,10 +73,11 @@
     };
   };
 
+  services.firewall.enable = false;
   services.unifi = {
     enable = true;
     openFirewall = true;
-    unifiPackage = pkgs.unifi;
+    unifiPackage = pkgs.unstable.unifi;
     mongodbPackage = pkgs.mongodb-7_0;
   };
 }
