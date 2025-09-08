@@ -8,9 +8,11 @@
     "${inputs.nixpkgs-unstable}/nixos/modules/services/matrix/tuwunel.nix"
   ];
 
-  sops.secrets."matrix/registration_token" = {};
+  sops.secrets."matrix/registration_token" = {
+    owner = "tuwunel";
+  };
 
-  services.matrix.tuwunel = {
+  services.matrix-tuwunel = {
     enable = true;
     package = pkgs.unstable.matrix-tuwunel;
     stateDirectory = "tuwunel";
@@ -26,6 +28,21 @@
         allow_federation = true;
         require_auth_for_profile_requests = true; # no user enumeration
         trusted_servers = ["matrix.org"];
+      };
+    };
+  };
+
+  services.nginx = {
+    enable = true;
+    recommendedProxySettings = true;
+    virtualHosts = {
+      "psychal.link" = {
+        forceSSL = true;
+        useACMEHost = "psychal.link";
+        locations."/" = {
+          proxyPass = "http://unix:/run/tuwunel/tuwunel.sock";
+          proxyWebsockets = true;
+        };
       };
     };
   };

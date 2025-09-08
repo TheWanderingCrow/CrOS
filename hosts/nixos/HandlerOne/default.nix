@@ -133,6 +133,7 @@
       "netbox.wanderingcrow.net" = {};
       "notify.wanderingcrow.net" = {};
       "logs.wanderingcrow.net" = {};
+      "psychal.link" = {};
       # Sites I host for someone else
       "swgalaxyproject.com" = {};
       "nnsbluegrass.com" = {};
