@@ -52,10 +52,10 @@
       "modules/services/trilium"
       "modules/services/fail2ban"
       "modules/services/ntfy-sh"
-      "modules/services/ollama/nginx.nix" # Just host the nginx path back to Parzival
+      "modules/services/ollama/proxy.nix" # Just host the proxy path back to Parzival
       "modules/services/netbox"
       "modules/services/system-logging"
-      "modules/services/system-logging/nginx.nix"
+      "modules/services/system-logging/proxy.nix"
       "modules/services/matrix"
       "modules/services/flamesites"
     ])
@@ -106,7 +106,7 @@
   #  acceptTerms = true;
   #  defaults = {
   #    email = "infrastructure@wanderingcrow.net";
-  #    group = config.services.nginx.group;
+  #    group = config.services.caddy.group;
   #    dnsProvider = "route53";
   #    credentialFiles = {
   #      "AWS_SHARED_CREDENTIALS_FILE" = config.sops.templates."aws_shared_credentials".path;

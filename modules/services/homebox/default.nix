@@ -1,26 +1,14 @@
 {inputs, ...}: {
   services = {
-    nginx = {
+    caddy = {
       enable = true;
-      recommendedProxySettings = true;
-      virtualHosts = {
-        "homebox.wanderingcrow.net" = {
-          forceSSL = true;
-          useACMEHost = "homebox.wanderingcrow.net";
-          locations."/" = {
-            extraConfig = ''
-              allow 192.168.0.0/16;
-              allow 10.8.0.0/24;
-              allow ${inputs.nix-secrets.network.primary.publicIP};
-              deny all;
-            '';
-            proxyPass = "http://localhost:7745";
-            proxyWebsockets = true;
-          };
-        };
-      };
+      virtualHosts."homebox.wanderingcrow.net".extraConfig = ''
+        remote_ip ${inputs.nix-secrets.network.primary.publicIP}
+        @block not remote_ip private_ranges
+        abort @block
+        reverse_proxy http://localhost:7745
+      '';
     };
-
     homebox = {
       enable = true;
       settings = {
