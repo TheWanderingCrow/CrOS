@@ -15,21 +15,11 @@ in {
     '';
   };
 
-  services.nginx = {
+  services.caddy = {
     enable = true;
-    recommendedProxySettings = true;
-    virtualHosts = {
-      "ta.wanderingcrow.net" = {
-        forceSSL = true;
-        useACMEHost = "ta.wanderingcrow.net";
-        locations = {
-          "/" = {
-            proxyPass = "http://10.88.0.14:8000";
-            proxyWebsockets = true;
-          };
-        };
-      };
-    };
+    virtualHosts."ta.wanderingcrow.net".extraConfig = ''
+      reverse_proxy 10.88.0.14:8000
+    '';
   };
 
   systemd.tmpfiles.rules = [

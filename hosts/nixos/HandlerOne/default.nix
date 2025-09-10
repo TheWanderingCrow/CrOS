@@ -43,7 +43,6 @@
       "modules/services/actualbudget"
       "modules/services/bar-assistant"
       "modules/services/frigate"
-      "modules/services/grocy"
       "modules/services/homebox"
       "modules/services/homepage"
       "modules/services/mqtt"
@@ -124,8 +123,6 @@
   #    "openhab.wanderingcrow.net" = {};
   #    "frigate.wanderingcrow.net" = {};
   #    "notes.wanderingcrow.net" = {};
-  #    "grocy.wanderingcrow.net" = {};
-  #    "barcodebuddy.grocy.wanderingcrow.net" = {};
   #    "budget.wanderingcrow.net" = {};
   #    "matrix.wanderingcrow.net" = {};
   #    "ta.wanderingcrow.net" = {};

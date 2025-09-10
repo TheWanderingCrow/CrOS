@@ -99,14 +99,6 @@ in {
         {
           WCE = [
             {
-              Grocy = [
-                {
-                  icon = "grocy.svg";
-                  href = "https://grocy.wanderingcrow.net";
-                }
-              ];
-            }
-            {
               Homebox = [
                 {
                   icon = "https://homebox.wanderingcrow.net/favicon.svg";
