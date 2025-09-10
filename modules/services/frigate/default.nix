@@ -47,18 +47,10 @@ in
       # Detectors #
       #############
       detectors = {
-        ov_0 = {
-          type = "openvino";
-          device = "CPU";
+        coral = {
+          type = "edgetpu";
+          device = "usb";
         };
-      };
-      model = {
-        width = 300;
-        height = 300;
-        input_tensor = "nhwc";
-        input_pixel_format = "bgr";
-        path = "/openvino-model/ssdlite_mobilenet_v2.xml";
-        labelmap_path = "/openvino-model/coco_91cl_bkgr.txt";
       };
       objects = {
         track = [
@@ -198,6 +190,9 @@ in
           extraOptions = [
             "--shm-size=612m"
             "--ip=10.88.0.10"
+          ];
+          devices = [
+            "/dev/bus/usb:/dev/bus/usb"
           ];
         };
       };
