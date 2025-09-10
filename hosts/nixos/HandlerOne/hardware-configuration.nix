@@ -16,4 +16,6 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = [];
   boot.extraModulePackages = [];
+
+  hardware.coral.usb.enable = true;
 }
