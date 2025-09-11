@@ -32,7 +32,7 @@ in
 
     services.caddy = {
       enable = true;
-      virtualHosts."openhab.wanderingcrow.net" = ''
+      virtualHosts."openhab.wanderingcrow.net".extraConfig = ''
         remote_ip ${inputs.nix-secrets.network.primary.publicIP};
         @denied not remote_ip private_ranges
         abort @denied
