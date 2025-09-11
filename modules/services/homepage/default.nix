@@ -23,24 +23,14 @@ in {
     #HOMEPAGE_VAR_LUBELOGGERPASS = ${config.sops.placeholder."lubelogger/pass"}
   };
 
-  services.nginx = {
+  services.caddy = {
     enable = true;
-    recommendedProxySettings = true;
-    virtualHosts = {
-      "home.wanderingcrow.net" = {
-        forceSSL = true;
-        useACMEHost = "home.wanderingcrow.net";
-        locations."/" = {
-          extraConfig = ''
-            allow 192.168.0.0/16;
-            allow ${s.network.primary.publicIP};
-            deny all;
-          '';
-          proxyPass = "http://localhost:8089";
-          proxyWebsockets = true;
-        };
-      };
-    };
+    virtualHosts."home.wanderingcrow.net".extraConfig = ''
+      remote_ip ${s.network.primary.publicIP}
+      @denied not remote_ip private_ranges
+      abort @denied
+      reverse_proxy http://localhost:8089
+    '';
   };
 
   services = {

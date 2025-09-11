@@ -1,21 +1,11 @@
 {inputs, ...}: {
-  services.nginx = {
+  services.caddy = {
     enable = true;
-    recommendedProxySettings = true;
-    virtualHosts = {
-      "chat.wanderingcrow.net" = {
-        forceSSL = true;
-        useACMEHost = "chat.wanderingcrow.net";
-        locations."/" = {
-          extraConfig = ''
-            allow 192.168.0.0/16;
-            allow ${inputs.nix-secrets.network.primary.publicIP};
-            deny all;
-          '';
-          proxyPass = "http://192.168.0.72:3000";
-          proxyWebsockets = true;
-        };
-      };
-    };
+    virtualHosts."chat.wanderingcrow.net".extraConfig = ''
+      remote_ip ${inputs.nix-secrets.network.primary.publicIP}
+      @denined not remote_ip private_ranges
+      abort @denied
+      reverse_proxy http://192.168.0.72:3000
+    '';
   };
 }

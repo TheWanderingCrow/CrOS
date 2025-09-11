@@ -34,19 +34,11 @@ in
       '';
     };
 
-    services.nginx = {
+    services.caddy = {
       enable = true;
-      recommendedProxySettings = true;
-      virtualHosts = {
-        "garage.wanderingcrow.net" = {
-          forceSSL = true;
-          useACMEHost = "garage.wanderingcrow.net";
-          locations."/" = {
-            proxyPass = "http://10.88.0.8:8080";
-            proxyWebsockets = true;
-          };
-        };
-      };
+      virtualHosts."garage.wanderingcrow.net".extraConfig = ''
+        reverse_proxy http://10.88.0.8:8080
+      '';
     };
 
     virtualisation.oci-containers = {

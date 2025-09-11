@@ -32,18 +32,10 @@
     };
   };
 
-  services.nginx = {
+  services.caddy = {
     enable = true;
-    recommendedProxySettings = true;
-    virtualHosts = {
-      "psychal.link" = {
-        forceSSL = true;
-        useACMEHost = "psychal.link";
-        locations."/" = {
-          proxyPass = "http://unix:/run/tuwunel/tuwunel.sock";
-          proxyWebsockets = true;
-        };
-      };
-    };
+    virtualHosts."psychal.link".extraConfig = ''
+      reverse_proxy unix//run/tuwunel/tuwunel.sock
+    '';
   };
 }
