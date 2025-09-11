@@ -84,6 +84,7 @@
 
   services.caddy = {
     email = "infrastructure@wanderingcrow.net";
+    acmeCA = "https://acme-v02.api.letsencrypt.org/directory";
   };
 
   #FIXME(TODO) Migrate this into another file, probably a module

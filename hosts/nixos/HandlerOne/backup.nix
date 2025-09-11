@@ -23,6 +23,8 @@ let
       # actualbudget
       "${volumePath}/actualbudget"
 
+      "/var/lib/tuwunel"
+
       # flamesites
       "${volumePath}/flamesites/swgalaxyproject"
       "${volumePath}/flamesites/nnsbluegrass"
