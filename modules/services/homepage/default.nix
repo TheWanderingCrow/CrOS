@@ -26,9 +26,8 @@ in {
   services.caddy = {
     enable = true;
     virtualHosts."home.wanderingcrow.net".extraConfig = ''
-      remote_ip ${s.network.primary.publicIP}
-      @denied not remote_ip private_ranges
-      abort @denied
+      @block not remote_ip ${inputs.nix-secrets.network.primary.publicIP} private_ranges
+      abort @block
       reverse_proxy http://localhost:8089
     '';
   };

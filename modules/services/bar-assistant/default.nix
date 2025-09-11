@@ -37,9 +37,8 @@ in
       enable = true;
       virtualHosts = {
         "bar.wanderingcrow.net".extraConfig = ''
-          remote_ip ${inputs.nix-secrets.network.primary.publicIP}
-          @denied not remote_ip private_ranges
-          abort @denied
+          @block not remote_ip ${inputs.nix-secrets.network.primary.publicIP} private_ranges
+          abort @block
           reverse_proxy /search/ http://10.88.0.3:7700
           reverse_proxy /api/ http://10.88.0.4:8080
           reverse_proxy http://10.88.0.5:8080
