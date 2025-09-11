@@ -80,4 +80,11 @@
     unifiPackage = pkgs.unstable.unifi;
     mongodbPackage = pkgs.mongodb-7_0;
   };
+
+  services.caddy = {
+    enable = true;
+    virtualHosts."dragneel.local".extraConfig = ''
+      reverse_proxy localhost:8080
+    '';
+  };
 }
