@@ -1,17 +1,9 @@
 {
-  services.nginx = {
+  services.caddy = {
     enable = true;
-    recommendedProxySettings = true;
-    virtualHosts = {
-      "notify.wanderingcrow.net" = {
-        forceSSL = true;
-        useACMEHost = "notify.wanderingcrow.net";
-        locations."/" = {
-          proxyPass = "http://localhost:9089";
-          proxyWebsockets = true;
-        };
-      };
-    };
+    virtualHosts."notify.wanderingcrow.net".extraConfig = ''
+      reverse_proxy http://localhost:9089
+    '';
   };
   services.ntfy-sh = {
     enable = true;

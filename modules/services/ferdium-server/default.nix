@@ -10,22 +10,13 @@ in {
     "d ${volumePath}/ferdium-server/app/recipes"
   ];
 
-  services.nginx = {
+  services.caddy = {
     enable = true;
-    recommendedProxySettings = true;
-    virtualHosts = {
-      "ferdium.wanderingcrow.net" = {
-        forceSSL = true;
-        useACMEHost = "ferdium.wanderingcrow.net";
-        locations = {
-          "/" = {
-            proxyPass = "http://10.88.0.13:3333";
-            proxyWebsockets = true;
-          };
-        };
-      };
-    };
+    virtualHosts."ferdium.wanderingcrow.net".extraConfig = ''
+      reverse_proxy http://10.88.0.13:3333
+    '';
   };
+
   virtualisation.oci-containers = {
     backend = "podman";
     containers = {

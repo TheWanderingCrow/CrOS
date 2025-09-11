@@ -12,19 +12,11 @@
       port = 8090;
     };
 
-    nginx = {
+    caddy = {
       enable = true;
-      recommendedProxySettings = true;
-      virtualHosts = {
-        "notes.wanderingcrow.net" = {
-          forceSSL = true;
-          useACMEHost = "notes.wanderingcrow.net";
-          locations."/" = {
-            proxyPass = "http://127.0.0.1:8090";
-            proxyWebsockets = true;
-          };
-        };
-      };
+      virtualHosts."notes.wanderingcrow.net".extraConfig = ''
+        reverse_proxy http://127.0.0.1:8090
+      '';
     };
   };
 }

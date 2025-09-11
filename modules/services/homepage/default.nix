@@ -23,24 +23,13 @@ in {
     #HOMEPAGE_VAR_LUBELOGGERPASS = ${config.sops.placeholder."lubelogger/pass"}
   };
 
-  services.nginx = {
+  services.caddy = {
     enable = true;
-    recommendedProxySettings = true;
-    virtualHosts = {
-      "home.wanderingcrow.net" = {
-        forceSSL = true;
-        useACMEHost = "home.wanderingcrow.net";
-        locations."/" = {
-          extraConfig = ''
-            allow 192.168.0.0/16;
-            allow ${s.network.primary.publicIP};
-            deny all;
-          '';
-          proxyPass = "http://localhost:8089";
-          proxyWebsockets = true;
-        };
-      };
-    };
+    virtualHosts."home.wanderingcrow.net".extraConfig = ''
+      @block not remote_ip ${inputs.nix-secrets.network.primary.publicIP} private_ranges
+      abort @block
+      reverse_proxy http://localhost:8089
+    '';
   };
 
   services = {
@@ -98,14 +87,6 @@ in {
       bookmarks = [
         {
           WCE = [
-            {
-              Grocy = [
-                {
-                  icon = "grocy.svg";
-                  href = "https://grocy.wanderingcrow.net";
-                }
-              ];
-            }
             {
               Homebox = [
                 {

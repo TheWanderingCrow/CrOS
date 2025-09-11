@@ -30,22 +30,12 @@ in
       };
     };
 
-    services.nginx = {
+    services.caddy = {
       enable = true;
-      recommendedProxySettings = true;
-      virtualHosts = {
-        "openhab.wanderingcrow.net" = {
-          forceSSL = true;
-          useACMEHost = "openhab.wanderingcrow.net";
-          locations."/" = {
-            extraConfig = ''
-              allow 192.168.0.0/16;
-              allow ${inputs.nix-secrets.network.primary.publicIP};
-              deny all;
-            '';
-            proxyPass = "http://10.88.0.9:8080";
-          };
-        };
-      };
+      virtualHosts."openhab.wanderingcrow.net".extraConfig = ''
+        @block not remote_ip ${inputs.nix-secrets.network.primary.publicIP} private_ranges
+        abort @block
+        reverse_proxy http://10.88.0.9:8080
+      '';
     };
   }

@@ -31,23 +31,12 @@ in
       '';
     };
 
-    services.nginx = {
+    services.caddy = {
       enable = true;
-      recommendedProxySettings = true;
-      virtualHosts = {
-        "umami.wanderingcrow.net" = {
-          forceSSL = true;
-          useACMEHost = "umami.wanderingcrow.net";
-          locations."/" = {
-            proxyPass = "http://10.88.0.6:3000";
-            proxyWebsockets = true;
-          };
-          locations."/script.js" = {
-            extraConfig = ''
-              deny 172.220.132.255;
-            '';
-          };
-        };
+      virtualHosts."umami.wanderingcrow.net" = {
+        extraConfig = ''
+          reverse_proxy http://10.88.0.6:3000
+        '';
       };
     };
 

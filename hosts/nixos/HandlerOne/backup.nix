@@ -20,9 +20,6 @@ let
       # trilium.nix
       "/var/lib/trilium/backup"
 
-      # grocy
-      "/var/lib/grocy"
-
       # actualbudget
       "${volumePath}/actualbudget"
 

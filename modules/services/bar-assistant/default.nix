@@ -33,33 +33,16 @@ in
     # Routing #
     ###########
 
-    services.nginx = {
+    services.caddy = {
       enable = true;
-      recommendedProxySettings = true;
       virtualHosts = {
-        "bar.wanderingcrow.net" = {
-          extraConfig = ''
-            allow 192.168.0.0/16;
-            allow 10.8.0.0/24;
-            allow ${inputs.nix-secrets.network.primary.publicIP};
-            deny all;
-          '';
-          forceSSL = true;
-          useACMEHost = "bar.wanderingcrow.net";
-          locations = {
-            "/search/" = {
-              proxyPass = "http://10.88.0.3:7700/";
-              priority = 1;
-            };
-            "/api/" = {
-              proxyPass = "http://10.88.0.4:8080/";
-              priority = 1;
-            };
-            "/" = {
-              proxyPass = "http://10.88.0.5:8080/";
-            };
-          };
-        };
+        "bar.wanderingcrow.net".extraConfig = ''
+          @block not remote_ip ${inputs.nix-secrets.network.primary.publicIP} private_ranges
+          abort @block
+          reverse_proxy /search/ http://10.88.0.3:7700
+          reverse_proxy /api/ http://10.88.0.4:8080
+          reverse_proxy http://10.88.0.5:8080
+        '';
       };
     };
 

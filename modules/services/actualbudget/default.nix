@@ -9,21 +9,11 @@ in {
     "d ${volumePath}/actualbudget"
   ];
 
-  services.nginx = {
+  services.caddy = {
     enable = true;
-    recommendedProxySettings = true;
-    virtualHosts = {
-      "budget.wanderingcrow.net" = {
-        forceSSL = true;
-        useACMEHost = "budget.wanderingcrow.net";
-        locations = {
-          "/" = {
-            proxyPass = "http://10.88.0.12";
-            proxyWebsockets = true;
-          };
-        };
-      };
-    };
+    virtualHosts."budget.wanderingcrow.net".extraConfig = ''
+      reverse_proxy http://10.88.0.12
+    '';
   };
   virtualisation.oci-containers = {
     backend = "podman";
