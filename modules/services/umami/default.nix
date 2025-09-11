@@ -35,7 +35,7 @@ in
       enable = true;
       virtualHosts."umami.wanderingcrow.net" = {
         extraConfig = ''
-          reverse_proxy 10.88.0.6:3000
+          reverse_proxy http://10.88.0.6:3000
         '';
       };
     };

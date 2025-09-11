@@ -82,6 +82,10 @@
     };
   };
 
+  services.caddy = {
+    email = "infrastructure@wanderingcrow.net";
+  };
+
   #FIXME(TODO) Migrate this into another file, probably a module
   #sops = {
   #  secrets = {

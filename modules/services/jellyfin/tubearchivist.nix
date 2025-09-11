@@ -18,7 +18,7 @@ in {
   services.caddy = {
     enable = true;
     virtualHosts."ta.wanderingcrow.net".extraConfig = ''
-      reverse_proxy 10.88.0.14:8000
+      reverse_proxy http://10.88.0.14:8000
     '';
   };
 
