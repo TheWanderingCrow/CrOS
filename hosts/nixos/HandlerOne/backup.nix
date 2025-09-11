@@ -20,11 +20,10 @@ let
       # trilium.nix
       "/var/lib/trilium/backup"
 
-      # grocy
-      "/var/lib/grocy"
-
       # actualbudget
       "${volumePath}/actualbudget"
+
+      "/var/lib/tuwunel"
 
       # flamesites
       "${volumePath}/flamesites/swgalaxyproject"

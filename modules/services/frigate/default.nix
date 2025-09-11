@@ -9,7 +9,7 @@ in
   }: let
     frigateConfig = pkgs.writeText "config.yaml" (lib.generators.toYAML {} {
       auth.reset_admin_password = true; # roll the admin password every restart, depend on user accounts for long-lived access
-      tls.enabled = false; # off because we're doing ssl through nginx
+      tls.enabled = false; # off because we're doing ssl through the proxy
       mqtt = {
         # TODO: add mqtt broker
         enabled = false;
@@ -198,18 +198,10 @@ in
       };
     };
 
-    services.nginx = {
+    services.caddy = {
       enable = true;
-      recommendedProxySettings = true;
-      virtualHosts = {
-        "frigate.wanderingcrow.net" = {
-          forceSSL = true;
-          useACMEHost = "frigate.wanderingcrow.net";
-          locations."/" = {
-            proxyPass = "http://10.88.0.10:8971";
-            proxyWebsockets = true;
-          };
-        };
-      };
+      virtualHosts."frigate.wanderingcrow.net".extraConfig = ''
+        reverse_proxy http://10.88.0.10:8971
+      '';
     };
   }

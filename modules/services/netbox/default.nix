@@ -6,26 +6,19 @@
 }: let
   sopsFolder = builtins.toString inputs.nix-secrets + "/sops";
 in {
-  users.users.nginx.extraGroups = ["netbox"];
+  users.users.caddy.extraGroups = ["netbox"];
 
   sops.secrets."netbox/secret-key" = {
     owner = "netbox";
     sopsFile = "${sopsFolder}/shared.yaml";
   };
 
-  services.nginx = {
+  services.caddy = {
     enable = true;
-    recommendedProxySettings = true; # otherwise you will get CSRF error while login
-    virtualHosts."netbox.wanderingcrow.net" = {
-      forceSSL = true;
-      useACMEHost = "netbox.wanderingcrow.net";
-      locations = {
-        "/" = {
-          proxyPass = "http://${config.services.netbox.listenAddress}:${builtins.toString config.services.netbox.port}";
-        };
-        "/static/" = {alias = "${config.services.netbox.dataDir}/static/";};
-      };
-    };
+    virtualHosts."netbox.wanderingcrow.net".extraConfig = ''
+      file_server /static/
+      reverse_proxy http://${config.services.netbox.listenAddress}:${builtins.toString config.services.netbox.port}
+    '';
   };
 
   services.netbox = {

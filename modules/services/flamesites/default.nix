@@ -32,34 +32,15 @@ in {
     };
   };
 
-  services.nginx = {
+  services.caddy = {
     enable = true;
-    recommendedProxySettings = true;
     virtualHosts = {
-      "swgalaxyproject.com" = {
-        forceSSL = true;
-        useACMEHost = "swgalaxyproject.com";
-        locations."/" = {
-          recommendedProxySettings = true;
-          extraConfig = ''
-            client_max_body_size 200M;
-          '';
-          proxyPass = "http://localhost:8080";
-          proxyWebsockets = true;
-        };
-      };
-      "nnsbluegrass.com" = {
-        forceSSL = true;
-        useACMEHost = "nnsbluegrass.com";
-        locations."/" = {
-          recommendedProxySettings = true;
-          extraConfig = ''
-            client_max_body_size 200M;
-          '';
-          proxyPass = "http://localhost:9821";
-          proxyWebsockets = true;
-        };
-      };
+      "swgalaxyproject.com".extraConfig = ''
+        reverse_proxy http://localhost:8080
+      '';
+      "nnsbluegrass.com".extraConfig = ''
+        reverse_proxy http://localhost:9821
+      '';
     };
   };
 }
