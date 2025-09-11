@@ -36,7 +36,7 @@ in {
     enable = true;
     virtualHosts = {
       "swgalaxyproject.com".extraConfig = ''
-        reverse_proxy http://localhost.8080
+        reverse_proxy http://localhost:8080
       '';
       "nnsbluegrass.com".extraConfig = ''
         reverse_proxy http://localhost:9821
