@@ -10,6 +10,7 @@
 
   environment.systemPackages = [
     pkgs.unstable.fluffychat-web
+    pkgs.unstable.element-web
   ];
 
   sops.secrets."matrix/registration_token" = {
@@ -46,8 +47,12 @@
       "psychal.link, psychal.link:8448".extraConfig = ''
         reverse_proxy unix//run/tuwunel/tuwunel.sock
       '';
-      "chat.psychal.link".extraConfig = ''
+      "fl.psychal.link".extraConfig = ''
         root * ${pkgs.unstable.fluffychat-web}
+        file_server
+      '';
+      "em.psychal.link".extraConfig = ''
+        root * ${pkgs.unstable.element-web}
         file_server
       '';
     };
